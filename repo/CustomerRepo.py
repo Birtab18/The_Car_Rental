@@ -32,5 +32,11 @@ class CustomerOptions:
 
     def delete_customer(self):
         with open('./data/customers.txtt', 'a+') as customer_file:
+            customer_Delete = input("Enter Customers SSN number: ")
+            for line in customer_file.readlines():
+                if line != customer_Delete:
+                    customer_file.write(line)
+        return self.__customer    
+        
 
  
