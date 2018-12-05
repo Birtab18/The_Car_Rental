@@ -11,14 +11,14 @@ class Customeroptions:
             socialnumber = customer.get_socialnumber()
             phonenumber = customer.get_phonenumber()
             email = customer.get_email()
-            videos_file.write('{},{},{},{}'.format(name, socialnumber, phonenumber, email))
+            customer_file.write('{},{},{},{}'.format(name, socialnumber, phonenumber, email))
 
     def get_videos(self):
         customer =[]
         with open('./data/customers.csv','r') as customer_file:
-            for line in video_file.readlines():
+            for line in customer_file.readlines():
                 name, socialnumber, phonenumber, email = line.split(",")
-                new_costumer = costumer(name, socialnumber, phonenumber, email)
+                new_costumer = Customer(name, socialnumber, phonenumber, email)
                 customer.append(new_costumer)
             return customer
  

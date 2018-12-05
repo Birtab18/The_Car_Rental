@@ -4,6 +4,7 @@ from upplysingar.vidskiptavinir import Customer
 class Frontpage:
     def __init__(self):
         self.__customer_main = Checking2
+        
 
     def main_menu(self):
         action = ''
@@ -25,7 +26,7 @@ class Frontpage:
                     socialnumber = input('Enter a number: ')
                     phonenumber = input('Enter a phonenumber: ')
                     email = input('Enter a email: ')
-                    new_costumer = Customer(name, socialnumber, phonenumber,email)
+                    new_costumer = Customer(name, socialnumber, phonenumber, email)
                     self.__customer_main.add_customer(new_costumer)
                 
      
