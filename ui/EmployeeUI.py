@@ -3,7 +3,7 @@ def front_Page():
     print('-'*50)
     print("{0:>26}".format('Hello'))
     print('-'*50)
-    print("Press - 1 for Cars \nPress - 2 for Customers \nPress q to Quit ")
+    print("Press 1 for Cars \nPress 2 for Customers \nPress q to Quit")
 
 
 def car_Page():
@@ -11,7 +11,15 @@ def car_Page():
     print('-'*50)
     print("{0:>26}".format('Cars'))
     print('-'*50)
-    print("Press - 1 to Mark car as available for rent \nPress - 2 to Mark car as rented \nPress - 3 to Make Order \nPress - 4 to Cancel Order Press\nPress - 5 to Search for Order \nPress - 6 to Change Order\nPress - 7 for Car Status\nPress - 8 for Price list\nPress q to Quit ")
+    print("Press 1 to Mark car as available for rent")
+    print("Press 2 to Mark car as rented")
+    print("Press 3 to Make Order")
+    print("Press 4 to Cancel Order Press")
+    print("Press 5 to Search for Order")
+    print("Press 6 to Change Order")
+    print("Press 7 for Car Status")
+    print("Press 8 for Price list")
+    print("Press q to Quit")
 
 
 def customers_Page():
@@ -19,7 +27,11 @@ def customers_Page():
     print('-'*50)
     print("{0:>26}".format('Customers'))
     print('-'*50)
-    print("Press - 1 for New Customer \nPress - 2 to Remove Customer  \nPress - 3 to Look up Customer\nPress - 4 to Edit Customer\nPress q to Quit ")
+    print("Press 1 for New Customer")
+    print("Press 2 to Remove Customer")
+    print("Press 3 to Look up Customer")
+    print("Press 4 to Edit Customer")
+    print("Press q to Quit")
 
 
 def main():
