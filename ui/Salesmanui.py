@@ -4,6 +4,7 @@ from business.vidskiptavinir import Customer
 class Frontpage:
     def __init__(self):
         self.__customer_main = Checking2
+        
 
     def main_menu(self):
         action = ''
@@ -40,3 +41,4 @@ class Frontpage:
                 print('Press 8 to Show Price List')
 
 
+#test
