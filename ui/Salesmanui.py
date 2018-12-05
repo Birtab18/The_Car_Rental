@@ -9,7 +9,11 @@ class Frontpage:
     def main_menu(self):
 
         def front_Page():
-            print('{0:40}{1}'.format('Bílaleigan', 'Front page'))
+            print()
+            print()
+            print()
+            print()
+            print('{0:40}{1}'.format('The Car Rental', 'Front page'))
             print('-'*50)
             print("{0:>26}".format('Hello'))
             print('-'*50)
