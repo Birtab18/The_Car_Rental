@@ -11,7 +11,7 @@ class Frontpage:
         while (action !='q'):
             print('Press 1 for Customer')
             print('Press 2 for Car')
-
+            print('Press q to Quit')
             action = input('Choose command: ').lower()
 
             if action =='1':
@@ -39,14 +39,14 @@ class Frontpage:
                     pass #quit
 
             elif action == '2':
-                print('Press 1 to Set a car free')
-                print('Press 2 to set a car in rental')
-                print('Press 3 to Put in an order')
-                print('Press 4 to Delete order')
-                print('Press 5 to Look up a order')
-                print('Press 6 to Change a order')
-                print('Press 7 to showing cars status')
-                print('Press 8 to showing how much each car cost')
+                print('Press 1 to Mark Car As Available For Rent')
+                print('Press 2 to Mark Car As Not Available For Rent')
+                print('Press 3 to Put In An Order')
+                print('Press 4 to Cancel Order')
+                print('Press 5 to Look Up Order')
+                print('Press 6 to Change Order')
+                print('Press 7 to Show Cars Availability') #True or False
+                print('Press 8 to Show Price List')
                 print('Press q to Quit')
                 action_Car = input('Choose command: ').lower()
 
@@ -68,4 +68,7 @@ class Frontpage:
                     pass
                 else:
                     pass #quit
+
+            else:
+                pass #quit
 
