@@ -8,6 +8,7 @@ class Frontpage:
 
     def main_menu(self):
         action = ''
+        while (action !='q'):
             print('Press 1 for Customer')
             print('Press 2 for Car')
             print('Press q to Quit')
