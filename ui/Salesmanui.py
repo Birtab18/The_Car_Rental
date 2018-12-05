@@ -43,6 +43,8 @@ class Frontpage:
             print('Press 8 to Show Price List')
             print('Press q to Quit')
 
+        # def sign_Up():
+
         action = ''
         while (action != 'q'):
             front_Page()  # forsida
