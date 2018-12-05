@@ -3,7 +3,7 @@ from models.Customer import Customer
 
 class Frontpage:
     def __init__(self):
-        self.__customer_main = CustomerService
+        self.__CustomerService = CustomerService()
         
     def main_menu(self):
         action = ''
@@ -27,9 +27,9 @@ class Frontpage:
                     phonenumber = input('Enter a phonenumber: ')
                     email = input('Enter an email: ')
                     new_costumer = Customer(name, socialnumber, phonenumber,email)
-                    self.__customer_main.add_customer(new_costumer)
+                    self.__CustomerService.add_customer(new_costumer)
                 elif action_Cust == '2':
-                    costumer = self.__customer_main.get_costumer()
+                    costumer = self.__CustomerService.get_costumer()
                 elif action_Cust == '3':
                     pass
                 elif action_Cust == '4':
