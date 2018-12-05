@@ -4,7 +4,7 @@ def main():
     ui = Frontpage()
     ui.main_menu()
     print("test")
-    print("another test")
+    print("another")
 
 main()
 
