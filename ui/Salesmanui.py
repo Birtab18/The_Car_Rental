@@ -51,6 +51,8 @@ class Frontpage:
                 customer_Page()  # customer valmyndin
                 action_Cust = input('Choose command: ').lower()
                 if action_Cust == '1':
+                    print("-"*15)
+                    print("New customer !!!")
                     name = input('Enter a name: ')
                     socialnumber = input('Enter a SSN number: ')
                     phonenumber = input('Enter a phonenumber: ')
