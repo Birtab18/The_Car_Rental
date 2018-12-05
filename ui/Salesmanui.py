@@ -1,5 +1,5 @@
-from business.doublechecking import Checking2
-from business.vidskiptavinir import Customer
+from services.doublechecking import Checking2
+from services.vidskiptavinir import Customer
 
 class Frontpage:
     def __init__(self):
