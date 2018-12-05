@@ -1,7 +1,7 @@
 from models.Customer import Customer 
 
 class CustomerOptions:
-
+ 
     def __init__(self):
         self.__customer = []
 
@@ -30,3 +30,5 @@ class CustomerOptions:
             return self.__customer
 
  
+
+
