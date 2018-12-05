@@ -47,7 +47,7 @@ class Frontpage:
         while (action != 'q'):
             front_Page()  # forsida
             action = input('Choose command: ').lower()
-            if action == '2':
+            if action == '1':
                 customer_Page()  # customer valmyndin
                 action_Cust = input('Choose command: ').lower()
                 if action_Cust == '1':
@@ -69,7 +69,7 @@ class Frontpage:
                 else:
                     print("Invalid input, try again!")
 
-            elif action == '1':
+            elif action == '2':
                 car_Page()  # bila valmynd
                 action_Car = input('Choose command: ').lower()
                 if action_Car == '1':
