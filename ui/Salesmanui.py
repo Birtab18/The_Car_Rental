@@ -45,10 +45,10 @@ class Frontpage:
 
         action = ''
         while (action != 'q'):
-            front_Page()
+            front_Page()  # forsida
             action = input('Choose command: ').lower()
             if action == '1':
-                customer_Page()
+                customer_Page()  # customer valmyndin
                 action_Cust = input('Choose command: ').lower()
                 if action_Cust == '1':
                     name = input('Enter a name: ')
@@ -63,15 +63,13 @@ class Frontpage:
                     pass
                 elif action_Cust == '4':
                     pass
-                elif action_Cust == 'q':
-                    pass  # quit
                 elif action_Cust == 'b':
                     pass
                 else:
                     print("Invalid input, try again!")
 
             elif action == '2':
-                car_Page()
+                car_Page()  # bila valmynd
                 action_Car = input('Choose command: ').lower()
                 if action_Car == '1':
                     print("mark car")
@@ -90,15 +88,11 @@ class Frontpage:
                     pass
                 elif action_Car == '8':
                     pass
-                elif action_Car == 'q':
-                    pass  # quit
                 elif action_Car == 'b':
                     pass
                 else:
                     print("Invalid input, try again!")
 
             elif action == 'q':
+                print("Goodbye !")
                 pass  # quit
-
-            else:
-                print('Invalid input, try again!')
