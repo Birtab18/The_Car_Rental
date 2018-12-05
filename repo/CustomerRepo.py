@@ -1,6 +1,6 @@
-from services.vidskiptavinir import Customer 
+from models.Customer import Customer 
 
-class Customeroptions:
+class CustomerOptions:
 
     def __init__(self):
         self.__customer = []

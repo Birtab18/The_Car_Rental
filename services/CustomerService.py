@@ -1,8 +1,8 @@
-from repo.moguleikar import Customeroptions
+from repo.CustomerRepo import CustomerOptions
 
-class Checking2:
+class CustomerService:
     def __init__(self):
-        self.__customer_repo = Customeroptions() #__checking_repo er private repository
+        self.__customer_repo = CustomerOptions() #__checking_repo er private repository
 
     def add_customer(self, customer):
         if self.is_valid_customer(customer): #eru innputin sett in rett

@@ -1,9 +1,9 @@
-from services.doublechecking import Checking2
-from services.vidskiptavinir import Customer
+from services.CustomerService import CustomerService
+from models.Customer import Customer
 
 class Frontpage:
     def __init__(self):
-        self.__customer_main = Checking2
+        self.__customer_main = CustomerService
         
 
     def main_menu(self):
