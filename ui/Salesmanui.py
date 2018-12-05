@@ -5,7 +5,6 @@ class Frontpage:
     def __init__(self):
         self.__customer_main = Checking2
         
-
     def main_menu(self):
         action = ''
         while (action !='q'):
@@ -26,10 +25,17 @@ class Frontpage:
                     socialnumber = input('Enter a number: ')
                     phonenumber = input('Enter a phonenumber: ')
                     email = input('Enter email: ')
-                    new_costumer = Customer(name, socialnumber, phonenumber,email)
+                    new_costumer = Customer(name, socialnumber, phonenumber, email)
                     self.__customer_main.add_customer(new_costumer)
+
                 elif action2 == '2':
-                    costumer = self.__customer_main.get_costumer()
+                    socialnumtodelete = input('Enter a number to delete: ')
+                    self.__customer_main.delete_costumer(socialnumtodelete)
+
+                # elif action2 == '3':
+                #     costumer = self.__customer_main.get_customer()
+                #     for customer in customer:
+                #         print(customer)
 
             elif action == '2':
                 print('Press 1 for Set a car free')
