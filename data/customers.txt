@@ -11,3 +11,4 @@ helgi,2323232323,345,helig@ru8937673,baldur,1406972739,baldur@hotmail.comBirta,2
 bergros,12345,12,b@b.is
 birta,200598,8670031,birta@eu.is
 
+Birta,2005984079,8670031,birtalifbaldurs@gmail.com

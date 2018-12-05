@@ -1,8 +1,8 @@
-from ui.SalesmanUi import Frontpage
+from ui.frontpageUi import Front_Page
 
 
 def main():
-    ui = Frontpage()
-    ui.main_menu()
+    ui = Front_Page()
+    ui.main_Menu()
 
 main()
