@@ -6,7 +6,7 @@ class Checking2:
 
     def add_customer(self, customer):
         if self.is_valid_customer(customer): #eru innputin sett in rett
-            self.__customer_repo.add_customer(customer)
+            self.__customer_main.add_customer(customer)
 
     def is_valid_customer(self, customer):
         #herna rékkum vi hvort þetta video se ekki orugglega hægt af vinna med.
@@ -14,8 +14,7 @@ class Checking2:
         return True
 
     def get_customer(self):
-        pass
-        #return self.__customer_repo.get_customer()
+        return self.__customer_main.get_customer()
 
 
 

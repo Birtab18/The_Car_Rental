@@ -21,6 +21,5 @@ class Customeroptions:
                 new_costumer = Customer(name, socialnumber, phonenumber, email)
                 customer.append(new_costumer)
             return customer
- 
 
-    
+ 
