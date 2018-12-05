@@ -1,4 +1,4 @@
-from business.vidskiptavinir import Customer 
+from services.vidskiptavinir import Customer 
 
 class Customeroptions:
 
