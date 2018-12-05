@@ -1,7 +1,7 @@
 from services.CustomerService import CustomerService
 from services.CarService import CarService
-from ui.carUi import Car_Page
-from ui.customerUi import Customer_Page
+from ui.CarUi import Car_Page
+from ui.CustomerUi import Customer_Page
 
 class Front_Page:
     def __init__(self):
@@ -25,7 +25,7 @@ class Front_Page:
 
         action = ''
         while (action != 'q'):
-            print_Frontpage()  #forsida
+            print_Frontpage()
             action = input('Choose command: ').lower()
             if action == '1':
                 ui = Customer_Page()

@@ -12,3 +12,4 @@ bergros,12345,12,b@b.is
 birta,200598,8670031,birta@eu.is
 
 Birta,2005984079,8670031,birtalifbaldurs@gmail.com
+bergrós ,22004059834,5812345,bergros@ru.is
