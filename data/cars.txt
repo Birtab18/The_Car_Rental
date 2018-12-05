@@ -1,20 +1,18 @@
-Type,status,price 
-Toyota Aygo,laus,5000
-Chervolet Spak,laus,7000
-Kia Picanto,laus,7000
-Chervolet Spak,laus,7000
-Hyundai i10,laus,9000
-Volkswagem Golf,laus,9000
-Mazda 3,laus,8000
-Ford Focus,laus,8000
-Hyundai i30,laus,13000
-Audi A3,laus,20000
-Tesla Model 3,laus,20000
-Nissan Quashqui,laus,12000
-Volkswagen Tiguan,laus,12000
-Volvo xc90,laus,12000
-Toyota Land Cruiser,laus,20000
-Volvo xc90,laus,20000
-Mercedes Benz G-Class,laus,30000
-
+manufacturer, the_Type, transmission, color, price, status
+Toyota, Aygo,stick shift,white,5000,True
+Chervolet,Spark,stick shift,black,7000,True
+Kia,Picanto,stick shift,blue,7000,False
+Hyundai,i10,stick shift,black,9000,False
+Volkswagen,Golf,manual,white,9000,False
+Mazda,3,stick shift,red,8000,True
+Ford,Focus,manual,blue,8000,False
+Hyundai,i30,manual,white,13000,True
+Audi,A3,manual,black,20000,False
+Tesla,Model 3,manual,black,20000,True
+Nissan,Quashqui,stick shift,grey,12000,False
+Volkswagen,Tiguan,manual,white,12000,False
+Volvo,xc90,stick shift,red,12000,False
+Toyota,Land Cruiser,manual,black,20000,True
+Mercedes,Benz G-Class,manual,grey,30000,False
 kia,rio,manual,blue,10000,True
+toyota,prius,stick shift,blue,7000,True
