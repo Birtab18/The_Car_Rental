@@ -1,10 +1,13 @@
 from services.CustomerService import CustomerService
+from services.CarService import CarService
 from models.Customer import Customer
+from models.Car import Car
 
 
 class Frontpage:
     def __init__(self):
         self.__CustomerService = CustomerService()
+        self.__CarService = CarService()
 
     def main_menu(self):
 
@@ -45,6 +48,8 @@ class Frontpage:
             print('Press 6 to Change Order')
             print('Press 7 to Show Cars Availability')  # True or False
             print('Press 8 to Show Price List')
+            print('Press 9 to Add A New Car To The Car Rental')
+            print('Press 10 to Change The Price List')
             print('Press q to Quit')
 
         # def sign_Up():
@@ -55,17 +60,16 @@ class Frontpage:
             action = input('Choose command: ').lower()
             if action == '1':
                 customer_Page()  # customer valmyndin
-                action = input('Choose command: ').lower()
-                if action == '1':
+                action_Cust = input('Choose command: ').lower()
+                if action_Cust == '1':
                     print("-"*15)
-                    print("New customer !!!")
+                    print("New customer:")
                     name = input('Enter a name: ')
                     socialnumber = input('Enter a SSN number: ')
                     phonenumber = input('Enter a phonenumber: ')
                     email = input('Enter an email: ')
-                    new_costumer = Customer(
-                        name, socialnumber, phonenumber, email)
-                    self.__CustomerService.add_customer(new_costumer)
+                    new_Costumer = Customer(name, socialnumber, phonenumber, email)
+                    self.__CustomerService.add_customer(new_Costumer)
                 elif action_Cust == '2':
                     costumer = self.__CustomerService.get_costumer()
                 elif action_Cust == '3':
@@ -79,8 +83,8 @@ class Frontpage:
 
             elif action == '2':
                 car_Page()  # bila valmynd
-                action = input('Choose command: ').lower()
-                if action == '1':
+                action_Car = input('Choose command: ').lower()
+                if action_Car == '1':
                     print("mark car")
                     pass
                 elif action_Car == '2':
@@ -97,7 +101,20 @@ class Frontpage:
                     pass
                 elif action_Car == '8':
                     pass
-                elif action_Car == 'b':
+                elif action_Car == '9':
+                    print("-"*15)
+                    print("New customer:")
+                    manufacturer = input('Enter The Manufacturer: ')
+                    the_Type = input('Enter The Type: ')
+                    transmission = input('Stick Shift Or Manual?: ')
+                    color = input('Enter The Color: ')
+                    price = input('Enter Price: ')
+                    #status = input('Enter Status: ')
+                    new_Car = Car(manufacturer, the_Type, transmission, color, price)
+                    self.__CarService.add_car(new_Car)
+                elif action_Car == '10':
+                    pass
+                elif action_Car == 'q':
                     pass
                 else:
                     print("Invalid input, try again!")
