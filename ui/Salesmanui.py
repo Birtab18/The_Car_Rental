@@ -80,6 +80,7 @@ class Frontpage:
                     pass
                 else:
                     print("Invalid input, try again!")
+                    continue
 
             elif action == '2':
                 car_Page()  # bila valmynd
@@ -118,6 +119,7 @@ class Frontpage:
                     pass
                 else:
                     print("Invalid input, try again!")
+                    continue
 
             elif action == 'q':
                 print("Goodbye !")
