@@ -13,7 +13,7 @@ class CustomerService:
         # ef valid þa addum vid þvi i gagnageymsluna. 
         return True
 
-    def get_customer(self):
+    def get__customer(self):
         return self.__customer_main.get_customer()
 
 
