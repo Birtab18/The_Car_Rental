@@ -1,4 +1,4 @@
-from service.moguleikar import Customeroptions
+from repo.moguleikar import Customeroptions
 
 class Checking2:
     def __init__(self):
