@@ -36,7 +36,7 @@ class Frontpage:
                 print('Press 4 for Delete order')
                 print('Press 5 for Look up a order')
                 print('Press 6 for Change a order')
-                print('Press 7 for showing cars stadus')
+                print('Press 7 for showing cars status')
                 print('Press 8 for showing how much each car cost')
 
 
