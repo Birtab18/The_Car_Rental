@@ -8,7 +8,7 @@ class CustomerOptions:
     def add_customer(self, customer):
         #first add to file then to private list
         try:
-            with open('./data/customers.csv', 'a+') as customer_file: #a+ = creates file if it doesnt exist
+            with open('./data/customers.txtt', 'a+') as customer_file: #a+ = creates file if it doesnt exist
                 name = customer.get_name()
                 socialnumber = customer.socialnumber()
                 phonenumber = customer.get_phonenumber()
@@ -20,7 +20,7 @@ class CustomerOptions:
 
     def get_customer(self):
         if self.__customer == []: #first time this function is used
-            with open('./data/customers.csv','r') as customer_file:
+            with open('./data/customers.txt','r') as customer_file:
                 for line in customer_file.readlines():
                     name, socialnumber, phonenumber, email = line.split(",")
                     new_costumer = Customer(name, socialnumber, phonenumber, email)
@@ -29,6 +29,20 @@ class CustomerOptions:
         else:
             return self.__customer
 
+<<<<<<< HEAD
  
 
 
+=======
+
+    def delete_customer(self):
+        with open('./data/customers.txtt', 'a+') as customer_file:
+            customer_Delete = input("Enter Customers SSN number: ")
+            for line in customer_file.readlines():
+                if line != customer_Delete:
+                    customer_file.write(line)
+        return self.__customer    
+        
+
+ 
+>>>>>>> d22db1716b29860436f72e804a61c83fa125e7f3
