@@ -1,6 +1,6 @@
 class Customer:
 
-    def __init__(self, socialnumber, phonenumber, name, email):
+    def __init__(self, name, socialnumber, phonenumber, email):
         self.__name = name
         self.__socialnumber = socialnumber
         self.__phonenumber = phonenumber

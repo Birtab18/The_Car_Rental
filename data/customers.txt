@@ -6,3 +6,5 @@ Birta Líf,2005984079,birtab18@ru.is8882238
 Bergros,3456788,bergros8937673
 8670031,Birta Líf,2005984079,birtab18@ru.is
 
+8645418,helgi,2612972489,helgi@ru.is
+helgi,2323232323,345,helig@ru
