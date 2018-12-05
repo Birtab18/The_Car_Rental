@@ -51,8 +51,8 @@ class Frontpage:
             action = input('Choose command: ').lower()
             if action == '1':
                 customer_Page()  # customer valmyndin
-                action = input('Choose command: ').lower()
-                if action == '1':
+                action_Cust = input('Choose command: ').lower()
+                if action_Cust == '1':
                     print("-"*15)
                     print("New customer !!!")
                     name = input('Enter a name: ')
@@ -72,11 +72,12 @@ class Frontpage:
                     pass
                 else:
                     print("Invalid input, try again!")
+                    continue
 
             elif action == '2':
                 car_Page()  # bila valmynd
-                action = input('Choose command: ').lower()
-                if action == '1':
+                action_Car = input('Choose command: ').lower()
+                if action_Car == '1':
                     print("mark car")
                     pass
                 elif action_Car == '2':
@@ -97,6 +98,7 @@ class Frontpage:
                     pass
                 else:
                     print("Invalid input, try again!")
+                    continue
 
             elif action == 'q':
                 print("Goodbye !")
