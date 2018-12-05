@@ -16,7 +16,7 @@ class Checking2:
     def get_customer(self):
         return self.__customer_repo.get_customer()
 
-
+#comment from birta
 
 
 
