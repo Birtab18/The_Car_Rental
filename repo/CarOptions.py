@@ -1,21 +1,22 @@
-from models.Customer import Customer
+from models.Car import Car
 
-
-class CustomerOptions:
+class CarOptions:
 
     def __init__(self):
-        self.__customer = []
+        self.__car = []
 
-    def add_customer(self, customer):
+    def add_car(self, car):
         # first add to file then to private list
         # try:
         # a+ = creates file if it doesnt exist
-        with open('./data/customers.txt', 'a+') as customer_file:
-            name = customer.get_name()
-            socialnumber = customer.get_socialnumber()
-            phonenumber = customer.get_phonenumber()
-            email = customer.get_email()
-            customer_file.write('{},{},{},{}\n'.format(name, socialnumber, phonenumber, email))
+        with open('./data/cars.txt', 'a+') as car_file:
+            manufacturer = car.get_manufacturer()
+            the_Type = car.get_the_Type()
+            transmission = car.get_transmission()
+            color = car.get_color()
+            price = car.get_price()
+            status = car.get_status()
+            car_file.write('{},{},{},{},{},{}\n'.format(manufacturer, the_Type, transmission, color, price, status))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass

@@ -17,3 +17,4 @@ Toyota Land Cruiser,laus,20000
 Volvo xc90,laus,20000
 Mercedes Benz G-Class,laus,30000
 
+kia,rio,manual,blue,10000,True
