@@ -1,6 +1,6 @@
 from services.vidskiptavinir import Customer 
 
-class Customeroptions:
+class CustomerOptions:
     def __init__(self):
         self.__customer = []
 
@@ -18,16 +18,18 @@ class Customeroptions:
             
     def get_customer(self):
         customer =[]
-        with open('./data/customers.csv','r') as customer_file:
+        with open('./data/customers.txt','r') as customer_file:
             for line in customer_file.readlines():
                 name, socialnumber, phonenumber, email = line.split(",")
                 new_costumer = Customer(name, socialnumber, phonenumber, email)
                 customer.append(new_costumer)
             return customer
 
-        
+    
     # def delete_customer(self):
     #     with open('./data/customers.csv', 'a+') as customer_file:
     #         for row in customer_file:
     #             if row[1] == socialnumtodelete
+
+
 
