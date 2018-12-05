@@ -5,7 +5,7 @@ from models.Customer import Customer
 class Frontpage:
     def __init__(self):
         self.__CustomerService = CustomerService()
-        
+
     def main_menu(self):
 
         def front_Page():
@@ -47,7 +47,7 @@ class Frontpage:
         while (action != 'q'):
             front_Page()  # forsida
             action = input('Choose command: ').lower()
-            if action == '1':
+            if action == '2':
                 customer_Page()  # customer valmyndin
                 action_Cust = input('Choose command: ').lower()
                 if action_Cust == '1':
@@ -55,7 +55,8 @@ class Frontpage:
                     socialnumber = input('Enter a SSN number: ')
                     phonenumber = input('Enter a phonenumber: ')
                     email = input('Enter an email: ')
-                    new_costumer = Customer(name, socialnumber, phonenumber,email)
+                    new_costumer = Customer(
+                        name, socialnumber, phonenumber, email)
                     self.__CustomerService.add_customer(new_costumer)
                 elif action_Cust == '2':
                     costumer = self.__CustomerService.get_costumer()
@@ -68,7 +69,7 @@ class Frontpage:
                 else:
                     print("Invalid input, try again!")
 
-            elif action == '2':
+            elif action == '1':
                 car_Page()  # bila valmynd
                 action_Car = input('Choose command: ').lower()
                 if action_Car == '1':
