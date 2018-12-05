@@ -4,13 +4,8 @@ from models.Customer import Customer
 
 class Frontpage:
     def __init__(self):
-<<<<<<< HEAD
         self.__CustomerService = CustomerService()
         
-=======
-        self.__customer_main = CustomerService
-
->>>>>>> ccb19c045204e8cb613074b050bb129e1a515c82
     def main_menu(self):
 
         def front_Page():
@@ -60,19 +55,10 @@ class Frontpage:
                     socialnumber = input('Enter a SSN number: ')
                     phonenumber = input('Enter a phonenumber: ')
                     email = input('Enter an email: ')
-<<<<<<< HEAD
                     new_costumer = Customer(name, socialnumber, phonenumber,email)
                     self.__CustomerService.add_customer(new_costumer)
                 elif action_Cust == '2':
                     costumer = self.__CustomerService.get_costumer()
-=======
-                    new_costumer = Customer(
-                        name, socialnumber, phonenumber, email)
-                    self.__customer_main.add_customer(new_costumer)
-                    
-                elif action_Cust == '2':
-                    self.__customer_main.get_costumer()
->>>>>>> ccb19c045204e8cb613074b050bb129e1a515c82
                 elif action_Cust == '3':
                     pass
                 elif action_Cust == '4':

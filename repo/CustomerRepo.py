@@ -7,7 +7,6 @@ class CustomerOptions:
 
     def add_customer(self, customer):
         #first add to file then to private list
-<<<<<<< HEAD
         #try:
         with open('./data/customers.txt', 'a+') as customer_file: #a+ = creates file if it doesnt exist
             name = customer.get_name()
@@ -16,16 +15,6 @@ class CustomerOptions:
             email = customer.get_email()
             customer_file.write('{},{},{},{}'.format(name, socialnumber, phonenumber, email))
         #except:
-=======
-        try:
-            with open('./data/customers.txtt', 'a+') as customer_file: #a+ = creates file if it doesnt exist
-                name = customer.get_name()
-                socialnumber = customer.socialnumber()
-                phonenumber = customer.get_phonenumber()
-                email = customer.get_email()
-                customer_file.write('{},{},{},{}'.format(self.__name, self.__socialnumber, self.__phonenumber, self.__email))
-        except:
->>>>>>> ccb19c045204e8cb613074b050bb129e1a515c82
             #adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         #pass
 
@@ -40,11 +29,6 @@ class CustomerOptions:
         else:
             return self.__customer
 
-<<<<<<< HEAD
- 
-
-
-=======
 
     def delete_customer(self):
         with open('./data/customers.txtt', 'a+') as customer_file:
@@ -56,4 +40,3 @@ class CustomerOptions:
         
 
  
->>>>>>> d22db1716b29860436f72e804a61c83fa125e7f3
