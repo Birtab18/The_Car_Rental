@@ -27,8 +27,9 @@ class Frontpage:
                     email = input('Enter a email: ')
                     new_costumer = Customer(name, socialnumber, phonenumber,email)
                     self.__customer_main.add_customer(new_costumer)
-                
-     
+                elif action2 == '2':
+                    costumer = self.__customer_main.get_costumer()
+
             elif action == '2':
                 print('Press 1 for Set a car free')
                 print('Press 2 for set a car in rental')
@@ -38,9 +39,4 @@ class Frontpage:
                 print('Press 6 for Change a order')
                 print('Press 7 for showing cars status')
                 print('Press 8 for showing how much each car cost')
-
-
-
-                #TEST
-
 
