@@ -57,7 +57,7 @@ class Frontpage:
                     email = input('Enter an email: ')
                     new_costumer = Customer(
                         name, socialnumber, phonenumber, email)
-                    self.__customer_main.add_customer(self, new_costumer)
+                    self.__customer_main.add_customer(new_costumer)
                 elif action_Cust == '2':
                     costumer = self.__customer_main.get_costumer()
                 elif action_Cust == '3':

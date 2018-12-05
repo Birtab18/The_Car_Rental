@@ -1,4 +1,4 @@
-from ui.SalesmanUi import Frontpage
+from ui.Salesmanui import Frontpage
 
 
 def main():
