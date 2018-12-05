@@ -2,4 +2,4 @@ Name,SSN,Telephone_Number,Email
 Helgi Sævar,2612972489,8645418,helgist18@ru.is
 Bardur,0405963458,5674450,bardur@gmail.com
 Hannes,1304982324,8445657,hannes@gmail.com
-8670031,Birta Líf,2005984079,birtab18@ru.is8882238,Bergros,3456788,bergros
+8670031,Birta Líf,2005984079,birtab18@ru.is8882238,Bergros,3456788,bergros2004,birta,1234,birta@ru.is
