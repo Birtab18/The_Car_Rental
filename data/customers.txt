@@ -4,3 +4,5 @@ Bardur,0405963458,5674450,bardur@gmail.com
 Hannes,1304982324,8445657,hannes@gmail.com
 Birta Líf,2005984079,birtab18@ru.is8882238
 Bergros,3456788,bergros8937673
+8670031,Birta Líf,2005984079,birtab18@ru.is
+
