@@ -15,8 +15,7 @@ class CustomerOptions:
             socialnumber = customer.get_socialnumber()
             phonenumber = customer.get_phonenumber()
             email = customer.get_email()
-            customer_file.write('{},{},{},{}'.format(
-                name, socialnumber, phonenumber, email))
+            customer_file.write('{},{},{},{}\n'.format(name, socialnumber, phonenumber, email))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
@@ -26,8 +25,7 @@ class CustomerOptions:
             with open('./data/customers.txt', 'r') as customer_file:
                 for line in customer_file.readlines():
                     name, socialnumber, phonenumber, email = line.split(",")
-                    new_costumer = Customer(
-                        name, socialnumber, phonenumber, email)
+                    new_costumer = Customer(name, socialnumber, phonenumber, email)
                     self.__customer.append(new_costumer)
             return self.__customer
         else:
