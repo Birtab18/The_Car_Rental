@@ -35,8 +35,11 @@ class Frontpage:
                     pass
                 elif action_Cust == '4':
                     pass
-                else: 
+                elif action_Cust == 'q':
                     pass #quit
+                else:
+                    print("Invalid input, try again!") 
+
 
             elif action == '2':
                 print('Press 1 to Mark Car As Available For Rent')
@@ -66,9 +69,15 @@ class Frontpage:
                     pass
                 elif action_Car == '8':
                     pass
-                else:
+                elif action_Car == 'q':
                     pass #quit
+                else:
+                    print("Invalid input, try again!") 
 
-            else:
+            elif action == 'q':
                 pass #quit
+            
+            else:
+                print('Invalid input, try again!')
+                
 
