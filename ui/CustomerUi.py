@@ -3,6 +3,7 @@ from services.CarService import CarService
 from models.Customer import Customer
 from models.Car import Car
 
+
 class Customer_Page:
     def __init__(self):
         self.__CustomerService = CustomerService()
@@ -37,11 +38,12 @@ class Customer_Page:
                 person_delete = input('Enter the ssn of the person you want to delete: ')
                 self.__CustomerService.delete_customer(person_delete)
             elif action_Cust == '3':
-                self.__CustomerService.get_costumer()
+                self.__CustomerService.look_up_customer()
             elif action_Cust == '4':
                 pass
             elif action_Cust == 'b':
-                print_Frontpage()
+                pass
+                #print_Frontpage()
             else:
                 print("Invalid input, try again!")
 

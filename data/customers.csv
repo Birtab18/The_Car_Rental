@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Name,SSN,Telephone_Number,Email
 Bardur,0405963458,5674450,bardur@gmail.com
 Hannes,4,8445657,hannes@gmail.com
@@ -5,3 +6,14 @@ Bergros,3456788,bergros8937673,
 8670031,Birta Líf,2005984079,birtab18@ru.is
 Baldur ,1406972739,8937673,baldur.haraldsson@hotmail.com
 Siggi,2810715729,8940708,ibv@hotmail.com
+=======
+SSN, Name,Telephone_Number,Email
+2612972489,Helgi Sævar,8645418,helgist18@ru.is
+0405963458,Bardur,5674450,bardur@gmail.com
+1304982324, Hannes,8445657,hannes@gmail.com
+2005984079,Birta Líf,8445657,birtab18@ru.is
+3456788,Bergros,8937673,bergros
+8670031,Birta Líf,2005984079,birtab18@ru.is
+1406972739,Baldur,8937673,baldur.haraldsson@hotmail.com
+2810715729,Siggi,8940708,ibv@hotmail.com
+>>>>>>> 8973ca9ae4cb56ad0f02918b5d85610b6ca56769

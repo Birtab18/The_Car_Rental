@@ -1,4 +1,5 @@
 from models.Customer import Customer
+import os
 import csv
 import os
 class CustomerOptions:
@@ -21,16 +22,13 @@ class CustomerOptions:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
 
-    def get_customer(self):
-        if self.__customer == []:  # first time this function is used
-            with open('./data/customers.csv', 'r') as customer_file:
-                for line in customer_file.readlines():
-                    socialnumber, name, phonenumber, email = line.split(",")
-                    new_costumer = Customer(socialnumber, name, phonenumber, email)
-                    self.__customer.append(new_costumer)
-            return self.__customer
-        else:
-            return self.__customer
+    def look_up_customer(self):
+        with open("./data/customers.csv", 'r') as look_up_customer_file:
+            reader = csv.reader(look_up_customer_file)
+            person_change = input('Enter the ssn of the person you want to look up: ')
+            for row in reader:
+                if row[0] == person_change:
+                    print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(row[0],row[1],row[2],row[3]))
 
     def delete_customer(self, person_SSM):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:

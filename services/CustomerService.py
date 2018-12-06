@@ -15,8 +15,8 @@ class CustomerService:
         # ef valid þa addum vid þvi i gagnageymsluna.
         return True
 
-    def get_customer(self):
-        return self.__customer_Repo.get_customer()  # ATH hvort repo eda main
+    def look_up_customer(self):
+        return self.__customer_Repo.look_up_customer()  # ATH hvort repo eda main
 
     def delete_customer(self, person_SSM):
         return self.__customer_Repo.delete_customer(person_SSM)
