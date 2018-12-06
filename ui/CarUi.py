@@ -53,7 +53,7 @@ class Car_Page:
                         print('Invalid input, try again!')
 
                 print("New Order:")
-                licece_Plate = input('Enter The Licence Plate: ')
+                licence_Plate = input('Enter The Licence Plate: ')
                 # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
                 # með uppl um vv
                 # notum daytime moduleinn her?
