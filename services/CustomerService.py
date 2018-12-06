@@ -8,8 +8,7 @@ class CustomerService:
 
     def add_customer(self, customer):
         if self.is_valid_customer(customer):  # eru innputin sett in rett
-            self.__customer_Repo.add_customer(
-                customer)  # ATH hvort repo eda main
+            self.__customer_Repo.add_customer(customer)  # ATH hvort repo eda main
 
     def is_valid_customer(self, customer):
         # herna rékkum vi hvort þetta video se ekki orugglega hægt af vinna med.
@@ -19,5 +18,5 @@ class CustomerService:
     def get_customer(self):
         return self.__customer_Repo.get_customer()  # ATH hvort repo eda main
 
-    def delete_customer(self):
-        return self.__customer_Repo.delete_customer()
+    def delete_customer(self, person_SSM):
+        return self.__customer_Repo.delete_customer(person_SSM)

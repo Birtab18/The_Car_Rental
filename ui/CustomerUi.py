@@ -34,7 +34,8 @@ class Customer_Page:
                 new_Costumer = Customer(socialnumber, name, phonenumber, email)
                 self.__CustomerService.add_customer(new_Costumer)
             elif action_Cust == '2':
-                self.__CustomerService.delete_customer()
+                person_delete = input('Enter the ssn of the person you want to delete: ')
+                self.__CustomerService.delete_customer(person_delete)
             elif action_Cust == '3':
                 self.__CustomerService.get_costumer()
             elif action_Cust == '4':
