@@ -1,4 +1,4 @@
-manufacturer, the_Type, transmission, color, price, status
+licence_Plate, manufacturer, the_Type, transmission, price, status
 Toyota, Aygo,stick shift,white,5000,True
 Chervolet,Spark,stick shift,black,7000,True
 Kia,Picanto,stick shift,blue,7000,False
@@ -17,4 +17,5 @@ Mercedes,Benz G-Class,manual,grey,30000,False
 kia,rio,manual,blue,10000,True
 Benz,töff typa,manual,UOB45,blue,300000,True
 audi,A3,manual,AB123,black,20000,True
-kia,rio,manual,SZD31,white,18000,True
+Volvo,X90,manual,HH888,30000,True
+BD123,kia,rio,manuel,40000,True

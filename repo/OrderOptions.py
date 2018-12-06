@@ -1,14 +1,14 @@
-from models.Customer import Customer
-class CustomerOptions:
+from models.Order import Order
+class OrderOptions:
 
     def __init__(self):
-        self.__customer = []
+        self.__order = []
 
-    def add_customer(self, customer):
+    def add_order(self, order):
         # first add to file then to private list
         # try:
         # a+ = creates file if it doesnt exist
-        with open('./data/customers.csv', 'a+') as customer_file:
+        with open('./data/orders.csv', 'a+') as order_file:
             name = customer.get_name()
             socialnumber = customer.get_socialnumber()
             phonenumber = customer.get_phonenumber()
@@ -19,12 +19,12 @@ class CustomerOptions:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
 
-    def get_customer(self):
+    def get_order(self):
         if self.__customer == []:  # first time this function is used
-            with open('./data/customers.csv', 'r') as customer_file:
-                for line in customer_file.readlines():
-                    socialnumber, name, phonenumber, email = line.split(",")
-                    new_costumer = Customer(socialnumber, name, phonenumber, email)
+            with open('./data/order.csv', 'r') as order_file:
+                for line in order_file.readlines():
+                    name, socialnumber, phonenumber, email = line.split(",")
+                    new_costumer = Customer(name, socialnumber, phonenumber, email)
                     self.__customer.append(new_costumer)
             return self.__customer
         else:

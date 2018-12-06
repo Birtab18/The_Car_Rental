@@ -52,15 +52,17 @@ class Car_Page:
                     else:
                         print('Invalid input, try again!')
 
-                # print("New customer:")
-                # manufacturer = input('Enter The Manufacturer: ')
-                # the_Type = input('Enter The Type: ')
-                # transmission = input('Stick Shift Or Manual?: ')
-                # licence_Plate = input('Enter The Licence Plate: ')
-                # color = input('Enter The Color: ')
-                # price = input('Enter Price: ')
-                # new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, color, price)
-                # self.__CarService.add_car(new_Car)
+                print("New Order:")
+                licece_Plate = input('Enter The Licence Plate: ')
+                # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
+                # með uppl um vv
+                # notum daytime moduleinn her?
+                rent_Date = input('Enter The Date Of The Rent: ')
+                # like her daytime?
+                return_Date = input('Enter The Date Of The Return: ')
+                new_Order = Order(the_Customer, the_Car,
+                                  rent_Date, return_Date)
+                self.__CarService.add_car(new_Car)
             elif action_Car == '4':
                 pass
             elif action_Car == '5':
@@ -77,14 +79,20 @@ class Car_Page:
             elif action_Car == '9':
                 print("-"*15)
                 print("New customer:")
+                licence_Plate = input('Enter The Licence Plate: ')
                 manufacturer = input('Enter The Manufacturer: ')
                 the_Type = input('Enter The Type: ')
                 transmission = input('Stick Shift Or Manual?: ')
-                licence_Plate = input('Enter The Licence Plate: ')
-                color = input('Enter The Color: ')
                 price = input('Enter Price: ')
+
+
+<< << << < HEAD
                 new_Car = Car(manufacturer, the_Type, transmission,
                               licence_Plate, color, price)
+== == == =
+                new_Car = Car(licence_Plate, manufacturer,
+                              the_Type, transmission, price)
+>>>>>> > 4cd81380d8ed35f8f0cf67d6131456665337af33
                 self.__CarService.add_car(new_Car)
             elif action_Car == '10':
                 pass
