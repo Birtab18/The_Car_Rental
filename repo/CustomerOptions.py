@@ -1,4 +1,5 @@
 from models.Customer import Customer
+import csv
 class CustomerOptions:
 
     def __init__(self):
@@ -31,9 +32,12 @@ class CustomerOptions:
             return self.__customer
 
     def delete_customer(self):
-        with open('./data/customers.csv', 'a+') as customer_file:
-            customer_Delete = input("Enter Customers SSN number: ")
-            for line in customer_file.readlines():
-                if line not in customer_Delete:
-                    customer_file.write(line)
-        return self.__customer
+        with open('./data/customers.csv', 'r') as inp, open('./data/newcustomers.csv', 'w') as out:
+            writer = csv.DictWriter(out,fieldnames = ['SSN','Name','Telephone_Number','Email'])
+            writer.writeheader()
+            person_delete = input('Enter the ssn of the person you want to delete: ')
+            for row in csv.DictReader(inp):
+                if row['SSN']!= person_delete:
+                    writer.writerow(row)
+
+

@@ -20,4 +20,4 @@ class CustomerService:
         return self.__customer_Repo.get_customer()  # ATH hvort repo eda main
 
     def delete_customer(self):
-        return self.__customer_main.delete_customer()
+        return self.__customer_Repo.delete_customer()

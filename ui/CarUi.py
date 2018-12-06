@@ -3,11 +3,12 @@ from services.CarService import CarService
 from models.Customer import Customer
 from models.Car import Car
 
+
 class Car_Page:
     def __init__(self):
         self.__CustomerService = CustomerService()
         self.__CarService = CarService()
-    
+
     def car_Menu(self):
 
         def print_Choices():
@@ -26,11 +27,11 @@ class Car_Page:
             print('Press 9 to Add A New Car To The Car Rental') 
             print('Press 10 to Change The Price List')  #ekki lagmarkskrafa
             print('Press q to Quit')
-        
+
         # def sign_Up():
 
         def main():
-            print_Choices() 
+            print_Choices()
             action_Car = input('Choose command: ').lower()
             if action_Car == '1':
                 print("mark car")
@@ -39,24 +40,28 @@ class Car_Page:
                 pass
             elif action_Car == '3':
                 print("-"*15)
-                new_Or_Old = input('Has the customer rented a car from us before? y = Yes, n = No').lower()
+                new_Or_Old = input(
+                    'Has the customer rented a car from us before? y = Yes, n = No').lower()
                 while new_Or_Old != 'y' or 'n':
                     if new_Or_Old == 'y':
-                        #go to look up customer
+                        # go to look up customer
                         pass
                     elif new_Or_Old == 'n':
-                        #go to sign up new customer
+                        # go to sign up new customer
                         pass
                     else:
                         print('Invalid input, try again!')
 
                 print("New Order:")
-                licece_Plate = input('Enter The Licence Plate: ')
-                #þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders 
+                licence_Plate = input('Enter The Licence Plate: ')
+                # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
                 # með uppl um vv
-                rent_Date = input('Enter The Date Of The Rent: ') #notum daytime moduleinn her?
-                return_Date = input('Enter The Date Of The Return: ') #like her daytime?
-                new_Order = Order(the_Customer, the_Car, rent_Date, return_Date)
+                # notum daytime moduleinn her?
+                rent_Date = input('Enter The Date Of The Rent: ')
+                # like her daytime?
+                return_Date = input('Enter The Date Of The Return: ')
+                new_Order = Order(the_Customer, the_Car,
+                                  rent_Date, return_Date)
                 self.__CarService.add_car(new_Car)
             elif action_Car == '4':
                 pass
@@ -67,7 +72,10 @@ class Car_Page:
             elif action_Car == '7':
                 pass
             elif action_Car == '8':
-                pass
+                f = open('pricelist.txt')
+                file_contents = f.read()
+                print(file_contents)
+                f.close()
             elif action_Car == '9':
                 print("-"*15)
                 print("New customer:")
