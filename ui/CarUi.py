@@ -37,13 +37,14 @@ class Car_Page:
                 print("Available cars")
                 self.__CarService.available_cars()
                 pass
+            
             elif action_Car == '2':
                 self.__CarService.taken_cars()
                 pass
+            
             elif action_Car == '3':
                 print("-"*15)
-                new_Or_Old = input(
-                    'Has the customer rented a car from us before? y = Yes, n = No').lower()
+                new_Or_Old = input('Has the customer rented a car from us before? y = Yes, n = No').lower()
                 while new_Or_Old != 'y' or 'n':
                     if new_Or_Old == 'y':
                         # go to look up customer
@@ -65,19 +66,25 @@ class Car_Page:
                 new_Order = Order(the_Customer, the_Car,
                                   rent_Date, return_Date)
                 self.__CarService.add_car(new_Car)
+            
             elif action_Car == '4':
                 pass
+            
             elif action_Car == '5':
                 pass
+            
             elif action_Car == '6':
                 pass
+            
             elif action_Car == '7':
                 pass
+            
             elif action_Car == '8':
                 f = open('pricelist.txt')
                 file_contents = f.read()
                 print(file_contents)
                 f.close()
+            
             elif action_Car == '9':
                 print("-"*15)
                 print("New customer:")
@@ -109,10 +116,13 @@ class Car_Page:
                 price = input('Enter Price: ')
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
+            
             elif action_Car == '10':
                 pass
+            
             elif action_Car == 'q':
                 pass
+            
             else:
                 print("Invalid input, try again!")
 

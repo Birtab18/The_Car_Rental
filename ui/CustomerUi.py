@@ -34,17 +34,22 @@ class Customer_Page:
                 email = input('Enter an email: ')
                 new_Costumer = Customer(socialnumber, name, phonenumber, email)
                 self.__CustomerService.add_customer(new_Costumer)
+            
             elif action_Cust == '2':
-                person_delete = input('Enter the ssn of the person you want to delete: ')
+                person_delete = input('Enter The SSN Of The Person You Want To Delete: ')
                 self.__CustomerService.delete_customer(person_delete)
+            
             elif action_Cust == '3':
-                person_change = input('Enter the ssn of the person you want to look up: ')
+                person_change = input('Enter The SSN Of The Person You Want To Look Up: ')
                 self.__CustomerService.look_up_customer(person_change)
+            
             elif action_Cust == '4':
                 pass
+            
             elif action_Cust == 'b':
                 pass
                 #print_Frontpage()
+            
             else:
                 print("Invalid input, try again!")
 
