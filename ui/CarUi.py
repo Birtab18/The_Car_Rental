@@ -95,7 +95,7 @@ class Car_Page:
                 #         print("Invalid input, try again!")
                 manufacturer = input('Enter The Manufacturer: ')
                 the_Type = input('Enter The Type: ')
-                transmission = input('Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
+                transmission = input('Enter The Transmission (Stick Shift or Manual): ').lower()
                 #þurfum að gera eh svona lykkju
                 # while transmission != 's' or 'm':
                 #     if transmission == 's':
