@@ -3,11 +3,12 @@ from services.CarService import CarService
 from models.Customer import Customer
 from models.Car import Car
 
+
 class Car_Page:
     def __init__(self):
         self.__CustomerService = CustomerService()
         self.__CarService = CarService()
-    
+
     def car_Menu(self):
 
         def print_Choices():
@@ -23,14 +24,14 @@ class Car_Page:
             print('Press 6 to Change Order')
             print('Press 7 to Show Cars Availability')  # True or False
             print('Press 8 to Show Price List')
-            print('Press 9 to Add A New Car To The Car Rental') 
+            print('Press 9 to Add A New Car To The Car Rental')
             print('Press 10 to Change The Price List')
             print('Press q to Quit')
-        
+
         # def sign_Up():
 
         def main():
-            print_Choices() 
+            print_Choices()
             action_Car = input('Choose command: ').lower()
             if action_Car == '1':
                 print("mark car")
@@ -39,20 +40,17 @@ class Car_Page:
                 pass
             elif action_Car == '3':
                 print("-"*15)
-                new_Or_Old = input('Has the customer rented a car from us before? y = Yes, n = No').lower()
+                new_Or_Old = input(
+                    'Has the customer rented a car from us before? y = Yes, n = No').lower()
                 while new_Or_Old != 'y' or 'n':
                     if new_Or_Old == 'y':
-                        #go to look up customer
+                        # go to look up customer
                         pass
                     elif new_Or_Old == 'n':
-                        #go to sign up new customer
+                        # go to sign up new customer
                         pass
                     else:
                         print('Invalid input, try again!')
-
-
-
-
 
                 # print("New customer:")
                 # manufacturer = input('Enter The Manufacturer: ')
@@ -72,7 +70,10 @@ class Car_Page:
             elif action_Car == '7':
                 pass
             elif action_Car == '8':
-                pass
+                f = open('pricelist.txt')
+                file_contents = f.read()
+                print(file_contents)
+                f.close()
             elif action_Car == '9':
                 print("-"*15)
                 print("New customer:")
@@ -82,7 +83,8 @@ class Car_Page:
                 licence_Plate = input('Enter The Licence Plate: ')
                 color = input('Enter The Color: ')
                 price = input('Enter Price: ')
-                new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, color, price)
+                new_Car = Car(manufacturer, the_Type, transmission,
+                              licence_Plate, color, price)
                 self.__CarService.add_car(new_Car)
             elif action_Car == '10':
                 pass

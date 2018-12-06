@@ -3,6 +3,7 @@ from services.CarService import CarService
 from models.Customer import Customer
 from models.Car import Car
 
+
 class Customer_Page:
     def __init__(self):
         self.__CustomerService = CustomerService()
@@ -19,10 +20,10 @@ class Customer_Page:
             print('Press 2 to Delete Customer')
             print('Press 3 to Look Up Customer')
             print('Press 4 to Change Information About A Customer')
-            print('Press q to Quit')
+            print('Press b to go to Frontpage')
 
         def main():
-            print_Choices() 
+            print_Choices()
             action_Cust = input('Choose command: ').lower()
             if action_Cust == '1':
                 print("-"*15)
@@ -40,9 +41,8 @@ class Customer_Page:
             elif action_Cust == '4':
                 pass
             elif action_Cust == 'b':
-                pass
+                print_Frontpage()
             else:
                 print("Invalid input, try again!")
-        
+
         main()
-        
