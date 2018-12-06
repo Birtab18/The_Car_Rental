@@ -24,8 +24,8 @@ class Car_Page:
             print('Press 6 to Change Order')
             print('Press 7 to Show Cars Availability')  # True or False
             print('Press 8 to Show Price List')
-            print('Press 9 to Add A New Car To The Car Rental')
-            print('Press 10 to Change The Price List')
+            print('Press 9 to Add A New Car To The Car Rental') 
+            print('Press 10 to Change The Price List')  #ekki lagmarkskrafa
             print('Press q to Quit')
 
         # def sign_Up():
@@ -53,7 +53,7 @@ class Car_Page:
                         print('Invalid input, try again!')
 
                 print("New Order:")
-                licece_Plate = input('Enter The Licence Plate: ')
+                licence_Plate = input('Enter The Licence Plate: ')
                 # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
                 # með uppl um vv
                 # notum daytime moduleinn her?
@@ -79,13 +79,33 @@ class Car_Page:
             elif action_Car == '9':
                 print("-"*15)
                 print("New customer:")
-                licence_Plate = input('Enter The Licence Plate: ')
+                licence_Plate = input('Enter The Licence Plate: ').upper()
+                category = input('Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
+                #þurfum að gera eh svona lykkju
+                # category = ''
+                # while category != 'm' or 'p' or 'j': 
+                #     category = input('Enter The Category (M = Mini Car, P = Passenger Car, J = Jeep): ').lower()
+                #     if category == 'm':
+                #         category = 'Mini Car'
+                #     elif category == 'p':
+                #         category = 'Passenger Car'
+                #     elif category == 'j':
+                #         category = 'Jeep'
+                #     else: 
+                #         print("Invalid input, try again!")
                 manufacturer = input('Enter The Manufacturer: ')
                 the_Type = input('Enter The Type: ')
-                transmission = input('Stick Shift Or Manual?: ')
+                transmission = input('Enter The Transmission (Stick Shift or Manual): ').lower()
+                #þurfum að gera eh svona lykkju
+                # while transmission != 's' or 'm':
+                #     if transmission == 's':
+                #         transmission == 'Stick Shift'
+                #     elif transmission == 'm':
+                #         transmission == 'Manual'
+                #     else:
+                #         print('Invalid input, try again!')
                 price = input('Enter Price: ')
-                new_Car = Car(licence_Plate, manufacturer,
-                              the_Type, transmission, price)
+                new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
             elif action_Car == '10':
                 pass

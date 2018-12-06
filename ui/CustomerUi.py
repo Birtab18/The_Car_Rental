@@ -3,7 +3,6 @@ from services.CarService import CarService
 from models.Customer import Customer
 from models.Car import Car
 
-
 class Customer_Page:
     def __init__(self):
         self.__CustomerService = CustomerService()

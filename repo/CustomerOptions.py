@@ -1,5 +1,8 @@
 from models.Customer import Customer
+<<<<<<< HEAD
 import os
+=======
+>>>>>>> bbe46cdd0351bf60e4858f09d02255b9dd990226
 import csv
 class CustomerOptions:
 
@@ -32,11 +35,12 @@ class CustomerOptions:
 
 
     def delete_customer(self):
-        with open('./data/customers.csv', 'r') as inp, open('birds.csv', 'w') as out:
-            writer = csv.DictWriter(out,fieldnames = ['Name','SSN','Telephone_Number','Email'])
+        with open('./data/customers.csv', 'r') as inp, open('./data/newcustomers.csv', 'w') as out:
+            writer = csv.DictWriter(out,fieldnames = ['SSN','Name','Telephone_Number','Email'])
             writer.writeheader()
             person_delete = input('Enter the ssn of the person you want to delete: ')
             for row in csv.DictReader(inp):
                 if row['SSN']!= person_delete:
                     writer.writerow(row)
+
 
