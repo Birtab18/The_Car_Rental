@@ -1,25 +1,16 @@
-licence_Plate, category, manufacturer, the_Type, transmission, price, status
-Toyota, Aygo,stick shift,white,5000,True
-Chervolet,Spark,stick shift,black,7000,True
-Kia,Picanto,stick shift,blue,7000,False
-Hyundai,i10,stick shift,black,9000,False
-Volkswagen,Golf,manual,white,9000,False
-Mazda,3,stick shift,red,8000,True
-Ford,Focus,manual,blue,8000,False
-Hyundai,i30,manual,white,13000,True
-Audi,A3,manual,black,20000,False
-Tesla,Model 3,manual,black,20000,True
-Nissan,Quashqui,stick shift,grey,12000,False
-Volkswagen,Tiguan,manual,white,12000,False
-Volvo,xc90,stick shift,red,12000,False
-Toyota,Land Cruiser,manual,black,20000,True
-Mercedes,Benz G-Class,manual,grey,30000,False
-kia,rio,manual,blue,10000,True
-Benz,töff typa,manual,UOB45,blue,300000,True
-audi,A3,manual,AB123,black,20000,True
-Volvo,X90,manual,HH888,30000,True
-BD123,kia,rio,manuel,40000,True
-HJ789,m,kia,rio,manual,9000,True
-kf56,m,kia,rio,s,9000,True
-hj567,mini car,kia,rio,manual,7000,True
-HJ567,m,kia,rio,s,5000,True
+licence_Plate,category,manufacturer,the_Type,transmission,price,status
+ab345,Mini Car,Toyota,Aygo,stick shift,5000,True
+ac456,Mini Car,Chervolet,Spark,stick shift,7000,True
+ad567,Mini Car,Kia,Picanto,stick shift,7000,False
+ae789,Mini Car,Hyundai,i10,stick shift,9000,False
+af890,Mini Car,Volkswagen,Golf,manual,9000,False
+ag123,Station Car,Mazda,3,stick shift,8000,True
+ah234,Station Car,Ford,Focus,manual,8000,False
+ak345,Station Car,Hyundai,i30,manual,13000,True
+ai456,Station Car,Audi,A3,manual,20000,False
+aj567,Station Car,Tesla,Model 3,manual,20000,True
+al678,Jeep,Nissan,Quashqui,stick shift,12000,False
+am890,Jeep,Volkswagen,Tiguan,manual,12000,False
+an123,Jeep,Volvo,xc90,stick shift,12000,False
+aw234,Jeep,Toyota,Land Cruiser,manual,20000,True
+ao456,Jeep,Mercedes,Benz G-Class,manual,30000,False

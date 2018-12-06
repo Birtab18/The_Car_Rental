@@ -33,4 +33,3 @@ class Car:
 
     def get_status(self):
         return self.__status
-    
