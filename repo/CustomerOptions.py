@@ -9,7 +9,7 @@ class CustomerOptions:
         # first add to file then to private list
         # try:
         # a+ = creates file if it doesnt exist
-        with open('./data/newcustomers.csv', 'a+') as customer_file:
+        with open('./data/customers.csv', 'a+') as customer_file:
             name = customer.get_name()
             socialnumber = customer.get_socialnumber()
             phonenumber = customer.get_phonenumber()
@@ -22,7 +22,7 @@ class CustomerOptions:
 
     def get_customer(self):
         if self.__customer == []:  # first time this function is used
-            with open('./data/newcustomers.csv', 'r') as customer_file:
+            with open('./data/customers.csv', 'r') as customer_file:
                 for line in customer_file.readlines():
                     socialnumber, name, phonenumber, email = line.split(",")
                     new_costumer = Customer(socialnumber, name, phonenumber, email)
