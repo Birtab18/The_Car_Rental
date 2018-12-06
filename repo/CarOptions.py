@@ -9,7 +9,7 @@ class CarOptions:
         # first add to file then to private list
         # try:
         # a+ = creates file if it doesnt exist
-        with open('./data/cars.txt', 'a+') as car_file:
+        with open('./data/cars.csv', 'a+') as car_file:
             manufacturer = car.get_manufacturer()
             the_Type = car.get_the_Type()
             transmission = car.get_transmission()
