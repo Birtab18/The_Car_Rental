@@ -36,7 +36,9 @@ class Customer_Page:
             elif action_Cust == '2':
                 self.__CustomerService.delete_customer()
             elif action_Cust == '3':
-                self.__CustomerService.get_customer()
+                person_change = input('Enter the ssn of the person you want to look up: ')
+                self.__CustomerService.look_up_customer(row[0])
+                print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(row[0],row[1],row[2],row[3]))
             elif action_Cust == '4':
                 pass
             elif action_Cust == 'b':
