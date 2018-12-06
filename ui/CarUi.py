@@ -61,8 +61,8 @@ class Car_Page:
                 rent_Date = input('Enter The Date Of The Rent: ')
                 # like her daytime?
                 return_Date = input('Enter The Date Of The Return: ')
-                new_Order = Order(the_Customer, the_Car,
-                                  rent_Date, return_Date)
+                insurance = input('Extra insurance? (Y = Yes, N = No) ')
+                new_Order = Order(the_Customer, the_Car, rent_Date, return_Date, insurance)
                 self.__CarService.add_car(new_Car)
             
             elif action_Car == '4':
