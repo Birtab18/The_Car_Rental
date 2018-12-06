@@ -34,9 +34,9 @@ class Customer_Page:
                 new_Costumer = Customer(name, socialnumber, phonenumber, email)
                 self.__CustomerService.add_customer(new_Costumer)
             elif action_Cust == '2':
-                costumer = self.__CustomerService.get_costumer()
+                self.__CustomerService.delete_customer()
             elif action_Cust == '3':
-                pass
+                self.__CustomerService.get_costumer()
             elif action_Cust == '4':
                 pass
             elif action_Cust == 'b':
@@ -45,3 +45,4 @@ class Customer_Page:
                 print("Invalid input, try again!")
         
         main()
+        
