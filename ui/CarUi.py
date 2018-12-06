@@ -42,8 +42,7 @@ class Car_Page:
             
             elif action_Car == '3':
                 print("-"*15)
-                new_Or_Old = input(
-                    'Has the customer rented a car from us before? y = Yes, n = No').lower()
+                new_Or_Old = input('Has the customer rented a car from us before? y = Yes, n = No').lower()
                 while new_Or_Old != 'y' or 'n':
                     if new_Or_Old == 'y':
                         # go to look up customer
