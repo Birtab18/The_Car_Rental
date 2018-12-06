@@ -29,8 +29,8 @@ class Front_Page:
             print_Frontpage()
             action = input('Choose command: ').lower()
             if action == '1':
-                    ui = Customer_Page()
-                    ui.customer_Menu()
+                ui = Customer_Page()
+                ui.customer_Menu()
 
             elif action == '2':
                 ui = Car_Page()

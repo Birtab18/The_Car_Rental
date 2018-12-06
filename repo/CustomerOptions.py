@@ -1,6 +1,4 @@
 from models.Customer import Customer
-
-
 class CustomerOptions:
 
     def __init__(self):
@@ -15,7 +13,8 @@ class CustomerOptions:
             socialnumber = customer.get_socialnumber()
             phonenumber = customer.get_phonenumber()
             email = customer.get_email()
-            customer_file.write('{},{},{},{}\n'.format(name, socialnumber, phonenumber, email))
+            customer_file.write('{},{},{},{}'.format(
+                name, socialnumber, phonenumber, email))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
@@ -35,6 +34,6 @@ class CustomerOptions:
         with open('./data/customers.csv', 'a+') as customer_file:
             customer_Delete = input("Enter Customers SSN number: ")
             for line in customer_file.readlines():
-                if line != customer_Delete:
+                if line not in customer_Delete:
                     customer_file.write(line)
         return self.__customer
