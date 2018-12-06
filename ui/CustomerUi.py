@@ -38,7 +38,8 @@ class Customer_Page:
                 person_delete = input('Enter the ssn of the person you want to delete: ')
                 self.__CustomerService.delete_customer(person_delete)
             elif action_Cust == '3':
-                self.__CustomerService.look_up_customer()
+                person_change = input('Enter the ssn of the person you want to look up: ')
+                self.__CustomerService.look_up_customer(person_change)
             elif action_Cust == '4':
                 pass
             elif action_Cust == 'b':
@@ -48,3 +49,5 @@ class Customer_Page:
                 print("Invalid input, try again!")
 
         main()
+
+

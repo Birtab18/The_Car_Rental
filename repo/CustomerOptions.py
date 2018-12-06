@@ -22,14 +22,14 @@ class CustomerOptions:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
 
-    def look_up_customer(self):
+    def look_up_customer(self,look_up):
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
-            person_change = input('Enter the ssn of the person you want to look up: ')
+    #        person_change = input('Enter the ssn of the person you want to look up: ')
             for row in reader:
-                if row[0] == person_change:
+                if row[0] == look_up:
                     print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(row[0],row[1],row[2],row[3]))
-
+                
     def delete_customer(self, person_SSM):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(out,fieldnames = ['Name','SSN','Telephone_Number','Email'])
