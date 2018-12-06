@@ -25,6 +25,7 @@ class Front_Page:
             print('Press q to Quit')
 
         action = ''
+
         while (action != 'q'):
             print_Frontpage()
             action = input('Choose command: ').lower()
@@ -35,7 +36,8 @@ class Front_Page:
             elif action == '2':
                 ui = Car_Page()
                 ui.car_Menu()
-
             elif action == 'q':
                 print("Goodbye !")
                 pass  # quit
+            else:
+                print('Invalid input!')
