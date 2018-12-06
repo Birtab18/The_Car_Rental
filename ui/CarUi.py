@@ -55,9 +55,10 @@ class Car_Page:
                 manufacturer = input('Enter The Manufacturer: ')
                 the_Type = input('Enter The Type: ')
                 transmission = input('Stick Shift Or Manual?: ')
+                licence_Plate = input('Enter The Licence Plate: ')
                 color = input('Enter The Color: ')
                 price = input('Enter Price: ')
-                new_Car = Car(manufacturer, the_Type, transmission, color, price)
+                new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, color, price)
                 self.__CarService.add_car(new_Car)
             elif action_Car == '10':
                 pass
