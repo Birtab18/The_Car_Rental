@@ -3,6 +3,7 @@ from services.CarService import CarService
 from models.Customer import Customer
 from models.Car import Car
 
+
 class Customer_Page:
     def __init__(self):
         self.__CustomerService = CustomerService()
@@ -33,30 +34,15 @@ class Customer_Page:
                 email = input('Enter an email: ')
                 new_Costumer = Customer(socialnumber, name, phonenumber, email)
                 self.__CustomerService.add_customer(new_Costumer)
-
             elif action_Cust == '2':
                 self.__CustomerService.delete_customer()
-
             elif action_Cust == '3':
-<<<<<<< HEAD
-                person_change = input('Enter the ssn of the person you want to look up: ')
-                self.__CustomerService.look_up_customer(row[0])
-                print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(row[0],row[1],row[2],row[3]))
-=======
-                self.__CustomerService.get_customer()
-                person_change = input('Enter the ssn of the person you want to look up: ')
-                if person_change == row[0]:
-                    print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(row[0],row[1],row[2],row[3]))
-
-
->>>>>>> c5d9434d73819b8e585458ca3ae8a97240108679
+                self.__CustomerService.look_up_customer()
             elif action_Cust == '4':
                 pass
-
             elif action_Cust == 'b':
-                #print_Frontpage()
                 pass
-
+                #print_Frontpage()
             else:
                 print("Invalid input, try again!")
 
