@@ -50,19 +50,14 @@ class Car_Page:
                     else:
                         print('Invalid input, try again!')
 
-
-
-
-
-                # print("New customer:")
-                # manufacturer = input('Enter The Manufacturer: ')
-                # the_Type = input('Enter The Type: ')
-                # transmission = input('Stick Shift Or Manual?: ')
-                # licence_Plate = input('Enter The Licence Plate: ')
-                # color = input('Enter The Color: ')
-                # price = input('Enter Price: ')
-                # new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, color, price)
-                # self.__CarService.add_car(new_Car)
+                print("New Order:")
+                manufacturer = input('Enter The Manufacturer: ')
+                the_Type = input('Enter The Type: ')
+                transmission = input('Stick Shift Or Manual?: ')
+                licence_Plate = input('Enter The Licence Plate: ')
+                price = input('Enter Price: ')
+                new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, price)
+                self.__CarService.add_car(new_Car)
             elif action_Car == '4':
                 pass
             elif action_Car == '5':
@@ -80,9 +75,8 @@ class Car_Page:
                 the_Type = input('Enter The Type: ')
                 transmission = input('Stick Shift Or Manual?: ')
                 licence_Plate = input('Enter The Licence Plate: ')
-                color = input('Enter The Color: ')
                 price = input('Enter Price: ')
-                new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, color, price)
+                new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, price)
                 self.__CarService.add_car(new_Car)
             elif action_Car == '10':
                 pass
