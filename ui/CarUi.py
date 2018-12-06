@@ -38,7 +38,31 @@ class Car_Page:
             elif action_Car == '2':
                 pass
             elif action_Car == '3':
-                pass
+                print("-"*15)
+                new_Or_Old = input('Has the customer rented a car from us before? y = Yes, n = No').lower()
+                while new_Or_Old != 'y' or 'n':
+                    if new_Or_Old == 'y':
+                        #go to look up customer
+                        pass
+                    elif new_Or_Old == 'n':
+                        #go to sign up new customer
+                        pass
+                    else:
+                        print('Invalid input, try again!')
+
+
+
+
+
+                # print("New customer:")
+                # manufacturer = input('Enter The Manufacturer: ')
+                # the_Type = input('Enter The Type: ')
+                # transmission = input('Stick Shift Or Manual?: ')
+                # licence_Plate = input('Enter The Licence Plate: ')
+                # color = input('Enter The Color: ')
+                # price = input('Enter Price: ')
+                # new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, color, price)
+                # self.__CarService.add_car(new_Car)
             elif action_Car == '4':
                 pass
             elif action_Car == '5':
