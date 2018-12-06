@@ -11,7 +11,7 @@ class Car_Page:
     def car_Menu(self):
 
         def print_Choices():
-            print('{0:40}{1}'.format('Bílaleigan', 'B to back'))
+            print('{0:40}{1}'.format('Bílaleigan', 'B to go back'))
             print('-'*50)
             print("{0:>26}".format('Cars'))
             print('-'*50)
@@ -23,7 +23,7 @@ class Car_Page:
             print('Press 6 to Change Order')
             print('Press 7 to Show Cars Availability')  # True or False
             print('Press 8 to Show Price List')
-            print('Press 9 to Add A New Car To The Car Rental')
+            print('Press 9 to Add A New Car To The Car Rental') 
             print('Press 10 to Change The Price List')
             print('Press q to Quit')
         

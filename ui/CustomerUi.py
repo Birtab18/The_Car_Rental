@@ -11,7 +11,7 @@ class Customer_Page:
     def customer_Menu(self):
 
         def print_Choices():
-            print('{0:40}{1}'.format('Bílaleigan', 'B to back'))
+            print('{0:40}{1}'.format('Bílaleigan', 'B to go back'))
             print('-'*50)
             print("{0:>26}".format('Customers'))
             print('-'*50)
