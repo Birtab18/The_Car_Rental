@@ -51,12 +51,12 @@ class Car_Page:
                         print('Invalid input, try again!')
 
                 print("New Order:")
-                manufacturer = input('Enter The Manufacturer: ')
-                the_Type = input('Enter The Type: ')
-                transmission = input('Stick Shift Or Manual?: ')
-                licence_Plate = input('Enter The Licence Plate: ')
-                price = input('Enter Price: ')
-                new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, price)
+                licece_Plate = input('Enter The Licence Plate: ')
+                #þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders 
+                # með uppl um vv
+                rent_Date = input('Enter The Date Of The Rent: ') #notum daytime moduleinn her?
+                return_Date = input('Enter The Date Of The Return: ') #like her daytime?
+                new_Order = Order(the_Customer, the_Car, rent_Date, return_Date)
                 self.__CarService.add_car(new_Car)
             elif action_Car == '4':
                 pass
@@ -71,12 +71,12 @@ class Car_Page:
             elif action_Car == '9':
                 print("-"*15)
                 print("New customer:")
+                licence_Plate = input('Enter The Licence Plate: ')
                 manufacturer = input('Enter The Manufacturer: ')
                 the_Type = input('Enter The Type: ')
                 transmission = input('Stick Shift Or Manual?: ')
-                licence_Plate = input('Enter The Licence Plate: ')
                 price = input('Enter Price: ')
-                new_Car = Car(manufacturer, the_Type, transmission, licence_Plate, price)
+                new_Car = Car(licence_Plate, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
             elif action_Car == '10':
                 pass

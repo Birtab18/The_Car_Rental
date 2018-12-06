@@ -10,13 +10,13 @@ class CarOptions:
         # try:
         # a+ = creates file if it doesnt exist
         with open('./data/cars.csv', 'a+') as car_file:
+            licence_Plate = car.get_licence_Plate()
             manufacturer = car.get_manufacturer()
             the_Type = car.get_the_Type()
             transmission = car.get_transmission()
-            licence_Plate = car.get_licence_Plate()
             price = car.get_price()
             status = car.get_status()
-            car_file.write('{},{},{},{},{},{}\n'.format(manufacturer, the_Type, transmission, licence_Plate,
+            car_file.write('{},{},{},{},{},{}\n'.format(licence_Plate, manufacturer, the_Type, transmission,
                         price, status))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2

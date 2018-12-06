@@ -27,11 +27,11 @@ class Customer_Page:
             if action_Cust == '1':
                 print("-"*15)
                 print("New customer:")
-                name = input('Enter a name: ')
                 socialnumber = input('Enter a SSN number: ')
+                name = input('Enter a name: ')
                 phonenumber = input('Enter a phonenumber: ')
                 email = input('Enter an email: ')
-                new_Costumer = Customer(name, socialnumber, phonenumber, email)
+                new_Costumer = Customer(socialnumber, name, phonenumber, email)
                 self.__CustomerService.add_customer(new_Costumer)
             elif action_Cust == '2':
                 self.__CustomerService.delete_customer()
