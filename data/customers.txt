@@ -5,5 +5,5 @@ Hannes,1304982324,8445657,hannes@gmail.com
 Birta Líf,2005984079,birtab18@ru.is8882238
 Bergros,3456788,bergros8937673
 8670031,Birta Líf,2005984079,birtab18@ru.is
-
-
+Baldur ,1406972739,8937673,baldur.haraldsson@hotmail.com
+Siggi,2810715729,8940708,ibv@hotmail.com

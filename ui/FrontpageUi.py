@@ -26,22 +26,16 @@ class Front_Page:
 
         action = ''
         while (action != 'q'):
+            print_Frontpage()
+            action = input('Choose command: ').lower()
+            if action == '1':
+                ui = Customer_Page()
+                ui.customer_Menu()
 
+            elif action == '2':
+                ui = Car_Page()
+                ui.car_Menu()
 
-<< << << < HEAD
-  print_Frontpage()  # forsida
-== == == =
-  print_Frontpage()
->>>>>> > b6defbf6ef5d8e730743065c595284e209ef390a
-  action = input('Choose command: ').lower()
-   if action == '1':
-        ui = Customer_Page()
-        ui.customer_Menu()
-
-    elif action == '2':
-        ui = Car_Page()
-        ui.car_Menu()
-
-    elif action == 'q':
-        print("Goodbye !")
-        pass  # quit
+            elif action == 'q':
+                print("Goodbye !")
+                pass  # quit
