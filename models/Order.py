@@ -1,6 +1,6 @@
 class Order:
 
-    def __init__(self, name, socialnumber, phonenumber, email):
+    def __init__(self, rent_date, socialnumber, phonenumber, email):
         self.__name = name
         self.__socialnumber = socialnumber
         self.__phonenumber = phonenumber
