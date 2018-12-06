@@ -6,6 +6,13 @@ class CarService:
         # __checking_repo er private repository
         self.__car_Repo = CarOptions()
 
+    def available_cars(self):
+        self.__car_Repo.show_available_cars()
+    def taken_cars(self):
+        self.__car_Repo.show_taken_cars()
+
+
+
     def add_car(self, car):
         if self.is_valid_car(car):  # eru innputin sett in rett
             self.__car_Repo.add_car(car)  # ATH hvort repo eda main
@@ -19,4 +26,4 @@ class CarService:
     #     return self.__car_Repo.get_car()  # ATH hvort repo eda main
 
     # def delete_car(self):
-    #     return self.__car_main.delete_car()
+    #     return self.__car_main.delete_car() 

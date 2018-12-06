@@ -16,13 +16,13 @@ class Car_Page:
             print('-'*50)
             print("{0:>26}".format('Cars'))
             print('-'*50)
-            print('Press 1 to Mark Car As Available For Rent')
-            print('Press 2 to Mark Car As Not Available For Rent')
+            print('Press 1 to Show Available') 
+            print('Press 2 to Show Taken Cars')
             print('Press 3 to Put In An Order')
             print('Press 4 to Cancel Order')
             print('Press 5 to Look Up Order')
             print('Press 6 to Change Order')
-            print('Press 7 to Show Cars Availability')  # True or False
+            print('Press 7')  # True or False
             print('Press 8 to Show Price List')
             print('Press 9 to Add A New Car To The Car Rental') 
             print('Press 10 to Change The Price List')  #ekki lagmarkskrafa
@@ -34,10 +34,12 @@ class Car_Page:
             print_Choices()
             action_Car = input('Choose command: ').lower()
             if action_Car == '1':
-                print("mark car")
+                print("Available cars")
+                self.__CarService.available_cars()
                 pass
             
             elif action_Car == '2':
+                self.__CarService.taken_cars()
                 pass
             
             elif action_Car == '3':

@@ -1,5 +1,5 @@
 from models.Car import Car
-
+import csv
 class CarOptions:
 
     def __init__(self):
@@ -23,23 +23,19 @@ class CarOptions:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
 
- #breyta i car her f neðan
+    def show_available_cars(self):
+        print('Available cars: \n')
+        with open("./data/cars.csv", 'r') as look_up_customer_file:
+            reader = csv.reader(look_up_customer_file)
+            for row in reader:
+                if row[6] == 'True':
+                    print('{} - {} - {} - {}kr - {} '.format(row[2],row[3],row[1],row[5],row[0]))
+        
+    def show_taken_cars(self):
+        print('Available cars: \n')
+        with open("./data/cars.csv", 'r') as look_up_customer_file:
+            reader = csv.reader(look_up_customer_file)
+            for row in reader:
+                if row[6] == 'False':
+                    print('{} - {} - {} - {}kr - {} '.format(row[2],row[3],row[1],row[5],row[0]))
 
-    # def get_customer(self):
-    #     if self.__customer == []:  # first time this function is used
-    #         with open('./data/customers.txt', 'r') as customer_file:
-    #             for line in customer_file.readlines():
-    #                 name, socialnumber, phonenumber, email = line.split(",")
-    #                 new_costumer = Customer(name, socialnumber, phonenumber, email)
-    #                 self.__customer.append(new_costumer)
-    #         return self.__customer
-    #     else:
-    #         return self.__customer
-
-    # def delete_customer(self):
-    #     with open('./data/customers.txt', 'a+') as customer_file:
-    #         customer_Delete = input("Enter Customers SSN number: ")
-    #         for line in customer_file.readlines():
-    #             if line != customer_Delete:
-    #                 customer_file.write(line)
-    #     return self.__customer
