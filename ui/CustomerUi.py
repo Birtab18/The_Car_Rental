@@ -37,11 +37,12 @@ class Customer_Page:
             elif action_Cust == '2':
                 self.__CustomerService.delete_customer()
             elif action_Cust == '3':
-                self.__CustomerService.get_costumer()
+                self.__CustomerService.get_customer()
             elif action_Cust == '4':
                 pass
             elif action_Cust == 'b':
-                print_Frontpage()
+                #print_Frontpage()
+                pass
             else:
                 print("Invalid input, try again!")
 
