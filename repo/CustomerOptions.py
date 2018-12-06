@@ -1,8 +1,5 @@
 from models.Customer import Customer
-<<<<<<< HEAD
 import os
-=======
->>>>>>> bbe46cdd0351bf60e4858f09d02255b9dd990226
 import csv
 class CustomerOptions:
 
@@ -24,7 +21,7 @@ class CustomerOptions:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
 
-    def get_customer(self):
+    def look_up_customer(self):
         with open("./data/customers.csv", 'r') as f:
             reader = csv.reader(f)
             person_change = input('Enter the ssn of the person you want to look up: ')
