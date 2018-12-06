@@ -29,7 +29,9 @@ class CustomerOptions:
             for row in reader:
                 if row[0] == look_up:
                     print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(row[0],row[1],row[2],row[3]))
-                
+                else:
+                    print('Customer not found')
+
     def delete_customer(self, person_SSM):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(out,fieldnames = ['Name','SSN','Telephone_Number','Email'])

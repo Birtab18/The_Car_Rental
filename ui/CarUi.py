@@ -36,8 +36,10 @@ class Car_Page:
             if action_Car == '1':
                 print("mark car")
                 pass
+            
             elif action_Car == '2':
                 pass
+            
             elif action_Car == '3':
                 print("-"*15)
                 new_Or_Old = input(
@@ -63,19 +65,25 @@ class Car_Page:
                 new_Order = Order(the_Customer, the_Car,
                                   rent_Date, return_Date)
                 self.__CarService.add_car(new_Car)
+            
             elif action_Car == '4':
                 pass
+            
             elif action_Car == '5':
                 pass
+            
             elif action_Car == '6':
                 pass
+            
             elif action_Car == '7':
                 pass
+            
             elif action_Car == '8':
                 f = open('pricelist.txt')
                 file_contents = f.read()
                 print(file_contents)
                 f.close()
+            
             elif action_Car == '9':
                 print("-"*15)
                 print("New customer:")
@@ -107,10 +115,13 @@ class Car_Page:
                 price = input('Enter Price: ')
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
+            
             elif action_Car == '10':
                 pass
+            
             elif action_Car == 'q':
                 pass
+            
             else:
                 print("Invalid input, try again!")
 
