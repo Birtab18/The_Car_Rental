@@ -44,15 +44,15 @@ class Customer_Page:
             
             elif action_Cust == '4':
                 print()
-                print('press 1 to change SSN')
-                print('Press 2 to change Name')
-                print('Press 3 to change Phone Number')
-                print('Press 4 to change Email')
+                print('press 1 to Change SSN')
+                print('Press 2 to Change Name')
+                print('Press 3 to Change Phone Number')
+                print('Press 4 to Change Email')
                 print()
-                ssn_number = input('Enter the SSN of the person you want to change: ')
-                num = input('Enter Choice: ')
+                ssn_number = input('Enter The SSN Of The Person You Want To Change: ')
+                choice = input('Enter Choice: ')
                 changes = input('Enter New Info: ')
-                self.__CustomerService.Change_Information(ssn_number, num, changes)
+                self.__CustomerService.Change_Information(ssn_number, choice, changes)
             
             elif action_Cust == 'b':
                 pass

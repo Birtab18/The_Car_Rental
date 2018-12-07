@@ -45,23 +45,23 @@ class CustomerOptions:
         os.remove('./data/customers.csv')
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
     
-    def Change_Information(self, ssn_number, num, changes):
+    def Change_Information(self, ssn_number, choice, changes):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i,value in row.items():
                     if value == ssn_number:
-                        choice = ''
-                        if num == '1':
-                            choice ='SSN'
-                        elif num == '2':
-                            choice = 'Name'
-                        elif num == '3':
-                            choice = 'Telephone_Number'
-                        elif num == '4':
-                            choice = 'Email'
-                        row[choice] = changes
+                        the_Choice = ''
+                        if choice == '1':
+                            the_Choice ='SSN'
+                        elif choice == '2':
+                            the_Choice = 'Name'
+                        elif choice == '3':
+                            the_Choice = 'Telephone_Number'
+                        elif choice == '4':
+                            the_Choice = 'Email'
+                        row[the_Choice] = changes
                         print(row)
                 writer.writerow(row)
         os.remove('./data/customers.csv')
