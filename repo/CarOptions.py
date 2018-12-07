@@ -33,12 +33,8 @@ class CarOptions:
                     print('{} - {} - {} - {}kr. - {} '.format(row[2],row[3],row[1],row[5],row[0]))
         
     def show_taken_cars(self):
-<<<<<<< HEAD
-        print('Taken cars: \n')
-=======
         print()
         print('Not Available Cars: \n')
->>>>>>> 6e77566ff7b3be8e7df1711349fc98ef39bb2f1a
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
