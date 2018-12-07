@@ -45,11 +45,11 @@ class CarOptions:
         with open("./data/categories.csv") as category_File:
             reader = csv.reader(category_File)
             for row in reader:
-                print('{:^25}{:^25}{:^25}'.format(row[0], row[1], row[2]))
-            print('-'*75)
+                print('{:^20}{:^20}{:^20}'.format(row[0], row[1], row[2]))
+            print('-'*60)
 
         with open("./data/pricelist.csv") as price_File:
             reader = csv.reader(price_File)
             for row in reader:
-                print('{:<62}{:<13}'.format(row[0], row[1]))
+                print('{:<47}{:<13}'.format(row[0], row[1]))
             print()
