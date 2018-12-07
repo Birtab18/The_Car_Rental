@@ -26,7 +26,6 @@ class Car_Page:
             print('Press 6 to Change Order')
             print('Press 7 to Show Price List')
             print('Press 8 to Add A New Car To The Car Rental')
-            print('Press 9 to Change The Price List')  # ekki lagmarkskrafa
             print('Press q to Quit')
             print()
 
@@ -137,9 +136,6 @@ class Car_Page:
                 price = input('Enter Price: ')
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
-
-            elif action_Car == '9':
-                pass
 
             elif action_Car == 'q':
                 pass
