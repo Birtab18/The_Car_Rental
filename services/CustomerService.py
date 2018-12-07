@@ -20,3 +20,6 @@ class CustomerService:
 
     def delete_customer(self, person_SSM):
         return self.__customer_Repo.delete_customer(person_SSM)
+
+    def change_Customer_Info(self, person_Change, the_Change, new_Info):
+        return self.__customer_Repo.change_Customer_Info(person_Change, the_Change, new_Info)
