@@ -1,1 +1,1 @@
-SSN, Name,Telephone_Number,Email,licence_Plate, manufacturer, the_Type, transmission, price, status,rent_Date,return_Date
+SSN,Name,licence_Plate,price,status,rent_Date,return_Date
