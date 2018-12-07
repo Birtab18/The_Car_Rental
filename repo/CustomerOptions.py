@@ -38,7 +38,6 @@ class CustomerOptions:
                 if row['SSN']!= person_SSN:
                     writer.writerow(row)
         os.remove('./data/customers.csv')
-<<<<<<< HEAD
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
     
     def Change_Information(self):
@@ -71,10 +70,6 @@ class CustomerOptions:
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
 
 # Til að eyða gömlu skránni og gera nýju skránna samnefnda gömlu skránni  
-=======
-        os.rename('./data/deletecustomers.csv', './data/customers.csv')    
-
->>>>>>> 6e77566ff7b3be8e7df1711349fc98ef39bb2f1a
 
 
 

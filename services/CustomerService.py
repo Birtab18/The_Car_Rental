@@ -1,6 +1,5 @@
 from repo.CustomerOptions import CustomerOptions
 
-
 class CustomerService:
     def __init__(self):
         # __checking_repo er private repository
