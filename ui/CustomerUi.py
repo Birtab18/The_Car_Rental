@@ -20,7 +20,7 @@ class Customer_Page:
             print('Press 2 to Delete Customer')
             print('Press 3 to Look Up Customer')
             print('Press 4 to Change Information About A Customer')
-            print('Press b to go to Frontpage')
+            print('Press b to Go To Frontpage')
 
         def main():
             print_Choices()
@@ -44,7 +44,7 @@ class Customer_Page:
                 self.__CustomerService.look_up_customer(person_change)
             
             elif action_Cust == '4':
-                pass
+                self.__CustomerService.Change_Information()
             
             elif action_Cust == 'b':
                 pass

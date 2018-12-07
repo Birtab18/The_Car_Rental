@@ -36,4 +36,4 @@ class Front_Page:
                 print("Goodbye !")
                 pass  # quit
             else:
-                print('Invalid input!')
+                print('Invalid input, try again!')
