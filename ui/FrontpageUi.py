@@ -41,4 +41,4 @@ class Front_Page:
                 pass  # quit
             
             else:
-                print('Invalid input!')
+                print('Invalid input, try again!')
