@@ -54,7 +54,7 @@ class CarOptions:
             transmission = car.get_transmission()
             price = car.get_price()
             status = car.get_status()
-            car_file.write('{},{},{},{},{},{},{}\n'.format(licence_Plate, category, manufacturer, the_Type, 
+            car_file.write('\n{},{},{},{},{},{},{}'.format(licence_Plate, category, manufacturer, the_Type, 
                             transmission, price, status))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2

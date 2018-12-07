@@ -35,6 +35,7 @@ class Customer_Page:
                 email = input('Enter an email: ')
                 new_Costumer = Customer(socialnumber, name, phonenumber, email)
                 self.__CustomerService.add_customer(new_Costumer)
+                print()
             
             elif action_Cust == '2':
                 person_delete = input('Enter The SSN Of The Person You Want To Delete: ')
