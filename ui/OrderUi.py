@@ -1,5 +1,6 @@
 from services.OrderService import OrderService
 from models.Order import Order
+# from ui.FrontpageUi import Front_Page
 
 
 class Order_Page:
@@ -17,7 +18,7 @@ class Order_Page:
             print('Press 2 to Cancel Order')
             print('Press 3 to Look Up Order')
             print('Press 4 to Change Order')
-            print('Press q to Quit')
+            print('Press F to Go To Frontpage')
             print()
 
         def main():
@@ -55,7 +56,6 @@ class Order_Page:
                 e = int(input('Y: '))
                 f = int(input('M: '))
                 g = int(input('D: '))
-    
                 self.__OrderService.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
 
             elif action == '2':
@@ -80,5 +80,13 @@ class Order_Page:
                 choice = input('Enter Choice: ')
                 changes = input('Enter New Info: ').lower()
                 self.__OrderService.change_Order(ssn, choice, changes)
+            
+            elif action == 'f':
+                # ui = Front_Page()
+                # ui.main_Menu()
+                pass
+
+            else:
+                print("Invalid input, try again!")
 
         main()
