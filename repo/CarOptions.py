@@ -42,7 +42,7 @@ class CarOptions:
             print()
 
     def show_Pricelist(self):
-        f = open('./data/pricelist.txt')
+        f = open('./data/pricelist.csv')
         file_Contents = f.read()
         print(file_Contents)
         f.close()
