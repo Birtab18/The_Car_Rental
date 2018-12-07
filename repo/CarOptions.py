@@ -32,10 +32,11 @@ class CarOptions:
                     print('{} - {} - {} - {}kr - {} '.format(row[2],row[3],row[1],row[5],row[0]))
         
     def show_taken_cars(self):
-        print('Available cars: \n')
+        print('Taken cars: \n')
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
                 if row[6] == 'False':
                     print('{} - {} - {} - {}kr - {} '.format(row[2],row[3],row[1],row[5],row[0]))
 
+    

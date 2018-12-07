@@ -1,7 +1,7 @@
 from models.Customer import Customer
 import os
 import csv
-import os
+
 class CustomerOptions:
 
     def __init__(self):
@@ -32,7 +32,7 @@ class CustomerOptions:
 
     def delete_customer(self, person_SSN):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
-            writer = csv.DictWriter(out,fieldnames = ['Name','SSN','Telephone_Number','Email'])
+            writer = csv.DictWriter(out,fieldnames = ['SSN','Name','Telephone_Number','Email'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN']!= person_SSN:
@@ -40,7 +40,37 @@ class CustomerOptions:
         os.remove('./data/customers.csv')
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
     
-    def change_Customer_Info(self):
+    def Change_Information(self):
+        print('press 1 to change SSN')
+        print('Press 2 to change Name')
+        print('Press 3 to change Phone Number')
+        print('Press 4 to change Email')
+        with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
+            ssn_number = input('Enter the SSN of the person you want to change: ')
+            writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])
+            writer.writeheader()
+            for row in csv.DictReader(inp):
+                for i,value in row.items():
+                    if value == ssn_number:
+                        num = input('Enter num: ')
+                        changes = input('Enter changed info: ')
+                        choice = ''
+                        if num == '1':
+                            choice ='SSN'
+                        elif num == '2':
+                            choice = 'Name'
+                        elif num == '3':
+                            choice = 'Telephone_Number'
+                        elif num == '4':
+                            choice = 'Email'
+                        row[choice] = changes
+                        print(row)
+                writer.writerow(row)
+        os.remove('./data/customers.csv')
+        os.rename('./data/deletecustomers.csv', './data/customers.csv')
+
+# Til að eyða gömlu skránni og gera nýju skránna samnefnda gömlu skránni  
+
 
 
 

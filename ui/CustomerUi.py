@@ -44,7 +44,7 @@ class Customer_Page:
                 self.__CustomerService.look_up_customer(person_change)
             
             elif action_Cust == '4':
-                pass
+                self.__CustomerService.Change_Information()
             
             elif action_Cust == 'b':
                 pass
