@@ -12,13 +12,13 @@ class Car_Page:
     def car_Menu(self):
 
         def print_Choices():
-            print('{0:40}{1}'.format('Bílaleigan', 'B to go back'))
+            print('{:<30}{:>20}'.format('Bílaleigan', 'B to go back'))
             print('-'*50)
-            print("{0:>26}".format('Cars'))
+            print("{:>26}".format('Cars'))
             print('-'*50)
             print('Press 1 to Show Available')
-            print('Press 2 to Show Taken Cars')
-            print('Press 3 to Put In An Order')
+            print('Press 2 to Show Unavailable Cars')
+            print('Press 3 to Put In Order')
             print('Press 4 to Cancel Order')
             print('Press 5 to Look Up Order')
             print('Press 6 to Change Order')
@@ -27,19 +27,18 @@ class Car_Page:
             print('Press 9 to Add A New Car To The Car Rental')
             print('Press 10 to Change The Price List')  # ekki lagmarkskrafa
             print('Press q to Quit')
+            print()
 
-        # def sign_Up():
 
         def main():
             print_Choices()
             action_Car = input('Choose command: ').lower()
+            print()
             if action_Car == '1':
                 self.__CarService.available_cars()
-                pass
 
             elif action_Car == '2':
                 self.__CarService.taken_cars()
-                pass
 
             elif action_Car == '3':
                 print("-"*15)
@@ -80,10 +79,7 @@ class Car_Page:
                 pass
 
             elif action_Car == '8':
-                f = open('pricelist.txt')
-                file_contents = f.read()
-                print(file_contents)
-                f.close()
+                self.__CarService.show_Pricelist()
 
             elif action_Car == '9':
                 print("-"*15)
@@ -105,8 +101,7 @@ class Car_Page:
                 #         print("Invalid input, try again!")
                 manufacturer = input('Enter The Manufacturer: ')
                 the_Type = input('Enter The Type: ')
-                transmission = input(
-                    'Enter The Transmission (Stick Shift or Manual): ').lower()
+                transmission = input('Enter The Transmission (Stick Shift or Manual): ').lower()
                 # þurfum að gera eh svona lykkju
                 # while transmission != 's' or 'm':
                 #     if transmission == 's':
@@ -116,8 +111,7 @@ class Car_Page:
                 #     else:
                 #         print('Invalid input, try again!')
                 price = input('Enter Price: ')
-                new_Car = Car(licence_Plate, category,
-                              manufacturer, the_Type, transmission, price)
+                new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
 
             elif action_Car == '10':

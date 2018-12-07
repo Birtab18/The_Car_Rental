@@ -45,3 +45,9 @@ class CarOptions:
             print()
             print()
 
+    def show_Pricelist(self):
+        f = open('./data/pricelist.txt')
+        file_Contents = f.read()
+        print(file_Contents)
+        f.close()
+        print()

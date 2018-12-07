@@ -12,18 +12,20 @@ class Front_Page:
     def main_Menu(self):
 
         def print_Frontpage():
-            print('{0:40}{1}'.format('The Car Rental', 'Front page'))
+            print('{:40}{:8}'.format('The Car Rental', 'Front page'))
             print('-'*50)
-            print("{0:>26}".format('Hello'))
+            print("{:>26}".format('Hello'))
             print('-'*50)
             print('Press 1 for Customer')
             print('Press 2 for Car')
             print('Press q to Quit')
+            print()
 
         action = ''
         while (action != 'q'):
             print_Frontpage()
             action = input('Choose command: ').lower()
+            print()
             if action == '1':
                 ui = Customer_Page()
                 ui.customer_Menu()

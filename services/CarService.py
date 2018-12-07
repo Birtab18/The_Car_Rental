@@ -24,3 +24,6 @@ class CarService:
 
     # def delete_car(self):
     #     return self.__car_main.delete_car() 
+
+    def show_Pricelist(self):
+        self.__car_Repo.show_Pricelist()

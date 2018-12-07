@@ -11,19 +11,21 @@ class Customer_Page:
     def customer_Menu(self):
 
         def print_Choices():
-            print('{0:40}{1}'.format('Bílaleigan', 'B to go back'))
+            print('{:<30}{:>20}'.format('Bílaleigan', 'B to go back'))
             print('-'*50)
-            print("{0:>26}".format('Customers'))
+            print("{:>26}".format('Customers'))
             print('-'*50)
             print('Press 1 to Sign Up New Customer ')
             print('Press 2 to Delete Customer')
             print('Press 3 to Look Up Customer')
             print('Press 4 to Change Information About A Customer')
             print('Press b to Go To Frontpage')
+            print()
 
         def main():
             print_Choices()
             action_Cust = input('Choose command: ').lower()
+            print()
             if action_Cust == '1':
                 print("-"*15)
                 print("New customer:")
