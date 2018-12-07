@@ -43,6 +43,12 @@ class Customer_Page:
                 self.__CustomerService.look_up_customer(person_change)
             
             elif action_Cust == '4':
+                print()
+                print('press 1 to change SSN')
+                print('Press 2 to change Name')
+                print('Press 3 to change Phone Number')
+                print('Press 4 to change Email')
+                print()
                 self.__CustomerService.Change_Information()
             
             elif action_Cust == 'b':
@@ -51,5 +57,5 @@ class Customer_Page:
             
             else:
                 print("Invalid input, try again!")
-
+        
         main()

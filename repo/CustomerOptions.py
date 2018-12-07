@@ -44,13 +44,8 @@ class CustomerOptions:
                     writer.writerow(row)
         os.remove('./data/customers.csv')
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
-<<<<<<< HEAD
     
     def Change_Information(self):
-        print('press 1 to change SSN')
-        print('Press 2 to change Name')
-        print('Press 3 to change Phone Number')
-        print('Press 4 to change Email')
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             ssn_number = input('Enter the SSN of the person you want to change: ')
             writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])
@@ -58,8 +53,8 @@ class CustomerOptions:
             for row in csv.DictReader(inp):
                 for i,value in row.items():
                     if value == ssn_number:
-                        num = input('Enter num: ')
-                        changes = input('Enter changed info: ')
+                        num = input('Enter Choice: ')
+                        changes = input('Enter New Info: ')
                         choice = ''
                         if num == '1':
                             choice ='SSN'
@@ -76,42 +71,3 @@ class CustomerOptions:
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
 
 # Til að eyða gömlu skránni og gera nýju skránna samnefnda gömlu skránni  
-=======
->>>>>>> 06d84041cc55479d391248f162e7e5f4cbf8f0af
-
-
-
-    def change_Customer_Info(self, person_Change, the_Change, new_Info):
-        customer_File = "./data/customers.csv"
-        temp_File = NamedTemporaryFile(delete=False)
-
-        with open(customer_File, 'r') as csv_File: #rb for binary
-            reader = csv.DictReader(csv_File)
-            writer = csv.DictWriter(temp_File, fieldnames=['SSN', 'Name', 'Phone Number', 'Email'])
-            writer.writeheader()
-
-            for row in reader:
-                writer.writerow({"SSN": row["SSN"], "Name": row["Name"], "Phone Number": row["Phone Number"], 
-                                "Email": row["Email"]}) #dictionary value
-                if the_Change == '1':
-                    row["SSN"] = new_Info
-                    writer.writerow(row)
-                elif the_Change == '2':
-                    row["Name"] = new_Info
-                    writer.writerow(row)
-                elif the_Change == '3':
-                    row["Phone Number"] = new_Info
-                    writer.writerow(row)
-                elif the_Change == '4':
-                    row["Email"] = new_Info
-                    writer.writerow(row)
-                else: 
-                    print("Invalid input, try again!")
-        
-        os.remove('./data/customers.csv')
-        os.rename('./data/temp_File.csv', './data/customers.csv')  
-            
-            #shutil.move(temp_File, customer_File)
-
-
-    # def change_Customer_Info(self):
