@@ -1,7 +1,6 @@
 SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,extra_Insurance
-2005984079,Birta Líf,ad567,Mini Car,Kia,Picanto,08.12.18,09.12.18
-2810715729,Sigmar,ak345,Station Car,Huyndai,i30,08.12.18,11.12.18
-222 ari ab345 Mini Car Toyota Aygo 2018-06-10//2018-06-07 
-222,ari,aj567,Station Car,Tesla,Model 3,2020-04-07//2020-04-05 
-222,ari,ab345,Mini Car,Toyota,Aygo,2018-12-14//2018-12-08 
-222,ari,ai456,Station Car,Audi,A3,2018-12-14//2018-12-08 
+2810715729,Sigmar,ak345,Station Car,Huyndai,i30,08.12.18,11.12.18,
+222 ari ab345 Mini Car Toyota Aygo 2018-06-10//2018-06-07 ,,,,,,,,
+222,ari,aj567,Station Car,Tesla,Model 3,2020-04-07//2020-04-05 ,,
+222,ari,ab345,Mini Car,Toyota,Aygo,2018-12-14//2018-12-08 ,,
+222,ari,ai456,Station Car,Audi,A3,2018-12-14//2018-12-08 ,,

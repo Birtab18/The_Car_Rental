@@ -24,10 +24,9 @@ class Car_Page:
             print('Press 4 to Cancel Order')
             print('Press 5 to Look Up Order')
             print('Press 6 to Change Order')
-            print('Press 7')  # True or False
-            print('Press 8 to Show Price List')
-            print('Press 9 to Add A New Car To The Car Rental')
-            print('Press 10 to Change The Price List')  # ekki lagmarkskrafa
+            print('Press 7 to Show Price List')
+            print('Press 8 to Add A New Car To The Car Rental')
+            print('Press 9 to Change The Price List')  # ekki lagmarkskrafa
             print('Press q to Quit')
             print()
 
@@ -82,7 +81,9 @@ class Car_Page:
                 self.__OrderService.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
 
             elif action_Car == '4':
-                pass
+                ssn = input('Enter The SSN Of The Person Who Put In The Order: ')
+                licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                self.__OrderService.cancel_Order(ssn, licence_Plate)
 
             elif action_Car == '5':
                 pass
@@ -91,12 +92,9 @@ class Car_Page:
                 pass
 
             elif action_Car == '7':
-                pass
-
-            elif action_Car == '8':
                 self.__CarService.show_Pricelist()
 
-            elif action_Car == '9':
+            elif action_Car == '8':
                 print("-"*15)
                 print("New customer:")
                 licence_Plate = input('Enter The Licence Plate: ').upper()
@@ -129,7 +127,7 @@ class Car_Page:
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
 
-            elif action_Car == '10':
+            elif action_Car == '9':
                 pass
 
             elif action_Car == 'q':

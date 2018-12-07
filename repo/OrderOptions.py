@@ -48,16 +48,17 @@ class OrderOptions:
         #   return_Date
             order_file.write('{},{},{},{},{},{},{}//{} \n'.format(SSN,Name,licence_Plate,category,manufacturer,the_Type, rentday, returnday))
 
-
-
     # Press 4 to Cancel Order
-    def delete_customer(self):
-        with open('./data/customers.csv', 'a+') as customer_file:
-            customer_Delete = input("Enter Customers SSN number: ")
-            for line in customer_file.readlines():
-                if line not in customer_Delete:
-                    customer_file.write(line)
-        return self.__customer 
+    def cancel_Order(self, SSN, licence_Plate):
+        with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
+            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
+                                                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
+            writer.writeheader()
+            for row in csv.DictReader(inp):
+                if row['SSN'] != SSN and row['licence_Plate'] != licence_Plate:
+                    writer.writerow(row)
+        os.remove('./data/orders.csv')
+        os.rename('./data/cancel_Order.csv', './data/orders.csv')
 
     # Press 5 to Look Up Order
     def look_up_customer(self, look_up):
