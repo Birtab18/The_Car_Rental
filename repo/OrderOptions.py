@@ -8,7 +8,7 @@ class OrderOptions:
     def __init__(self):
         self.__order = []
 
-    # Press 3 to Put In Orders
+    # Press 1 to Put In Orders
     def put_in_an_order(self,look_up,car_id,a,b,c,e,f,g):
         with open("./data/customers.csv", 'r') as customer_ssn:
          #   look_up = input('Enter The SSN Of The Person who want to rent a car: ')
@@ -48,7 +48,7 @@ class OrderOptions:
         #   return_Date
             order_file.write('{},{},{},{},{},{},{},{} \n'.format(SSN,Name,licence_Plate,category,manufacturer,the_Type, rentday, returnday))
 
-    # Press 4 to Cancel Order
+    # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
@@ -60,7 +60,7 @@ class OrderOptions:
         os.remove('./data/orders.csv')
         os.rename('./data/cancel_Order.csv', './data/orders.csv')
 
-    # Press 5 to Look Up Order
+    # Press 3 to Look Up Order
     def look_Up_Order(self, look_Up):
         with open("./data/orders.csv", 'r') as look_up_order_file:
             reader = csv.reader(look_up_order_file)
@@ -80,7 +80,7 @@ class OrderOptions:
             #     print()
           
     
-    # Press 6 to Change Order
+    # Press 4 to Change Order
     def change_Order(self, ssn, choice, changes):
         with open('./data/orders.csv', 'r') as inp, open('./data/delete_Orders.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
