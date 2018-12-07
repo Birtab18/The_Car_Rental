@@ -89,7 +89,16 @@ class Car_Page:
                 pass
 
             elif action_Car == '6':
-                pass
+                print()
+                print('press 1 to Change Category (Mini Car, Station Car Or Jeep)')
+                print('Press 2 to Change Rent Date')
+                print('Press 3 to Change Return Date')
+                print('Press 4 to Change Extra Insurance (Y = Yes, N = No')
+                print()
+                ssn = input('Enter The SSN Of The Person Who Ordered The Car: ')
+                choice = input('Enter Choice: ')
+                changes = input('Enter New Info: ').lower()
+                self.__OrderService.change_Order(ssn, choice, changes)
 
             elif action_Car == '7':
                 self.__CarService.show_Pricelist()

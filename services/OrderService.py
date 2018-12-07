@@ -23,3 +23,6 @@ class OrderService:
     
     def put_in_an_order(self,look_up,car_id,a,b,c,e,f,g):
         self.__order_Repo.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
+
+    def change_Order(self, ssn_number, choice, changes):
+        self.__order_Repo.change_Order(ssn_number, choice, changes)
