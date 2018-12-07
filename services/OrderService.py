@@ -18,8 +18,11 @@ class OrderService:
     def look_up_order(self, look_Up):
         return self.__order_Repo.look_Up_Order(look_Up) # ATH hvort repo eda main
 
-    def delete_order(self):
-        return self.__order_main.delete_order()
+    def cancel_Order(self, SSN, licence_Plate):
+        return self.__order_Repo.cancel_Order(SSN, licence_Plate)
     
     def put_in_an_order(self,look_up,car_id,a,b,c,e,f,g):
         self.__order_Repo.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
+
+    def change_Order(self, ssn_number, choice, changes):
+        self.__order_Repo.change_Order(ssn_number, choice, changes)

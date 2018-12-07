@@ -48,16 +48,17 @@ class OrderOptions:
         #   return_Date
             order_file.write('{},{},{},{},{},{},{},{} \n'.format(SSN,Name,licence_Plate,category,manufacturer,the_Type, rentday, returnday))
 
-
-
     # Press 4 to Cancel Order
-    def delete_customer(self):
-        with open('./data/customers.csv', 'a+') as customer_file:
-            customer_Delete = input("Enter Customers SSN number: ")
-            for line in customer_file.readlines():
-                if line not in customer_Delete:
-                    customer_file.write(line)
-        return self.__customer 
+    def cancel_Order(self, SSN, licence_Plate):
+        with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
+            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
+                                                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
+            writer.writeheader()
+            for row in csv.DictReader(inp):
+                if row['SSN'] != SSN and row['licence_Plate'] != licence_Plate:
+                    writer.writerow(row)
+        os.remove('./data/orders.csv')
+        os.rename('./data/cancel_Order.csv', './data/orders.csv')
 
     # Press 5 to Look Up Order
     def look_Up_Order(self, look_Up):
@@ -80,7 +81,30 @@ class OrderOptions:
           
     
     # Press 6 to Change Order
-    def change_Order(self):
-        pass
+    def change_Order(self, ssn, choice, changes):
+        with open('./data/orders.csv', 'r') as inp, open('./data/delete_Orders.csv', 'w') as out:
+            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
+                                                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
+            writer.writeheader()
+            for row in csv.DictReader(inp):
+                for i,value in row.items():
+                    if value == ssn: #i lagi að gera rað f að aðili se bara með 1 pöntun?
+                        the_Choice = ''
+                        if choice == '1':
+                            the_Choice ='category'
+                            # if len(the_Choice) == 10:
+                            #     row[the_Choice] = changes
+                        elif choice == '2':
+                            the_Choice = 'rent_Date'
+                        elif choice == '3':
+                            the_Choice = 'return_Date'
+                        elif choice == '4':
+                            the_Choice = 'extra_Insurance'
+                        row[the_Choice] = changes
+                        print(row)
+                writer.writerow(row)
+        os.remove('./data/orders.csv')
+        os.rename('./data/delete_Orders.csv', './data/orders.csv')
+        
 
     
