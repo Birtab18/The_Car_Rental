@@ -1,12 +1,6 @@
 from models.Customer import Customer
 import os
 import csv
-<<<<<<< HEAD
-=======
-import os
-import shutil
-from tempfile import NamedTemporaryFile
->>>>>>> 6e77566ff7b3be8e7df1711349fc98ef39bb2f1a
 
 class CustomerOptions:
 

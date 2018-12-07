@@ -44,14 +44,7 @@ class Customer_Page:
                 self.__CustomerService.look_up_customer(person_change)
             
             elif action_Cust == '4':
-<<<<<<< HEAD
                 self.__CustomerService.Change_Information()
-=======
-                person_Change = input("Enter The SSN Of The Person To Change It's Info: ")
-                the_Change = input('What Do You Want To Change? (1 = SSN, 2 = Name, 3 = Phone Number, 4 = Email) ')
-                new_Info = input('Enter The New Info: ')
-                self.__CustomerService.change_Customer_Info(person_Change, the_Change, new_Info)
->>>>>>> 6e77566ff7b3be8e7df1711349fc98ef39bb2f1a
             
             elif action_Cust == 'b':
                 pass
