@@ -15,7 +15,7 @@ class Order_Page:
             print("{:>26}".format('Cars'))
             print('-'*50)
             print('Press 1 to Put In Order')
-            print('Press 2 to Cancel Order')
+            print('Press 2 to Cancel Order') 
             print('Press 3 to Look Up Order')
             print('Press 4 to Change Order')
             print('Press F to Go To Frontpage')

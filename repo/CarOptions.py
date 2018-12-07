@@ -27,7 +27,7 @@ class CarOptions:
             print()
             print()
     
-    # Press 8 to Show Price List
+    # Press 3 to Show Price List
     def show_Pricelist(self):
         with open("./data/categories.csv") as category_File:
             reader = csv.reader(category_File)
@@ -41,7 +41,7 @@ class CarOptions:
                 print('{:<47}{:<13}'.format(row[0], row[1]))
             print()
 
-    # Press 9 to Add A New Car To The Car Rental       
+    # Press 4 to Add A New Car To The Car Rental       
     def add_car(self, car):
         # first add to file then to private list
         # try:
@@ -61,6 +61,3 @@ class CarOptions:
         # pass
     
 
-    # Press 10 to Change The Price List
-    def change_Price_List(self):
-        pass
