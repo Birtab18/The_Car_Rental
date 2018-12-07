@@ -49,7 +49,10 @@ class Customer_Page:
                 print('Press 3 to change Phone Number')
                 print('Press 4 to change Email')
                 print()
-                self.__CustomerService.Change_Information()
+                ssn_number = input('Enter the SSN of the person you want to change: ')
+                num = input('Enter Choice: ')
+                changes = input('Enter New Info: ')
+                self.__CustomerService.Change_Information(ssn_number, num, changes)
             
             elif action_Cust == 'b':
                 pass
