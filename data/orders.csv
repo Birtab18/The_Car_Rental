@@ -1,1 +1,3 @@
-SSN,Name,licence_Plate,price,status,rent_Date,return_Date
+SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,extra_Insurance
+2005984079,Birta Líf,ad567,Mini Car,Kia,Picanto,08.12.18,09.12.18,True
+2810715729,Sigmar,ak345,Station Car,Huyndai,i30,08.12.18,11.12.18,False
