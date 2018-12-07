@@ -20,3 +20,6 @@ class OrderService:
 
     def delete_order(self):
         return self.__order_main.delete_order()
+    
+    def put_in_an_order(self,look_up,car_id,a,b,c,e,f,g):
+        self.__order_Repo.put_in_an_order(look_up,car_id,a,b,c,e,f,g)

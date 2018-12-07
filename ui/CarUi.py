@@ -1,5 +1,6 @@
 from services.CustomerService import CustomerService
 from services.CarService import CarService
+from services.OrderService import OrderService
 from models.Customer import Customer
 from models.Car import Car
 
@@ -8,6 +9,7 @@ class Car_Page:
     def __init__(self):
         self.__CustomerService = CustomerService()
         self.__CarService = CarService()
+        self.__OrderService = OrderService()
 
     def car_Menu(self):
 
@@ -77,7 +79,7 @@ class Car_Page:
                 f = int(input('M: '))
                 g = int(input('D: '))
     
-                self.__CarService.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
+                self.__OrderService.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
 
             elif action_Car == '4':
                 pass

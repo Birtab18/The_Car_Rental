@@ -4,10 +4,11 @@ import csv
 import os
 
 class CustomerOptions:
-
+    
     def __init__(self):
         self.__customer = []
 
+    # Press 1 to Sign Up New Customer
     def add_customer(self, customer):
         # first add to file then to private list
         # try:
@@ -22,6 +23,19 @@ class CustomerOptions:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
 
+    # Press 2 to Delete Customer 
+    def delete_customer(self, person_SSN):
+        with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
+            writer = csv.DictWriter(
+                out, fieldnames=['Name', 'SSN', 'Telephone_Number', 'Email'])
+            writer.writeheader()
+            for row in csv.DictReader(inp):
+                if row['SSN'] != person_SSN:
+                    writer.writerow(row)
+        os.remove('./data/customers.csv')
+        os.rename('./data/deletecustomers.csv', './data/customers.csv')
+
+    # Press 3 to Look Up Customer    
     def look_up_customer(self, look_up):
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
@@ -35,17 +49,8 @@ class CustomerOptions:
                 print()
             
 
-    def delete_customer(self, person_SSN):
-        with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
-            writer = csv.DictWriter(
-                out, fieldnames=['Name', 'SSN', 'Telephone_Number', 'Email'])
-            writer.writeheader()
-            for row in csv.DictReader(inp):
-                if row['SSN'] != person_SSN:
-                    writer.writerow(row)
-        os.remove('./data/customers.csv')
-        os.rename('./data/deletecustomers.csv', './data/customers.csv')
-
+    
+    # Press 4 to Change Information About A Customer
     def Change_Information(self, ssn_number, choice, changes):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])

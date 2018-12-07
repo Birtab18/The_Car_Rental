@@ -28,5 +28,4 @@ class CarService:
     def show_Pricelist(self):
         self.__car_Repo.show_Pricelist()
 
-    def put_in_an_order(self,look_up,car_id,a,b,c,e,f,g):
-        self.__car_Repo.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
+    
