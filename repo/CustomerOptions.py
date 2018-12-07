@@ -18,8 +18,7 @@ class CustomerOptions:
             socialnumber = customer.get_socialnumber()
             phonenumber = customer.get_phonenumber()
             email = customer.get_email()
-            customer_file.write('{},{},{},{}'.format(
-                name, socialnumber, phonenumber, email))
+            customer_file.write('{},{},{},{}'.format(name, socialnumber, phonenumber, email))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
@@ -28,11 +27,14 @@ class CustomerOptions:
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
+                match = []
                 if row[0] == look_up:
-                    print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(
-                        row[0], row[1], row[2], row[3]))
-                else:
-                    print('Customer not found')
+                    match.append('found')
+                    print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(row[0], row[1], row[2], row[3]))
+            if match == []:
+                print('Customer Not Found')
+                print()
+            
 
     def delete_customer(self, person_SSN):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:

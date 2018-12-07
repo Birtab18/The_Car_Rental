@@ -24,8 +24,6 @@ class CarOptions:
         # pass
 
     def show_available_cars(self):
-        print()
-        print('Available cars: \n')
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
@@ -35,8 +33,6 @@ class CarOptions:
             print()
         
     def show_taken_cars(self):
-        print()
-        print('Not Available Cars: \n')
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:

@@ -16,7 +16,7 @@ class Car_Page:
             print('-'*50)
             print("{:>26}".format('Cars'))
             print('-'*50)
-            print('Press 1 to Show Available')
+            print('Press 1 to Show Available Cars')
             print('Press 2 to Show Unavailable Cars')
             print('Press 3 to Put In Order')
             print('Press 4 to Cancel Order')
@@ -35,9 +35,13 @@ class Car_Page:
             action_Car = input('Choose command: ').lower()
             print()
             if action_Car == '1':
+                print('Available Cars: \n')
+                print()
                 self.__CarService.available_cars()
 
             elif action_Car == '2':
+                print('Unavailable Cars: \n')
+                print()
                 self.__CarService.taken_cars()
 
             elif action_Car == '3':
