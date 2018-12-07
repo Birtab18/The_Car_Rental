@@ -31,7 +31,8 @@ class CarOptions:
             for row in reader:
                 if row[6] == 'True':
                     print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
-                    print()
+            print()
+            print()
         
     def show_taken_cars(self):
         print()
@@ -41,5 +42,6 @@ class CarOptions:
             for row in reader:
                 if row[6] == 'False':
                     print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
-                    print()
+            print()
+            print()
 
