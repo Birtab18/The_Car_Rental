@@ -3,7 +3,6 @@ import os
 import csv
 import os
 
-
 class CustomerOptions:
 
     def __init__(self):
@@ -46,7 +45,7 @@ class CustomerOptions:
                     writer.writerow(row)
         os.remove('./data/customers.csv')
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
-    
+
     def Change_Information(self, ssn_number, choice, changes):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])

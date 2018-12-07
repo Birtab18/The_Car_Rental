@@ -46,29 +46,38 @@ class Car_Page:
 
             elif action_Car == '3':
                 print("-"*15)
-                new_Or_Old = input(
-                    'Has the customer rented a car from us before? y = Yes, n = No').lower()
-                while new_Or_Old != 'y' or 'n':
-                    if new_Or_Old == 'y':
-                        # go to look up customer
-                        pass
-                    elif new_Or_Old == 'n':
-                        # go to sign up new customer
-                        pass
-                    else:
-                        print('Invalid input, try again!')
+                # new_Or_Old = input(
+                #     'Has the customer rented a car from us before? y = Yes, n = No').lower()
+                # while new_Or_Old != 'y' or 'n':
+                #     if new_Or_Old == 'y':
+                #         # go to look up customer
+                #         pass
+                #     elif new_Or_Old == 'n':
+                #         # go to sign up new customer
+                #         pass
+                #     else:
+                #         print('Invalid input, try again!')
 
-                print("New Order:")
-                licence_Plate = input('Enter The Licence Plate: ')
-                # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
-                # með uppl um vv
-                # notum daytime moduleinn her?
-                rent_Date = input('Enter The Date Of The Rent: ')
-                # like her daytime?
-                return_Date = input('Enter The Date Of The Return: ')
-                insurance = input('Extra insurance? (Y = Yes, N = No) ')
-                new_Order = Order(the_Customer, the_Car, rent_Date, return_Date, insurance)
-                self.__CarService.add_car(new_Car)
+                # print("New Order:")
+                # licence_Plate = input('Enter The Licence Plate: ')
+                # # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
+                # # með uppl um vv
+                # # notum daytime moduleinn her?
+                # rent_Date = input('Enter The Date Of The Rent: ')
+                # # like her daytime?
+                # return_Date = input('Enter The Date Of The Return: ')
+                # insurance = input('Extra insurance? (Y = Yes, N = No) ')
+                # new_Order = Order(the_Customer, the_Car, rent_Date, return_Date, insurance)
+                look_up = input('Enter The SSN Of The Person who want to rent a car: ')
+                car_id = input('Enter licenche: ')
+                a = int(input('Y: '))
+                b = int(input('M: '))
+                c = int(input('D: '))
+                e = int(input('Y: '))
+                f = int(input('M: '))
+                g = int(input('D: '))
+    
+                self.__CarService.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
 
             elif action_Car == '4':
                 pass

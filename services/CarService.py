@@ -11,9 +11,9 @@ class CarService:
     def taken_cars(self):
         self.__car_Repo.show_taken_cars()
 
-    def add_car(self, car):
-        if self.is_valid_car(car):  # eru innputin sett in rett
-            self.__car_Repo.add_car(car)  # ATH hvort repo eda main
+    # def add_car(self, car):
+    #     if self.is_valid_car(car):  # eru innputin sett in rett
+    #         self.__car_Repo.add_car(car)  # ATH hvort repo eda main
 
     def is_valid_car(self, car):
         # herna rékkum vi hvort þetta video se ekki orugglega hægt af vinna med.
@@ -27,3 +27,6 @@ class CarService:
 
     def show_Pricelist(self):
         self.__car_Repo.show_Pricelist()
+
+    def put_in_an_order(self,look_up,car_id,a,b,c,e,f,g):
+        self.__car_Repo.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
