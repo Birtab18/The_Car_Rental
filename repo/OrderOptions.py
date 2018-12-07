@@ -68,13 +68,13 @@ class OrderOptions:
                 match = []
                 if row[2] == look_Up:
                     match.append('found')
-                    print('Customer Informations\n{}'.format("-"*20))
-                    print('SSN:{:<10}\nName:{:>30}\n'.format(row[0],row[1]))
+                    print('Customer Informations\n{}'.format("-"*35))
+                    print('SSN:{:>20}{}\nName:{:>19}{}\n'.format(" ",row[0]," ",row[1]))
                     print('Car Informations:\n{}'.format("-"*35))
-                    print('Licence Plate: {:>13}\nCategory: {:>21}\nManufacturer: {:>12}\nType: {:>24}\n'.
-                            format(row[2], row[3], row[4],row[5]))
+                    print('Licence Plate:{:>10}{}\nCategory:{:>15}{}\nManufacturer:{:>11}{}\nType:{:>19}{}\n'.
+                            format(" ",row[2]," ",row[3]," ", row[4]," ",row[5]))
                     print('Order Informations:\n{}'.format("-"*35))
-                    print('Rent Date: {:>22}\nReturn Date: {:>20}\nExtra Insurance: {:>10}'.format(row[6], row[7], row[8]))
+                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nExtra Insurance:{:>8}{}'.format(" ",row[6]," ", row[7]," ", row[8]))
             # if match == []:
             #     print('Order Not Found')
             #     print()
