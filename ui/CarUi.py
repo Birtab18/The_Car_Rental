@@ -85,8 +85,10 @@ class Car_Page:
                 self.__OrderService.cancel_Order(ssn, licence_Plate)
 
             elif action_Car == '5':
-                pass
-
+                look_Up = input('Enter The Licence Plate Of The Car: ')
+                print()
+                self.__OrderService.look_up_order(look_Up)
+                print()
             elif action_Car == '6':
                 print()
                 print('press 1 to Change Category (Mini Car, Station Car Or Jeep)')
