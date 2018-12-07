@@ -12,10 +12,6 @@ class Front_Page:
     def main_Menu(self):
 
         def print_Frontpage():
-            print()
-            print()
-            print()
-            print()
             print('{0:40}{1}'.format('The Car Rental', 'Front page'))
             print('-'*50)
             print("{0:>26}".format('Hello'))
@@ -35,10 +31,9 @@ class Front_Page:
             elif action == '2':
                 ui = Car_Page()
                 ui.car_Menu()
-            
+
             elif action == 'q':
                 print("Goodbye !")
                 pass  # quit
-            
             else:
                 print('Invalid input!')
