@@ -46,7 +46,7 @@ class OrderOptions:
             print(rentday)
         #   rent_Date
         #   return_Date
-            order_file.write('{},{},{},{},{},{},{}//{} \n'.format(SSN,Name,licence_Plate,category,manufacturer,the_Type, rentday, returnday))
+            order_file.write('{},{},{},{},{},{},{},{} \n'.format(SSN,Name,licence_Plate,category,manufacturer,the_Type, rentday, returnday))
 
 
 
@@ -60,17 +60,24 @@ class OrderOptions:
         return self.__customer 
 
     # Press 5 to Look Up Order
-    def look_up_customer(self, look_up):
-        with open("./data/customers.csv", 'r') as look_up_customer_file:
-            reader = csv.reader(look_up_customer_file)
+    def look_Up_Order(self, look_Up):
+        with open("./data/orders.csv", 'r') as look_up_order_file:
+            reader = csv.reader(look_up_order_file)
             for row in reader:
                 match = []
-                if row[0] == look_up:
+                if row[2] == look_Up:
                     match.append('found')
-                    print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(row[0], row[1], row[2], row[3]))
-            if match == []:
-                print('Customer Not Found')
-                print()
+                    print('Customer Informations\n{}'.format("-"*20))
+                    print('SSN:{:<10}\nName:{:>30}\n'.format(row[0],row[1]))
+                    print('Car Informations:\n{}'.format("-"*35))
+                    print('Licence Plate: {:>13}\nCategory: {:>21}\nManufacturer: {:>12}\nType: {:>24}\n'.
+                            format(row[2], row[3], row[4],row[5]))
+                    print('Order Informations:\n{}'.format("-"*35))
+                    print('Rent Date: {:>22}\nReturn Date: {:>20}\nExtra Insurance: {:>10}'.format(row[6], row[7], row[8]))
+            # if match == []:
+            #     print('Order Not Found')
+            #     print()
+          
     
     # Press 6 to Change Order
     def change_Order(self):

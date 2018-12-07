@@ -15,8 +15,8 @@ class OrderService:
         # ef valid þa addum vid þvi i gagnageymsluna.
         return True
 
-    def get_order(self):
-        return self.__order_Repo.get_order()  # ATH hvort repo eda main
+    def look_up_order(self, look_Up):
+        return self.__order_Repo.look_Up_Order(look_Up) # ATH hvort repo eda main
 
     def delete_order(self):
         return self.__order_main.delete_order()
