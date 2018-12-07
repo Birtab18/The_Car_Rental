@@ -66,5 +66,4 @@ class CustomerOptions:
                 writer.writerow(row)
         os.remove('./data/customers.csv')
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
-
 # Til að eyða gömlu skránni og gera nýju skránna samnefnda gömlu skránni  
