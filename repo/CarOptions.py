@@ -30,7 +30,8 @@ class CarOptions:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
                 if row[6] == 'True':
-                    print('{} - {} - {} - {}kr. - {} '.format(row[2],row[3],row[1],row[5],row[0]))
+                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
+                    print()
         
     def show_taken_cars(self):
         print()
@@ -39,5 +40,6 @@ class CarOptions:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
                 if row[6] == 'False':
-                    print('{} - {} - {} - {}kr. - {} '.format(row[2],row[3],row[1],row[5],row[0]))
+                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
+                    print()
 
