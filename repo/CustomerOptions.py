@@ -1,6 +1,8 @@
 from models.Customer import Customer
 import os
 import csv
+import os
+
 
 class CustomerOptions:
 
@@ -16,29 +18,33 @@ class CustomerOptions:
             socialnumber = customer.get_socialnumber()
             phonenumber = customer.get_phonenumber()
             email = customer.get_email()
-            customer_file.write('{},{},{},{}\n'.format(name, socialnumber, phonenumber, email))
+            customer_file.write('{},{},{},{}'.format(
+                name, socialnumber, phonenumber, email))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
 
-    def look_up_customer(self,look_up):
+    def look_up_customer(self, look_up):
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
                 if row[0] == look_up:
-                    print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(row[0],row[1],row[2],row[3]))
+                    print('SSN: {}\nName: {}\nTelephone: {}\nEmail: {}'.format(
+                        row[0], row[1], row[2], row[3]))
                 else:
                     print('Customer not found')
 
     def delete_customer(self, person_SSN):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
-            writer = csv.DictWriter(out,fieldnames = ['SSN','Name','Telephone_Number','Email'])
+            writer = csv.DictWriter(
+                out, fieldnames=['Name', 'SSN', 'Telephone_Number', 'Email'])
             writer.writeheader()
             for row in csv.DictReader(inp):
-                if row['SSN']!= person_SSN:
+                if row['SSN'] != person_SSN:
                     writer.writerow(row)
         os.remove('./data/customers.csv')
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
+<<<<<<< HEAD
     
     def Change_Information(self):
         print('press 1 to change SSN')
@@ -70,6 +76,8 @@ class CustomerOptions:
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
 
 # Til að eyða gömlu skránni og gera nýju skránna samnefnda gömlu skránni  
+=======
+>>>>>>> 06d84041cc55479d391248f162e7e5f4cbf8f0af
 
 
 
@@ -106,3 +114,4 @@ class CustomerOptions:
             #shutil.move(temp_File, customer_File)
 
 
+    # def change_Customer_Info(self):
