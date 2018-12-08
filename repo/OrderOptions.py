@@ -46,7 +46,8 @@ class OrderOptions:
             print(rentday)
         #   rent_Date
         #   return_Date
-            order_file.write('\n{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,manufacturer,the_Type, rentday, returnday))
+            order_file.write('\n{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,
+                                                        manufacturer,the_Type, rentday, returnday))
 
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):
