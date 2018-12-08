@@ -23,7 +23,6 @@ class Customer_Page:
 
         def main():
             print_Choices()
-            action = input('Choose command: ').lower()
             print()
             if action == '1':
                 print("-"*15)

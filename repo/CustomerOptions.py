@@ -28,8 +28,7 @@ class CustomerOptions:
     def delete_customer(self, person_SSN):
         ''' Deletes a customer from The Car Rental (from customers.csv file) '''
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
-            writer = csv.DictWriter(
-                out, fieldnames=['Name', 'SSN', 'Telephone_Number', 'Email'])
+            writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != person_SSN:
@@ -43,16 +42,13 @@ class CustomerOptions:
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
-                match = []
                 if row[0] == look_up:
-                    match.append('found')
                     print('SSN: {:>20}\nName: {:>20}\nTelephone: {:>11}\nEmail: {:>28}'.format(row[0], row[1], 
                             row[2], row[3]))
             # if match == []:
             #     print('Customer Not Found')
                 print()
             
-
     
     # Press 4 to Change Information About A Customer
     def Change_Information(self, SSN, choice, changes):

@@ -1,9 +1,12 @@
-SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date
-2005984079,Birta Líf,ad567,Mini Car,Kia,Picanto,2018-12-20,2018-12-22
-2810715729,Sigmar,ak345,Station Car,Huyndai,i30,2018-12-16,2018-19-08
-222,ari, ab345,Mini Car,Toyota, Aygo, 2018-06-10,2018-06-07
-222,ari,aj567,Station Car,Tesla,Model 3,2020-04-07,2020-04-05
-222,ari,ab345,Mini Car,Toyota,Aygo,2018-12-14,2018-12-08
-222,ari,ai456,Station Car,Audi,A3,2018-12-14,2018-12-08
-2408962279,Daníel,ab345,Mini Car,Toyota,Aygo,2019-01-05,2019-01-01
-2408962279,Daníel,ab345,Mini Car,Toyota,Aygo,2019-01-04,2019-01-02
+SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,extra_Insurance
+2005984079,Birta Líf,ad567,Mini Car,Kia,Picanto,2018-12-20,2018-12-22,True
+2810715729,Sigmar,ak345,Station Car,Huyndai,i30,2018-12-16,2018-19-08,True
+222,ari, ab345,Mini Car,Toyota, Aygo, 2018-06-10,2018-06-07,False
+222,ari,aj567,Station Car,Tesla,Model 3,2020-04-07,2020-04-05,False 
+222,ari,ab345,Mini Car,Toyota,Aygo,2018-12-14,2018-12-08,True
+222,ari,ai456,Station Car,Audi,A3,2018-12-14,2018-12-08,False
+2408962279,Daníel,ac456,Mini Car,Chervolet,Spark,2020-05-08,2020-05-06 
+2408962279,Daníel,am890,Jeep,Volkswagen,Tiguan,2018-04-08,2018-04-05 
+2408962279,Daníel,aj567,Station Car,Tesla,Model 3,2020-02-08,2020-02-04 
+2612974349,Gunnar Páll,ae789,Mini Car,Hyundai,i10,2021-08-12,2021-08-09 
+0402694079,Kristín,ad567,Mini Car,Kia,Picanto,2019-03-06,2019-03-04 

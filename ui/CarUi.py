@@ -25,7 +25,6 @@ class Car_Page:
 
         def main():
             print_Choices()
-            action = input('Choose command: ').lower()
             print()
             if action == '1':
                 print("-"*15)
@@ -80,12 +79,13 @@ class Car_Page:
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
 
-            elif action == 'f':
-                # ui = Front_Page()
-                # ui.main_Menu()
-                pass
+                elif action == 'f':
+                    pass
+                    # ui = Front_Page()
+                    # ui.main_Menu()
+                    
 
-            else:
-                print("Invalid input, try again!")
+                else:
+                    print("Invalid input, try again!")
 
         main()
