@@ -24,7 +24,10 @@ class Customer_Page:
         def main():
             print_Choices()
             print()
+<<<<<<< HEAD
             action = in
+=======
+>>>>>>> 609b47672b5b6ed98dbbdd8eb836f4cee1c635f3
             if action == '1':
                 print("-"*15)
                 print("New customer:")

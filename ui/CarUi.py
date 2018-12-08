@@ -79,10 +79,18 @@ class Car_Page:
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
 
+<<<<<<< HEAD
             elif action == 'f':
                 # ui = Front_Page()
                 # ui.main_Menu()
                 pass
+=======
+                elif action == 'f':
+                    pass
+                    # ui = Front_Page()
+                    # ui.main_Menu()
+                    
+>>>>>>> 609b47672b5b6ed98dbbdd8eb836f4cee1c635f3
 
             else:
                 print("Invalid input, try again!")

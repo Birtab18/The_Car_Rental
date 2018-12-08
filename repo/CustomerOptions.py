@@ -43,7 +43,10 @@ class CustomerOptions:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
                 if row[0] == look_up:
+<<<<<<< HEAD
                     match.append('found')
+=======
+>>>>>>> 609b47672b5b6ed98dbbdd8eb836f4cee1c635f3
                     print('SSN: {:>20}\nName: {:>20}\nTelephone: {:>11}\nEmail: {:>28}'.format(row[0], row[1], 
                             row[2], row[3]))
             # if match == []:
