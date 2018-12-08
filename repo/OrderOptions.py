@@ -17,7 +17,7 @@ class OrderOptions:
                 if row[0] == look_up:
                     customerid = row[0], row[1]
                     print('{}, {}'.format(row[0], row[1]))
-        #fa upplysingar um bilinn. 
+        #fa upplysingar um bilinn. s
         with open('./data/cars.csv','r') as order_car:
             # car_id = input('Enter licenche: ')
             reader_car = csv.reader(order_car)
@@ -46,7 +46,7 @@ class OrderOptions:
             print(rentday)
         #   rent_Date
         #   return_Date
-            order_file.write('{},{},{},{},{},{},{},{} \n'.format(SSN,Name,licence_Plate,category,manufacturer,the_Type, rentday, returnday))
+            order_file.write('\n{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,manufacturer,the_Type, rentday, returnday))
 
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):
