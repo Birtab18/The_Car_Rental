@@ -1,6 +1,6 @@
 from services.CarService import CarService
 from models.Car import Car
-
+# from ui.FrontpageUi import Front_Page
 
 class Car_Page:
     def __init__(self):
@@ -17,28 +17,28 @@ class Car_Page:
             print('Press 2 to Show Unavailable Cars')
             print('Press 3 to Show Price List')
             print('Press 4 to Add A New Car To The Car Rental')
-            print('Press q to Quit')
+            print('Press F to Go To Frontpage')
             print()
 
 
         def main():
             print_Choices()
-            action_Car = input('Choose command: ').lower()
+            action = input('Choose command: ').lower()
             print()
-            if action_Car == '1':
+            if action == '1':
                 print('Available Cars: \n')
                 print()
                 self.__CarService.available_cars()
             
-            elif action_Car == '2':
+            elif action == '2':
                 print('Unavailable Cars: \n')
                 print()
                 self.__CarService.taken_cars()
 
-            elif action_Car == '3':
+            elif action == '3':
                 self.__CarService.show_Pricelist()
 
-            elif action_Car == '4':
+            elif action == '4':
                 print("-"*15)
                 print("New customer:")
                 licence_Plate = input('Enter The Licence Plate: ').upper()
@@ -71,7 +71,9 @@ class Car_Page:
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
 
-            elif action_Car == 'q':
+            elif action == 'f':
+                # ui = Front_Page()
+                # ui.main_Menu()
                 pass
 
             else:
