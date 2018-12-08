@@ -24,7 +24,7 @@ class Car_Page:
 
         def main():
             print_Choices()
-            action = input('Enter your option')
+            action = input('Choose command: ')
             print()
             if action == '1':
                 print("-"*15)
@@ -44,7 +44,7 @@ class Car_Page:
 
             elif action == '4':
                 print("-"*15)
-                print("New customer:")
+                print("New car:")
                 licence_Plate = input('Enter The Licence Plate: ').upper()
                 category = input(
                     'Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()

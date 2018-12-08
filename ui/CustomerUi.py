@@ -2,6 +2,7 @@ from services.CustomerService import CustomerService
 from models.Customer import Customer
 # from ui.FrontpageUi import Front_Page
 
+
 class Customer_Page:
     def __init__(self):
         self.__CustomerService = CustomerService()
@@ -24,7 +25,7 @@ class Customer_Page:
         def main():
             print_Choices()
             print()
-            action = input('Enter your option')
+            action = input('Choose command: ')
             if action == '1':
                 print("-"*15)
                 print("New customer:")
@@ -39,25 +40,29 @@ class Customer_Page:
                 new_Costumer = Customer(SSN, name, phonenumber, email)
                 self.__CustomerService.add_customer(new_Costumer)
                 print()
-            
+
             elif action == '2':
                 print("-"*15)
-                person_delete = input('Enter The SSN Of The Person You Want To Delete: ')
+                person_delete = input(
+                    'Enter The SSN Of The Person You Want To Delete: ')
                 while len(person_delete) != 10:
                     print('Error! Please Input A Valid SSN (only 10 digits)')
                     print()
-                    person_delete = input('Enter The SSN Of The Person You Want To Delete: ')
+                    person_delete = input(
+                        'Enter The SSN Of The Person You Want To Delete: ')
                 self.__CustomerService.delete_customer(person_delete)
-            
+
             elif action == '3':
                 print("-"*15)
-                person_Look_Up = input('Enter The SSN Of The Person You Want To Look Up: ')
+                person_Look_Up = input(
+                    'Enter The SSN Of The Person You Want To Look Up: ')
                 while len(person_Look_Up) != 10:
                     print('Error! Please Input A Valid SSN (only 10 digits)')
                     print()
-                    person_Look_Up = input('Enter The SSN Of The Person You Want To Look Up: ')
+                    person_Look_Up = input(
+                        'Enter The SSN Of The Person You Want To Look Up: ')
                 self.__CustomerService.look_up_customer(person_Look_Up)
-            
+
             elif action == '4':
                 print("-"*15)
                 print()
@@ -70,17 +75,18 @@ class Customer_Page:
                 while len(SSN) != 10:
                     print('Error! Please Input A Valid SSN (only 10 digits)')
                     print()
-                    SSN = input('Enter The SSN Of The Person You Want To Change: ')
+                    SSN = input(
+                        'Enter The SSN Of The Person You Want To Change: ')
                 choice = input('Enter Choice: ')
                 changes = input('Enter New Info: ')
                 self.__CustomerService.Change_Information(SSN, choice, changes)
-            
+
             elif action == 'f':
                 # ui = Front_Page()
                 # ui.main_Menu()
                 pass
-            
+
             else:
                 print("Invalid input, try again!")
-        
+
         main()
