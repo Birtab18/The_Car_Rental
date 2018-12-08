@@ -10,7 +10,7 @@ class Car_Page:
 
         def print_Choices():
             ''' Prints out everything you can do with cars in the system '''
-            print('{:<30}{:>20}'.format('Bílaleigan', 'B to go back'))
+            print('{:<30}{:>20}'.format('The Car Rental', 'B to go back'))
             print('-'*50)
             print("{:>26}".format('Cars'))
             print('-'*50)
