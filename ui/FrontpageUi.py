@@ -44,7 +44,7 @@ class Front_Page:
 
             elif action == 'q':
                 print("Goodbye !")
-                pass  # quit
             
             else:
                 print('Invalid input, try again!')
+                print()
