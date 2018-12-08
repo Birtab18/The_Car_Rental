@@ -85,7 +85,7 @@ class OrderOptions:
           
     
     # Press 4 to Change Order
-    def change_Order(self, ssn, choice, changes):
+    def change_Order(self, SSN, choice, changes):
         ''' Changes an order in The Car Rental (in the orders.csv file). Changes category, the date of the rent,
         the date of the return or/and if the customer want an extra insurance '''
         with open('./data/orders.csv', 'r') as inp, open('./data/delete_Orders.csv', 'w') as out:
@@ -94,7 +94,7 @@ class OrderOptions:
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i,value in row.items():
-                    if value == ssn: #i lagi að gera rað f að aðili se bara með 1 pöntun?
+                    if value == SSN: #i lagi að gera rað f að aðili se bara með 1 pöntun?
                         the_Choice = ''
                         if choice == '1':
                             the_Choice ='category'

@@ -28,15 +28,15 @@ class Customer_Page:
             if action == '1':
                 print("-"*15)
                 print("New customer:")
-                socialnumber = input('Enter A SSN: ')
-                while len(socialnumber) != 10:
+                SSN = input('Enter A SSN: ')
+                while len(SSN) != 10:
                     print('Error! Please Input A Valid SSN (only 10 digits)')
                     print()
-                    socialnumber = input('Enter A SSN: ')
+                    SSN = input('Enter A SSN: ')
                 name = input('Enter a name: ')
                 phonenumber = input('Enter a phonenumber: ')
                 email = input('Enter an email: ')
-                new_Costumer = Customer(socialnumber, name, phonenumber, email)
+                new_Costumer = Customer(SSN, name, phonenumber, email)
                 self.__CustomerService.add_customer(new_Costumer)
                 print()
             
@@ -66,14 +66,14 @@ class Customer_Page:
                 print('Press 3 to Change Phone Number')
                 print('Press 4 to Change Email')
                 print()
-                ssn_number = input('Enter The SSN Of The Person You Want To Change: ')
-                while len(ssn_number) != 10:
+                SSN = input('Enter The SSN Of The Person You Want To Change: ')
+                while len(SSN) != 10:
                     print('Error! Please Input A Valid SSN (only 10 digits)')
                     print()
-                    ssn_number = input('Enter The SSN Of The Person You Want To Change: ')
+                    SSN = input('Enter The SSN Of The Person You Want To Change: ')
                 choice = input('Enter Choice: ')
                 changes = input('Enter New Info: ')
-                self.__CustomerService.Change_Information(ssn_number, choice, changes)
+                self.__CustomerService.Change_Information(SSN, choice, changes)
             
             elif action == 'f':
                 # ui = Front_Page()

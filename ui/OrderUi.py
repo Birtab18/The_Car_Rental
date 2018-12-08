@@ -93,14 +93,14 @@ class Order_Page:
                 print('Press 3 to Change Return Date')
                 print('Press 4 to Change Extra Insurance (Y = Yes, N = No')
                 print()
-                ssn = input('Enter The SSN Of The Person Who Ordered The Car: ')
-                while len(ssn) != 10:
+                SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
+                while len(SSN) != 10:
                     print('Error! Please Input A Valid SSN (only 10 digits)')
                     print()
-                    ssn = input('Enter The SSN Of The Person Who Ordered The Car: ')
+                    SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
                 choice = input('Enter Choice: ')
                 changes = input('Enter New Info: ').lower()
-                self.__OrderService.change_Order(ssn, choice, changes)
+                self.__OrderService.change_Order(SSN, choice, changes)
             
             elif action == 'f':
                 # ui = Front_Page()

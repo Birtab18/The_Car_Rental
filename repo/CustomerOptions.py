@@ -16,10 +16,10 @@ class CustomerOptions:
         # a+ = creates file if it doesnt exist
         with open('./data/customers.csv', 'a+') as customer_file:
             name = customer.get_name()
-            socialnumber = customer.get_socialnumber()
+            SSN = customer.get_SSN()
             phonenumber = customer.get_phonenumber()
             email = customer.get_email()
-            customer_file.write('\n{},{},{},{}'.format(name, socialnumber, phonenumber, email))
+            customer_file.write('\n{},{},{},{}'.format(name, SSN, phonenumber, email))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
@@ -54,14 +54,14 @@ class CustomerOptions:
 
     
     # Press 4 to Change Information About A Customer
-    def Change_Information(self, ssn_number, choice, changes):
+    def Change_Information(self, SSN, choice, changes):
         ''' Changes information about a customer from The Car Rental (from customers.csv file) '''
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i,value in row.items():
-                    if value == ssn_number:
+                    if value == SSN:
                         the_Choice = ''
                         if choice == '1':
                             the_Choice ='SSN'
