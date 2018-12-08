@@ -61,12 +61,12 @@ class OrderOptions:
         os.rename('./data/cancel_Order.csv', './data/orders.csv')
 
     # Press 3 to Look Up Order
-    def look_Up_Order(self, look_Up):
+    def look_Up_Order(self, SSN, licence_Plate):
         with open("./data/orders.csv", 'r') as look_up_order_file:
             reader = csv.reader(look_up_order_file)
             for row in reader:
                 match = []
-                if row[2] == look_Up:
+                if row[0] == SSN and row[2] == licence_Plate:
                     match.append('found')
                     print('Customer Informations\n{}'.format("-"*35))
                     print('SSN:{:>20}{}\nName:{:>19}{}\n'.format(" ",row[0]," ",row[1]))

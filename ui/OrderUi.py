@@ -59,14 +59,15 @@ class Order_Page:
                 self.__OrderService.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
 
             elif action == '2':
-                ssn = input('Enter The SSN Of The Person Who Put In The Order: ')
+                SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
                 licence_Plate = input('Enter The Licence Plate Of The Car: ')
-                self.__OrderService.cancel_Order(ssn, licence_Plate)
+                self.__OrderService.cancel_Order(SSN, licence_Plate)
 
             elif action == '3':
-                look_Up = input('Enter The Licence Plate Of The Car: ')
+                SSN = input('Enter The SSN of The Person Who Put In The Order: ')
+                licence_Plate = input('Enter The Licence Plate Of The Car: ')
                 print()
-                self.__OrderService.look_up_order(look_Up)
+                self.__OrderService.look_up_order(SSN,licence_Plate)
                 print()
 
             elif action == '4':
