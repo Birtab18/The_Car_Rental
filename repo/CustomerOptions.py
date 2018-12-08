@@ -10,21 +10,23 @@ class CustomerOptions:
 
     # Press 1 to Sign Up New Customer
     def add_customer(self, customer):
+        ''' Adds a new customer to The Car Rental (the customers.csv file) '''
         # first add to file then to private list
         # try:
         # a+ = creates file if it doesnt exist
         with open('./data/customers.csv', 'a+') as customer_file:
             name = customer.get_name()
-            socialnumber = customer.get_socialnumber()
+            SSN = customer.get_SSN()
             phonenumber = customer.get_phonenumber()
             email = customer.get_email()
-            customer_file.write('\n{},{},{},{}'.format(name, socialnumber, phonenumber, email))
+            customer_file.write('\n{},{},{},{}'.format(name, SSN, phonenumber, email))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
 
     # Press 2 to Delete Customer 
     def delete_customer(self, person_SSN):
+        ''' Deletes a customer from The Car Rental (from customers.csv file) '''
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(
                 out, fieldnames=['Name', 'SSN', 'Telephone_Number', 'Email'])
@@ -37,22 +39,33 @@ class CustomerOptions:
 
     # Press 3 to Look Up Customer    
     def look_up_customer(self, look_up):
+        ''' Looks Up a customer from The Car Rental (from customers.csv file) '''
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
                 if row[0] == look_up:
+<<<<<<< HEAD
                     print('SSN:{:>12}{}\nName:{:>11}{}\nTelephone:{:>6}{}\nEmail:{:>10}{}'.
                            format(" ",row[0]," ", row[1]," ", row[2]," ",row[3]))
+=======
+                    match.append('found')
+                    print('SSN: {:>20}\nName: {:>20}\nTelephone: {:>11}\nEmail: {:>28}'.format(row[0], row[1], 
+                            row[2], row[3]))
+            # if match == []:
+            #     print('Customer Not Found')
+                print()
+>>>>>>> d6373da540f025060fc6caa90bd0625e2b14f0d7
             
     
     # Press 4 to Change Information About A Customer
-    def Change_Information(self, ssn_number, choice, changes):
+    def Change_Information(self, SSN, choice, changes):
+        ''' Changes information about a customer from The Car Rental (from customers.csv file) '''
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i,value in row.items():
-                    if value == ssn_number:
+                    if value == SSN:
                         the_Choice = ''
                         if choice == '1':
                             the_Choice ='SSN'

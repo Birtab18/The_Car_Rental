@@ -10,6 +10,7 @@ class OrderOptions:
 
     # Press 1 to Put In Orders
     def put_in_an_order(self,look_up,car_id,a,b,c,e,f,g):
+        ''' Adds an order to The Car Rental (the orders.csv file) '''
         with open("./data/customers.csv", 'r') as customer_ssn:
          #   look_up = input('Enter The SSN Of The Person who want to rent a car: ')
             reader_customer = csv.reader(customer_ssn)
@@ -17,7 +18,7 @@ class OrderOptions:
                 if row[0] == look_up:
                     customerid = row[0], row[1]
                     print('{}, {}'.format(row[0], row[1]))
-        #fa upplysingar um bilinn. 
+        #fa upplysingar um bilinn. s
         with open('./data/cars.csv','r') as order_car:
             # car_id = input('Enter licenche: ')
             reader_car = csv.reader(order_car)
@@ -46,13 +47,15 @@ class OrderOptions:
             print(rentday)
         #   rent_Date
         #   return_Date
-            order_file.write('{},{},{},{},{},{},{},{} \n'.format(SSN,Name,licence_Plate,category,manufacturer,the_Type, rentday, returnday))
+            order_file.write('\n{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,
+                    manufacturer,the_Type, rentday, returnday))
 
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):
+        ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
-                                                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
+                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != SSN and row['licence_Plate'] != licence_Plate:
@@ -62,6 +65,7 @@ class OrderOptions:
 
     # Press 3 to Look Up Order
     def look_Up_Order(self, SSN, licence_Plate):
+        ''' Looks up an order in The Car Rental (in the orders.csv file) '''
         with open("./data/orders.csv", 'r') as look_up_order_file:
             reader = csv.reader(look_up_order_file)
             for row in reader:
@@ -74,21 +78,24 @@ class OrderOptions:
                     print('Licence Plate:{:>10}{}\nCategory:{:>15}{}\nManufacturer:{:>11}{}\nType:{:>19}{}\n'.
                             format(" ",row[2]," ",row[3]," ", row[4]," ",row[5]))
                     print('Order Informations:\n{}'.format("-"*35))
-                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nExtra Insurance:{:>8}{}'.format(" ",row[6]," ", row[7]," ", row[8]))
+                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nExtra Insurance:{:>8}{}'.format(" ",row[6],
+                            " ", row[7]," ", row[8]))
             # if match == []:
             #     print('Order Not Found')
             #     print()
           
     
     # Press 4 to Change Order
-    def change_Order(self, ssn, choice, changes):
+    def change_Order(self, SSN, choice, changes):
+        ''' Changes an order in The Car Rental (in the orders.csv file). Changes category, the date of the rent,
+        the date of the return or/and if the customer want an extra insurance '''
         with open('./data/orders.csv', 'r') as inp, open('./data/delete_Orders.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
-                                                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
+                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i,value in row.items():
-                    if value == ssn: #i lagi að gera rað f að aðili se bara með 1 pöntun?
+                    if value == SSN: #i lagi að gera rað f að aðili se bara með 1 pöntun?
                         the_Choice = ''
                         if choice == '1':
                             the_Choice ='category'

@@ -8,6 +8,7 @@ class CarService:
 
     def available_cars(self):
         self.__car_Repo.show_available_cars()
+    
     def taken_cars(self):
         self.__car_Repo.show_taken_cars()
 
