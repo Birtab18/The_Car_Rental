@@ -42,8 +42,7 @@ class Car_Page:
                 print("-"*15)
                 print("New customer:")
                 licence_Plate = input('Enter The Licence Plate: ').upper()
-                category = input(
-                    'Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
+                category = input('Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
                 # þurfum að gera eh svona lykkju
                 # category = ''
                 # while category != 'm' or 'p' or 'j':
