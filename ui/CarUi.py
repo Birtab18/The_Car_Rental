@@ -2,6 +2,7 @@ from services.CarService import CarService
 from models.Car import Car
 # from ui.FrontpageUi import Front_Page
 
+
 class Car_Page:
     def __init__(self):
         self.__CarService = CarService()
@@ -10,7 +11,7 @@ class Car_Page:
 
         def print_Choices():
             ''' Prints out everything you can do with cars in the system '''
-            print('{:<30}{:>20}'.format('Bílaleigan', 'B to go back'))
+            print('{:<30}{:>20}'.format('The Car Rental', 'B to go back'))
             print('-'*50)
             print("{:>26}".format('Cars'))
             print('-'*50)
@@ -75,8 +76,6 @@ class Car_Page:
                 # except ValueError:
                 #     print('Error! Please Enter Digits')
                 #     print()
-                #     price = ''    
-                #     while price != int()
                 #     price = input('Enter Price: ')
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
