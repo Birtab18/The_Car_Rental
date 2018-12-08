@@ -7,8 +7,9 @@ class CarOptions:
     def __init__(self):
         self.__car = []
 
-    # Press 1 to Show Available Cars
+    #Press 1 to Show Available Cars
     def show_available_cars(self):
+        ''' Prints out available cars at the moment '''
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
@@ -19,6 +20,7 @@ class CarOptions:
 
     # Press 2 to Show Unavailable Cars
     def show_taken_cars(self):
+        ''' Prints out unavailable cars at the moment '''        
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
@@ -29,6 +31,7 @@ class CarOptions:
     
     # Press 3 to Show Price List
     def show_Pricelist(self):
+        ''' Prints out the price for each category and prices of all individual cars '''
         with open("./data/categories.csv") as category_File:
             reader = csv.reader(category_File)
             for row in reader:
@@ -43,6 +46,7 @@ class CarOptions:
 
     # Press 4 to Add A New Car To The Car Rental       
     def add_car(self, car):
+        ''' Adds a new car to The Car Rental (the cars.csv file) '''
         # first add to file then to private list
         # try:
         # a+ = creates file if it doesnt exist

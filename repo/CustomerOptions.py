@@ -10,6 +10,7 @@ class CustomerOptions:
 
     # Press 1 to Sign Up New Customer
     def add_customer(self, customer):
+        ''' Adds a new customer to The Car Rental (the customers.csv file) '''
         # first add to file then to private list
         # try:
         # a+ = creates file if it doesnt exist
@@ -25,6 +26,7 @@ class CustomerOptions:
 
     # Press 2 to Delete Customer 
     def delete_customer(self, person_SSN):
+        ''' Deletes a customer from The Car Rental (from customers.csv file) '''
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(
                 out, fieldnames=['Name', 'SSN', 'Telephone_Number', 'Email'])
@@ -37,6 +39,7 @@ class CustomerOptions:
 
     # Press 3 to Look Up Customer    
     def look_up_customer(self, look_up):
+        ''' Looks Up a customer from The Car Rental (from customers.csv file) '''
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
@@ -52,6 +55,7 @@ class CustomerOptions:
     
     # Press 4 to Change Information About A Customer
     def Change_Information(self, ssn_number, choice, changes):
+        ''' Changes information about a customer from The Car Rental (from customers.csv file) '''
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])
             writer.writeheader()

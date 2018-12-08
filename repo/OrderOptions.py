@@ -10,6 +10,7 @@ class OrderOptions:
 
     # Press 1 to Put In Orders
     def put_in_an_order(self,look_up,car_id,a,b,c,e,f,g):
+        ''' Adds an order to The Car Rental (the orders.csv file) '''
         with open("./data/customers.csv", 'r') as customer_ssn:
          #   look_up = input('Enter The SSN Of The Person who want to rent a car: ')
             reader_customer = csv.reader(customer_ssn)
@@ -51,6 +52,7 @@ class OrderOptions:
 
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):
+        ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
                                                     'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
@@ -63,6 +65,7 @@ class OrderOptions:
 
     # Press 3 to Look Up Order
     def look_Up_Order(self, SSN, licence_Plate):
+        ''' Looks up an order in The Car Rental (in the orders.csv file) '''
         with open("./data/orders.csv", 'r') as look_up_order_file:
             reader = csv.reader(look_up_order_file)
             for row in reader:
@@ -83,6 +86,8 @@ class OrderOptions:
     
     # Press 4 to Change Order
     def change_Order(self, ssn, choice, changes):
+        ''' Changes an order in The Car Rental (in the orders.csv file). Changes category, the date of the rent,
+        the date of the return or/and if the customer want an extra insurance '''
         with open('./data/orders.csv', 'r') as inp, open('./data/delete_Orders.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
                                                     'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
