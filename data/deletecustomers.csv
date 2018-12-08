@@ -1,5 +1,5 @@
-SSN,Name,Telephone_Number,Email
-2612972489,Helgi Sævar,8645418,helgist18@ru.is
-2612974349,Gunnar Páll,5674450,gunnipalli@gmail.com
-2810715729,Sigmar,8445657,simmi@gmail.com
-2005984079,Birta Líf,8445657,birtab18@ru.is
+Name,SSN,Telephone_Number,Email
+Helgi Sævar,2612972489,8645418,helgist18@ru.is
+Gunnar Páll,2612974349,5674450,gunnipalli@gmail.com
+Sigmar,2810715729,8445657,simmi@gmail.com
+Birta Líf,2005984079,8445657,birtab18@ru.is

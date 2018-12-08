@@ -40,15 +40,10 @@ class CustomerOptions:
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
-                match = []
                 if row[0] == look_up:
-                    match.append('found')
-                    print('SSN: {:>20}\nName: {:>20}\nTelephone: {:>11}\nEmail: {:>28}'.format(row[0], row[1], row[2], row[3]))
-            # if match == []:
-            #     print('Customer Not Found')
-                print()
+                    print('SSN:{:>12}{}\nName:{:>11}{}\nTelephone:{:>6}{}\nEmail:{:>10}{}'.
+                           format(" ",row[0]," ", row[1]," ", row[2]," ",row[3]))
             
-
     
     # Press 4 to Change Information About A Customer
     def Change_Information(self, ssn_number, choice, changes):
