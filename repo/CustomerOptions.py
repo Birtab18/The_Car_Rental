@@ -46,7 +46,8 @@ class CustomerOptions:
                 match = []
                 if row[0] == look_up:
                     match.append('found')
-                    print('SSN: {:>20}\nName: {:>20}\nTelephone: {:>11}\nEmail: {:>28}'.format(row[0], row[1], row[2], row[3]))
+                    print('SSN: {:>20}\nName: {:>20}\nTelephone: {:>11}\nEmail: {:>28}'.format(row[0], row[1], 
+                            row[2], row[3]))
             # if match == []:
             #     print('Customer Not Found')
                 print()

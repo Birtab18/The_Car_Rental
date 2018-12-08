@@ -48,14 +48,14 @@ class OrderOptions:
         #   rent_Date
         #   return_Date
             order_file.write('\n{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,
-                                                        manufacturer,the_Type, rentday, returnday))
+                    manufacturer,the_Type, rentday, returnday))
 
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
-                                                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
+                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != SSN and row['licence_Plate'] != licence_Plate:
@@ -78,7 +78,8 @@ class OrderOptions:
                     print('Licence Plate:{:>10}{}\nCategory:{:>15}{}\nManufacturer:{:>11}{}\nType:{:>19}{}\n'.
                             format(" ",row[2]," ",row[3]," ", row[4]," ",row[5]))
                     print('Order Informations:\n{}'.format("-"*35))
-                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nExtra Insurance:{:>8}{}'.format(" ",row[6]," ", row[7]," ", row[8]))
+                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nExtra Insurance:{:>8}{}'.format(" ",row[6],
+                            " ", row[7]," ", row[8]))
             # if match == []:
             #     print('Order Not Found')
             #     print()
@@ -90,7 +91,7 @@ class OrderOptions:
         the date of the return or/and if the customer want an extra insurance '''
         with open('./data/orders.csv', 'r') as inp, open('./data/delete_Orders.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
-                                                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
+                    'the_Type', 'rent_Date', 'return_Date', 'extra_Insurance'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i,value in row.items():

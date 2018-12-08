@@ -2,6 +2,7 @@ from services.CarService import CarService
 from models.Car import Car
 # from ui.FrontpageUi import Front_Page
 
+
 class Car_Page:
     def __init__(self):
         self.__CarService = CarService()
@@ -75,8 +76,6 @@ class Car_Page:
                 # except ValueError:
                 #     print('Error! Please Enter Digits')
                 #     print()
-                #     price = ''    
-                #     while price != int()
                 #     price = input('Enter Price: ')
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)

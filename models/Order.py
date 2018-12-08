@@ -12,7 +12,7 @@ class Order:
     
     def __str__(self):
         return '{},{},{},{},{},{},{},{}'.format(self.__SSN, self.__Name, self.__licence_plate, self.__category, 
-                            self.__manufacturer, self.__the_Type, self.__rent_Date, self.__extra_Insurance)
+                self.__manufacturer, self.__the_Type, self.__rent_Date, self.__extra_Insurance)
 
     def get_SSN(self):
         return self.__SSN
