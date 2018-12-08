@@ -9,6 +9,7 @@ class Car_Page:
     def car_Menu(self):
 
         def print_Choices():
+            ''' Prints out everything you can do with cars in the system '''
             print('{:<30}{:>20}'.format('Bílaleigan', 'B to go back'))
             print('-'*50)
             print("{:>26}".format('Cars'))
@@ -70,6 +71,14 @@ class Car_Page:
                 #     else:
                 #         print('Invalid input, try again!')
                 price = input('Enter Price: ')
+                # try:
+                #     price = int(price)
+                # except ValueError:
+                #     print('Error! Please Enter Digits')
+                #     print()
+                #     price = ''    
+                #     while price != int()
+                #     price = input('Enter Price: ')
                 new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
 

@@ -9,6 +9,7 @@ class Customer_Page:
     def customer_Menu(self):
 
         def print_Choices():
+            ''' Prints out everything you can do with customers in the system '''
             print('{:<30}{:>20}'.format('Bílaleigan', 'B to go back'))
             print('-'*50)
             print("{:>26}".format('Customers'))
