@@ -47,14 +47,13 @@ class Car_Page:
                 print("New customer:")
                 licence_Plate = input('Enter The Licence Plate: ').upper()
                 category = input('Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
-                # þurfum að gera eh svona lykkju
-                # category = ''
-                # while category != 'm' or 'p' or 'j':
-                #     category = input('Enter The Category (M = Mini Car, P = Passenger Car, J = Jeep): ').lower()
+                category = ''
+                # while category != 'm' or 's' or 'j':
+                #     category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
                 #     if category == 'm':
                 #         category = 'Mini Car'
-                #     elif category == 'p':
-                #         category = 'Passenger Car'
+                #     elif category == 's':
+                #         category = 'Station Car'
                 #     elif category == 'j':
                 #         category = 'Jeep'
                 #     else:
