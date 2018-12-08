@@ -16,6 +16,7 @@ class OrderOptions:
             for row in reader_customer:
                 if row[0] == look_up:
                     customerid = row[0], row[1]
+                    break
                     print('{}, {}'.format(row[0], row[1]))
         #fa upplysingar um bilinn. 
         with open('./data/cars.csv','r') as order_car:

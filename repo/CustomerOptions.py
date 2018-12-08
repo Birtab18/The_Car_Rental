@@ -26,8 +26,7 @@ class CustomerOptions:
     # Press 2 to Delete Customer 
     def delete_customer(self, person_SSN):
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
-            writer = csv.DictWriter(
-                out, fieldnames=['Name', 'SSN', 'Telephone_Number', 'Email'])
+            writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != person_SSN:
