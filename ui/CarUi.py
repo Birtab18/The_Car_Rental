@@ -26,16 +26,19 @@ class Car_Page:
             action = input('Choose command: ').lower()
             print()
             if action == '1':
+                print("-"*15)
                 print('Available Cars: \n')
                 print()
                 self.__CarService.available_cars()
             
             elif action == '2':
+                print("-"*15)
                 print('Unavailable Cars: \n')
                 print()
                 self.__CarService.taken_cars()
 
             elif action == '3':
+                print("-"*15)
                 self.__CarService.show_Pricelist()
 
             elif action == '4':

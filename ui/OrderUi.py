@@ -63,6 +63,7 @@ class Order_Page:
                 self.__OrderService.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
 
             elif action == '2':
+                print("-"*15)
                 SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
                 while len(SSN) != 10:
                     print('Error! Please Input A Valid SSN (only 10 digits)')
@@ -72,6 +73,7 @@ class Order_Page:
                 self.__OrderService.cancel_Order(SSN, licence_Plate)
 
             elif action == '3':
+                print("-"*15)
                 SSN = input('Enter The SSN of The Person Who Put In The Order: ')
                 while len(SSN) != 10:
                     print('Error! Please Input A Valid SSN (only 10 digits)')
@@ -83,6 +85,7 @@ class Order_Page:
                 print()
 
             elif action == '4':
+                print("-"*15)
                 print()
                 print('press 1 to Change Category (Mini Car, Station Car Or Jeep)')
                 print('Press 2 to Change Rent Date')
