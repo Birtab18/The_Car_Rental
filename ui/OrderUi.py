@@ -42,56 +42,6 @@ class Order_Page:
                     #     else:
                     #         print('Invalid input, try again!')
 
-<<<<<<< HEAD
-                    # print("New Order:")
-                    # licence_Plate = input('Enter The Licence Plate: ')
-                    # # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
-                    # # með uppl um vv
-                    # # notum daytime moduleinn her?
-                    # rent_Date = input('Enter The Date Of The Rent: ')
-                    # # like her daytime?
-                    # return_Date = input('Enter The Date Of The Return: ')
-                    # insurance = input('Extra insurance? (Y = Yes, N = No) ')
-                    # new_Order = Order(the_Customer, the_Car, rent_Date, return_Date, insurance)
-                    look_up = input('Enter The SSN Of The Person who want to rent a car: ')
-                    car_id = input('Enter licenche: ')
-                    a = int(input('Y: '))
-                    b = int(input('M: '))
-                    c = int(input('D: '))
-                    e = int(input('Y: '))
-                    f = int(input('M: '))
-                    g = int(input('D: '))
-                    self.__OrderService.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
-
-                elif action == '2':
-                    SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
-                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
-                    self.__OrderService.cancel_Order(SSN, licence_Plate)
-
-                elif action == '3':
-                    SSN = input('Enter The SSN of The Person Who Put In The Order: ')
-                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
-                    print()
-                    self.__OrderService.look_up_order(SSN,licence_Plate)
-                    print()
-
-                elif action == '4':
-                    print()
-                    print('press 1 to Change Category (Mini Car, Station Car Or Jeep)')
-                    print('Press 2 to Change Rent Date')
-                    print('Press 3 to Change Return Date')
-                    print('Press 4 to Change Extra Insurance (Y = Yes, N = No')
-                    print()
-                    ssn = input('Enter The SSN Of The Person Who Ordered The Car: ')
-                    choice = input('Enter Choice: ')
-                    changes = input('Enter New Info: ').lower()
-                    self.__OrderService.change_Order(ssn, choice, changes)
-                
-                elif action == 'f':
-                    # ui = Front_Page()
-                    # ui.main_Menu()
-                    pass
-=======
                 # print("New Order:")
                 # licence_Plate = input('Enter The Licence Plate: ')
                 # # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
@@ -102,64 +52,63 @@ class Order_Page:
                 # return_Date = input('Enter The Date Of The Return: ')
                 # insurance = input('Extra insurance? (Y = Yes, N = No) ')
                 # new_Order = Order(the_Customer, the_Car, rent_Date, return_Date, insurance)
-                look_up = input('Enter The SSN Of The Person who want to rent a car: ')
-                while len(look_up) != 10:
-                    print('Error! Please Input A Valid SSN (only 10 digits)')
-                    print()
                     look_up = input('Enter The SSN Of The Person who want to rent a car: ')
-                car_id = input('Enter The Licence Plate Of The Car: ')
-                a = int(input('Y: '))
-                b = int(input('M: '))
-                c = int(input('D: '))
-                e = int(input('Y: '))
-                f = int(input('M: '))
-                g = int(input('D: '))
-                self.__OrderService.put_in_an_order(look_up,car_id,a,b,c,e,f,g)
+                    while len(look_up) != 10:
+                        print('Error! Please Input A Valid SSN (only 10 digits)')
+                        print()
+                        look_up = input('Enter The SSN Of The Person who want to rent a car: ')
+                    car_id = input('Enter The Licence Plate Of The Car: ')
+                    car_rent_year = int(input('Enter Year: '))
+                    car_rent_month = int(input('Enter Month: '))
+                    car_rent_day = int(input('Enter Day: '))
+                    car_return_year = int(input('Enter Year: '))
+                    car_return_month = int(input('Enter Month: '))
+                    car_return_day = int(input('Enter Day: '))
+                    self.__OrderService.put_in_an_order(look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day)
 
-            elif action == '2':
-                print("-"*15)
-                SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
-                while len(SSN) != 10:
-                    print('Error! Please Input A Valid SSN (only 10 digits)')
-                    print()
+                elif action == '2':
+                    print("-"*15)
+                    SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
+                    while len(SSN) != 10:
+                        print('Error! Please Input A Valid SSN (only 10 digits)')
+                        print()
+                        SSN = input('Enter The SSN of The Person Who Put In The Order: ')
+                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                    self.__OrderService.cancel_Order(SSN, licence_Plate)
+
+                elif action == '3':
+                    print("-"*15)
                     SSN = input('Enter The SSN of The Person Who Put In The Order: ')
-                licence_Plate = input('Enter The Licence Plate Of The Car: ')
-                self.__OrderService.cancel_Order(SSN, licence_Plate)
-
-            elif action == '3':
-                print("-"*15)
-                SSN = input('Enter The SSN of The Person Who Put In The Order: ')
-                while len(SSN) != 10:
-                    print('Error! Please Input A Valid SSN (only 10 digits)')
+                    while len(SSN) != 10:
+                        print('Error! Please Input A Valid SSN (only 10 digits)')
+                        print()
+                        SSN = input('Enter The SSN of The Person Who Put In The Order: ')
+                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
                     print()
-                    SSN = input('Enter The SSN of The Person Who Put In The Order: ')
-                licence_Plate = input('Enter The Licence Plate Of The Car: ')
-                print()
-                self.__OrderService.look_up_order(SSN,licence_Plate)
-                print()
+                    self.__OrderService.look_up_order(SSN,licence_Plate)
+                    print()
 
-            elif action == '4':
-                print("-"*15)
-                print()
-                print('press 1 to Change Category (Mini Car, Station Car Or Jeep)')
-                print('Press 2 to Change Rent Date')
-                print('Press 3 to Change Return Date')
-                print('Press 4 to Change Extra Insurance (Y = Yes, N = No')
-                print()
-                SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
-                while len(SSN) != 10:
-                    print('Error! Please Input A Valid SSN (only 10 digits)')
+                elif action == '4':
+                    print("-"*15)
+                    print()
+                    print('press 1 to Change Category (Mini Car, Station Car Or Jeep)')
+                    print('Press 2 to Change Rent Date')
+                    print('Press 3 to Change Return Date')
+                    print('Press 4 to Change Extra Insurance (Y = Yes, N = No')
                     print()
                     SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
-                choice = input('Enter Choice: ')
-                changes = input('Enter New Info: ').lower()
-                self.__OrderService.change_Order(SSN, choice, changes)
-            
-            elif action == 'f':
-                # ui = Front_Page()
-                # ui.main_Menu()
-                pass
->>>>>>> d6373da540f025060fc6caa90bd0625e2b14f0d7
+                    while len(SSN) != 10:
+                        print('Error! Please Input A Valid SSN (only 10 digits)')
+                        print()
+                        SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
+                    choice = input('Enter Choice: ')
+                    changes = input('Enter New Info: ').lower()
+                    self.__OrderService.change_Order(SSN, choice, changes)
+                
+                elif action == 'f':
+                    # ui = Front_Page()
+                    # ui.main_Menu()
+                    pass
 
                 else:
                     print("Invalid input, try again!")
