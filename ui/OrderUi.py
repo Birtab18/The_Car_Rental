@@ -106,10 +106,9 @@ class Order_Page:
                     self.__OrderService.change_Order(SSN, choice, changes)
                 
                 elif action == 'f':
-                    # ui = Front_Page()
-                    # ui.main_Menu()
+                    #ui = Front_Page()
+                    #ui.main_Menu()
                     pass
-
                 else:
                     print("Invalid input, try again!")
 

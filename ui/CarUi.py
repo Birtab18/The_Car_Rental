@@ -22,16 +22,16 @@ class Car_Page:
             print('Press F to Go To Frontpage')
             print()
 
-
         def main():
             print_Choices()
+            action = input('Enter your option')
             print()
             if action == '1':
                 print("-"*15)
                 print('Available Cars: \n')
                 print()
                 self.__CarService.available_cars()
-            
+
             elif action == '2':
                 print("-"*15)
                 print('Unavailable Cars: \n')
@@ -46,7 +46,8 @@ class Car_Page:
                 print("-"*15)
                 print("New customer:")
                 licence_Plate = input('Enter The Licence Plate: ').upper()
-                category = input('Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
+                category = input(
+                    'Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
                 category = ''
                 # while category != 'm' or 's' or 'j':
                 #     category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
@@ -60,7 +61,8 @@ class Car_Page:
                 #         print("Invalid input, try again!")
                 manufacturer = input('Enter The Manufacturer: ')
                 the_Type = input('Enter The Type: ')
-                transmission = input('Enter The Transmission (Stick Shift or Manual): ').lower()
+                transmission = input(
+                    'Enter The Transmission (Stick Shift or Manual): ').lower()
                 # þurfum að gera eh svona lykkju
                 # while transmission != 's' or 'm':
                 #     if transmission == 's':
@@ -76,21 +78,14 @@ class Car_Page:
                 #     print('Error! Please Enter Digits')
                 #     print()
                 #     price = input('Enter Price: ')
-                new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
+                new_Car = Car(licence_Plate, category,
+                              manufacturer, the_Type, transmission, price)
                 self.__CarService.add_car(new_Car)
 
-<<<<<<< HEAD
             elif action == 'f':
                 # ui = Front_Page()
                 # ui.main_Menu()
                 pass
-=======
-                elif action == 'f':
-                    pass
-                    # ui = Front_Page()
-                    # ui.main_Menu()
-                    
->>>>>>> 609b47672b5b6ed98dbbdd8eb836f4cee1c635f3
 
             else:
                 print("Invalid input, try again!")
