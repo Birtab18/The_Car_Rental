@@ -7,9 +7,17 @@ class OrderOptions:
 
     def __init__(self):
         self.__order = []
+    def print_available_cars(self):
+        #prints out availeble cars: 
+        print('Availeble cars: ')
+        with open("./data/cars.csv", 'r') as look_up_customer_file:
+            reader = csv.reader(look_up_customer_file)
+            for row in reader:
+                if row[6] == 'True':
+                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
 
     # Press 1 to Put In Orders
-    def put_in_an_order(self,look_up,car_id,a,b,c,e,f,g):
+    def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day):
         ''' Adds an order to The Car Rental (the orders.csv file) '''
         with open("./data/customers.csv", 'r') as customer_ssn:
          #   look_up = input('Enter The SSN Of The Person who want to rent a car: ')
@@ -42,8 +50,8 @@ class OrderOptions:
             # e = int(input('Y: '))
             # f = int(input('M: '))
             # g = int(input('D: '))
-            returnday = date(a,b,c)
-            rentday = date(e,f,g)
+            returnday = date(car_rent_year,car_rent_month,car_rent_day)
+            rentday = date(car_return_year,car_return_month,car_return_day)
             print(returnday)
             print(rentday)
         #   rent_Date
