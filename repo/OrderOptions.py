@@ -36,6 +36,7 @@ class OrderOptions:
                     car_id = bar[0],bar[1],bar[2], bar[3]
                     break
                     print('{}, {}, {}, {}'.format(bar[0], bar[1], bar[2], bar[3]))
+        
         # taka inn dagasetningarnar sem vid viljum  panta bilinn. 
         with open('./data/orders.csv', 'a+') as order_file: 
             SSN = row[0]
@@ -44,12 +45,6 @@ class OrderOptions:
             category = bar[1]
             manufacturer = bar[2]
             the_Type = bar[3]
-            # a = int(input('Y: '))
-            # b = int(input('M: '))
-            # c = int(input('D: '))
-            # e = int(input('Y: '))
-            # f = int(input('M: '))
-            # g = int(input('D: '))
             returnday = date(car_rent_year,car_rent_month,car_rent_day)
             rentday = date(car_return_year,car_return_month,car_return_day)
             print(returnday)
@@ -58,7 +53,7 @@ class OrderOptions:
             print(differece)
             multiply = differece * int(bar[5])
             print(multiply)
-            # extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
+            #sxtra insurence
             if total_price =='y':
                 total_price_main = multiply*1.25
             elif total_price == 'n':
@@ -69,6 +64,19 @@ class OrderOptions:
         #   return_Date
             order_file.write('\n{},{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,
                     manufacturer,the_Type,rentday,returnday,total_price_main))
+
+        with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
+            writer = csv.DictWriter(out, fieldnames=['licence_Plate','category','manufacturer','the_Type','transmission','price','status'])
+            writer.writeheader()
+            for row in csv.DictReader(inp):
+                for i,value in row.items():
+                    if value == look_up:
+                        if row['status'] == 'True':
+                            row['status'] = 'False'
+                        print(row)
+                writer.writerow(row)
+        os.remove('./data/cars.csv')
+        os.rename('./data/deletecars.csv', './data/cars.csv')
 
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):

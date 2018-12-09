@@ -68,9 +68,9 @@ class Order_Page:
                     car_rent_year = int(input('Enter Year: '))
                     car_rent_month = int(input('Enter Month: '))
                     car_rent_day = int(input('Enter Day: '))
-                    car_return_year = int(input('Enter Year: '))
-                    car_return_month = int(input('Enter Month: '))
-                    car_return_day = int(input('Enter Day: '))
+                    car_return_year = int(input('Enter return Year: '))
+                    car_return_month = int(input('Enter return Month: '))
+                    car_return_day = int(input('Enter return Day: '))
                     extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
                     self.__OrderService.put_in_an_order(look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,extra_insurence)
 
