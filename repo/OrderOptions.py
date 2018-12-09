@@ -64,7 +64,7 @@ class OrderOptions:
         #   return_Date
             order_file.write('\n{},{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,
                     manufacturer,the_Type,rentday,returnday,total_price_main))
-
+        #ATHHHHHh þetta a ad breyta cars.csv en thetta virkar ekki, held ad thad se ut af fallid veit ekki hvad look_up er en er ekki viss
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['licence_Plate','category','manufacturer','the_Type','transmission','price','status'])
             writer.writeheader()
