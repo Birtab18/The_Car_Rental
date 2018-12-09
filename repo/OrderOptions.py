@@ -17,7 +17,7 @@ class OrderOptions:
                     print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
 
     # Press 1 to Put In Orders
-    def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day):
+    def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,total_price):
         ''' Adds an order to The Car Rental (the orders.csv file) '''
         with open("./data/customers.csv", 'r') as customer_ssn:
          #   look_up = input('Enter The SSN Of The Person who want to rent a car: ')
@@ -54,10 +54,21 @@ class OrderOptions:
             rentday = date(car_return_year,car_return_month,car_return_day)
             print(returnday)
             print(rentday)
+            differece = returnday.day - rentday.day
+            print(differece)
+            multiply = differece * int(bar[5])
+            print(multiply)
+            # extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
+            if total_price =='y':
+                total_price_main = multiply*1.25
+            elif total_price == 'n':
+                total_price_main = multiply
+            else:
+                print('Invalid input')
         #   rent_Date
         #   return_Date
-            order_file.write('\n{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,
-                    manufacturer,the_Type, rentday, returnday))
+            order_file.write('\n{},{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,
+                    manufacturer,the_Type,rentday,returnday,total_price_main))
 
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):

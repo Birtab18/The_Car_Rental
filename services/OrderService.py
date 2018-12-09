@@ -24,8 +24,8 @@ class OrderService:
     def print_available_cars(self):
         return self.__order_Repo.print_available_cars()
     
-    def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day):
-        self.__order_Repo.put_in_an_order(look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day)
+    def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,total_price):
+        self.__order_Repo.put_in_an_order(look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,total_price)
 
     def change_Order(self, SSN, choice, changes):
         self.__order_Repo.change_Order(SSN, choice, changes)
