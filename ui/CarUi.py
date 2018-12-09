@@ -87,7 +87,7 @@ class Car_Page:
                 elif action == 'f':
                     # ui = Front_Page()
                     # ui.main_Menu()
-                    pass
+                    break
 
                 else:
                     print("Invalid input, try again!")
