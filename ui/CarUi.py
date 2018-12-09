@@ -24,70 +24,72 @@ class Car_Page:
 
         def main():
             print_Choices()
-            action = input('Choose command: ')
             print()
-            if action == '1':
-                print("-"*15)
-                print('Available Cars: \n')
-                print()
-                self.__CarService.available_cars()
+            action = ""
+            while action not in ["1","2","3","4","F"]:
+                action = input('Choose command: ').lower()
+                if action == '1':
+                    print("-"*15)
+                    print('Available Cars: \n')
+                    print()
+                    self.__CarService.available_cars()
 
-            elif action == '2':
-                print("-"*15)
-                print('Unavailable Cars: \n')
-                print()
-                self.__CarService.taken_cars()
+                elif action == '2':
+                    print("-"*15)
+                    print('Unavailable Cars: \n')
+                    print()
+                    self.__CarService.taken_cars()
 
-            elif action == '3':
-                print("-"*15)
-                self.__CarService.show_Pricelist()
+                elif action == '3':
+                    print("-"*15)
+                    self.__CarService.show_Pricelist()
 
-            elif action == '4':
-                print("-"*15)
-                print("New car:")
-                licence_Plate = input('Enter The Licence Plate: ').upper()
-                category = input(
-                    'Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
-                category = ''
-                # while category != 'm' or 's' or 'j':
-                #     category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
-                #     if category == 'm':
-                #         category = 'Mini Car'
-                #     elif category == 's':
-                #         category = 'Station Car'
-                #     elif category == 'j':
-                #         category = 'Jeep'
-                #     else:
-                #         print("Invalid input, try again!")
-                manufacturer = input('Enter The Manufacturer: ')
-                the_Type = input('Enter The Type: ')
-                transmission = input(
-                    'Enter The Transmission (Stick Shift or Manual): ').lower()
-                # þurfum að gera eh svona lykkju
-                # while transmission != 's' or 'm':
-                #     if transmission == 's':
-                #         transmission == 'Stick Shift'
-                #     elif transmission == 'm':
-                #         transmission == 'Manual'
-                #     else:
-                #         print('Invalid input, try again!')
-                price = input('Enter Price: ')
-                # try:
-                #     price = int(price)
-                # except ValueError:
-                #     print('Error! Please Enter Digits')
-                #     print()
-                #     price = input('Enter Price: ')
-                new_Car = Car(licence_Plate, category,
-                              manufacturer, the_Type, transmission, price)
-                self.__CarService.add_car(new_Car)
+                elif action == '4':
+                    print("-"*15)
+                    print("New car:")
+                    licence_Plate = input('Enter The Licence Plate: ').upper()
+                    category = input(
+                        'Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
+                    category = ''
+                    # while category != 'm' or 's' or 'j':
+                    #     category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
+                    #     if category == 'm':
+                    #         category = 'Mini Car'
+                    #     elif category == 's':
+                    #         category = 'Station Car'
+                    #     elif category == 'j':
+                    #         category = 'Jeep'
+                    #     else:
+                    #         print("Invalid input, try again!")
+                    manufacturer = input('Enter The Manufacturer: ')
+                    the_Type = input('Enter The Type: ')
+                    transmission = input(
+                        'Enter The Transmission (Stick Shift or Manual): ').lower()
+                    # þurfum að gera eh svona lykkju
+                    # while transmission != 's' or 'm':
+                    #     if transmission == 's':
+                    #         transmission == 'Stick Shift'
+                    #     elif transmission == 'm':
+                    #         transmission == 'Manual'
+                    #     else:
+                    #         print('Invalid input, try again!')
+                    price = input('Enter Price: ')
+                    # try:
+                    #     price = int(price)
+                    # except ValueError:
+                    #     print('Error! Please Enter Digits')
+                    #     print()
+                    #     price = input('Enter Price: ')
+                    new_Car = Car(licence_Plate, category,
+                                manufacturer, the_Type, transmission, price)
+                    self.__CarService.add_car(new_Car)
 
-            elif action == 'f':
-                # ui = Front_Page()
-                # ui.main_Menu()
-                pass
+                elif action == 'f':
+                    # ui = Front_Page()
+                    # ui.main_Menu()
+                    pass
 
-            else:
-                print("Invalid input, try again!")
+                else:
+                    print("Invalid input, try again!")
 
         main()
