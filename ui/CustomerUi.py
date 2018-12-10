@@ -23,7 +23,6 @@ class Customer_Page:
 
         def main():
             print_Choices()
-            print()
             action = ""
             while action not in ["1","2","3","4","F"]:
                 action = input('Choose command: ').lower()
@@ -62,13 +61,13 @@ class Customer_Page:
                 
                 elif action == '4':
                     print("-"*15)
+                    SSN = input('Enter The SSN Of The Person You Want To Change: ')    
                     print()
                     print('press 1 to Change SSN')
                     print('Press 2 to Change Name')
                     print('Press 3 to Change Phone Number')
                     print('Press 4 to Change Email')
                     print()
-                    SSN = input('Enter The SSN Of The Person You Want To Change: ')
                     while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)')
                         print()
