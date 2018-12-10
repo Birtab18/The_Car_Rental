@@ -7,15 +7,6 @@ class OrderOptions:
 
     def __init__(self):
         self.__order = []
-    
-    # def print_available_cars(self):
-    #     #prints out availeble cars: 
-    #     print('Availeble cars: ')
-    #     with open("./data/cars.csv", 'r') as look_up_customer_file:
-    #         reader = csv.reader(look_up_customer_file)
-    #         for row in reader:
-    #             if row[6] == 'True':
-    #                 print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
 
     # Press 1 to Put In Orders
     def put_in_an_order(self,SSN,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
