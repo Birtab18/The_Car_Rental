@@ -8,6 +8,20 @@ class OrderOptions:
     def __init__(self):
         self.__order = []
 
+    def car_check(self, car_id):
+        with open("./data/cars.csv", 'r') as car_check:
+            reader = csv.reader(car_check)
+            for row in reader:
+                helgi = True
+                while helgi :
+                    if row[6] == 'False':
+                        print('This car is unavailable at this moment!')
+                        print('Try again!')
+                        break
+                    else:
+                        print('Found!')
+                        helgi = False
+
     # Press 1 to Put In Orders
     def put_in_an_order(self,SSN,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
             car_return_month,car_return_day,total_price):

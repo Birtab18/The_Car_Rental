@@ -57,13 +57,14 @@ class Order_Page:
                             break
                         else:
                             print('Invalid input, try again!')
-                        
+                    print('Available cars: ')
                     self.__CarService.available_cars()
                     SSN = input('\nEnter The SSN Of The Person who want to rent a car: ')
                     while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person who want to rent a car: ')
                     car_id = input('Enter The Licence Plate Of The Car: ')
+                    self.__OrderService.car_check(car_id)
                     print("-"*60)
                     car_rent_year = int(input('Enter Rent Year: '))
                     car_rent_month = int(input('Enter Rent Month: '))
