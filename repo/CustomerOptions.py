@@ -37,12 +37,12 @@ class CustomerOptions:
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
 
     # Press 3 to Look Up Customer    
-    def look_up_customer(self, look_up):
+    def look_up_customer(self, SSN):
         ''' Looks Up a customer from The Car Rental (from customers.csv file) '''
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
-                if row[0] == look_up:
+                if row[0] == SSN:
                     #match.append('found')
                     print('SSN: {:>20}\nName: {:>20}\nTelephone: {:>11}\nEmail: {:>28}'.format(row[0], row[1], 
                             row[2], row[3]))
