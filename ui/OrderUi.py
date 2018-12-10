@@ -4,12 +4,14 @@ from services.OrderService import OrderService
 from services.CustomerService import CustomerService
 from services.CarService import CarService
 from models.Order import Order
-
+from repo.CustomerOptions import CustomerOptions
 
 class Order_Page:
     def __init__(self):
         self.__OrderService = OrderService()
         self.__CarService = CarService()
+        self.__Customer = CustomerOptions()
+        self.__CustomerService = CustomerService()
 
     def Order_Menu(self):
 
@@ -37,18 +39,27 @@ class Order_Page:
                     new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
                         if new_Or_Old == 'y':
-                            # go to look up customer
-                            # SSN = ('Enter The SSN Of The Person You Want To Look Up: ')
-                            # lookup = CustomerService()
-                            # lookup.look_up_customer(SSN)
                             break
                         elif new_Or_Old == 'n':
+                            # self.__Customer.add_customer()
                             # go to sign up new customer
                             # signup = CustomerService()
                             # signup.add_customer()
-                            pass
+                            print("New customer:")
+                            SSN = input('Enter A SSN: ')
+                            while len(SSN) != 10:
+                                print('Error! Please Input A Valid SSN (only 10 digits)')
+                                print()
+                                SSN = input('Enter A SSN: ')
+                            name = input('Enter a name: ')
+                            phonenumber = input('Enter a phonenumber: ')
+                            email = input('Enter an email: ')
+                            new_Costumer = Customer(SSN, name, phonenumber, email)
+                            self.__CustomerService.add_customer(new_Costumer)
                         else:
                             print('Invalid input, try again!')
+                        
+
                     self.__CarService.available_cars()
                 # print("New Order:")
                 # licence_Plate = input('Enter The Licence Plate: ')
