@@ -32,4 +32,4 @@ class OrderService:
         self.__order_Repo.change_Order(SSN, choice, changes)
 
     def return_car(self,plate):
-        self.__order_Repo.plate()
+        self.__order_Repo.return_car(plate)

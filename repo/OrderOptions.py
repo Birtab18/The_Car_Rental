@@ -152,7 +152,7 @@ class OrderOptions:
                     'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
             writer.writeheader()
             for row in csv.DictReader(inp):
-                if row['SSN'] != SSN and row['licence_Plate'] != plate:
+                if row['licence_Plate'] != plate:
                     writer.writerow(row)
         os.remove('./data/orders.csv')
         os.rename('./data/cancel_Order.csv', './data/orders.csv')

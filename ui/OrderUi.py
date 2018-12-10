@@ -113,7 +113,7 @@ class Order_Page:
                 elif action == '5':
                     print('Return car ')
                     plate = input('Enter the lichence plate of the car you want to return: ')
-                    self.__OrderService.plate()
+                    self.__OrderService.return_car(plate)
                 
                 elif action == 'f':
                     break
