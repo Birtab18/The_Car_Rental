@@ -25,6 +25,7 @@ class Order_Page:
             print('Press 2 to Cancel Order') 
             print('Press 3 to Look Up Order')
             print('Press 4 to Change Order')
+            print('Press 5 to return car')
             print('Press F to Go To Frontpage')
             print()
 
@@ -109,6 +110,11 @@ class Order_Page:
                     changes = input('Enter New Info: ').lower()
                     self.__OrderService.change_Order(SSN, choice, changes)
                     print('\nOrder Changed!\n\n')
+                
+                elif action == '5':
+                    print('Return car ')
+                    plate = input('Enter the lichence plate of the car you want to return: ')
+                    self.__OrderService.plate()
                 
                 elif action == 'f':
                     break

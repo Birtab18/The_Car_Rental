@@ -30,3 +30,6 @@ class OrderService:
 
     def change_Order(self, SSN, choice, changes):
         self.__order_Repo.change_Order(SSN, choice, changes)
+
+    def return_car(self,plate):
+        self.__order_Repo.plate()

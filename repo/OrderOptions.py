@@ -133,5 +133,28 @@ class OrderOptions:
         os.remove('./data/orders.csv')
         os.rename('./data/delete_Orders.csv', './data/orders.csv')
         
+    def return_car(self, plate):
+        with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
+            writer = csv.DictWriter(out, fieldnames=['licence_Plate','category','manufacturer','the_Type','transmission','price','status'])
+            writer.writeheader()
+            for row in csv.DictReader(inp):
+                for i,value in row.items():
+                    if value == plate:
+                        if row['status'] == 'False':
+                            row['status'] = 'True'
+                        print(row)
+                writer.writerow(row)
+        os.remove('./data/cars.csv')
+        os.rename('./data/deletecars.csv', './data/cars.csv')
 
-    
+        with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
+            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
+                    'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
+            writer.writeheader()
+            for row in csv.DictReader(inp):
+                if row['SSN'] != SSN and row['licence_Plate'] != plate:
+                    writer.writerow(row)
+        os.remove('./data/orders.csv')
+        os.rename('./data/cancel_Order.csv', './data/orders.csv')
+
+
