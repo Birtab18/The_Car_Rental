@@ -72,12 +72,13 @@ class Car_Page:
                     #     else:
                     #         print('Invalid input, try again!')
                     price = input('Enter Price: ')
-                    try:
-                        price = int(price)
-                    except ValueError:
-                        print('Error! Please Enter Digits')
-                        print()
-                        price = input('Enter Price: ')
+                    # try:
+                    #     price = int(price)
+                    # except ValueError:
+                    #     print('Error! Please Enter Digits')
+                    #     print()
+                    #     þurfum að gera eh lykkju hér svo þetta runni þangað til það komi rétt input
+                    #     price = input('Enter Price: ')
                     new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                     self.__CarService.add_car(new_Car)
 

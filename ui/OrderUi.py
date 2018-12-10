@@ -41,17 +41,13 @@ class Order_Page:
                         if new_Or_Old == 'y':
                             break
                         elif new_Or_Old == 'n':
-                            # self.__Customer.add_customer()
-                            # go to sign up new customer
-                            # signup = CustomerService()
-                            # signup.add_customer()
-                            print("New customer:")
+                            print("Signing A New Customer:")
+                            print("-"*15)
                             SSN = input('Enter A SSN: ')
                             while len(SSN) != 10:
                                 print('Error! Please Input A Valid SSN (only 10 digits)')
                                 print()
                                 SSN = input('Enter A SSN: ')
-                                
                             name = input('Enter a name: ')
                             phonenumber = input('Enter a phonenumber: ')
                             email = input('Enter an email: ')
@@ -63,23 +59,22 @@ class Order_Page:
                         
 
                     self.__CarService.available_cars()
-                    look_up = input('Enter The SSN Of The Person who want to rent a car: ')
-                    while len(look_up) != 10:
+                    SSN = input('Enter The SSN Of The Person who want to rent a car: ')
+                    while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)')
                         print()
-                        look_up = input('Enter The SSN Of The Person who want to rent a car: ')
+                        SSN = input('Enter The SSN Of The Person who want to rent a car: ')
                     car_id = input('Enter The Licence Plate Of The Car: ')
-                    print("Enter Rent Date")
                     print("-"*15)
                     car_rent_year = int(input('Enter Rent Year: '))
                     car_rent_month = int(input('Enter Rent Month: '))
                     car_rent_day = int(input('Enter Rent Day: '))
-                    print("Enter Return Date")
+                    print("-"*15)
                     car_return_year = int(input('Enter Return Year: '))
                     car_return_month = int(input('Enter Return Month: '))
                     car_return_day = int(input('Enter Return Day: '))
                     extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
-                    self.__OrderService.put_in_an_order(look_up,car_id,car_rent_year,car_rent_month,car_rent_day,
+                    self.__OrderService.put_in_an_order(SSN,car_id,car_rent_year,car_rent_month,car_rent_day,
                             car_return_year,car_return_month,car_return_day,extra_insurence)
 
                 elif action == '2':

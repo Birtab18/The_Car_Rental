@@ -9,14 +9,14 @@ class OrderOptions:
         self.__order = []
 
     # Press 1 to Put In Orders
-    def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
+    def put_in_an_order(self,SSN,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
             car_return_month,car_return_day,total_price):
         ''' Adds an order to The Car Rental (the orders.csv file) '''
         with open("./data/customers.csv", 'r') as customer_ssn:
          #   look_up = input('Enter The SSN Of The Person who want to rent a car: ')
             reader_customer = csv.reader(customer_ssn)
             for row in reader_customer:
-                if row[0] == look_up:
+                if row[0] == SSN:
                     customerid = row[0], row[1]
                     break
                     print('{}, {}'.format(row[0], row[1]))
@@ -29,8 +29,8 @@ class OrderOptions:
                     car_id = bar[0],bar[1],bar[2], bar[3]
                     break
                     print('{}, {}, {}, {}'.format(bar[0], bar[1], bar[2], bar[3]))
-        
-        # taka inn dagasetningarnar sem vid viljum  panta bilinn. 
+
+        # taka inn dagasetningarnar sem vid viljum panta bilinn. 
         with open('./data/orders.csv', 'a+') as order_file: 
             SSN = row[0]
             Name = row[1]
@@ -46,7 +46,7 @@ class OrderOptions:
             print(differece)
             multiply = differece * int(bar[5])
             print(multiply)
-            #sxtra insurence
+            #extra insurence
             if total_price =='y':
                 total_price_main = int(multiply*1.25)
             elif total_price == 'n':
@@ -65,7 +65,7 @@ class OrderOptions:
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i,value in row.items():
-                    if value == look_up:
+                    if value == SSN:
                         if row['status'] == 'True':
                             row['status'] = 'False'
                         print(row)

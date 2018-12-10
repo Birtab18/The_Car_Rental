@@ -19,7 +19,7 @@ class CustomerOptions:
             SSN = customer.get_SSN()
             phonenumber = customer.get_phonenumber()
             email = customer.get_email()
-            customer_file.write('\n{},{},{},{}'.format(name, SSN, phonenumber, email))
+            customer_file.write('{},{},{},{}\n'.format(name, SSN, phonenumber, email))
         # except:
             # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
         # pass
@@ -29,14 +29,14 @@ class CustomerOptions:
         ''' Deletes a customer from The Car Rental (from customers.csv file) '''
         with open('./data/customers.csv', 'r') as inp, open('./data/deletecustomers.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN','Name','Telephone_Number','Email'])
-            writer.writeheader()
+            writer.writeheader()   
             for row in csv.DictReader(inp):
                 if row['SSN'] != person_SSN:
                     writer.writerow(row)
         os.remove('./data/customers.csv')
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
 
-    # Press 3 to Look Up Customer    
+    # Press 3 to Look Up Customer   
     def look_up_customer(self, SSN):
         ''' Looks Up a customer from The Car Rental (from customers.csv file) '''
         with open("./data/customers.csv", 'r') as look_up_customer_file:

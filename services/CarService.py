@@ -20,12 +20,7 @@ class CarService:
         # herna rékkum vi hvort þetta video se ekki orugglega hægt af vinna med.
         # ef valid þa addum vid þvi i gagnageymsluna.
         return True
-    # def get_car(self):
-    #     return self.__car_Repo.get_car()  # ATH hvort repo eda main
-
-    # def delete_car(self):
-    #     return self.__car_main.delete_car() 
-
+        
     def show_Pricelist(self):
         self.__car_Repo.show_Pricelist()
 

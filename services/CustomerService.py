@@ -6,8 +6,7 @@ class CustomerService:
         self.__customer_Repo = CustomerOptions()
 
     def add_customer(self, customer):
-        if self.is_valid_customer(customer):  # eru innputin sett in rett
-            self.__customer_Repo.add_customer(customer)  # ATH hvort repo eda main
+        self.__customer_Repo.add_customer(customer)
 
     # def is_valid_customer(self, customer):
     #     # herna rékkum vi hvort þetta video se ekki orugglega hægt af vinna med.
@@ -17,8 +16,8 @@ class CustomerService:
     def look_up_customer(self, SSN):
         return self.__customer_Repo.look_up_customer(SSN)  # ATH hvort repo eda main
 
-    def delete_customer(self, person_SSM):
-        return self.__customer_Repo.delete_customer(person_SSM)
+    def delete_customer(self, SSN):
+        return self.__customer_Repo.delete_customer(SSN)
 
     def Change_Information(self, SSN, choice, changes):
         self.__customer_Repo.Change_Information(SSN, choice, changes)

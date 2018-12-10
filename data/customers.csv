@@ -9,4 +9,12 @@ SSN,Name,Telephone_Number,Email
 0402694079,Kristín,8206312,kristinbg@landsbankinn.is
 2609692279,Baldur,6163012,baldurgj@landsbankinn.is
 2408962279,Daníel,6661211,danielab@ru.is
+<<<<<<< HEAD
 1610964079,Arnar Freyr,6955441,arnar17@ru.is
+=======
+1610964079,Arnar Freyr,6955441,arnar17@ru.is
+
+2323232323,helgi,34534535,helgii
+2323232323,helgi,35654,helgiiii1206962710,Bergrós,5812345,bergros@ru.is
+2223181010,lubbi,8989765,lubbi@ru.is
+>>>>>>> 8b1e5e07a4b3463e7e7ef960e32833f86584b672

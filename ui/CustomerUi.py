@@ -43,12 +43,12 @@ class Customer_Page:
                 
                 elif action == '2':
                     print("-"*15)
-                    person_delete = input('Enter The SSN Of The Person You Want To Delete: ')
-                    while len(person_delete) != 10:
+                    SSN = input('Enter The SSN Of The Person You Want To Delete: ')
+                    while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)')
                         print()
-                        person_delete = input('Enter The SSN Of The Person You Want To Delete: ')
-                    self.__CustomerService.delete_customer(person_delete)
+                        SSN = input('Enter The SSN Of The Person You Want To Delete: ')
+                    self.__CustomerService.delete_customer(SSN)
                 
                 elif action == '3':
                     print("-"*15)
