@@ -32,7 +32,7 @@ class OrderOptions:
 
         # taka inn dagasetningarnar sem vid viljum panta bilinn. 
         with open('./data/orders.csv', 'a+') as order_file: 
-            SSN = row[0]
+            SSN= row[0]
             Name = row[1]
             licence_Plate = bar[0]
             category = bar[1]

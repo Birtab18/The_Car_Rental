@@ -20,8 +20,8 @@ class OrderService:
     def cancel_Order(self, SSN, licence_Plate):
         return self.__order_Repo.cancel_Order(SSN, licence_Plate)
     
-    def print_available_cars(self):
-        return self.__order_Repo.print_available_cars()
+    # def print_available_cars(self):
+    #     return self.__order_Repo.print_available_cars()
     
     def put_in_an_order(self,SSN,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
             car_return_month,car_return_day,total_price):
