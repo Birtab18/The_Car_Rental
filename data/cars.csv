@@ -1,7 +1,7 @@
 licence_Plate,category,manufacturer,the_Type,transmission,price,status
-ab345,Mini Car,Toyota,Aygo,stick shift,5000,True
-ac456,Mini Car,Chervolet,Spark,stick shift,7000,True
-ad567,Mini Car,Kia,Picanto,stick shift,7000,True
+ab345,Mini Car,Toyota,Aygo,stick shift,5000,False
+ac456,Mini Car,Chervolet,Spark,stick shift,7000,False
+ad567,Mini Car,Kia,Picanto,stick shift,7000,False
 ae789,Mini Car,Hyundai,i10,stick shift,9000,False
 af890,Mini Car,Volkswagen,Golf,manual,9000,True
 ag123,Station Car,Mazda,3,stick shift,8000,True
@@ -10,7 +10,7 @@ ak345,Station Car,Hyundai,i30,manual,13000,True
 ai456,Station Car,Audi,A3,manual,20000,True
 aj567,Station Car,Tesla,Model 3,manual,20000,True
 al678,Jeep,Nissan,Quashqui,stick shift,12000,True
-am890,Jeep,Volkswagen,Tiguan,manual,12000,True
+am890,Jeep,Volkswagen,Tiguan,manual,12000,False
 an123,Jeep,Volvo,xc90,stick shift,12000,False
 aw234,Jeep,Toyota,Land Cruiser,manual,20000,True
 ao456,Jeep,Mercedes,Benz G-Class,manual,30000,True
