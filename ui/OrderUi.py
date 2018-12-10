@@ -41,7 +41,7 @@ class Order_Page:
                             # SSN = ('Enter The SSN Of The Person You Want To Look Up: ')
                             # lookup = CustomerService()
                             # lookup.look_up_customer(SSN)
-                            pass
+                            break
                         elif new_Or_Old == 'n':
                             # go to sign up new customer
                             # signup = CustomerService()
@@ -49,7 +49,7 @@ class Order_Page:
                             pass
                         else:
                             print('Invalid input, try again!')
-                    self.__OrderService.print_available_cars()
+                    self.__CarService.available_cars()
                 # print("New Order:")
                 # licence_Plate = input('Enter The Licence Plate: ')
                 # # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
