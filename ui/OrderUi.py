@@ -114,6 +114,7 @@ class Order_Page:
                     choice = input('Enter Choice: ')
                     changes = input('Enter New Info: ').lower()
                     self.__OrderService.change_Order(SSN, choice, changes)
+                    print('\nOrder Changed!\n\n')
                 
                 elif action == 'f':
                     break
