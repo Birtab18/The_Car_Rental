@@ -5,7 +5,7 @@ from services.CustomerService import CustomerService
 from services.CarService import CarService
 from models.Order import Order
 from repo.CustomerOptions import CustomerOptions
-
+from models.Customer import Customer
 class Order_Page:
     def __init__(self):
         self.__OrderService = OrderService()
@@ -51,32 +51,18 @@ class Order_Page:
                                 print('Error! Please Input A Valid SSN (only 10 digits)')
                                 print()
                                 SSN = input('Enter A SSN: ')
+                                
                             name = input('Enter a name: ')
                             phonenumber = input('Enter a phonenumber: ')
                             email = input('Enter an email: ')
                             new_Costumer = Customer(SSN, name, phonenumber, email)
                             self.__CustomerService.add_customer(new_Costumer)
+                            break
                         else:
                             print('Invalid input, try again!')
                         
 
                     self.__CarService.available_cars()
-                # print("New Order:")
-                # licence_Plate = input('Enter The Licence Plate: ')
-                # # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
-                # # með uppl um vv
-                # # notum daytime moduleinn her?
-                # rent_Date = input('Enter The Date Of The Rent: ')
-                # # like her daytime?
-                # return_Date = input('Enter The Date Of The Return: ')
-                # insurance = input('Extra insurance? (Y = Yes, N = No) ')
-                # new_Order = Order(the_Customer, the_Car, rent_Date, return_Date, insurance)
-                    # print('Availeble cars: ')
-                    # with open("./data/cars.csv", 'r') as look_up_customer_file:
-                    #     reader = csv.reader(look_up_customer_file)
-                    #     for row in reader:
-                    #         if row[6] == 'True':
-                    #             print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
                     look_up = input('Enter The SSN Of The Person who want to rent a car: ')
                     while len(look_up) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)')
