@@ -13,7 +13,6 @@ class Front_Page:
         self.__OrderService = OrderService()
 
     def main_Menu(self):
-
         def print_Frontpage():
             print('{:40}{:8}'.format('The Car Rental', 'Front page'))
             print('-'*50)

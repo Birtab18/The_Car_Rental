@@ -1,14 +1,11 @@
 from services.CarService import CarService
 from models.Car import Car
 
-
-
 class Car_Page:
     def __init__(self):
         self.__CarService = CarService()
 
     def car_Menu(self):
-
         def print_Choices():
             ''' Prints out everything you can do with cars in the system '''
             print('{:<30}{:>20}'.format('The Car Rental', 'F To Go to Frontpage'))
@@ -31,18 +28,19 @@ class Car_Page:
                 if action == '1':
                     print("-"*15)
                     print('Available Cars: \n')
-                    print()
                     self.__CarService.available_cars()
+                    print()
                 
                 elif action == '2':
                     print("-"*15)
                     print('Unavailable Cars: \n')
-                    print()
                     self.__CarService.unavailable_cars()
+                    print()
 
                 elif action == '3':
                     print("-"*15)
                     self.__CarService.show_Pricelist()
+                    print()
 
                 elif action == '4':
                     print("-"*15)
@@ -81,6 +79,9 @@ class Car_Page:
                     #     price = input('Enter Price: ')
                     new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                     self.__CarService.add_car(new_Car)
+                    print()
+                    print('Car Added!')
+                    print()
 
                 elif action == 'f':
                     break

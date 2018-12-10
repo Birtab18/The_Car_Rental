@@ -15,8 +15,6 @@ class CarOptions:
             for row in reader:
                 if row[6] == 'True':
                     print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
-            print()
-            print()
 
     # Press 2 to Show Unavailable Cars
     def show_unavailable_cars(self):
@@ -26,9 +24,7 @@ class CarOptions:
             for row in reader:
                 if row[6] == 'False':
                     print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
-            print()
-            print()
-    
+
     # Press 3 to Show Price List
     def show_Pricelist(self):
         ''' Prints out the price for each category and prices of all individual cars '''
@@ -42,7 +38,6 @@ class CarOptions:
             reader = csv.reader(price_File)
             for row in reader:
                 print('{:<47}{:<13}'.format(row[0], row[1]))
-            print()
 
     # Press 4 to Add A New Car To The Car Rental       
     def add_car(self, car):

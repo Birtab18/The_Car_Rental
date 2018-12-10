@@ -4,8 +4,9 @@ from services.OrderService import OrderService
 from services.CustomerService import CustomerService
 from services.CarService import CarService
 from models.Order import Order
-from repo.CustomerOptions import CustomerOptions
 from models.Customer import Customer
+from repo.CustomerOptions import CustomerOptions
+
 class Order_Page:
     def __init__(self):
         self.__OrderService = OrderService()
@@ -14,7 +15,6 @@ class Order_Page:
         self.__CustomerService = CustomerService()
 
     def Order_Menu(self):
-
         def print_Choices():
             ''' Prints out everything you can do with orders in the system '''
             print('{:<30}{:>20}'.format('The Car Rental', 'F To Go to Frontpage'))
@@ -57,7 +57,6 @@ class Order_Page:
                         else:
                             print('Invalid input, try again!')
                         
-
                     self.__CarService.available_cars()
                     SSN = input('Enter The SSN Of The Person who want to rent a car: ')
                     while len(SSN) != 10:
@@ -118,6 +117,7 @@ class Order_Page:
                 
                 elif action == 'f':
                     break
+
                 else:
                     print("Invalid input, try again!")
 

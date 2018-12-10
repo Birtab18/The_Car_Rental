@@ -48,7 +48,6 @@ class CustomerOptions:
                             (" ", row[0], " ", row[1], " ", row[2], " ", row[3]))
             # if match == []:
             #     print('Customer Not Found')
-                print()
             
     
     # Press 4 to Change Information About A Customer
@@ -72,7 +71,6 @@ class CustomerOptions:
                         elif choice == '4':
                             the_Choice = 'Email'
                         row[the_Choice] = changes
-                        print(row)
                 writer.writerow(row)
         os.remove('./data/customers.csv')
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
