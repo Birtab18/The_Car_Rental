@@ -1,6 +1,6 @@
 from services.CarService import CarService
 from models.Car import Car
-# from ui.FrontpageUi import Front_Page
+
 
 
 class Car_Page:
@@ -82,8 +82,6 @@ class Car_Page:
                     self.__CarService.add_car(new_Car)
 
                 elif action == 'f':
-                    # ui = Front_Page()
-                    # ui.main_Menu()
                     break
 
                 else:

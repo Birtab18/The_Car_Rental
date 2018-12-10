@@ -1,8 +1,8 @@
-from services.OrderService import OrderService
-from models.Order import Order
-# from ui.FrontpageUi import Front_Page
 import csv
 import os
+from services.OrderService import OrderService
+from models.Order import Order
+
 
 class Order_Page:
     def __init__(self):
@@ -114,8 +114,6 @@ class Order_Page:
                     self.__OrderService.change_Order(SSN, choice, changes)
                 
                 elif action == 'f':
-                    #ui = Front_Page()
-                    #ui.main_Menu()
                     break
                 else:
                     print("Invalid input, try again!")

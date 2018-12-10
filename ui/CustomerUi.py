@@ -1,6 +1,6 @@
 from services.CustomerService import CustomerService
 from models.Customer import Customer
-# from ui.FrontpageUi import Front_Page
+
 
 class Customer_Page:
     def __init__(self):
@@ -78,8 +78,6 @@ class Customer_Page:
                     self.__CustomerService.Change_Information(SSN, choice, changes)
                 
                 elif action == 'f':
-                    # ui = Front_Page()
-                    # ui.main_Menu()
                     break
                 
                 else:
