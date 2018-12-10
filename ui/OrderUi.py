@@ -71,6 +71,7 @@ class Order_Page:
                     car_return_month = int(input('Enter Return Month: '))
                     car_return_day = int(input('Enter Return Day: '))
                     extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
+                    payment = input('Are you paying with a Card or Cash: \n Press 1 for card press 2 for cash')
                     self.__OrderService.put_in_an_order(SSN,car_id,car_rent_year,car_rent_month,car_rent_day,
                             car_return_year,car_return_month,car_return_day,extra_insurence)
 
