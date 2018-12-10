@@ -19,7 +19,7 @@ class CarOptions:
             print()
 
     # Press 2 to Show Unavailable Cars
-    def show_taken_cars(self):
+    def show_unavailable_cars(self):
         ''' Prints out unavailable cars at the moment '''        
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)

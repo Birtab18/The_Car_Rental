@@ -38,7 +38,7 @@ class Car_Page:
                     print("-"*15)
                     print('Unavailable Cars: \n')
                     print()
-                    self.__CarService.taken_cars()
+                    self.__CarService.unavailable_cars()
 
                 elif action == '3':
                     print("-"*15)
@@ -49,7 +49,7 @@ class Car_Page:
                     print("New customer:")
                     licence_Plate = input('Enter The Licence Plate: ').upper()
                     category = input('Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
-                    category = ''
+                    # category = ''
                     # while category != 'm' or 's' or 'j':
                     #     category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
                     #     if category == 'm':
@@ -72,12 +72,12 @@ class Car_Page:
                     #     else:
                     #         print('Invalid input, try again!')
                     price = input('Enter Price: ')
-                    # try:
-                    #     price = int(price)
-                    # except ValueError:
-                    #     print('Error! Please Enter Digits')
-                    #     print()
-                    #     price = input('Enter Price: ')
+                    try:
+                        price = int(price)
+                    except ValueError:
+                        print('Error! Please Enter Digits')
+                        print()
+                        price = input('Enter Price: ')
                     new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                     self.__CarService.add_car(new_Car)
 
