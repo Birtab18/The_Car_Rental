@@ -1,6 +1,7 @@
 class Order:
 
-    def __init__(self, SSN, Name, licence_plate, category, manufacturer, the_Type, rent_Date, return_Date, extra_Insurance):
+    def __init__(self, SSN, Name, licence_plate, category, manufacturer, the_Type, rent_Date, return_Date, 
+            extra_Insurance):
         self.__SSN = SSN
         self.__Name = Name
         self.__licence_plate = licence_plate

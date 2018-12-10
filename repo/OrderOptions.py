@@ -18,7 +18,8 @@ class OrderOptions:
     #                 print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
 
     # Press 1 to Put In Orders
-    def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,total_price):
+    def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
+            car_return_month,car_return_day,total_price):
         ''' Adds an order to The Car Rental (the orders.csv file) '''
         with open("./data/customers.csv", 'r') as customer_ssn:
          #   look_up = input('Enter The SSN Of The Person who want to rent a car: ')
@@ -63,11 +64,13 @@ class OrderOptions:
                 print('Invalid input')
         #   rent_Date
         #   return_Date
-            order_file.write('\n{},{},{},{},{},{},{},{},{}kr.-'.format(SSN,Name,licence_Plate,category,
+            order_file.write('{},{},{},{},{},{},{},{},{}kr.-\n'.format(SSN,Name,licence_Plate,category,
                     manufacturer,the_Type,rentday,returnday,total_price_main))
-        #ATHHHHHh þetta a ad breyta cars.csv en thetta virkar ekki, held ad thad se ut af fallid veit ekki hvad look_up er en er ekki viss
+        #ATHHHHHh þetta a ad breyta cars.csv en thetta virkar ekki, held ad thad se ut af fallid veit ekki hvad 
+        #look_up er en er ekki viss
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['licence_Plate','category','manufacturer','the_Type','transmission','price','status'])
+            writer = csv.DictWriter(out, fieldnames=['licence_Plate','category','manufacturer','the_Type',
+                    'transmission','price','status'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i,value in row.items():

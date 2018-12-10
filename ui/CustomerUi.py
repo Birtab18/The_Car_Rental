@@ -53,12 +53,12 @@ class Customer_Page:
                 
                 elif action == '3':
                     print("-"*15)
-                    person_Look_Up = input('Enter The SSN Of The Person You Want To Look Up: ')
-                    while len(person_Look_Up) != 10:
+                    SSN = input('Enter The SSN Of The Person You Want To Look Up: ')
+                    while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)')
                         print()
-                        person_Look_Up = input('Enter The SSN Of The Person You Want To Look Up: ')
-                    self.__CustomerService.look_up_customer(person_Look_Up)
+                        SSN = input('Enter The SSN Of The Person You Want To Look Up: ')
+                    self.__CustomerService.look_up_customer(SSN)
                 
                 elif action == '4':
                     print("-"*15)
