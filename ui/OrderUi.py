@@ -1,11 +1,8 @@
 import csv
 import os
 from services.OrderService import OrderService
-<<<<<<< HEAD
 from services.CustomerService import CustomerService
-=======
 from services.CarService import CarService
->>>>>>> 31fc2173783815727d68e027716327b8277a5b8e
 from models.Order import Order
 
 
@@ -37,7 +34,6 @@ class Order_Page:
                 action = input('Choose command: ').lower()
                 if action == '1':
                     print("-"*15)
-<<<<<<< HEAD
                     new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
                         if new_Or_Old == 'y':
@@ -54,20 +50,6 @@ class Order_Page:
                         else:
                             print('Invalid input, try again!')
                     self.__OrderService.print_available_cars()
-=======
-                    # new_Or_Old = input(
-                    #     'Has the customer rented a car from us before? y = Yes, n = No').lower()
-                    # while new_Or_Old != 'y' or 'n':
-                    #     if new_Or_Old == 'y':
-                    #         # go to look up customer
-                    #         pass
-                    #     elif new_Or_Old == 'n':
-                    #         # go to sign up new customer
-                    #         pass
-                    #     else:
-                    #         print('Invalid input, try again!')
-                    self.__CarService.available_cars()
->>>>>>> 31fc2173783815727d68e027716327b8277a5b8e
                 # print("New Order:")
                 # licence_Plate = input('Enter The Licence Plate: ')
                 # # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
@@ -100,7 +82,8 @@ class Order_Page:
                     car_return_month = int(input('Enter Return Month: '))
                     car_return_day = int(input('Enter Return Day: '))
                     extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
-                    self.__OrderService.put_in_an_order(look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,extra_insurence)
+                    self.__OrderService.put_in_an_order(look_up,car_id,car_rent_year,car_rent_month,car_rent_day,
+                            car_return_year,car_return_month,car_return_day,extra_insurence)
 
                 elif action == '2':
                     print("-"*15)
