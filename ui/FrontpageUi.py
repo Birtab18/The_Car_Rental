@@ -27,8 +27,7 @@ class Front_Page:
         action = ''
         while (action != 'q'):
             print_Frontpage()
-            action = input('Choose command: ').lower()
-            print()
+            action = input('Choose command: \n').lower()
             if action == '1':
                 ui = Customer_Page()
                 ui.customer_Menu()
@@ -45,5 +44,4 @@ class Front_Page:
                 print("Goodbye !")
             
             else:
-                print('Invalid input, try again!')
-                print()
+                print('Invalid input, try again!\n')

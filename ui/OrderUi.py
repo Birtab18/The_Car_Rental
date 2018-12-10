@@ -45,8 +45,7 @@ class Order_Page:
                             print("-"*15)
                             SSN = input('Enter A SSN: ')
                             while len(SSN) != 10:
-                                print('Error! Please Input A Valid SSN (only 10 digits)')
-                                print()
+                                print('Error! Please Input A Valid SSN (only 10 digits)\n')
                                 SSN = input('Enter A SSN: ')
                             name = input('Enter a name: ')
                             phonenumber = input('Enter a phonenumber: ')
@@ -60,8 +59,7 @@ class Order_Page:
                     self.__CarService.available_cars()
                     SSN = input('Enter The SSN Of The Person who want to rent a car: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person who want to rent a car: ')
                     car_id = input('Enter The Licence Plate Of The Car: ')
                     print("-"*15)
@@ -80,8 +78,7 @@ class Order_Page:
                     print("-"*15)
                     SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN of The Person Who Put In The Order: ')
                     licence_Plate = input('Enter The Licence Plate Of The Car: ')
                     self.__OrderService.cancel_Order(SSN, licence_Plate)
@@ -90,11 +87,9 @@ class Order_Page:
                     print("-"*15)
                     SSN = input('Enter The SSN of The Person Who Put In The Order: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN of The Person Who Put In The Order: ')
-                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
-                    print()
+                    licence_Plate = input('Enter The Licence Plate Of The Car: \n')
                     self.__OrderService.look_up_order(SSN,licence_Plate)
                     print()
 
@@ -108,8 +103,7 @@ class Order_Page:
                     print()
                     SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
                     choice = input('Enter Choice: ')
                     changes = input('Enter New Info: ').lower()

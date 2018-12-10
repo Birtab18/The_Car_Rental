@@ -30,8 +30,7 @@ class Customer_Page:
                     print("New customer:")
                     SSN = input('Enter A SSN: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter A SSN: ')
                     name = input('Enter a name: ')
                     phonenumber = input('Enter a phonenumber: ')
@@ -44,8 +43,7 @@ class Customer_Page:
                     print("-"*15)
                     SSN = input('Enter The SSN Of The Person You Want To Delete: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person You Want To Delete: ')
                     self.__CustomerService.delete_customer(SSN)
                     print('\nCustomer Deleted!\n\n')
@@ -54,8 +52,7 @@ class Customer_Page:
                     print("-"*15)
                     SSN = input('Enter The SSN Of The Person You Want To Look Up: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person You Want To Look Up: ')
                     self.__CustomerService.look_up_customer(SSN)
                     print()
@@ -70,8 +67,7 @@ class Customer_Page:
                     print('Press 4 to Change Email')
                     print()
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person You Want To Change: ')
                     choice = input('Enter Choice: ')
                     changes = input('Enter New Info: ')
