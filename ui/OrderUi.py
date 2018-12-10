@@ -39,10 +39,11 @@ class Order_Page:
                     new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
                         if new_Or_Old == 'y':
+                            print()
                             break
                         elif new_Or_Old == 'n':
                             print("Signing A New Customer:")
-                            print("-"*15)
+                            print("-"*60)
                             SSN = input('Enter A SSN: ')
                             while len(SSN) != 10:
                                 print('Error! Please Input A Valid SSN (only 10 digits)\n')
@@ -52,6 +53,7 @@ class Order_Page:
                             email = input('Enter an email: ')
                             new_Costumer = Customer(SSN, name, phonenumber, email)
                             self.__CustomerService.add_customer(new_Costumer)
+                            print()
                             break
                         else:
                             print('Invalid input, try again!')
@@ -73,6 +75,7 @@ class Order_Page:
                     extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
                     self.__OrderService.put_in_an_order(SSN,car_id,car_rent_year,car_rent_month,car_rent_day,
                             car_return_year,car_return_month,car_return_day,extra_insurence)
+                    print('\nOrder Added!\n\n')
 
                 elif action == '2':
                     print("-"*60)
@@ -82,6 +85,7 @@ class Order_Page:
                         SSN = input('Enter The SSN of The Person Who Put In The Order: ')
                     licence_Plate = input('Enter The Licence Plate Of The Car: ')
                     self.__OrderService.cancel_Order(SSN, licence_Plate)
+                    print()
 
                 elif action == '3':
                     print("-"*60)
