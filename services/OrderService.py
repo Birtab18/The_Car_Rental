@@ -11,7 +11,6 @@ class OrderService:
         # ef valid þa addum vid þvi i gagnageymsluna.
         return True
 
-    # def add_order(self, order):
     #     if self.is_valid_order(order):  # eru innputin sett in rett
     #         self.__order_Repo._order(order)  # ATH hvort repo eda main
 
@@ -21,12 +20,12 @@ class OrderService:
     def cancel_Order(self, SSN, licence_Plate):
         return self.__order_Repo.cancel_Order(SSN, licence_Plate)
     
-    #def print_available_cars(self):
-        #return self.__order_Repo.print_available_cars()
+    def print_available_cars(self):
+        return self.__order_Repo.print_available_cars()
     
-    def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
+    def put_in_an_order(self,SSN,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
             car_return_month,car_return_day,total_price):
-        self.__order_Repo.put_in_an_order(look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
+        self.__order_Repo.put_in_an_order(SSN,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
                 car_return_month,car_return_day,total_price)
 
     def change_Order(self, SSN, choice, changes):
