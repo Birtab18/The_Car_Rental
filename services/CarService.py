@@ -9,12 +9,12 @@ class CarService:
     def available_cars(self):
         self.__car_Repo.show_available_cars()
     
-    def taken_cars(self):
-        self.__car_Repo.show_taken_cars()
+    def unavailable_cars(self):
+        self.__car_Repo.show_unavailable_cars()
 
-    # def add_car(self, car):
-    #     if self.is_valid_car(car):  # eru innputin sett in rett
-    #         self.__car_Repo.add_car(car)  # ATH hvort repo eda main
+    def add_car(self, car):
+        if self.is_valid_car(car):  # eru innputin sett in rett
+            self.__car_Repo.add_car(car)  # ATH hvort repo eda main
 
     def is_valid_car(self, car):
         # herna rékkum vi hvort þetta video se ekki orugglega hægt af vinna med.
