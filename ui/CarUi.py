@@ -25,7 +25,7 @@ class Car_Page:
         def main():
             print_Choices()
             print()
-            action = ""
+            action = ""  #so the while loop will start running
             while action not in ["1","2","3","4","F"]:
                 action = input('Choose command: ').lower()
                 if action == '1':
