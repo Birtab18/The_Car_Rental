@@ -8,14 +8,14 @@ class OrderOptions:
     def __init__(self):
         self.__order = []
     
-    def print_available_cars(self):
-        #prints out availeble cars: 
-        print('Availeble cars: ')
-        with open("./data/cars.csv", 'r') as look_up_customer_file:
-            reader = csv.reader(look_up_customer_file)
-            for row in reader:
-                if row[6] == 'True':
-                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
+    # def print_available_cars(self):
+    #     #prints out availeble cars: 
+    #     print('Availeble cars: ')
+    #     with open("./data/cars.csv", 'r') as look_up_customer_file:
+    #         reader = csv.reader(look_up_customer_file)
+    #         for row in reader:
+    #             if row[6] == 'True':
+    #                 print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
 
     # Press 1 to Put In Orders
     def put_in_an_order(self,look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,total_price):
@@ -50,20 +50,20 @@ class OrderOptions:
             rentday = date(car_return_year,car_return_month,car_return_day)
             print(returnday)
             print(rentday)
-            differece = returnday.day - rentday.day
+            differece =  rentday.day - returnday.day
             print(differece)
             multiply = differece * int(bar[5])
             print(multiply)
             #sxtra insurence
             if total_price =='y':
-                total_price_main = multiply*1.25
+                total_price_main = int(multiply*1.25)
             elif total_price == 'n':
-                total_price_main = multiply
+                total_price_main = int(multiply)
             else:
                 print('Invalid input')
         #   rent_Date
         #   return_Date
-            order_file.write('\n{},{},{},{},{},{},{},{},{}'.format(SSN,Name,licence_Plate,category,
+            order_file.write('\n{},{},{},{},{},{},{},{},{}kr.-'.format(SSN,Name,licence_Plate,category,
                     manufacturer,the_Type,rentday,returnday,total_price_main))
         #ATHHHHHh þetta a ad breyta cars.csv en thetta virkar ekki, held ad thad se ut af fallid veit ekki hvad look_up er en er ekki viss
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:

@@ -22,3 +22,6 @@ SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,extr
 2612972489,Helgi Sævar,ac456,Mini Car,Chervolet,Spark,2019-03-06,2019-03-04,-14000
 2612972489,Helgi Sævar,ac456,Mini Car,Chervolet,Spark,2019-03-08,2019-03-04,-28000
 2408962279,Daníel,ac456,Mini Car,Chervolet,Spark,2018-12-18,2018-12-14,-35000.0
+2810715729,Sigmar,af890,Mini Car,Volkswagen,Golf,2018-12-16,2018-12-14,-22500.0
+1406972739,Baldur,al678,Jeep,Nissan,Quashqui,2018-12-16,2018-12-14,30000.0
+2612972489,Helgi Sævar,ak345,Station Car,Hyundai,i30,2018-12-16,2018-12-14,32500kr.-

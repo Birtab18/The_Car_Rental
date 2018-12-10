@@ -1,13 +1,18 @@
 import csv
 import os
 from services.OrderService import OrderService
+<<<<<<< HEAD
 from services.CustomerService import CustomerService
+=======
+from services.CarService import CarService
+>>>>>>> 31fc2173783815727d68e027716327b8277a5b8e
 from models.Order import Order
 
 
 class Order_Page:
     def __init__(self):
         self.__OrderService = OrderService()
+        self.__CarService = CarService()
 
     def Order_Menu(self):
 
@@ -32,6 +37,7 @@ class Order_Page:
                 action = input('Choose command: ').lower()
                 if action == '1':
                     print("-"*15)
+<<<<<<< HEAD
                     new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
                         if new_Or_Old == 'y':
@@ -48,6 +54,20 @@ class Order_Page:
                         else:
                             print('Invalid input, try again!')
                     self.__OrderService.print_available_cars()
+=======
+                    # new_Or_Old = input(
+                    #     'Has the customer rented a car from us before? y = Yes, n = No').lower()
+                    # while new_Or_Old != 'y' or 'n':
+                    #     if new_Or_Old == 'y':
+                    #         # go to look up customer
+                    #         pass
+                    #     elif new_Or_Old == 'n':
+                    #         # go to sign up new customer
+                    #         pass
+                    #     else:
+                    #         print('Invalid input, try again!')
+                    self.__CarService.available_cars()
+>>>>>>> 31fc2173783815727d68e027716327b8277a5b8e
                 # print("New Order:")
                 # licence_Plate = input('Enter The Licence Plate: ')
                 # # þurfum að leita upp línunni í cars með þetta nr og taka þær uppl og setja i orders
@@ -70,12 +90,15 @@ class Order_Page:
                         print()
                         look_up = input('Enter The SSN Of The Person who want to rent a car: ')
                     car_id = input('Enter The Licence Plate Of The Car: ')
-                    car_rent_year = int(input('Enter Year: '))
-                    car_rent_month = int(input('Enter Month: '))
-                    car_rent_day = int(input('Enter Day: '))
-                    car_return_year = int(input('Enter return Year: '))
-                    car_return_month = int(input('Enter return Month: '))
-                    car_return_day = int(input('Enter return Day: '))
+                    print("Enter Rent Date")
+                    print("-"*15)
+                    car_rent_year = int(input('Enter Rent Year: '))
+                    car_rent_month = int(input('Enter Rent Month: '))
+                    car_rent_day = int(input('Enter Rent Day: '))
+                    print("Enter Return Date")
+                    car_return_year = int(input('Enter Return Year: '))
+                    car_return_month = int(input('Enter Return Month: '))
+                    car_return_day = int(input('Enter Return Day: '))
                     extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
                     self.__OrderService.put_in_an_order(look_up,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,extra_insurence)
 
