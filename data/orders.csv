@@ -1,3 +1,9 @@
 SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,total_price_main
 2612972489,Helgi Sævar,ak345,Station Car,Hyundai,i30,2018-12-16,2018-12-14,32500kr.-
 1206962709,Bergros,ak345,Station Car,Hyundai,i30,2018-12-16,2018-12-14,26000kr.-
+2005984079,Birta Líf,ac456,Mini Car,Chervolet,Spark,2018-12-24,2018-12-20,35000kr.-
+2005984079,Birta Líf,ad567,Mini Car,Kia,Picanto,2018-12-24,2018-12-20,28000kr.-
+2612972489,Helgi Sævar,af890,Mini Car,Volkswagen,Golf,2018-12-14,2018-12-09,56250kr.-
+2612972489,Helgi Sævar,aj567,Station Car,Tesla,Model 3,2018-12-14,2018-12-09,100000kr.-
+2612972489,Helgi Sævar,ai456,Station Car,Audi,A3,2018-12-13,2018-12-09,80000kr.-
+2612972489,Helgi Sævar,ab345,Mini Car,Toyota,Aygo,2019-12-04,2019-12-01,15000kr.-

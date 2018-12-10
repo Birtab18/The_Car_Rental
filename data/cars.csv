@@ -4,19 +4,18 @@ ac456,Mini Car,Chervolet,Spark,stick shift,7000,True
 ad567,Mini Car,Kia,Picanto,stick shift,7000,True
 ae789,Mini Car,Hyundai,i10,stick shift,9000,False
 af890,Mini Car,Volkswagen,Golf,manual,9000,True
-ag123,Station Car,Mazda,3,stick shift,8000,Fale
-ah234,Station Car,Ford,Focus,manual,8000,False
-ak345,Station Car,Hyundai,i30,manual,13000,True
-ai456,Station Car,Audi,A3,manual,20000,False
-aj567,Station Car,Tesla,Model 3,manual,20000,False
+ag123,Station Car,Mazda,3,stick shift,8000,True
+ah234,Station Car,Ford,Focus,manual,8000,True
+ak345,Station Car,Hyundai,i30,manual,13000,False
+ai456,Station Car,Audi,A3,manual,20000,True
+aj567,Station Car,Tesla,Model 3,manual,20000,True
 al678,Jeep,Nissan,Quashqui,stick shift,12000,True
-am890,Jeep,Volkswagen,Tiguan,manual,12000,False
+am890,Jeep,Volkswagen,Tiguan,manual,12000,True
 an123,Jeep,Volvo,xc90,stick shift,12000,False
-aw234,Jeep,Toyota,Land Cruiser,manual,20000,True
-ao456,Jeep,Mercedes,Benz G-Class,manual,30000,False
+aw234,Jeep,Toyota,Land Cruiser,manual,20000,False
+ao456,Jeep,Mercedes,Benz G-Class,manual,30000,True
 HJ678,mini car,kia,rio,manual,b,True
 HJH56,mini car,kia rio,rio,manual,j,True
 HJK67,mini car,kia,rio,manual,j,True
 HH444,mini car,kia,rio,manual,k,True
 DO215,passenger car,golf,eh typa,stick shift,10000,True
-AA222,mini car,kia,rio,manual,4000,True

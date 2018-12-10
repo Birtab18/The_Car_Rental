@@ -26,7 +26,7 @@ class OrderOptions:
             reader_car = csv.reader(order_car)
             for bar in reader_car:
                 if bar[0] == car_id:
-                    car_id = bar[0],bar[1],bar[2], bar[3]
+                    car_idid = bar[0],bar[1],bar[2], bar[3]
                     break
                     print('{}, {}, {}, {}'.format(bar[0], bar[1], bar[2], bar[3]))
 
@@ -53,26 +53,24 @@ class OrderOptions:
                 total_price_main = int(multiply)
             else:
                 print('Invalid input')
-        #   rent_Date
-        #   return_Date
+
             order_file.write('{},{},{},{},{},{},{},{},{}kr.-\n'.format(SSN,Name,licence_Plate,category,
                     manufacturer,the_Type,rentday,returnday,total_price_main))
-        #ATHHHHHh þetta a ad breyta cars.csv en thetta virkar ekki, held ad thad se ut af fallid veit ekki hvad 
-        #look_up er en er ekki viss
+        #fall sem breytir yfir i false. 
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['licence_Plate','category','manufacturer','the_Type',
                     'transmission','price','status'])
             writer.writeheader()
+            print('hallo')
             for row in csv.DictReader(inp):
                 for i,value in row.items():
-                    if value == SSN:
+                    if value == car_id:
                         if row['status'] == 'True':
                             row['status'] = 'False'
                         print(row)
                 writer.writerow(row)
         os.remove('./data/cars.csv')
         os.rename('./data/deletecars.csv', './data/cars.csv')
-
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
