@@ -129,7 +129,6 @@ class OrderOptions:
                         elif choice == '4':
                             the_Choice = 'total_price_main'
                         row[the_Choice] = changes
-                        print(row)
                 writer.writerow(row)
         os.remove('./data/orders.csv')
         os.rename('./data/delete_Orders.csv', './data/orders.csv')

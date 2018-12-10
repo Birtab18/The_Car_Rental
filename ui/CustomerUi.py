@@ -7,7 +7,6 @@ class Customer_Page:
         self.__CustomerService = CustomerService()
 
     def customer_Menu(self):
-
         def print_Choices():
             ''' Prints out everything you can do with customers in the system '''
             print('{:<30}{:>20}'.format('The Car Rental', 'F To Go to Frontpage'))
@@ -31,33 +30,32 @@ class Customer_Page:
                     print("New customer:")
                     SSN = input('Enter A SSN: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter A SSN: ')
                     name = input('Enter a name: ')
                     phonenumber = input('Enter a phonenumber: ')
                     email = input('Enter an email: ')
                     new_Costumer = Customer(SSN, name, phonenumber, email)
                     self.__CustomerService.add_customer(new_Costumer)
-                    print()
+                    print('\nCustomer Signed!\n\n')
                 
                 elif action == '2':
                     print("-"*15)
                     SSN = input('Enter The SSN Of The Person You Want To Delete: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person You Want To Delete: ')
                     self.__CustomerService.delete_customer(SSN)
+                    print('\nCustomer Deleted!\n\n')
                 
                 elif action == '3':
                     print("-"*15)
                     SSN = input('Enter The SSN Of The Person You Want To Look Up: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person You Want To Look Up: ')
                     self.__CustomerService.look_up_customer(SSN)
+                    print()
                 
                 elif action == '4':
                     print("-"*15)
@@ -69,12 +67,12 @@ class Customer_Page:
                     print('Press 4 to Change Email')
                     print()
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person You Want To Change: ')
                     choice = input('Enter Choice: ')
                     changes = input('Enter New Info: ')
                     self.__CustomerService.Change_Information(SSN, choice, changes)
+                    print('\nCustomer Info Changed!\n\n')
                 
                 elif action == 'f':
                     break

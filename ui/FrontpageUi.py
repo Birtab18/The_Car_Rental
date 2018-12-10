@@ -13,7 +13,6 @@ class Front_Page:
         self.__OrderService = OrderService()
 
     def main_Menu(self):
-
         def print_Frontpage():
             print('{:40}{:8}'.format('The Car Rental', 'Front page'))
             print('-'*50)
@@ -28,8 +27,7 @@ class Front_Page:
         action = ''
         while (action != 'q'):
             print_Frontpage()
-            action = input('Choose command: ').lower()
-            print()
+            action = input('Choose command: \n').lower()
             if action == '1':
                 ui = Customer_Page()
                 ui.customer_Menu()
@@ -46,5 +44,4 @@ class Front_Page:
                 print("Goodbye !")
             
             else:
-                print('Invalid input, try again!')
-                print()
+                print('Invalid input, try again!\n')

@@ -4,8 +4,9 @@ from services.OrderService import OrderService
 from services.CustomerService import CustomerService
 from services.CarService import CarService
 from models.Order import Order
-from repo.CustomerOptions import CustomerOptions
 from models.Customer import Customer
+from repo.CustomerOptions import CustomerOptions
+
 class Order_Page:
     def __init__(self):
         self.__OrderService = OrderService()
@@ -14,7 +15,6 @@ class Order_Page:
         self.__CustomerService = CustomerService()
 
     def Order_Menu(self):
-
         def print_Choices():
             ''' Prints out everything you can do with orders in the system '''
             print('{:<30}{:>20}'.format('The Car Rental', 'F To Go to Frontpage'))
@@ -45,8 +45,7 @@ class Order_Page:
                             print("-"*15)
                             SSN = input('Enter A SSN: ')
                             while len(SSN) != 10:
-                                print('Error! Please Input A Valid SSN (only 10 digits)')
-                                print()
+                                print('Error! Please Input A Valid SSN (only 10 digits)\n')
                                 SSN = input('Enter A SSN: ')
                             name = input('Enter a name: ')
                             phonenumber = input('Enter a phonenumber: ')
@@ -57,12 +56,10 @@ class Order_Page:
                         else:
                             print('Invalid input, try again!')
                         
-
                     self.__CarService.available_cars()
                     SSN = input('Enter The SSN Of The Person who want to rent a car: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person who want to rent a car: ')
                     car_id = input('Enter The Licence Plate Of The Car: ')
                     print("-"*15)
@@ -81,8 +78,7 @@ class Order_Page:
                     print("-"*15)
                     SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN of The Person Who Put In The Order: ')
                     licence_Plate = input('Enter The Licence Plate Of The Car: ')
                     self.__OrderService.cancel_Order(SSN, licence_Plate)
@@ -91,11 +87,9 @@ class Order_Page:
                     print("-"*15)
                     SSN = input('Enter The SSN of The Person Who Put In The Order: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN of The Person Who Put In The Order: ')
-                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
-                    print()
+                    licence_Plate = input('Enter The Licence Plate Of The Car: \n')
                     self.__OrderService.look_up_order(SSN,licence_Plate)
                     print()
 
@@ -109,15 +103,16 @@ class Order_Page:
                     print()
                     SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
                     while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)')
-                        print()
+                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
                         SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
                     choice = input('Enter Choice: ')
                     changes = input('Enter New Info: ').lower()
                     self.__OrderService.change_Order(SSN, choice, changes)
+                    print('\nOrder Changed!\n\n')
                 
                 elif action == 'f':
                     break
+
                 else:
                     print("Invalid input, try again!")
 
