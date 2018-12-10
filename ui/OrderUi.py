@@ -112,6 +112,7 @@ class Order_Page:
                 
                 elif action == '5':
                     print('Return car ')
+                    self.__OrderService.print_orders()
                     plate = input('Enter the lichence plate of the car you want to return: ')
                     self.__OrderService.return_car(plate)
                 
