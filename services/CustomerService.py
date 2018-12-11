@@ -26,7 +26,7 @@ class CustomerService:
         while len(SSN) != 10:
             print('Error! Please Input A Valid SSN (only 10 digits)\n')
             SSN = input('Enter The SSN Of The Person You Want To Change: ')
-        
+            
         loop = True
         while loop:
             try:
