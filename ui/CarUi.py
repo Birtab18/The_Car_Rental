@@ -50,7 +50,8 @@ class Car_Page:
                 elif action == '4':
                     print("-"*60)
                     print("New Car:")
-                    licence_Plate = input('Enter The Licence Plate: ').upper()
+                    licence_Plate = input('Enter The Licence Plate: ')
+                    licence_Plate = licence_Plate.upper()
                     category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
                     category = self.__CarService.check_Category(category)
                     manufacturer = input('Enter The Manufacturer: ')
