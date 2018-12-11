@@ -13,15 +13,11 @@ class OrderOptions:
         with open("./data/cars.csv", 'r') as car_check:
             reader = csv.reader(car_check)
             for row in reader:
-                main_checking = True
-                while main_checking:
-                    if row[6] == 'False':
-                        print('This car is unavailable at this moment!')
-                        print('Try again!')
-                        break
-                    else:
-                        print('Found!')
-                        main_checking = False
+                # main_checking = True
+                # while main_checking:
+                if row[6] == 'True' and row[0] == car_id:
+                    print('Found!')
+                    return True
 
     # Press 1 to Put In Orders
     def put_in_an_order(self, SSN, car_id, car_rent_year, car_rent_month, car_rent_day, car_return_year,
@@ -145,9 +141,9 @@ class OrderOptions:
         with open("./data/orders.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
-                print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0],row[1],row[2],row[4],
-                        row[5],row[6],row[7]))
-            
+                print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0], row[1], row[2], row[4],
+                                                                          row[5], row[6], row[7]))
+
     def return_car(self, plate):
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=[
