@@ -9,3 +9,7 @@ SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,tota
 2005984079,birta beib,am890,Jeep,Volkswagen,Tiguan,2018-12-13,2018-12-12,15000kr.-
 0210683869,Haraldur,af890,Mini Car,Volkswagen,Golf,2018-12-04,2018-12-01,27000kr.-
 1406972739,Baldur,ao456,Jeep,Mercedes,Benz G-Class,2018-12-03,2018-12-01,60000kr.-
+1234567899,test,MM333,Mini Car,kia,rio,2018-04-08,2018-04-05,15000kr.-
+1234567899,test,AF890,Mini Car,Volkswagen,Golf,2018-12-16,2018-12-12,36000kr.-
+1234567899,test,AI456,Station Car,Audi,A3,2018-12-25,2018-12-20,100000kr.-
+2223181010,lubbi,AH234,Station Car,Ford,Focus,2018-12-25,2018-12-20,40000kr.-
