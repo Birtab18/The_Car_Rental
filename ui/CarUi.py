@@ -20,7 +20,7 @@ class Car_Page:
             print('Press 4 to Add A New Car To The Car Rental')
             print('Press F to Go To Frontpage')
             print()
-
+            
         def main():
             print_Choices()
             action = ""  # so the while loop will start running
