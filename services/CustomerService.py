@@ -25,8 +25,8 @@ class CustomerService:
     def check_SSN(self, SSN):
         while len(SSN) != 10:
             print('Error! Please Input A Valid SSN (only 10 digits)\n')
-            SSN = input('Enter The SSN Of The Person You Want To Change: ')
-            
+            SSN = input('Enter The SSN: ')
+
         loop = True
         while loop:
             try:
@@ -34,6 +34,23 @@ class CustomerService:
                 loop = False
             except ValueError:
                 print('Error! Please Enter A Valid SSN (only 10 digits)\n')
-                SSN = input('Enter The SSN Of The Person You Want To Change: ')
+                SSN = input('Enter The SSN: ')
         
         return SSN
+    
+
+    def check_Phonenumber(self, phonenumber):
+        while len(phonenumber) != 7:
+            print('Error! Please Input A Valid Phone Number (only 7 digits)\n')
+            phonenumber = input('Enter A Phone Number: ')
+
+        loop = True
+        while loop:
+            try:
+                phonenumber = int(phonenumber)
+                loop = False
+            except ValueError:
+                print('Error! Please Enter A Valid Phone Number (only 7 digits)\n')
+                phonenumber = input('Enter A Phone Number: ')
+        
+        return phonenumber

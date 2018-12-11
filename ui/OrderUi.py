@@ -49,10 +49,8 @@ class Order_Page:
                             SSN = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                             SSN = self.__CustomerService.check_SSN(SSN)
                             name = input('Enter a name: ')
-                            phonenumber = input('Enter a phonenumber: ')
-                            while len(phonenumber) != 7:
-                                print('Error! Please Input A Valid Phone Number (only 7 digits)\n')
-                                phonenumber = input('Enter a phonenumber: ')
+                            phonenumber = input('Enter a Phone Number: ')
+                            phonenumber = self.__CustomerService.check_Phonenumber(phonenumber)
                             email = input('Enter an email: ')
                             new_Costumer = Customer(SSN, name, phonenumber, email)
                             self.__CustomerService.add_customer(new_Costumer)
