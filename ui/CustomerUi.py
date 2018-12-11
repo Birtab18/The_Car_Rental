@@ -34,6 +34,9 @@ class Customer_Page:
                         SSN = input('Enter A SSN: ')
                     name = input('Enter a name: ')
                     phonenumber = input('Enter a phonenumber: ')
+                    while len(phonenumber) != 7:
+                        print('Error! Please Input A Valid Phone Number (only 7 digits)\n')
+                        phonenumber = input('Enter a phonenumber: ')
                     email = input('Enter an email: ')
                     new_Costumer = Customer(SSN, name, phonenumber, email)
                     self.__CustomerService.add_customer(new_Costumer)

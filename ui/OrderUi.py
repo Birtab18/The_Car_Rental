@@ -38,8 +38,7 @@ class Order_Page:
                 action = input('Choose command: ').lower()
                 if action == '1':
                     print("-"*60)
-                    new_Or_Old = input(
-                        'Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
+                    new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
                         if new_Or_Old == 'y':
                             print()
