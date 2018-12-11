@@ -17,8 +17,7 @@ class Customer_Page:
             print('Press 2 to Delete Customer')
             print('Press 3 to Look Up Customer')
             print('Press 4 to Change Information About A Customer')
-            print('Press F to Go To Frontpage')
-            print()
+            print('Press F to Go To Frontpage\n')
 
         def main():
             print_Choices()
@@ -75,7 +74,6 @@ class Customer_Page:
                     print('\nCustomer Info Changed!\n\n')
                 
                 elif action == 'f':
-                    print()
                     break
                 
                 else:
