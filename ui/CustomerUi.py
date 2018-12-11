@@ -50,9 +50,14 @@ class Customer_Page:
                     SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
+                    isFound = self.__CustomerService.costumer_Check(SSN_input)
+                    while not isFound:
+                        print("Costumer not found \nPlease try again!")
+                        SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
+                        isFound = self.__CustomerService.costumer_Check(SSN_input)
                     self.__CustomerService.look_up_customer(SSN)
                     print()
-                    print()
+                    print()  
                 
                 elif action == '4':
                     print("-"*60)

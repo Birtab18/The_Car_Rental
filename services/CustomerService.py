@@ -57,3 +57,6 @@ class CustomerService:
             print('Error! Invalid Choice. Please Try Again')
             choice_input = input('Enter Choice: ')
         return choice_input
+
+    def costumer_Check(self,SSN_input):
+        return self.__customer_Repo.costumer_Check(SSN_input)

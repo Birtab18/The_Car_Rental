@@ -13,8 +13,6 @@ class OrderOptions:
         with open("./data/cars.csv", 'r') as car_check:
             reader = csv.reader(car_check)
             for row in reader:
-                # main_checking = True
-                # while main_checking:
                 if row[6] == 'True' and row[0] == car_id:
                     print('Found!')
                     return True
