@@ -75,6 +75,7 @@ class Customer_Page:
                     print('\nCustomer Info Changed!\n\n')
                 
                 elif action == 'f':
+                    print()
                     break
                 
                 else:
