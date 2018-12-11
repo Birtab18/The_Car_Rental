@@ -22,7 +22,7 @@ class CustomerService:
     def Change_Information(self, SSN, choice, changes):
         self.__customer_Repo.Change_Information(SSN, choice, changes)
     
-    def get_SSN(self, SSN_input):
+    def check_SSN(self, SSN_input):
         while len(SSN_input) != 10:
             print('Error! Please Input A Valid SSN (only 10 digits)\n')
             SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
