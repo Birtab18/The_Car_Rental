@@ -13,7 +13,4 @@ al678,Jeep,Nissan,Quashqui,stick shift,12000,True
 am890,Jeep,Volkswagen,Tiguan,manual,12000,False
 an123,Jeep,Volvo,xc90,stick shift,12000,False
 aw234,Jeep,Toyota,Land Cruiser,manual,20000,True
-ao456,Jeep,Mercedes,Benz G-Class,manual,30000,True
-HJ678,mini car,kia,rio,manual,b,True
-HJH56,mini car,kia rio,rio,manual,j,True
-HJK67,mini car,kia,rio,manual,j,True
+ao456,Jeep,Mercedes,Benz G-Class,manual,30000,False
