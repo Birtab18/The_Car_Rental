@@ -64,7 +64,8 @@ class Customer_Page:
                     print('Press 3 to Change The Phone Number')
                     print('Press 4 to Change The Email')
                     print()
-                    choice = input('Enter Choice: ')
+                    choice_input = input('Enter Choice: ')
+                    choice = self.__CustomerService.check_Choice(choice_input)
                     changes = input('Enter New Info: ')
                     if choice == '1':
                         changes = self.__CustomerService.check_SSN(changes)
