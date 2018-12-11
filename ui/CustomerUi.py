@@ -29,6 +29,7 @@ class Customer_Page:
                     print("New customer:")
                     SSN_input = input('Enter The SSN Of The Person You Want To Sign Up: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    #self.__CustomerService.look_up_customer(SSN) #check if the customer already exitst
                     name = input('Enter a name: ')
                     phonenumber_input = input('Enter A Phone Number: ')
                     phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)

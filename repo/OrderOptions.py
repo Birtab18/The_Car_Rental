@@ -143,8 +143,8 @@ class OrderOptions:
         with open("./data/orders.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
-                print('{:20}{:20}{:20}{:20}{:20}{:20}{:20}{:20}{:20}'.format(row[0],row[1],row[2],row[3],row[4],
-                        row[5],row[6],row[7],row[8]))
+                print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0],row[1],row[2],row[4],
+                        row[5],row[6],row[7]))
             
     def return_car(self, plate):
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
@@ -155,7 +155,6 @@ class OrderOptions:
                     if value == plate:
                         if row['status'] == 'False':
                             row['status'] = 'True'
-                        print(row)
                 writer.writerow(row)
         os.remove('./data/cars.csv')
         os.rename('./data/deletecars.csv', './data/cars.csv')

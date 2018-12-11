@@ -27,7 +27,7 @@ class Order_Page:
             print('Press 2 to Cancel Order')
             print('Press 3 to Look Up Order')
             print('Press 4 to Change Order')
-            print('Press 5 to return car')
+            print('Press 5 to Return Car')
             print('Press F to Go To Frontpage\n')
 
         def main():
@@ -123,10 +123,12 @@ class Order_Page:
                     print('\nOrder Changed!\n\n')
 
                 elif action == '5':
-                    print('Return car ')
+                    print("-"*60)
+                    print('Return car: \n')
                     self.__OrderService.print_orders()
-                    plate = input('Enter The Licence Plate Of The Car You Want To Return: ')
+                    plate = input('\nEnter The Licence Plate Of The Car You Want To Return: ')
                     self.__OrderService.return_car(plate)
+                    print('\nCar Returned!\n\n')
 
                 elif action == 'f':
                     break
