@@ -1,22 +1,22 @@
-licence_Plate,category,manufacturer,the_Type,transmission,price,status
-AB345,Mini Car,Toyota,Aygo,stick shift,5000,False
-AC456,Mini Car,Chervolet,Spark,stick shift,7000,False
-AD567,Mini Car,Kia,Picanto,stick shift,7000,False
-AE789,Mini Car,Hyundai,i10,stick shift,9000,False
-AF890,Mini Car,Volkswagen,Golf,manual,9000,True
-AG123,Station Car,Mazda,3,stick shift,8000,True
-AH234,Station Car,Ford,Focus,manual,8000,True
-AK345,Station Car,Hyundai,i30,manual,13000,True
-AI456,Station Car,Audi,A3,manual,20000,True
-AJ567,Station Car,Tesla,Model 3,manual,20000,True
-AL678,Jeep,Nissan,Quashqui,stick shift,12000,True
-AM890,Jeep,Volkswagen,Tiguan,manual,12000,False
-AN123,Jeep,Volvo,xc90,stick shift,12000,False
-AW234,Jeep,Toyota,Land Cruiser,manual,20000,True
-AO456,Jeep,Mercedes,Benz G-Class,manual,30000,False
-SZD31,Station Car,Hyundai,i30,s,15000,True
-AA123,Mini Car,kia,rio,m,3000,True
-AA333,Mini Car,kia,picanto,Stick Shift,6000,True
-AA444,Mini Car,kia,rio,Manual,4000,True
-BB222,Station Car,benz,ehtype,Jeep,20000,True
-MM333,Mini Car,kia,rio,Manual,5000,False
+licence_Plate,category,manufacturer,the_Type,transmission,price,status
+AB345,Mini Car,Toyota,Aygo,stick shift,5000,False
+AC456,Mini Car,Chervolet,Spark,stick shift,7000,False
+AD567,Mini Car,Kia,Picanto,stick shift,7000,False
+AE789,Mini Car,Hyundai,i10,stick shift,9000,False
+AF890,Mini Car,Volkswagen,Golf,manual,9000,False
+AG123,Station Car,Mazda,3,stick shift,8000,True
+AH234,Station Car,Ford,Focus,manual,8000,True
+AK345,Station Car,Hyundai,i30,manual,13000,True
+AI456,Station Car,Audi,A3,manual,20000,True
+AJ567,Station Car,Tesla,Model 3,manual,20000,True
+AL678,Jeep,Nissan,Quashqui,stick shift,12000,True
+AM890,Jeep,Volkswagen,Tiguan,manual,12000,False
+AN123,Jeep,Volvo,xc90,stick shift,12000,False
+AW234,Jeep,Toyota,Land Cruiser,manual,20000,True
+AO456,Jeep,Mercedes,Benz G-Class,manual,30000,False
+SZD31,Station Car,Hyundai,i30,s,15000,True
+AA123,Mini Car,kia,rio,m,3000,True
+AA333,Mini Car,kia,picanto,Stick Shift,6000,True
+AA444,Mini Car,kia,rio,Manual,4000,True
+BB222,Station Car,benz,ehtype,Jeep,20000,True
+MM333,Mini Car,kia,rio,Manual,5000,True
