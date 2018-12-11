@@ -58,6 +58,7 @@ class CarService:
         while loop:
             try:
                 price = int(price)
+                print = str(price)
                 loop = False
             except ValueError:
                 print('Error! Please Enter Digits')
