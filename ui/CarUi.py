@@ -51,45 +51,12 @@ class Car_Page:
                     print("-"*60)
                     print("New Car:")
                     licence_Plate = input('Enter The Licence Plate: ').upper()
-                    hallo = True
-                    while hallo:
-                        category = input(
-                            'Enter The Category (Mini Car, Station Car, or Jeep): \n Press m for Mini Car \n Press s for Station Car \n Press j for Jeep\n ').lower()
-                        if category == 'm':
-                            category = 'Mini Car'
-                            hallo = False
-                        elif category == 's':
-                            category = 'Station Car'
-                            hallo = False
-                        elif category == 'j':
-                            category = 'Jeep'
-                            hallo = False
-                        else:
-                            print("Invalid input, try again!")
+                    category = self.__CarService.get_Category()
                     manufacturer = input('Enter The Manufacturer: ')
                     the_Type = input('Enter The Type: ')
-                    baldur = True
-                    while baldur:
-                        transmission = input(
-                            'Enter The Transmission (Stick Shift or Manual): ').lower()
-                        if transmission == 's':
-                            transmission == 'Stick Shift'
-                            baldur = False
-                        elif transmission == 'm':
-                            transmission == 'Manual'
-                            baldur = False
-                        else:
-                            print('Invalid input, try again!')
-                        birta = True
-                        while birta:
-                            price = input('Enter Price: ')
-                            try:
-                                price = int(price)
-                                birta = False
-                            except ValueError:
-                                print('Error! Please Enter Digits')
-                    new_Car = Car(licence_Plate, category,
-                                  manufacturer, the_Type, transmission, price)
+                    transmission = self.__CarService.get_Transmission()
+                    price = self.__CarService.get_Price()
+                    new_Car = Car(licence_Plate, category, manufacturer, the_Type, transmission, price)
                     self.__CarService.add_car(new_Car)
                     print()
                     print('Car Added!\n\n')

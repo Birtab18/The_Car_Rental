@@ -25,17 +25,45 @@ class CarService:
         self.__car_Repo.show_Pricelist()
 
     def get_Category(self):
-        category = ""
-        while category != 'm' or 's' or 'j':
+        hallo = True
+        while hallo:
             category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
             if category == 'm':
                 category = 'Mini Car'
+                hallo = False
             elif category == 's':
                 category = 'Station Car'
+                hallo = False
             elif category == 'j':
                 category = 'Jeep'
+                hallo = False
             else:
                 print("Invalid input, try again!")
         return category
+
+    def get_Transmission(self):
+        loop = True
+        while loop:
+            transmission = input('Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
+            if transmission == 's':
+                transmission = 'Stick Shift'
+                loop = False
+            elif transmission == 'm':
+                transmission = 'Manual'
+                loop = False
+            else:
+                print('Invalid input, try again!')
+        return transmission
+
+    def get_Price(self):
+        loop = True
+        while loop:
+            price = input('Enter Price: ')
+            try:
+                price = int(price)
+                loop = False
+            except ValueError:
+                print('Error! Please Enter Digits')
+        return price
 
     
