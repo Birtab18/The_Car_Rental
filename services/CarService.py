@@ -24,4 +24,18 @@ class CarService:
     def show_Pricelist(self):
         self.__car_Repo.show_Pricelist()
 
+    def get_Category(self):
+        category = ""
+        while category != 'm' or 's' or 'j':
+            category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
+            if category == 'm':
+                category = 'Mini Car'
+            elif category == 's':
+                category = 'Station Car'
+            elif category == 'j':
+                category = 'Jeep'
+            else:
+                print("Invalid input, try again!")
+        return category
+
     

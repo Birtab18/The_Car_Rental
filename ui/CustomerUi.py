@@ -64,10 +64,10 @@ class Customer_Page:
                     print("-"*60)
                     SSN = input('Enter The SSN Of The Person You Want To Change: ')    
                     print()
-                    print('press 1 to Change SSN')
-                    print('Press 2 to Change Name')
-                    print('Press 3 to Change Phone Number')
-                    print('Press 4 to Change Email')
+                    print('press 1 to Change The SSN')
+                    print('Press 2 to Change The Name')
+                    print('Press 3 to Change The Phone Number')
+                    print('Press 4 to Change The Email')
                     print()
                     while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)\n')
@@ -81,6 +81,6 @@ class Customer_Page:
                     break
                 
                 else:
-                    print("Invalid input, try again!")
+                    print("Invalid input, try again!\n")
         
         main()

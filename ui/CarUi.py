@@ -49,18 +49,8 @@ class Car_Page:
                     print("-"*60)
                     print("New Car:")
                     licence_Plate = input('Enter The Licence Plate: ').upper()
-                    category = input('Enter The Category (Mini Car, Passenger Car, or Jeep): ').lower()
-                    # category = ''
-                    # while category != 'm' or 's' or 'j':
-                    #     category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
-                    #     if category == 'm':
-                    #         category = 'Mini Car'
-                    #     elif category == 's':
-                    #         category = 'Station Car'
-                    #     elif category == 'j':
-                    #         category = 'Jeep'
-                    #     else:
-                    #         print("Invalid input, try again!")
+                    category = self.__CarService.get_Category()
+
                     manufacturer = input('Enter The Manufacturer: ')
                     the_Type = input('Enter The Type: ')
                     transmission = input('Enter The Transmission (Stick Shift or Manual): ').lower()
