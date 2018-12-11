@@ -24,10 +24,9 @@ class CarService:
     def show_Pricelist(self):
         self.__car_Repo.show_Pricelist()
 
-    def get_Category(self):
+    def check_Category(self, category):
         loop = True
         while loop:
-            category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
             if category == 'm':
                 category = 'Mini Car'
                 loop = False
@@ -41,10 +40,9 @@ class CarService:
                 print("Invalid input, try again!")
         return category
 
-    def get_Transmission(self):
+    def check_Transmission(self, transmission):
         loop = True
         while loop:
-            transmission = input('Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
             if transmission == 's':
                 transmission = 'Stick Shift'
                 loop = False
@@ -55,10 +53,9 @@ class CarService:
                 print('Invalid input, try again!')
         return transmission
 
-    def get_Price(self):
+    def check_Price(self, price):
         loop = True
         while loop:
-            price = input('Enter Price: ')
             try:
                 price = int(price)
                 loop = False
