@@ -28,10 +28,8 @@ class Customer_Page:
                 if action == '1':
                     print("-"*60)
                     print("New customer:")
-                    SSN = input('Enter A SSN: ')
-                    while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input('Enter A SSN: ')
+                    SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
+                    SSN = self.__CustomerService.get_SSN(SSN_input)
                     name = input('Enter a name: ')
                     phonenumber = input('Enter a phonenumber: ')
                     while len(phonenumber) != 7:
@@ -44,37 +42,30 @@ class Customer_Page:
                 
                 elif action == '2':
                     print("-"*60)
-                    SSN = input('Enter The SSN Of The Person You Want To Delete: ')
-                    while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input('Enter The SSN Of The Person You Want To Delete: ')
+                    SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
+                    SSN = self.__CustomerService.get_SSN(SSN_input)
                     self.__CustomerService.delete_customer(SSN)
                     print('\nCustomer Deleted!\n\n')
                 
                 elif action == '3':
                     print("-"*60)
-                    SSN = input('Enter The SSN Of The Person You Want To Look Up: ')
+                    SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
+                    SSN = self.__CustomerService.get_SSN(SSN_input)
                     print()
-                    while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input('Enter The SSN Of The Person You Want To Look Up: ')
-                        print()
                     self.__CustomerService.look_up_customer(SSN)
                     print()
                     print()
                 
                 elif action == '4':
                     print("-"*60)
-                    SSN = input('Enter The SSN Of The Person You Want To Change: ')    
+                    SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
+                    SSN = self.__CustomerService.get_SSN(SSN_input)
                     print()
                     print('press 1 to Change The SSN')
                     print('Press 2 to Change The Name')
                     print('Press 3 to Change The Phone Number')
                     print('Press 4 to Change The Email')
                     print()
-                    while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input('Enter The SSN Of The Person You Want To Change: ')
                     choice = input('Enter Choice: ')
                     changes = input('Enter New Info: ')
                     self.__CustomerService.Change_Information(SSN, choice, changes)
