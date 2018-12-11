@@ -62,8 +62,6 @@ class CustomerOptions:
                         the_Choice = ''
                         if choice == '1':
                             the_Choice ='SSN'
-                            # if len(the_Choice) == 10:
-                            #     row[the_Choice] = changes
                         elif choice == '2':
                             the_Choice = 'Name'
                         elif choice == '3':
@@ -75,3 +73,4 @@ class CustomerOptions:
         os.remove('./data/customers.csv')
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
 # Til að eyða gömlu skránni og gera nýju skránna samnefnda gömlu skránni  
+
