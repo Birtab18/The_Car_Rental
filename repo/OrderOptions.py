@@ -12,15 +12,15 @@ class OrderOptions:
         with open("./data/cars.csv", 'r') as car_check:
             reader = csv.reader(car_check)
             for row in reader:
-                helgi = True
-                while helgi :
+                main_checking = True
+                while main_checking :
                     if row[6] == 'False':
                         print('This car is unavailable at this moment!')
                         print('Try again!')
                         break
                     else:
                         print('Found!')
-                        helgi = False
+                        main_checking = False
 
     # Press 1 to Put In Orders
     def put_in_an_order(self,SSN,car_id,car_rent_year,car_rent_month,car_rent_day,car_return_year,
@@ -74,19 +74,6 @@ class OrderOptions:
                 writer.writerow(row)
         os.remove('./data/cars.csv')
         os.rename('./data/deletecars.csv', './data/cars.csv')
-        ####
-    
-
-
-
-
-
-
-
-
-
-
-
 
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN, licence_Plate):
