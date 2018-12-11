@@ -48,14 +48,15 @@ class Order_Page:
                             print("-"*60)
                             SSN = input('Enter A SSN: ')
                             while len(SSN) != 10:
-                                print(
-                                    'Error! Please Input A Valid SSN (only 10 digits)\n')
+                                print('Error! Please Input A Valid SSN (only 10 digits)\n')
                                 SSN = input('Enter A SSN: ')
                             name = input('Enter a name: ')
                             phonenumber = input('Enter a phonenumber: ')
+                            while len(phonenumber) != 7:
+                                print('Error! Please Input A Valid Phone Number (only 7 digits)\n')
+                                phonenumber = input('Enter a phonenumber: ')
                             email = input('Enter an email: ')
-                            new_Costumer = Customer(
-                                SSN, name, phonenumber, email)
+                            new_Costumer = Customer(SSN, name, phonenumber, email)
                             self.__CustomerService.add_customer(new_Costumer)
                             print()
                             break
@@ -63,12 +64,10 @@ class Order_Page:
                             print('Invalid input, try again!')
                     print('Available cars: ')
                     self.__CarService.available_cars()
-                    SSN = input(
-                        '\nEnter The SSN Of The Person who want to rent a car: ')
+                    SSN = input('\nEnter The SSN Of The Person who want to rent a car: ')
                     while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input(
-                            'Enter The SSN Of The Person who want to rent a car: ')
+                        SSN = input('Enter The SSN Of The Person who want to rent a car: ')
                     car_id = input('Enter The Licence Plate Of The Car: ')
                     self.__OrderService.car_check(car_id)
                     print("-"*60)
@@ -79,50 +78,41 @@ class Order_Page:
                     car_return_year = int(input('Enter Return Year: '))
                     car_return_month = int(input('Enter Return Month: '))
                     car_return_day = int(input('Enter Return Day: '))
-                    extra_insurence = input(
-                        'Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
-                    payment = input(
-                        'Are you paying with a Card or Cash: \n Press 1 for Card \n Press 2 for Cash')
+                    extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
+                    payment = input('Are you paying with a Card or Cash: (Press 1 for Card , Press 2 for Cash) ')
                     if payment == '1':
-                        cardholder = input("Enter cardholder's name: ")
+                        cardholder = input("Enter The Cardholder's Name: ")
                         card = ''
-                        card = input('Enter your Card number: ')
+                        card = input('Enter Your Card Number: ')
                         while len(card) != 16:
-                            print(
-                                'Error! Please Input A Valid Card Number (only 16 digits)\n')
-                            card = input('Enter your Card number: ')
-                        exp_date = input('Enter Cards expiry date: ')
-                        sec_num = input('Enter the security number:')
-                        print('Payment completed !')
+                            print('Error! Please Input A Valid Card Number (only 16 digits)\n')
+                            card = input('Enter Your Card Number: ')
+                        exp_date = input('Enter Cards Expiry Date: ')
+                        sec_num = input('Enter The Security Number:')
+                        print('Payment Completed!')
                     if payment == '2':
-                        print('Payment completed')
+                        print('Payment Completed!')
                     self.__OrderService.put_in_an_order(SSN, car_id, car_rent_year, car_rent_month, car_rent_day,
-                                                        car_return_year, car_return_month, car_return_day, extra_insurence)
+                            car_return_year, car_return_month, car_return_day, extra_insurence)
                     print('\nOrder Added!\n\n')
 
                 elif action == '2':
                     print("-"*60)
-                    SSN = input(
-                        'Enter The SSN Of The Person Who Put In The Order: ')
+                    SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
                     while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input(
-                            'Enter The SSN of The Person Who Put In The Order: ')
-                    licence_Plate = input(
-                        'Enter The Licence Plate Of The Car: ')
+                        SSN = input('Enter The SSN of The Person Who Put In The Order: ')
+                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
                     self.__OrderService.cancel_Order(SSN, licence_Plate)
                     print()
 
                 elif action == '3':
                     print("-"*60)
-                    SSN = input(
-                        'Enter The SSN of The Person Who Put In The Order: ')
+                    SSN = input('Enter The SSN of The Person Who Put In The Order: ')
                     while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input(
-                            'Enter The SSN of The Person Who Put In The Order: ')
-                    licence_Plate = input(
-                        'Enter The Licence Plate Of The Car: \n')
+                        SSN = input('Enter The SSN of The Person Who Put In The Order: ')
+                    licence_Plate = input('Enter The Licence Plate Of The Car: \n')
                     self.__OrderService.look_up_order(SSN, licence_Plate)
                     print()
 
@@ -134,12 +124,10 @@ class Order_Page:
                     print('Press 3 to Change Return Date')
                     print('Press 4 to Change Extra Insurance (Y = Yes, N = No')
                     print()
-                    SSN = input(
-                        'Enter The SSN Of The Person Who Ordered The Car: ')
+                    SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
                     while len(SSN) != 10:
                         print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input(
-                            'Enter The SSN Of The Person Who Ordered The Car: ')
+                        SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
                     choice = input('Enter Choice: ')
                     changes = input('Enter New Info: ').lower()
                     self.__OrderService.change_Order(SSN, choice, changes)
@@ -148,8 +136,7 @@ class Order_Page:
                 elif action == '5':
                     print('Return car ')
                     self.__OrderService.print_orders()
-                    plate = input(
-                        'Enter the lichence plate of the car you want to return: ')
+                    plate = input('Enter The Licence Plate Of The Car You Want To Return: ')
                     self.__OrderService.return_car(plate)
 
                 elif action == 'f':
