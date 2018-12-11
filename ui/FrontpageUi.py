@@ -14,15 +14,14 @@ class Front_Page:
 
     def main_Menu(self):
         def print_Frontpage():
-            print('{:<30}{:>30}'.format('The Car Rental', 'Front page'))
+            print('\n\n\n{:<30}{:>30}'.format('The Car Rental', 'Front page'))
             print('-'*60)
             print("{:^60}".format('HELLO'))
             print('-'*60)
             print('Press 1 for Customers')
             print('Press 2 for Cars')
             print('Press 3 for Orders')
-            print('Press q to Quit')
-            print()
+            print('Press q to Quit\n')
 
         action = ''
         while (action != 'q'):
@@ -42,7 +41,7 @@ class Front_Page:
                 ui.Order_Menu()
 
             elif action == 'q':
-                print("Goodbye !")
+                print("Exiting Program. Goodbye !\n")
             
             else:
                 print('Invalid input, try again!\n')

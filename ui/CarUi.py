@@ -18,9 +18,8 @@ class Car_Page:
             print('Press 2 to Show Unavailable Cars')
             print('Press 3 to Show Price List')
             print('Press 4 to Add A New Car To The Car Rental')
-            print('Press F to Go To Frontpage')
-            print()
-
+            print('Press F to Go To Frontpage\n')
+            
         def main():
             print_Choices()
             action = ""  # so the while loop will start running
@@ -50,7 +49,8 @@ class Car_Page:
                 elif action == '4':
                     print("-"*60)
                     print("New Car:")
-                    licence_Plate = input('Enter The Licence Plate: ').upper()
+                    licence_Plate = input('Enter The Licence Plate: ')
+                    licence_Plate = licence_Plate.upper()
                     category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
                     category = self.__CarService.check_Category(category)
                     manufacturer = input('Enter The Manufacturer: ')

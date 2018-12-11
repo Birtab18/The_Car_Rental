@@ -22,32 +22,38 @@ class CustomerService:
     def Change_Information(self, SSN, choice, changes):
         self.__customer_Repo.Change_Information(SSN, choice, changes)
     
-    def check_SSN(self, SSN):
-        while len(SSN) != 10:
+    def check_SSN(self, SSN_input):
+        while len(SSN_input) != 10:
             print('Error! Please Input A Valid SSN (only 10 digits)\n')
-            SSN = input('Enter The SSN: ')
+            SSN_input = input('Enter The SSN: ')
         loop = True
         while loop:
             try:
-                SSN = int(SSN)
+                SSN_input = int(SSN_input)
+                SSN_input = str(SSN_input)
                 loop = False
             except ValueError:
                 print('Error! Please Enter A Valid SSN (only 10 digits)\n')
-                SSN = input('Enter The SSN: ')
-        return SSN
-    
+                SSN_input = input('Enter The SSN: ')
+        return SSN_input
 
-    def check_Phonenumber(self, phonenumber):
-        while len(phonenumber) != 7:
+    def check_Phonenumber(self, phonenumber_input):
+        while len(phonenumber_input) != 7:
             print('Error! Please Input A Valid Phone Number (only 7 digits)\n')
-            phonenumber = input('Enter A Phone Number: ')
+            phonenumber_input = input('Enter A Phone Number: ')
         loop = True
         while loop:
             try:
-                phonenumber = int(phonenumber)
+                phonenumber_input = int(phonenumber_input)
+                phonenumber_input = str(phonenumber_input)
                 loop = False
             except ValueError:
                 print('Error! Please Enter A Valid Phone Number (only 7 digits)\n')
-                phonenumber = input('Enter A Phone Number: ')
-        return phonenumber
+                phonenumber_input = input('Enter A Phone Number: ')
+        return phonenumber_input
     
+    def check_Choice(self, choice_input):
+        while choice_input not in ['1', '2', '3', '4']:
+            print('Error! Invalid Choice. Please Try Again')
+            choice_input = input('Enter Choice: ')
+        return choice_input
