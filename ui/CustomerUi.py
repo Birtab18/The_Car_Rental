@@ -66,6 +66,10 @@ class Customer_Page:
                     print()
                     choice = input('Enter Choice: ')
                     changes = input('Enter New Info: ')
+                    if choice == '1':
+                        changes = self.__CustomerService.check_SSN(changes)
+                    elif choice == '3':
+                        changes = self.__CustomerService.check_Phonenumber(changes)
                     self.__CustomerService.Change_Information(SSN, choice, changes)
                     print('\nCustomer Info Changed!\n\n')
                 

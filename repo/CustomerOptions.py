@@ -62,8 +62,6 @@ class CustomerOptions:
                         the_Choice = ''
                         if choice == '1':
                             the_Choice ='SSN'
-                            # if len(the_Choice) == 10:
-                            #     row[the_Choice] = changes
                         elif choice == '2':
                             the_Choice = 'Name'
                         elif choice == '3':

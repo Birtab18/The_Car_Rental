@@ -26,7 +26,6 @@ class CustomerService:
         while len(SSN) != 10:
             print('Error! Please Input A Valid SSN (only 10 digits)\n')
             SSN = input('Enter The SSN: ')
-
         loop = True
         while loop:
             try:
@@ -42,7 +41,6 @@ class CustomerService:
         while len(phonenumber) != 7:
             print('Error! Please Input A Valid Phone Number (only 7 digits)\n')
             phonenumber = input('Enter A Phone Number: ')
-        
         loop = True
         while loop:
             try:
@@ -52,3 +50,4 @@ class CustomerService:
                 print('Error! Please Enter A Valid Phone Number (only 7 digits)\n')
                 phonenumber = input('Enter A Phone Number: ')
         return phonenumber
+    
