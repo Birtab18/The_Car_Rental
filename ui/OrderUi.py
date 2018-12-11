@@ -28,8 +28,7 @@ class Order_Page:
             print('Press 3 to Look Up Order')
             print('Press 4 to Change Order')
             print('Press 5 to return car')
-            print('Press F to Go To Frontpage')
-            print()
+            print('Press F to Go To Frontpage\n')
 
         def main():
             print_Choices()
@@ -63,6 +62,7 @@ class Order_Page:
                     SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     car_id = input('Enter The Licence Plate Of The Car: ')
+                    car_id = car_id.upper()
                     self.__OrderService.car_check(car_id)
                     print("-"*60)
                     car_rent_year = int(input('Enter Rent Year: '))

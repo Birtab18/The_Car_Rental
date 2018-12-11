@@ -18,8 +18,7 @@ class Car_Page:
             print('Press 2 to Show Unavailable Cars')
             print('Press 3 to Show Price List')
             print('Press 4 to Add A New Car To The Car Rental')
-            print('Press F to Go To Frontpage')
-            print()
+            print('Press F to Go To Frontpage\n')
             
         def main():
             print_Choices()
