@@ -46,15 +46,11 @@ class Order_Page:
                         elif new_Or_Old == 'n':
                             print("Signing A New Customer:")
                             print("-"*60)
-                            SSN = input('Enter A SSN: ')
-                            while len(SSN) != 10:
-                                print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                                SSN = input('Enter A SSN: ')
+                            SSN = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
+                            SSN = self.__CustomerService.check_SSN(SSN)
                             name = input('Enter a name: ')
-                            phonenumber = input('Enter a phonenumber: ')
-                            while len(phonenumber) != 7:
-                                print('Error! Please Input A Valid Phone Number (only 7 digits)\n')
-                                phonenumber = input('Enter a phonenumber: ')
+                            phonenumber = input('Enter a Phone Number: ')
+                            phonenumber = self.__CustomerService.check_Phonenumber(phonenumber)
                             email = input('Enter an email: ')
                             new_Costumer = Customer(SSN, name, phonenumber, email)
                             self.__CustomerService.add_customer(new_Costumer)
@@ -64,10 +60,8 @@ class Order_Page:
                             print('Invalid input, try again!')
                     print('Available cars: ')
                     self.__CarService.available_cars()
-                    SSN = input('\nEnter The SSN Of The Person who want to rent a car: ')
-                    while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input('Enter The SSN Of The Person who want to rent a car: ')
+                    SSN = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
+                    SSN = self.__CustomerService.check_SSN(SSN)
                     car_id = input('Enter The Licence Plate Of The Car: ')
                     self.__OrderService.car_check(car_id)
                     print("-"*60)
@@ -99,19 +93,15 @@ class Order_Page:
                 elif action == '2':
                     print("-"*60)
                     SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
-                    while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input('Enter The SSN of The Person Who Put In The Order: ')
+                    SSN = self.__CustomerService.check_SSN(SSN)
                     licence_Plate = input('Enter The Licence Plate Of The Car: ')
                     self.__OrderService.cancel_Order(SSN, licence_Plate)
                     print()
 
                 elif action == '3':
                     print("-"*60)
-                    SSN = input('Enter The SSN of The Person Who Put In The Order: ')
-                    while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input('Enter The SSN of The Person Who Put In The Order: ')
+                    SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
+                    SSN = self.__CustomerService.check_SSN(SSN)
                     licence_Plate = input('Enter The Licence Plate Of The Car: \n')
                     self.__OrderService.look_up_order(SSN, licence_Plate)
                     print()
@@ -124,10 +114,8 @@ class Order_Page:
                     print('Press 3 to Change Return Date')
                     print('Press 4 to Change Extra Insurance (Y = Yes, N = No')
                     print()
-                    SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
-                    while len(SSN) != 10:
-                        print('Error! Please Input A Valid SSN (only 10 digits)\n')
-                        SSN = input('Enter The SSN Of The Person Who Ordered The Car: ')
+                    SSN = input('Enter The SSN Of The Person Who Put In The Order: ')
+                    SSN = self.__CustomerService.check_SSN(SSN)
                     choice = input('Enter Choice: ')
                     changes = input('Enter New Info: ').lower()
                     self.__OrderService.change_Order(SSN, choice, changes)
