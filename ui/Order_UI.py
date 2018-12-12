@@ -169,10 +169,7 @@ class Order_UI:
                             print('Quitting..')
                             break
 
-<<<<<<< HEAD
                 # Press 3 to Look Up Order
-=======
->>>>>>> ecbeb443f1291567db5854e9667a413efedf2402
                 elif action == '3':
                     print("-"*60)
                     SSN_input = input(
