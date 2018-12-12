@@ -84,23 +84,6 @@ class Customer_UI:
                             print('\nQuitting..\n\n')
                             break
 
-
-
-
-
-
-
-
-                    # while not isFound:
-                    #     print("Costumer not found! Please try again!\n")
-                    #     SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
-                    #     print()
-                    #     SSN = self.__CustomerService.check_SSN(SSN_input)
-                    #     isFound = self.__CustomerService.check_Costumer(SSN)
-                    # self.__CustomerService.look_up_customer(SSN)
-                    # print()
-                    # print()  
-                
                 elif action == '4':
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
