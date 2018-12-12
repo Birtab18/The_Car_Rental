@@ -1,12 +1,12 @@
 from services.CustomerService import CustomerService
 from services.CarService import CarService
 from services.OrderService import OrderService
-from ui.CustomerUi import Customer_Page
-from ui.CarUi import Car_Page
-from ui.OrderUi import Order_Page
+from ui.CustomerUI import Customer_UI
+from ui.CarUI import Car_UI
+from ui.OrderUI import Order_UI
 
 
-class Front_Page:
+class Front_Page_UI:
     def __init__(self):
         self.__CustomerService = CustomerService()
         self.__CarService = CarService()
@@ -29,15 +29,15 @@ class Front_Page:
             action = input('Choose command: ').lower()
             print()
             if action == '1':
-                ui = Customer_Page()
+                ui = Customer_UI()
                 ui.customer_Menu()
 
             elif action == '2':
-                ui = Car_Page()
+                ui = Car_UI()
                 ui.car_Menu()
             
             elif action == '3':
-                ui = Order_Page()
+                ui = Order_UI()
                 ui.Order_Menu()
 
             elif action == 'q':

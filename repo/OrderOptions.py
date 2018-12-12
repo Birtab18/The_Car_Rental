@@ -9,19 +9,21 @@ class OrderOptions:
     def __init__(self):
         self.__order = []
 
-    def car_check(self, car_id):
-        with open("./data/cars.csv", 'r') as car_check:
-            reader = csv.reader(car_check)
+    def check_Car(self, licence_Plate):
+        with open("./data/cars.csv", 'r') as check_Car:
+            reader = csv.reader(check_Car)
             for row in reader:
-                main_checking = True
-                while main_checking:
-                    if row[6] == 'False':
-                        print('This car is unavailable at this moment!')
-                        print('Try again!')
-                        break
-                    else:
-                        print('Found!')
-                        main_checking = False
+                if row[6] == 'True' and row[0] == licence_Plate:
+                    print('Found!')
+                    return True
+    
+    # Check if the order exists or not 
+    def check_Order(self,SSN_input,licence_Plate):
+        with open("./data/orders.csv", 'r') as check_Order:
+            reader = csv.reader(check_Order)
+            for row in reader:
+                if row[0] == SSN_input and row[2] == licence_Plate:
+                    return True
 
     # Press 1 to Put In Orders
     #bæta vi
@@ -67,6 +69,8 @@ class OrderOptions:
         #### Nota þetta til ad beata vid time moduleinn i thetta fall. 
         #breyta þvi þannig ad ef vid lesum ur order og ef akvedinn dagsetning er thad sama og dagsetningin i dag tha breytist hann ur true i false og t
         #thvi ekki haegt ad panta bilinn
+        
+
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type','transmission', 'price', 'status'])
             writer.writeheader()
@@ -109,11 +113,8 @@ class OrderOptions:
                     print('Licence Plate:{:>10}{}\nCategory:{:>15}{}\nManufacturer:{:>11}{}\nType:{:>19}{}\n'.
                           format(" ", row[2], " ", row[3], " ", row[4], " ", row[5]))
                     print('Order Informations:\n{}'.format("-"*35))
-                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>8}{}'.format(" ", row[6],
-                                                                                                 " ", row[7], " ", row[8]))
-            # if match == []:
-            #     print('Order Not Found')
-            #     print()
+                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>12}{}'.format(" ", row[6], " ", row[7], " ", row[8]))
+         
 
     # Press 4 to Change Order
 
@@ -146,9 +147,9 @@ class OrderOptions:
         with open("./data/orders.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
-                print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0],row[1],row[2],row[4],
-                        row[5],row[6],row[7]))
-            
+                print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0], row[1], row[2], row[4],
+                                                                          row[5], row[6], row[7]))
+
     def return_car(self, plate):
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=[

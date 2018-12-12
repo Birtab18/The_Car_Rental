@@ -2,15 +2,14 @@ from services.CarService import CarService
 from models.Car import Car
 
 
-class Car_Page:
+class Car_UI:
     def __init__(self):
         self.__CarService = CarService()
 
     def car_Menu(self):
         def print_Choices():
             ''' Prints out everything you can do with cars in the system '''
-            print('{:<30}{:>30}'.format(
-                'The Car Rental', 'F To Go to Frontpage'))
+            print('{:<30}{:>30}'.format('The Car Rental', 'F To Go to Frontpage'))
             print('-'*60)
             print("{:^60}".format('CARS'))
             print('-'*60)

@@ -8,6 +8,16 @@ class CustomerOptions:
     def __init__(self):
         self.__customer = []
 
+    
+
+    #Check if the comstumer exists
+    def check_Costumer(self, SSN_input):
+        with open("./data/customers.csv", 'r') as check_Costumer:
+            reader = csv.reader(check_Costumer)
+            for row in reader:
+                if row[0] ==  SSN_input:
+                    return True
+
     # Press 1 to Sign Up New Customer
     def add_customer(self, customer):
         ''' Adds a new customer to The Car Rental (the customers.csv file) '''

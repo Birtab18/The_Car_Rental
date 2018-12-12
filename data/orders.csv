@@ -1,9 +1,5 @@
 SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,total_price_main
-2612972489,Helgi Sævar,af890,Mini Car,Volkswagen,Golf,2018-12-14,2018-12-09,56250kr.-
-2612972489,Helgi Sævar,ai456,Station Car,Audi,A3,2018-12-13,2018-12-09,80000kr.-
-2612972489,Helgi Sævar,ab345,Mini Car,Toyota,Aygo,2019-12-04,2019-12-01,15000kr.-
 2005984079,birta beib,ab345,Mini Car,Toyota,Aygo,2018-12-28,2018-12-20,40000kr.-
-1234567899,birta bergros test,ac456,Mini Car,Chervolet,Spark,2018-12-20,2018-12-10,87500kr.-
 2005984079,birta beib,am890,Jeep,Volkswagen,Tiguan,2018-12-13,2018-12-12,15000kr.-
 0210683869,Haraldur,af890,Mini Car,Volkswagen,Golf,2018-12-04,2018-12-01,27000kr.-
 1406972739,Baldur,ao456,Jeep,Mercedes,Benz G-Class,2018-12-03,2018-12-01,60000kr.-

@@ -8,7 +8,7 @@ from models.Customer import Customer
 from repo.CustomerOptions import CustomerOptions
 
 
-class Order_Page:
+class Order_UI:
     def __init__(self):
         self.__OrderService = OrderService()
         self.__CarService = CarService()
@@ -37,7 +37,8 @@ class Order_Page:
                 action = input('Choose command: ').lower()
                 if action == '1':
                     print("-"*60)
-                    new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
+                    new_Or_Old = input(
+                        'Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
                         if new_Or_Old == 'y':
                             print()
@@ -45,13 +46,16 @@ class Order_Page:
                         elif new_Or_Old == 'n':
                             print("Signing A New Customer:")
                             print("-"*60)
-                            SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
+                            SSN_input = input(
+                                'Enter The SSN Of The Person Who Is Putting In An Order: ')
                             SSN = self.__CustomerService.check_SSN(SSN_input)
                             name = input('Enter a name: ')
                             phonenumber_input = input('Enter a Phone Number: ')
-                            phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)
+                            phonenumber = self.__CustomerService.check_Phonenumber(
+                                phonenumber_input)
                             email = input('Enter an email: ')
-                            new_Costumer = Customer(SSN, name, phonenumber, email)
+                            new_Costumer = Customer(
+                                SSN, name, phonenumber, email)
                             self.__CustomerService.add_customer(new_Costumer)
                             print()
                             break
@@ -61,9 +65,12 @@ class Order_Page:
                     self.__CarService.available_cars()
                     SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
-                    car_id = input('Enter The Licence Plate Of The Car: ')
-                    car_id = car_id.upper()
-                    self.__OrderService.car_check(car_id)
+                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                    isFound = self.__OrderService.check_Car(licence_Plate)
+                    while not isFound:
+                        print("Car not found \nPlease try again!")
+                        licence_Plate = input('Enter The Licence Plate Of The Car: ').upper()
+                        isFound = self.__OrderService.check_Car(licence_Plate)
                     print("-"*60)
                     car_rent_year = int(input('Enter Rent Year: '))
                     car_rent_month = int(input('Enter Rent Month: '))
@@ -79,15 +86,15 @@ class Order_Page:
                         card = ''
                         card = input('Enter Your Card Number: ')
                         while len(card) != 16:
-                            print('Error! Please Input A Valid Card Number (only 16 digits)\n')
+                            print( 'Error! Please Input A Valid Card Number (only 16 digits)\n')
                             card = input('Enter Your Card Number: ')
                         exp_date = input('Enter Cards Expiry Date: ')
                         sec_num = input('Enter The Security Number:')
                         print('Payment Completed!')
                     if payment == '2':
                         print('Payment Completed!')
-                    self.__OrderService.put_in_an_order(SSN, car_id, car_rent_year, car_rent_month, car_rent_day,
-                            car_return_year, car_return_month, car_return_day, extra_insurence)
+                    self.__OrderService.put_in_an_order(SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day,
+                                                        car_return_year, car_return_month, car_return_day, extra_insurence)
                     print('\nOrder Added!\n\n')
 
                 elif action == '2':
@@ -95,14 +102,32 @@ class Order_Page:
                     SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     licence_Plate = input('Enter The Licence Plate Of The Car: ')
-                    self.__OrderService.cancel_Order(SSN, licence_Plate)
                     print()
+                    isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                    while not isFound:
+                        print("\nOrder not found! Please try again!\n")
+                        SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
+                        SSN = self.__CustomerService.check_SSN(SSN_input)
+                        licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                        print()
+                        isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                    self.__OrderService.cancel_Order(SSN, licence_Plate)
+                    print('\nOrder Canceled!\n\n')
 
                 elif action == '3':
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
-                    licence_Plate = input('Enter The Licence Plate Of The Car: \n')
+                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                    print()
+                    isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                    while not isFound:
+                        print("\nOrder not found! Please try again!\n") 
+                        SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
+                        SSN = self.__CustomerService.check_SSN(SSN_input)
+                        licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                        print()
+                        isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
                     self.__OrderService.look_up_order(SSN, licence_Plate)
                     print()
 
@@ -126,7 +151,8 @@ class Order_Page:
                     print("-"*60)
                     print('Return car: \n')
                     self.__OrderService.print_orders()
-                    plate = input('\nEnter The Licence Plate Of The Car You Want To Return: ')
+                    plate = input(
+                        '\nEnter The Licence Plate Of The Car You Want To Return: ')
                     self.__OrderService.return_car(plate)
                     print('\nCar Returned!\n\n')
 
