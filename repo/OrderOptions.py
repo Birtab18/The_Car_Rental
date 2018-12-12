@@ -97,19 +97,17 @@ class OrderOptions:
         ''' Looks up an order in The Car Rental (in the orders.csv file) '''
         with open("./data/orders.csv", 'r') as look_up_order_file:
             reader = csv.reader(look_up_order_file)
+            # It iterates through every row in the file, to try to find a match
             for row in reader:
-                match = []
                 if row[0] == SSN:
-                    match.append('found')
+                    # If the SSN input matches index [0] it will print all the informations about the costumer
                     print('Customer Informations\n{}'.format("-"*35))
-                    print('SSN:{:>20}{}\nName:{:>19}{}\n'.format(
-                        " ", row[0], " ", row[1]))
+                    print('SSN:{:>20}{}\nName:{:>19}{}\n'.format(" ", row[0], " ", row[1]))
                     print('Car Informations:\n{}'.format("-"*35))
                     print('Licence Plate:{:>10}{}\nCategory:{:>15}{}\nManufacturer:{:>11}{}\nType:{:>19}{}\n'.
                           format(" ", row[2], " ", row[3], " ", row[4], " ", row[5]))
                     print('Order Informations:\n{}'.format("-"*35))
-                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>12}{}'.format(
-                        " ", row[6], " ", row[7], " ", row[8]))
+                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>12}{}'.format(" ", row[6], " ", row[7], " ", row[8]))
 
     # Press 4 to Change Order
     def change_Order(self, SSN, choice, changes):
