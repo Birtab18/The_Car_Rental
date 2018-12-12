@@ -15,9 +15,9 @@ class OrderOptions:
             for row in reader:
                 if row[6] == 'True' and row[0] == licence_Plate:
                     return True
-    
-    # Check if the order exists or not 
-    def check_Order(self,SSN):
+
+    # Check if the order exists or not
+    def check_Order(self, SSN):
         with open("./data/orders.csv", 'r') as check_Order:
             reader = csv.reader(check_Order)
             for row in reader:
@@ -40,7 +40,8 @@ class OrderOptions:
             for bar in reader_car:
                 if bar[0] == car_id:
                     break
-                    print('{}, {}, {}, {}'.format(bar[0], bar[1], bar[2], bar[3]))
+                    print('{}, {}, {}, {}'.format(
+                        bar[0], bar[1], bar[2], bar[3]))
 
         # taka inn dagasetningarnar sem vid viljum panta bilinn.
         with open('./data/orders.csv', 'a+') as order_file:
@@ -57,6 +58,12 @@ class OrderOptions:
             # extra insurence
             if total_price == 'y':
                 total_price_main = int(multiply*1.25)
+                credit_card_input = input('Enter your credit card number: ')
+                while len(credit_card_input) != 16:
+                    print(
+                        'Error! Please Input A Valid Credit Card Number (only 7 digits)\n')
+                    credit_card_input = input(
+                        'Enter your credit card number: ')
             elif total_price == 'n':
                 total_price_main = int(multiply)
             else:
@@ -82,8 +89,8 @@ class OrderOptions:
     def cancel_Order(self, SSN):
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
-                                                    'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
+            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer',
+                                                     'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != SSN:
@@ -107,8 +114,8 @@ class OrderOptions:
                     print('Licence Plate:{:>10}{}\nCategory:{:>15}{}\nManufacturer:{:>11}{}\nType:{:>19}{}\n'.
                           format(" ", row[2], " ", row[3], " ", row[4], " ", row[5]))
                     print('Order Informations:\n{}'.format("-"*35))
-                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>12}{}'.format(" ", row[6], " ", row[7], " ", row[8]))
-         
+                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>12}{}'.format(
+                        " ", row[6], " ", row[7], " ", row[8]))
 
     # Press 4 to Change Order
 
@@ -121,7 +128,7 @@ class OrderOptions:
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i, value in row.items():
-                    if value == SSN: 
+                    if value == SSN:
                         the_Choice = ''
                         if choice == '1':
                             the_Choice = 'rent_Date'
