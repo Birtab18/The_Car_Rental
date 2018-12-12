@@ -1,5 +1,6 @@
 from services.CarService import CarService
 from models.Car import Car
+from datetime import datetime
 
 
 class Car_UI:
@@ -12,7 +13,8 @@ class Car_UI:
             print('{:<30}{:>30}'.format(
                 'The Car Rental', 'F To Go to Frontpage'))
             print('-'*60)
-            print("{:^60}".format('CARS'))
+            today = datetime.today().date()
+            print("{:}{:>22}".format(today, 'CARS'))
             print('-'*60)
             print('Press 1 to Show Available Cars')
             print('Press 2 to Show Unavailable Cars')

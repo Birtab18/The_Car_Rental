@@ -1,5 +1,6 @@
 from services.CustomerService import CustomerService
 from models.Customer import Customer
+from datetime import datetime
 
 
 class Customer_UI:
@@ -9,9 +10,11 @@ class Customer_UI:
     def customer_Menu(self):
         def print_Choices():
             ''' Prints out everything you can do with customers in the system '''
-            print('{:<30}{:>30}'.format('The Car Rental', 'F To Go to Frontpage'))
+            print('{:<30}{:>30}'.format(
+                'The Car Rental', 'F To Go to Frontpage'))
             print('-'*60)
-            print("{:^60}".format('CUSTOMERS'))
+            today = datetime.today().date()
+            print("{:}{:>22}".format(today, 'CUSTOMERS'))
             print('-'*60)
             print('Press 1 to Sign Up New Customer ')
             print('Press 2 to Delete Customer')
@@ -22,12 +25,13 @@ class Customer_UI:
         def main():
             print_Choices()
             action = ""
-            while action not in ["1","2","3","4","F"]:
+            while action not in ["1", "2", "3", "4", "F"]:
                 action = input('Choose command: ').lower()
                 if action == '1':
                     print("-"*60)
                     print("New customer:")
-                    SSN_input = input('Enter The SSN Of The Person You Want To Sign Up: ')
+                    SSN_input = input(
+                        'Enter The SSN Of The Person You Want To Sign Up: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     isfound = self.__CustomerService.check_Costumer(SSN)
                     if isfound:
@@ -35,7 +39,8 @@ class Customer_UI:
                     else:
                         name = input('Enter A Name: ')
                         phonenumber_input = input('Enter A Phone Number: ')
-                        phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)
+                        phonenumber = self.__CustomerService.check_Phonenumber(
+                            phonenumber_input)
                         email = input('Enter An Email: ')
                         new_Costumer = Customer(SSN, name, phonenumber, email)
                         self.__CustomerService.add_customer(new_Costumer)
@@ -43,7 +48,8 @@ class Customer_UI:
 
                 elif action == '2':
                     print("-"*60)
-                    SSN_input = input('Enter The SSN Of The Person You Want To Delete: ')
+                    SSN_input = input(
+                        'Enter The SSN Of The Person You Want To Delete: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
                     isFound = self.__CustomerService.check_Costumer(SSN)
@@ -51,11 +57,14 @@ class Customer_UI:
                         self.__CustomerService.delete_customer(SSN)
                         print('\nCustomer Deleted!\n\n')
                     while not isFound:
-                        again = input("Costumer Not Found! Press 1 to Try Again, Press 2 to Quit: ")
+                        again = input(
+                            "Costumer Not Found! Press 1 to Try Again, Press 2 to Quit: ")
                         if again == '1':
-                            SSN_input = input('\nEnter The SSN Of The Person You Want To Delete: ')
+                            SSN_input = input(
+                                '\nEnter The SSN Of The Person You Want To Delete: ')
                             SSN = self.__CustomerService.check_SSN(SSN_input)
-                            isFound = self.__CustomerService.check_Costumer(SSN)
+                            isFound = self.__CustomerService.check_Costumer(
+                                SSN)
                             if isFound:
                                 self.__CustomerService.delete_customer(SSN)
                                 print('\nCustomer Deleted!\n\n')
@@ -63,31 +72,34 @@ class Customer_UI:
                             print('\nQuitting..\n\n')
                             break
 
-
                 elif action == '3':
                     print("-"*60)
-                    SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
+                    SSN_input = input(
+                        'Enter The SSN Of The Person You Want To Look Up: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     while not isFound:
                         print("Costumer not found! Please try again!\n")
-                        SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
+                        SSN_input = input(
+                            'Enter The SSN Of The Person You Want To Look Up: ')
                         print()
                         SSN = self.__CustomerService.check_SSN(SSN_input)
                         isFound = self.__CustomerService.check_Costumer(SSN)
                     self.__CustomerService.look_up_customer(SSN)
                     print()
-                    print()  
-                
+                    print()
+
                 elif action == '4':
                     print("-"*60)
-                    SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
+                    SSN_input = input(
+                        'Enter The SSN Of The Person You Want To Change: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     while not isFound:
                         print("Costumer not found! Please try again!\n")
-                        SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
+                        SSN_input = input(
+                            'Enter The SSN Of The Person You Want To Change: ')
                         SSN = self.__CustomerService.check_SSN(SSN_input)
                         isFound = self.__CustomerService.check_Costumer(SSN)
                     print()
@@ -102,14 +114,16 @@ class Customer_UI:
                     if choice == '1':
                         changes = self.__CustomerService.check_SSN(changes)
                     elif choice == '3':
-                        changes = self.__CustomerService.check_Phonenumber(changes)
-                    self.__CustomerService.Change_Information(SSN, choice, changes)
+                        changes = self.__CustomerService.check_Phonenumber(
+                            changes)
+                    self.__CustomerService.Change_Information(
+                        SSN, choice, changes)
                     print('\nCustomer Info Changed!\n\n')
-                
+
                 elif action == 'f':
                     break
-                
+
                 else:
                     print("Invalid input, try again!\n")
-                
+
         main()

@@ -6,6 +6,7 @@ from services.CarService import CarService
 from models.Order import Order
 from models.Customer import Customer
 from repo.CustomerOptions import CustomerOptions
+from datetime import datetime
 
 
 class Order_UI:
@@ -21,7 +22,8 @@ class Order_UI:
             print('{:<30}{:>30}'.format(
                 'The Car Rental', 'F To Go to Frontpage'))
             print('-'*60)
-            print("{:^60}".format('ORDERS'))
+            today = datetime.today().date()
+            print("{:}{:>22}".format(today, 'ORDERS'))
             print('-'*60)
             print('Press 1 to Put In Order')
             print('Press 2 to Cancel Order')

@@ -4,6 +4,7 @@ from services.OrderService import OrderService
 from ui.Customer_UI import Customer_UI
 from ui.Car_UI import Car_UI
 from ui.Order_UI import Order_UI
+from datetime import datetime
 
 
 class Front_Page_UI:
@@ -16,7 +17,8 @@ class Front_Page_UI:
         def print_Frontpage():
             print('\n\n\n{:<30}{:>30}'.format('The Car Rental', 'Front page'))
             print('-'*60)
-            print("{:^60}".format('HELLO'))
+            today = datetime.today().date()
+            print("{:}{:>22}".format(today, 'HELLO'))
             print('-'*60)
             print('Press 1 for Customers')
             print('Press 2 for Cars')
