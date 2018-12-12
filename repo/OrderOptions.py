@@ -62,7 +62,7 @@ class OrderOptions:
             else:
                 print('Invalid input')
             order_file.write('{},{},{},{},{},{},{},{},{}kr.-\n'.format(SSN, Name, licence_Plate, category,
-                                                                       manufacturer, the_Type, rentday, returnday, total_price_main))
+                    manufacturer, the_Type, rentday, returnday, total_price_main))
         # fall sem breytir yfir i false.
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type',
@@ -111,7 +111,6 @@ class OrderOptions:
          
 
     # Press 4 to Change Order
-
     def change_Order(self, SSN, choice, changes):
         ''' Changes an order in The Car Rental (in the orders.csv file). Changes category, the date of the rent,
         the date of the return or/and if the customer want an extra insurance '''
