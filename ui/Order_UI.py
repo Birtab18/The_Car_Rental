@@ -42,6 +42,7 @@ class Order_UI:
                     #Prenta út thad sem stendur i futureorders.csv skranni. og segja 
                     print('Are there any Orders You have to activate today?')
                     self.__OrderService.print_out_future_orders()
+                    
                     print("-"*60)
                     new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
@@ -53,6 +54,7 @@ class Order_UI:
                             print("-"*60)
                             SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                             SSN = self.__CustomerService.check_SSN(SSN_input)
+                            self.__OrderService.remove_from_future_orders(SSN_input)
                             name = input('Enter a name: ')
                             phonenumber_input = input('Enter a Phone Number: ')
                             phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)
@@ -91,8 +93,7 @@ class Order_UI:
                         else:
                             print('Wrong input')
                     print("-"*60)
-                    SSN_input = input(
-                        'Enter The SSN Of The Person Who Is Putting In An Order: ')
+                    SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print("-"*60)
                     licence_Plate = input(

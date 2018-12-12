@@ -8,8 +8,6 @@ class CustomerOptions:
     def __init__(self):
         self.__customer = []
 
-    
-
     #Check if the comstumer exists
     def check_Costumer(self, SSN_input):
         with open("./data/customers.csv", 'r') as check_Costumer:

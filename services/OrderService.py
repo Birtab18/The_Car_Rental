@@ -53,3 +53,6 @@ class OrderService:
 
     def print_out_future_orders(self):
         return self.__order_Repo.print_out_future_orders()
+        
+    def remove_from_future_orders(self,SSN_input):
+        return self.__order_Repo.remove_from_future_orders(SSN_input)
