@@ -46,12 +46,12 @@ class Customer_UI:
                     SSN_input = input('Enter The SSN Of The Person You Want To Delete: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
-                    isFound = self.__CustomerService.check_Costumer(SSN_input)
+                    isFound = self.__CustomerService.check_Costumer(SSN)
                     while not isFound:
                         print("Costumer Not Found! Please Try Again!\n")
                         SSN_input = input('Enter The SSN Of The Person You Want To Delete: ')
                         SSN = self.__CustomerService.check_SSN(SSN_input)
-                        isFound = self.__CustomerService.check_Costumer(SSN_input)
+                        isFound = self.__CustomerService.check_Costumer(SSN)
                     self.__CustomerService.delete_customer(SSN)
                     print('\nCustomer Deleted!\n\n')
                 
@@ -60,13 +60,13 @@ class Customer_UI:
                     SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
-                    isFound = self.__CustomerService.check_Costumer(SSN_input)
+                    isFound = self.__CustomerService.check_Costumer(SSN)
                     while not isFound:
                         print("Costumer not found! Please try again!\n")
                         SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
                         print()
                         SSN = self.__CustomerService.check_SSN(SSN_input)
-                        isFound = self.__CustomerService.check_Costumer(SSN_input)
+                        isFound = self.__CustomerService.check_Costumer(SSN)
                     self.__CustomerService.look_up_customer(SSN)
                     print()
                     print()  
@@ -75,6 +75,12 @@ class Customer_UI:
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    isFound = self.__CustomerService.check_Costumer(SSN)
+                    while not isFound:
+                        print("Costumer not found! Please try again!\n")
+                        SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
+                        SSN = self.__CustomerService.check_SSN(SSN_input)
+                        isFound = self.__CustomerService.check_Costumer(SSN)
                     print()
                     print('press 1 to Change The SSN')
                     print('Press 2 to Change The Name')
@@ -96,5 +102,5 @@ class Customer_UI:
                 
                 else:
                     print("Invalid input, try again!\n")
-        
+                
         main()

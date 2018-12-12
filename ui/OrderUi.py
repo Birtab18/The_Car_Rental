@@ -46,13 +46,11 @@ class Order_UI:
                         elif new_Or_Old == 'n':
                             print("Signing A New Customer:")
                             print("-"*60)
-                            SSN_input = input(
-                                'Enter The SSN Of The Person Who Is Putting In An Order: ')
+                            SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                             SSN = self.__CustomerService.check_SSN(SSN_input)
                             name = input('Enter a name: ')
                             phonenumber_input = input('Enter a Phone Number: ')
-                            phonenumber = self.__CustomerService.check_Phonenumber(
-                                phonenumber_input)
+                            phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)
                             email = input('Enter an email: ')
                             new_Costumer = Customer(
                                 SSN, name, phonenumber, email)
@@ -103,14 +101,14 @@ class Order_UI:
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     licence_Plate = input('Enter The Licence Plate Of The Car: ')
                     print()
-                    isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                    isFound = self.__OrderService.check_Order(SSN,licence_Plate)
                     while not isFound:
                         print("\nOrder not found! Please try again!\n")
                         SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                         SSN = self.__CustomerService.check_SSN(SSN_input)
                         licence_Plate = input('Enter The Licence Plate Of The Car: ')
                         print()
-                        isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                        isFound = self.__OrderService.check_Order(SSN,licence_Plate)
                     self.__OrderService.cancel_Order(SSN, licence_Plate)
                     print('\nOrder Canceled!\n\n')
 
@@ -120,14 +118,14 @@ class Order_UI:
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     licence_Plate = input('Enter The Licence Plate Of The Car: ')
                     print()
-                    isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                    isFound = self.__OrderService.check_Order(SSN,licence_Plate)
                     while not isFound:
                         print("\nOrder not found! Please try again!\n") 
                         SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                         SSN = self.__CustomerService.check_SSN(SSN_input)
                         licence_Plate = input('Enter The Licence Plate Of The Car: ')
                         print()
-                        isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                        isFound = self.__OrderService.check_Order(SSN,licence_Plate)
                     self.__OrderService.look_up_order(SSN, licence_Plate)
                     print()
 
