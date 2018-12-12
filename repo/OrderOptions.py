@@ -38,8 +38,7 @@ class OrderOptions:
                     return True
 
     # Press 1 to Put In Orders
-    def put_in_an_order(self, SSN, car_id, car_rent_year, car_rent_month, car_rent_day, car_return_year,
-                        car_return_month, car_return_day, total_price):
+    def put_in_an_order(self, SSN, car_id, car_rent_year, car_rent_month, car_rent_day, car_return_year,car_return_month, car_return_day, total_price):
         ''' Adds an order to The Car Rental (the orders.csv file) '''
         with open("./data/customers.csv", 'r') as customer_File:
             reader_customer = csv.reader(customer_File)
@@ -181,8 +180,13 @@ class OrderOptions:
         with open('./data/futureorders.csv', 'a+') as order_file:
             SSN = SSN
             Name = Name
-            licence_Plate = licence_Plate
-            rentday = date(car_rent_year, car_rent_month, car_rent_day)
-            returnday = date(car_return_year, car_return_month, car_return_day)
-
-            order_file.write('{},{},{},{},{},{}\n'.format(SSN, Name, licence_Plate, rentday, returnday, extra_insurance))
+            LicencePlate = licence_Plate
+            Rentday = date(car_rent_year, car_rent_month, car_rent_day)
+            Returnday = date(car_return_year, car_return_month, car_return_day)
+            ExtraInsurance = extra_insurance
+            order_file.write('{},{},{},{},{},{}\n'.format(SSN, Name, LicencePlate, Rentday, Returnday, ExtraInsurance))
+    def print_out_future_orders(self):
+        with open('./data/futureorders.csv', 'r') as order_car:
+            reader_car = csv.reader(order_car)
+            for bar in reader_car:
+                print('{:10} {:15} {:15} {:15} {:15} {:15}'.format(bar[0],bar[1],bar[2],bar[3],bar[4],bar[5]))
