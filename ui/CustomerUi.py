@@ -29,15 +29,18 @@ class Customer_UI:
                     print("New customer:")
                     SSN_input = input('Enter The SSN Of The Person You Want To Sign Up: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
-                    #self.__CustomerService.look_up_customer(SSN) #check if the customer already exitst
-                    name = input('Enter a name: ')
-                    phonenumber_input = input('Enter A Phone Number: ')
-                    phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)
-                    email = input('Enter An Email: ')
-                    new_Costumer = Customer(SSN, name, phonenumber, email)
-                    self.__CustomerService.add_customer(new_Costumer)
-                    print('\nCustomer Signed!\n\n')
-                
+                    isfound = self.__CustomerService.check_Costumer(SSN)
+                    if isfound:
+                        print('\nCustomer Already Exists!\n')
+                    else:
+                        name = input('Enter A Name: ')
+                        phonenumber_input = input('Enter A Phone Number: ')
+                        phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)
+                        email = input('Enter An Email: ')
+                        new_Costumer = Customer(SSN, name, phonenumber, email)
+                        self.__CustomerService.add_customer(new_Costumer)
+                        print('\nCustomer Signed!\n\n')
+                    
                 elif action == '2':
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person You Want To Delete: ')
@@ -45,7 +48,7 @@ class Customer_UI:
                     print()
                     isFound = self.__CustomerService.check_Costumer(SSN_input)
                     while not isFound:
-                        print("Costumer not found! Please try again!\n")
+                        print("Costumer Not Found! Please Try Again!\n")
                         SSN_input = input('Enter The SSN Of The Person You Want To Delete: ')
                         SSN = self.__CustomerService.check_SSN(SSN_input)
                         isFound = self.__CustomerService.check_Costumer(SSN_input)
@@ -61,6 +64,7 @@ class Customer_UI:
                     while not isFound:
                         print("Costumer not found! Please try again!\n")
                         SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
+                        print()
                         SSN = self.__CustomerService.check_SSN(SSN_input)
                         isFound = self.__CustomerService.check_Costumer(SSN_input)
                     self.__CustomerService.look_up_customer(SSN)
