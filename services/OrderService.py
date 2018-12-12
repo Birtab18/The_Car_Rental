@@ -46,3 +46,7 @@ class OrderService:
     
     def check_Order(self,SSN):
         return self.__order_Repo.check_Order(SSN)
+
+    def put_in_future_order(self,SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,extra_insurance):
+        return self.__order_Repo.put_in_future_order(SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,
+                    car_return_day,extra_insurance)

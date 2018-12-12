@@ -29,17 +29,17 @@ class Order_UI:
             print('Press 3 to Look Up Order')
             print('Press 4 to Change Order')
             print('Press 5 to Return Car')
+            print('Press 6 to Put in a Future Order')
             print('Press F to Go To Frontpage\n')
 
         def main():
             print_Choices()
             action = ""
-            while action not in ["1", "2", "3", "4", "5", "F"]:
+            while action not in ["1", "2", "3", "4", "5", "6", "F"]:
                 action = input('Choose command: ').lower()
                 if action == '1':
                     print("-"*60)
-                    new_Or_Old = input(
-                        'Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
+                    new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
                         if new_Or_Old == 'y':
                             print()
@@ -47,8 +47,7 @@ class Order_UI:
                         elif new_Or_Old == 'n':
                             print("Signing A New Customer:")
                             print("-"*60)
-                            SSN_input = input(
-                                'Enter The SSN Of The Person Who Is Putting In An Order: ')
+                            SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                             SSN = self.__CustomerService.check_SSN(SSN_input)
                             name = input('Enter a name: ')
                             phonenumber_input = input('Enter a Phone Number: ')
@@ -165,7 +164,6 @@ class Order_UI:
                             print('Quitting..')
                             break
 
-
                 elif action == '3':
                     print("-"*60)
                     SSN_input = input(
@@ -217,6 +215,21 @@ class Order_UI:
                     self.__OrderService.return_car(plate)
                     print('\nCar Returned!')
 
+                elif action == '6':
+                    print("-"*60)
+                    SSN = input('Enter SSN: ')
+                    Name = input('Enter Name: ')
+                    licence_Plate = input('Enter licence plate: ')
+                    car_rent_year = int(input('Enter Rent Year: '))
+                    car_rent_month = int(input('Enter Rent Month: '))
+                    car_rent_day = int(input('Enter Rent Day: '))
+                    print("-"*60)
+                    car_return_year = int(input('Enter Return Year: '))
+                    car_return_month = int(input('Enter Return Month: '))
+                    car_return_day = int(input('Enter Return Day: '))
+                    extra_insurance = input('Do you want extra insurance? ')
+                    self.__OrderService.put_in_future_order(SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,
+                    car_return_day,extra_insurance)
                 elif action == 'f':
                     break
 

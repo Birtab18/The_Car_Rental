@@ -79,8 +79,7 @@ class OrderOptions:
                     manufacturer, the_Type, rentday, returnday, total_price_main))
         # fall sem breytir yfir i false.
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type',
-                                                     'transmission', 'price', 'status'])
+            writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type', 'transmission', 'price', 'status'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i, value in row.items():
@@ -173,3 +172,15 @@ class OrderOptions:
                     writer.writerow(row)
         os.remove('./data/orders.csv')
         os.rename('./data/cancel_Order.csv', './data/orders.csv')
+
+    #Yta a 6! 
+    def put_in_future_order(self,SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,extra_insurance):
+        ''' Keeps information about future orders.'''
+        with open('./data/futureorders.csv', 'a+') as order_file:
+            SSN = SSN
+            Name = Name
+            licence_Plate = licence_Plate
+            rentday = date(car_rent_year, car_rent_month, car_rent_day)
+            returnday = date(car_return_year, car_return_month, car_return_day)
+
+            order_file.write('{},{},{},{},{},{}\n'.format(SSN, Name, licence_Plate, rentday, returnday, extra_insurance))
