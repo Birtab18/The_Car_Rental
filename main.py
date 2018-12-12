@@ -1,4 +1,4 @@
-from ui.Frontpage_UI import Front_Page_UI
+from ui.Front_Page_UI import Front_Page_UI
 
 
 def main():
