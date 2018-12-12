@@ -1,9 +1,9 @@
 from services.CustomerService import CustomerService
 from services.CarService import CarService
 from services.OrderService import OrderService
-from ui.CustomerUI import Customer_UI
-from ui.CarUI import Car_UI
-from ui.OrderUI import Order_UI
+from ui.Customer_UI import Customer_UI
+from ui.Car_UI import Car_UI
+from ui.Order_UI import Order_UI
 
 
 class Front_Page_UI:
@@ -35,13 +35,13 @@ class Front_Page_UI:
             elif action == '2':
                 ui = Car_UI()
                 ui.car_Menu()
-            
+
             elif action == '3':
                 ui = Order_UI()
                 ui.Order_Menu()
 
             elif action == 'q':
                 print("Exiting Program. Goodbye !\n")
-            
+
             else:
                 print('Invalid input, try again!\n')
