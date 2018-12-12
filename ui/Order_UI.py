@@ -67,7 +67,7 @@ class Order_UI:
                         'Enter The SSN Of The Person Who Is Putting In An Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     licence_Plate = input(
-                        'Enter The Licence Plate Of The Car: ')
+                        'Enter The Licence Plate Of The Car: ').upper()
                     isFound = self.__OrderService.check_Car(licence_Plate)
                     while not isFound:
                         print("Car not found \nPlease try again!")
@@ -82,11 +82,21 @@ class Order_UI:
                     car_return_year = int(input('Enter Return Year: '))
                     car_return_month = int(input('Enter Return Month: '))
                     car_return_day = int(input('Enter Return Day: '))
-                    extra_insurence = input(
-                        'Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
+                    print("-"*60)
+                    extra_insurance = input(
+                        'Do you want extra insurance: Press(Y) for Yes and Press(N) for No: ').lower()
+                    print("-"*60)
+                    if extra_insurance == 'y':
+                        print('We need your Credit Card Number please\n')
+                        credit_card = input('Enter your Credit Card Number:')
+                        while len(credit_card) != 16:
+                            print(
+                                'Error! Please Input A Valid Credit Card Number (only 16 digits)\n')
+                            credit_card = input(
+                                'Enter your Credit Card Number:')
                     print("-"*60)
                     payment = input(
-                        'Are you paying with a Card or Cash: (Press 1 for Card , Press 2 for Cash) ')
+                        'Are you paying with a Card or Cash: (Press 1 for Card , Press 2 for Cash): ')
                     print("-"*60)
                     if payment == '1':
                         cardholder = input("Enter The Cardholder's Name: ")
@@ -102,7 +112,7 @@ class Order_UI:
                     if payment == '2':
                         print('Payment Completed!')
                     self.__OrderService.put_in_an_order(SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day,
-                                                        car_return_year, car_return_month, car_return_day, extra_insurence)
+                                                        car_return_year, car_return_month, car_return_day, extra_insurance)
                     print('\nOrder Added!\n\n')
 
                 elif action == '2':
