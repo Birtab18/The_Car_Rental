@@ -14,7 +14,6 @@ class OrderOptions:
             reader = csv.reader(check_Car)
             for row in reader:
                 if row[6] == 'True' and row[0] == licence_Plate:
-                    print('Found!')
                     return True
     
     # Check if the order exists or not 

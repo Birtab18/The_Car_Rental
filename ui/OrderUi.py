@@ -62,6 +62,7 @@ class Order_UI:
                     SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                    licence_Plate = licence_Plate.upper()
                     isFound = self.__OrderService.check_Car(licence_Plate)
                     while not isFound:
                         print("Car not found \nPlease try again!")
