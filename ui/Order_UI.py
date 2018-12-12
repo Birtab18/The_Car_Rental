@@ -168,10 +168,7 @@ class Order_UI:
                             print('Quitting..')
                             break
 
-<<<<<<< HEAD
-=======
                 # Press 3 to Look Up Order
->>>>>>> 4b62012b0c8228b316e3784514ba2470c84d29f8
                 elif action == '3':
                     print("-"*60)
                     SSN_input = input(
@@ -226,7 +223,6 @@ class Order_UI:
                     self.__OrderService.return_car(plate)
                     print('\nCar Returned!')
 
-<<<<<<< HEAD
                 elif action == '6':
                     print("-"*60)
                     SSN = input('Enter SSN: ')
@@ -242,9 +238,6 @@ class Order_UI:
                     extra_insurance = input('Do you want extra insurance? ')
                     self.__OrderService.put_in_future_order(SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,
                     car_return_day,extra_insurance)
-=======
-                # Press F to Go To Frontpage
->>>>>>> 4b62012b0c8228b316e3784514ba2470c84d29f8
                 elif action == 'f':
                     break
 

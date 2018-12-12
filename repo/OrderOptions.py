@@ -90,8 +90,8 @@ class OrderOptions:
         os.remove('./data/cars.csv')
         os.rename('./data/deletecars.csv', './data/cars.csv')
 
-    # Press 2 to Cancel Order
 
+    # Press 2 to Cancel Order
     def cancel_Order(self, SSN):
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
