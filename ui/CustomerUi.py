@@ -45,8 +45,9 @@ class Customer_Page:
                     print()
                     isFound = self.__CustomerService.check_Costumer(SSN_input)
                     while not isFound:
-                        print("Costumer not found! Please try again!")
+                        print("Costumer not found! Please try again!\n")
                         SSN_input = input('Enter The SSN Of The Person You Want To Delete: ')
+                        SSN = self.__CustomerService.check_SSN(SSN_input)
                         isFound = self.__CustomerService.check_Costumer(SSN_input)
                     self.__CustomerService.delete_customer(SSN)
                     print('\nCustomer Deleted!\n\n')
@@ -58,8 +59,9 @@ class Customer_Page:
                     print()
                     isFound = self.__CustomerService.check_Costumer(SSN_input)
                     while not isFound:
-                        print("Costumer not found! Please try again!")
+                        print("Costumer not found! Please try again!\n")
                         SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
+                        SSN = self.__CustomerService.check_SSN(SSN_input)
                         isFound = self.__CustomerService.check_Costumer(SSN_input)
                     self.__CustomerService.look_up_customer(SSN)
                     print()
