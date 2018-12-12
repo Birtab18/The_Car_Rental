@@ -24,6 +24,7 @@ class OrderOptions:
                         main_checking = False
 
     # Press 1 to Put In Orders
+    #bæta vi
     def put_in_an_order(self, SSN, car_id, car_rent_year, car_rent_month, car_rent_day, car_return_year,
                         car_return_month, car_return_day, total_price):
         ''' Adds an order to The Car Rental (the orders.csv file) '''
@@ -61,16 +62,18 @@ class OrderOptions:
                 total_price_main = int(multiply)
             else:
                 print('Invalid input')
-            order_file.write('{},{},{},{},{},{},{},{},{}kr.-\n'.format(SSN, Name, licence_Plate, category,
-                                                                       manufacturer, the_Type, rentday, returnday, total_price_main))
+            order_file.write('{},{},{},{},{},{},{},{},{}kr.-\n'.format(SSN, Name, licence_Plate, category, manufacturer, the_Type, rentday, returnday, total_price_main))
         # fall sem breytir yfir i false.
+        #### Nota þetta til ad beata vid time moduleinn i thetta fall. 
+        #breyta þvi þannig ad ef vid lesum ur order og ef akvedinn dagsetning er thad sama og dagsetningin i dag tha breytist hann ur true i false og t
+        #thvi ekki haegt ad panta bilinn
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type',
-                                                     'transmission', 'price', 'status'])
+            writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type','transmission', 'price', 'status'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i, value in row.items():
                     if value == car_id:
+                        #breyta herna i dagsetningarnar. taka þetta fall og cp paste it. 
                         if row['status'] == 'True':
                             row['status'] = 'False'
                 writer.writerow(row)
@@ -82,8 +85,7 @@ class OrderOptions:
     def cancel_Order(self, SSN, licence_Plate):
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=[
-                                    'SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
+            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != SSN and row['licence_Plate'] != licence_Plate:
@@ -119,8 +121,7 @@ class OrderOptions:
         ''' Changes an order in The Car Rental (in the orders.csv file). Changes category, the date of the rent,
         the date of the return or/and if the customer want an extra insurance '''
         with open('./data/orders.csv', 'r') as inp, open('./data/delete_Orders.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer',
-                                                     'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
+            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer','the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i, value in row.items():
