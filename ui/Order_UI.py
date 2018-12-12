@@ -54,7 +54,6 @@ class Order_UI:
                             print("-"*60)
                             SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                             SSN = self.__CustomerService.check_SSN(SSN_input)
-                            self.__OrderService.remove_from_future_orders(SSN_input)
                             name = input('Enter a name: ')
                             phonenumber_input = input('Enter a Phone Number: ')
                             phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)
@@ -94,6 +93,7 @@ class Order_UI:
                             print('Wrong input')
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
+                    self.__OrderService.remove_from_future_orders(SSN_input)
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print("-"*60)
                     licence_Plate = input(
@@ -170,6 +170,7 @@ class Order_UI:
                             print('Quitting..')
                             break
 
+                # Press 3 to Look Up Order
                 elif action == '3':
                     print("-"*60)
                     SSN_input = input(
@@ -226,6 +227,28 @@ class Order_UI:
 
                 elif action == '6':
                     print("-"*60)
+                    new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
+                    while new_Or_Old != 'y' or 'n':
+                        if new_Or_Old == 'y':
+                            print()
+                            break
+                        elif new_Or_Old == 'n':
+                            print("Signing A New Customer:")
+                            print("-"*60)
+                            SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
+                            SSN = self.__CustomerService.check_SSN(SSN_input)
+                            self.__OrderService.remove_from_future_orders(SSN_input)
+                            name = input('Enter a name: ')
+                            phonenumber_input = input('Enter a Phone Number: ')
+                            phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)
+                            email = input('Enter an email: ')
+                            new_Costumer = Customer(
+                                SSN, name, phonenumber, email)
+                            self.__CustomerService.add_customer(new_Costumer)
+                            print()
+                            break
+                        else:
+                            print('Invalid input, try again!')
                     SSN = input('Enter SSN: ')
                     Name = input('Enter Name: ')
                     licence_Plate = input('Enter licence plate: ')

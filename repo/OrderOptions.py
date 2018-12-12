@@ -89,8 +89,8 @@ class OrderOptions:
         os.remove('./data/cars.csv')
         os.rename('./data/deletecars.csv', './data/cars.csv')
 
-    # Press 2 to Cancel Order
 
+    # Press 2 to Cancel Order
     def cancel_Order(self, SSN):
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
@@ -183,6 +183,7 @@ class OrderOptions:
             LicencePlate = licence_Plate
             Rentday = date(car_rent_year, car_rent_month, car_rent_day)
             Returnday = date(car_return_year, car_return_month, car_return_day)
+            ExtraInsurance = extra_insurance
             order_file.write('{},{},{},{},{},{}\n'.format(SSN, Name, LicencePlate, Rentday, Returnday, ExtraInsurance))
 
     def print_out_future_orders(self):
@@ -192,11 +193,11 @@ class OrderOptions:
                 print('{:10} {:15} {:15} {:15} {:15} {:15}'.format(bar[0],bar[1],bar[2],bar[3],bar[4],bar[5]))
 
     def remove_from_future_orders(self, SSN_input):
-        with open('./data/futureorders.csv', 'r') as inp, open('./data/deletefuturerders.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['SSN','Name','licence_Plate','rent_Date','return_Date','extra_insurance'])
+        with open('./data/futureorders.csv', 'r') as inp, open('./data/deletefutureorders.csv', 'w') as out:
+            writer = csv.DictWriter(out, fieldnames=['SSN','Name','LicencePlate','Rentday','Returnday','ExtraInsurance'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != SSN_input:
                     writer.writerow(row)
         os.remove('./data/futureorders.csv')
-        os.rename('./data/deleteorder.csv', './data/futureorders.csv')
+        os.rename('./data/deletefutureorders.csv', './data/futureorders.csv')

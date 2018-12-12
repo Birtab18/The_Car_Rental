@@ -13,6 +13,7 @@ class CarOptions:
         available_Cars = []
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
+            print('{:20}{:20}{:20}{:>10}{:>26}'.format("Manufacturer:","Type:","Category:","Price:","Licence Plate:"))
             for row in reader:
                 if row[6] == 'True':
                     print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
@@ -28,6 +29,7 @@ class CarOptions:
         unavailable_Cars = [] 
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
+            print('{:20}{:20}{:20}{:>10}{:>26}'.format("Manufacturer:","Type:","Category:","Price:","Licence Plate:"))
             for row in reader:
                 if row[6] == 'False':
                     print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
@@ -46,10 +48,12 @@ class CarOptions:
                 print('{:^20}{:^20}{:^20}'.format(row[0], row[1], row[2]))
             print('-'*60)
 
-        with open("./data/pricelist.csv") as price_File:
+        with open("./data/cars.csv") as price_File:
             reader = csv.reader(price_File)
+            next(price_File) # Skip header row 
+            print('{:<20}{:<30}{:^12}'.format("Manufacturer:","Type:","Price:\n"))
             for row in reader:
-                print('{:<47}{:<13}'.format(row[0], row[1]))
+                print('{:<20}{:<30}{:>6} kr.'.format(row[2],row[3],row[5]))
 
     # Press 4 to Add A New Car To The Car Rental       
     def add_car(self, car):
