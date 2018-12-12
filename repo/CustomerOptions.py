@@ -17,7 +17,7 @@ class CustomerOptions:
             for row in reader:
                 if row[0] ==  SSN_input:
                     return True
-
+                
     # Press 1 to Sign Up New Customer
     def add_customer(self, customer):
         ''' Adds a new customer to The Car Rental (the customers.csv file) '''

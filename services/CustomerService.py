@@ -54,7 +54,7 @@ class CustomerService:
     
     def check_Choice(self, choice_input):
         while choice_input not in ['1', '2', '3', '4']:
-            print('Error! Invalid Choice. Please Try Again–n')
+            print('Error! Invalid Choice. Please Try Again\n')
             choice_input = input('Enter Choice: ')
         return choice_input
 

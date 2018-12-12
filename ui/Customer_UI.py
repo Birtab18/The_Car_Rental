@@ -40,21 +40,30 @@ class Customer_UI:
                         new_Costumer = Customer(SSN, name, phonenumber, email)
                         self.__CustomerService.add_customer(new_Costumer)
                         print('\nCustomer Signed!\n\n')
-                    
+
                 elif action == '2':
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person You Want To Delete: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
                     isFound = self.__CustomerService.check_Costumer(SSN)
+                    if isFound:
+                        self.__CustomerService.delete_customer(SSN)
+                        print('\nCustomer Deleted!\n\n')
                     while not isFound:
-                        print("Costumer Not Found! Please Try Again!\n")
-                        SSN_input = input('Enter The SSN Of The Person You Want To Delete: ')
-                        SSN = self.__CustomerService.check_SSN(SSN_input)
-                        isFound = self.__CustomerService.check_Costumer(SSN)
-                    self.__CustomerService.delete_customer(SSN)
-                    print('\nCustomer Deleted!\n\n')
-                
+                        again = input("Costumer Not Found! Press 1 to Try Again, Press 2 to Quit: ")
+                        if again == '1':
+                            SSN_input = input('\nEnter The SSN Of The Person You Want To Delete: ')
+                            SSN = self.__CustomerService.check_SSN(SSN_input)
+                            isFound = self.__CustomerService.check_Costumer(SSN)
+                            if isFound:
+                                self.__CustomerService.delete_customer(SSN)
+                                print('\nCustomer Deleted!\n\n')
+                        else:
+                            print('\nQuitting..\n\n')
+                            break
+
+
                 elif action == '3':
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
