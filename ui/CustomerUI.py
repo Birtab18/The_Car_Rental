@@ -76,7 +76,6 @@ class Customer_UI:
                         again = input("Costumer Not Found! Press 1 to Try Again, Press 2 to Quit: ")
                         if again == '1':
                             SSN_input = input('\nEnter The SSN Of The Person You Want To Look Up: ')
-                            print()
                             SSN = self.__CustomerService.check_SSN(SSN_input)
                             isFound = self.__CustomerService.check_Costumer(SSN)
                             if isFound:
@@ -85,29 +84,39 @@ class Customer_UI:
                             print('\nQuitting..\n\n')
                             break
 
+
+
+
+
+
+
+
+                    # while not isFound:
+                    #     print("Costumer not found! Please try again!\n")
+                    #     SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
+                    #     print()
+                    #     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    #     isFound = self.__CustomerService.check_Costumer(SSN)
+                    # self.__CustomerService.look_up_customer(SSN)
+                    # print()
+                    # print()  
+                
                 elif action == '4':
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     isFound = self.__CustomerService.check_Costumer(SSN)
-                    if isFound:
-                        pass
                     while not isFound:
-                        again = input("\nCostumer Not Found! Press 1 to Try Again, Press 2 to Quit: ")
-                        if again == '1':
-                            SSN_input = input('\nEnter The SSN Of The Person You Want To Change: ')
-                            print()
-                            SSN = self.__CustomerService.check_SSN(SSN_input)
-                            isFound = self.__CustomerService.check_Costumer(SSN)
-                            if isFound:
-                                pass
-                        else:
-                            print('\nQuitting..\n\n')
-                            break
-                    print('\npress 1 to Change The SSN')
+                        print("Costumer not found! Please try again!\n")
+                        SSN_input = input('Enter The SSN Of The Person You Want To Change: ')
+                        SSN = self.__CustomerService.check_SSN(SSN_input)
+                        isFound = self.__CustomerService.check_Costumer(SSN)
+                    print()
+                    print('press 1 to Change The SSN')
                     print('Press 2 to Change The Name')
                     print('Press 3 to Change The Phone Number')
-                    print('Press 4 to Change The Email\n')
+                    print('Press 4 to Change The Email')
+                    print()
                     choice_input = input('Enter Choice: ')
                     choice = self.__CustomerService.check_Choice(choice_input)
                     changes = input('Enter New Info: ')
