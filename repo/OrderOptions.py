@@ -184,5 +184,4 @@ class OrderOptions:
             licence_Plate = licence_Plate
             rentday = date(car_rent_year, car_rent_month, car_rent_day)
             returnday = date(car_return_year, car_return_month, car_return_day)
-
             order_file.write('{},{},{},{},{},{}\n'.format(SSN, Name, licence_Plate, rentday, returnday, extra_insurance))
