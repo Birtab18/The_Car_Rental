@@ -32,6 +32,9 @@ class OrderService:
     def change_Order(self, SSN, choice, changes):
         self.__order_Repo.change_Order(SSN, choice, changes)
 
+    def pick_a_category(self,car_choice):
+        self.__order_Repo.pick_a_category(car_choice)
+
     def print_orders(self):
         self.__order_Repo.print_orders()
 
