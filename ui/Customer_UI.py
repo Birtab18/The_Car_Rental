@@ -90,7 +90,7 @@ class Customer_UI:
                             if isFound:
                                 self.__CustomerService.look_up_customer(SSN)
                         else:
-                            print('\nQuitting..\n\n')
+                            print('\nQuitting..')
                             break
 
                 elif action == '4':
