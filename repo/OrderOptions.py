@@ -133,12 +133,14 @@ class OrderOptions:
         os.rename('./data/delete_Orders.csv', './data/orders.csv')
 
     def print_orders(self):
+        ''' Prints out all of the orders that are active '''
         with open("./data/orders.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
                 print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0], row[1], row[2], row[4],row[5], row[6], row[7]))
 
     def return_car(self, plate):
+        ''' When the car is returned the user needs to return it manually '''
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type', 'transmission', 'price', 'status'])
             writer.writeheader()
