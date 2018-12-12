@@ -37,6 +37,8 @@ class Order_UI:
             action = ""
             while action not in ["1", "2", "3", "4", "5", "6", "F"]:
                 action = input('Choose command: ').lower()
+
+                # Press 1 to Put In Order
                 if action == '1':
                     print("-"*60)
                     new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
@@ -141,11 +143,13 @@ class Order_UI:
                                                         car_return_year, car_return_month, car_return_day, extra_insurance)
                     print('\nOrder Added!')
 
+                # Press 2 to Cancel Order
                 elif action == '2':
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
+                    # isFound iterates through the file and if there is not match it will allow the user to try again or quit
                     isFound = self.__OrderService.check_Order(SSN)
                     if isFound:
                         self.__OrderService.cancel_Order(SSN)
@@ -164,12 +168,17 @@ class Order_UI:
                             print('Quitting..')
                             break
 
+<<<<<<< HEAD
+=======
+                # Press 3 to Look Up Order
+>>>>>>> 4b62012b0c8228b316e3784514ba2470c84d29f8
                 elif action == '3':
                     print("-"*60)
                     SSN_input = input(
                         'Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
+                    # isFound iterates through the file and if there is not match it will allow the user to try again or quit
                     isFound = self.__OrderService.check_Order(SSN)
                     if isFound:
                         self.__OrderService.look_up_order(SSN)
@@ -185,10 +194,12 @@ class Order_UI:
                             print('Quitting..')
                             break
 
+                # Press 4 to Change Order
                 elif action == '4':
                     print("-"*60)
                     SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    # isFound iterates through the file and if there is not match it will allow the user to try again 
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     while not isFound:
                         print("\nOrder Not Found! Please Try Again\n")
@@ -206,15 +217,16 @@ class Order_UI:
                     self.__OrderService.change_Order(SSN, choice, changes)
                     print('\nOrder Changed!')
 
+                # Press 5 to Return Car'
                 elif action == '5':
                     print("-"*60)
                     print('Return car: \n')
                     self.__OrderService.print_orders()
-                    plate = input(
-                        '\nEnter The Licence Plate Of The Car You Want To Return: ')
+                    plate = input('\nEnter The Licence Plate Of The Car You Want To Return: ')
                     self.__OrderService.return_car(plate)
                     print('\nCar Returned!')
 
+<<<<<<< HEAD
                 elif action == '6':
                     print("-"*60)
                     SSN = input('Enter SSN: ')
@@ -230,6 +242,9 @@ class Order_UI:
                     extra_insurance = input('Do you want extra insurance? ')
                     self.__OrderService.put_in_future_order(SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,
                     car_return_day,extra_insurance)
+=======
+                # Press F to Go To Frontpage
+>>>>>>> 4b62012b0c8228b316e3784514ba2470c84d29f8
                 elif action == 'f':
                     break
 

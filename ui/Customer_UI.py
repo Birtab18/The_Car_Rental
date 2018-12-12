@@ -1,6 +1,6 @@
 from services.CustomerService import CustomerService
 from models.Customer import Customer
-from datetime import datetime
+
 
 
 class Customer_UI:
@@ -26,12 +26,15 @@ class Customer_UI:
             action = ""
             while action not in ["1", "2", "3", "4", "F"]:
                 action = input('Choose command: ').lower()
+
+                # Press 1 to Sign Up New Customer
                 if action == '1':
                     print("-"*60)
                     print("New customer:")
                     SSN_input = input(
                         'Enter The SSN Of The Person You Want To Sign Up: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    # isFound iterates through the file and if there is a match, it will let you know that the customer already exists
                     isfound = self.__CustomerService.check_Costumer(SSN)
                     if isfound:
                         print('\nCustomer Already Exists!')
@@ -44,12 +47,14 @@ class Customer_UI:
                         new_Costumer = Customer(SSN, name, phonenumber, email)
                         self.__CustomerService.add_customer(new_Costumer)
                         print('\nCustomer Signed!')
-
+                
+                # Press 2 to Delete Customer
                 elif action == '2':
                     print("-"*60)
                     SSN_input = input(
                         'Enter The SSN Of The Person You Want To Delete: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    # isFound iterates through the file and if there is not match it will allow the user to try again or quit
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     if isFound:
                         self.__CustomerService.delete_customer(SSN)
@@ -70,11 +75,13 @@ class Customer_UI:
                             print('\nQuitting..')
                             break
 
+                # Press 3 to Look Up Customer
                 elif action == '3':
                     print("-"*60)
                     SSN_input = input(
                         'Enter The SSN Of The Person You Want To Look Up: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    # isFound iterates through the file and if there is not match it will allow the user to try again or quit
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     if isFound:
                         self.__CustomerService.look_up_customer(SSN)
@@ -92,12 +99,14 @@ class Customer_UI:
                         else:
                             print('\nQuitting..')
                             break
-
+                
+                # Press 4 to Change Information About A Customer
                 elif action == '4':
                     print("-"*60)
                     SSN_input = input(
                         'Enter The SSN Of The Person You Want To Change: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    # isFound iterates through the file and if there is not match it will allow the user to try again 
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     while not isFound:
                         print("\nCostumer Not Found! Please Try Again")
@@ -119,6 +128,7 @@ class Customer_UI:
                     self.__CustomerService.Change_Information(SSN, choice, changes)
                     print('\nCustomer Info Changed!')
                 
+                # Press F to Go To Frontpage
                 elif action == 'f':
                     break
 

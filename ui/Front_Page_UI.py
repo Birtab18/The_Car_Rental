@@ -31,18 +31,23 @@ class Front_Page_UI:
             print_Frontpage()
             action = input('Choose command: ').lower()
             print()
+
+            # Press 1 for Customers
             if action == '1':
                 ui = Customer_UI()
                 ui.customer_Menu()
 
+            # Press 2 for Cars
             elif action == '2':
                 ui = Car_UI()
                 ui.car_Menu()
 
+            # Press 3 for Orders
             elif action == '3':
                 ui = Order_UI()
                 ui.Order_Menu()
 
+            # Press q to Quit
             elif action == 'q':
                 print("Exiting Program. Goodbye !\n")
 

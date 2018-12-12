@@ -26,45 +26,45 @@ class Car_UI:
             action = ""  # so the while loop will start running
             while action not in ["1", "2", "3", "4", "F"]:
                 action = input('Choose command: ').lower()
+
+                # Press 1 to Show Available Cars
                 if action == '1':
                     print("-"*60)
                     print('Available Cars: \n')
                     self.__CarService.available_cars()
                     
-
+                # Press 2 to Show Unavailable Cars
                 elif action == '2':
                     print("-"*60)
                     print('Unavailable Cars: \n')
                     self.__CarService.unavailable_cars()
                     
-
+                # Press 3 to Show Price List
                 elif action == '3':
                     print("-"*60)
                     print()
                     self.__CarService.show_Pricelist()
                    
-
+                # Press 4 to Add A New Car To The Car Rental
                 elif action == '4':
                     print("-"*60)
                     print("New Car:")
                     licence_Plate = input('Enter The Licence Plate: ')
                     licence_Plate = licence_Plate.upper()
-                    category = input(
-                        'Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
+                    category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
                     category = self.__CarService.check_Category(category)
                     manufacturer = input('Enter The Manufacturer: ')
                     the_Type = input('Enter The Type: ')
-                    transmission = input(
-                        'Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
+                    transmission = input('Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
                     transmission = self.__CarService.check_Transmission(
                         transmission)
                     price = input('Enter Price: ')
                     price = self.__CarService.check_Price(price)
-                    new_Car = Car(licence_Plate, category,
-                                  manufacturer, the_Type, transmission, price)
+                    new_Car = Car(licence_Plate, category,manufacturer, the_Type, transmission, price)
                     self.__CarService.add_car(new_Car)
                     print('\nCar Added!')
 
+                # Press F to Go To Frontpage
                 elif action == 'f':
                     break
 
