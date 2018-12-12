@@ -14,12 +14,12 @@ class OrderService:
     #     if self.is_valid_order(order):  # eru innputin sett in rett
     #         self.__order_Repo._order(order)  # ATH hvort repo eda main
 
-    def look_up_order(self, SSN, licence_Plate):
+    def look_up_order(self, SSN):
         # ATH hvort repo eda main
-        return self.__order_Repo.look_Up_Order(SSN, licence_Plate)
+        return self.__order_Repo.look_Up_Order(SSN)
 
-    def cancel_Order(self, SSN, licence_Plate):
-        return self.__order_Repo.cancel_Order(SSN, licence_Plate)
+    def cancel_Order(self, SSN):
+        return self.__order_Repo.cancel_Order(SSN)
 
     # def print_available_cars(self):
     #     return self.__order_Repo.print_available_cars()
@@ -41,5 +41,5 @@ class OrderService:
     def check_Car(self, licence_Plate):
         return self.__order_Repo.check_Car(licence_Plate)
     
-    def check_Order(self,SSN_input,licence_Plate):
-        return self.__order_Repo.check_Order(SSN_input,licence_Plate)
+    def check_Order(self,SSN):
+        return self.__order_Repo.check_Order(SSN)

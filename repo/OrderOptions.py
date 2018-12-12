@@ -18,11 +18,11 @@ class OrderOptions:
                     return True
     
     # Check if the order exists or not 
-    def check_Order(self,SSN_input,licence_Plate):
+    def check_Order(self,SSN):
         with open("./data/orders.csv", 'r') as check_Order:
             reader = csv.reader(check_Order)
             for row in reader:
-                if row[0] == SSN_input and row[2] == licence_Plate:
+                if row[0] == SSN:
                     return True
 
     # Press 1 to Put In Orders
@@ -81,26 +81,26 @@ class OrderOptions:
 
     # Press 2 to Cancel Order
 
-    def cancel_Order(self, SSN, licence_Plate):
+    def cancel_Order(self, SSN):
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
                                                     'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
             writer.writeheader()
             for row in csv.DictReader(inp):
-                if row['SSN'] != SSN and row['licence_Plate'] != licence_Plate:
+                if row['SSN'] != SSN:
                     writer.writerow(row)
         os.remove('./data/orders.csv')
         os.rename('./data/cancel_Order.csv', './data/orders.csv')
 
     # Press 3 to Look Up Order
-    def look_Up_Order(self, SSN, licence_Plate):
+    def look_Up_Order(self, SSN):
         ''' Looks up an order in The Car Rental (in the orders.csv file) '''
         with open("./data/orders.csv", 'r') as look_up_order_file:
             reader = csv.reader(look_up_order_file)
             for row in reader:
                 match = []
-                if row[0] == SSN and row[2] == licence_Plate:
+                if row[0] == SSN:
                     match.append('found')
                     print('Customer Informations\n{}'.format("-"*35))
                     print('SSN:{:>20}{}\nName:{:>19}{}\n'.format(
@@ -123,17 +123,13 @@ class OrderOptions:
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i, value in row.items():
-                    if value == SSN:  # i lagi að gera rað f að aðili se bara með 1 pöntun?
+                    if value == SSN: 
                         the_Choice = ''
                         if choice == '1':
-                            the_Choice = 'category'
-                            # if len(the_Choice) == 10:
-                            #     row[the_Choice] = changes
-                        elif choice == '2':
                             the_Choice = 'rent_Date'
-                        elif choice == '3':
+                        elif choice == '2':
                             the_Choice = 'return_Date'
-                        elif choice == '4':
+                        elif choice == '3':
                             the_Choice = 'total_price_main'
                         row[the_Choice] = changes
                 writer.writerow(row)
