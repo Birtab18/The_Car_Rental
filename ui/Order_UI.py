@@ -8,7 +8,6 @@ from models.Customer import Customer
 from repo.CustomerOptions import CustomerOptions
 from datetime import datetime
 
-
 class Order_UI:
     def __init__(self):
         self.__OrderService = OrderService()
@@ -40,6 +39,9 @@ class Order_UI:
 
                 # Press 1 to Put In Order
                 if action == '1':
+                    #Prenta út thad sem stendur i futureorders.csv skranni. og segja 
+                    print('Are there any Orders You have to activate today?')
+                    self.__OrderService.print_out_future_orders()
                     print("-"*60)
                     new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
@@ -53,8 +55,7 @@ class Order_UI:
                             SSN = self.__CustomerService.check_SSN(SSN_input)
                             name = input('Enter a name: ')
                             phonenumber_input = input('Enter a Phone Number: ')
-                            phonenumber = self.__CustomerService.check_Phonenumber(
-                                phonenumber_input)
+                            phonenumber = self.__CustomerService.check_Phonenumber(phonenumber_input)
                             email = input('Enter an email: ')
                             new_Costumer = Customer(
                                 SSN, name, phonenumber, email)
@@ -168,10 +169,6 @@ class Order_UI:
                             print('Quitting..')
                             break
 
-<<<<<<< HEAD
-=======
-                # Press 3 to Look Up Order
->>>>>>> 4b62012b0c8228b316e3784514ba2470c84d29f8
                 elif action == '3':
                     print("-"*60)
                     SSN_input = input(
@@ -226,7 +223,6 @@ class Order_UI:
                     self.__OrderService.return_car(plate)
                     print('\nCar Returned!')
 
-<<<<<<< HEAD
                 elif action == '6':
                     print("-"*60)
                     SSN = input('Enter SSN: ')
@@ -242,9 +238,6 @@ class Order_UI:
                     extra_insurance = input('Do you want extra insurance? ')
                     self.__OrderService.put_in_future_order(SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,
                     car_return_day,extra_insurance)
-=======
-                # Press F to Go To Frontpage
->>>>>>> 4b62012b0c8228b316e3784514ba2470c84d29f8
                 elif action == 'f':
                     break
 
