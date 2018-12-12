@@ -129,6 +129,7 @@ class Order_UI:
                         if again == '1':
                             SSN_input = input('\nEnter The SSN Of The Person Who Put In Order: ')
                             SSN = self.__CustomerService.check_SSN(SSN_input)
+                            print()
                             isFound = self.__CustomerService.check_Costumer(SSN)
                             if isFound:
                                 self.__OrderService.cancel_Order(SSN)
@@ -162,14 +163,12 @@ class Order_UI:
 
                 elif action == '4':
                     print("-"*60)
-                    SSN_input = input(
-                        'Enter The SSN Of The Person Who Put In The Order: ')
+                    SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     while not isFound:
-                        print("Order not found! Please try again!\n")
-                        SSN_input = input(
-                            'Enter The SSN Of The Person Who Put In The Order: ')
+                        print("\Order Not Found! Please Try Again")
+                        SSN_input = input('\nEnter The SSN Of The Person Who Put In The Order: ')
                         SSN = self.__CustomerService.check_SSN(SSN_input)
                         isFound = self.__CustomerService.check_Costumer(SSN)
                     self.__OrderService.look_up_order(SSN)

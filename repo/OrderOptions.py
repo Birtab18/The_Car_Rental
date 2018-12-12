@@ -93,6 +93,7 @@ class OrderOptions:
 
     # Press 3 to Look Up Order
     def look_Up_Order(self, SSN):
+        print()
         ''' Looks up an order in The Car Rental (in the orders.csv file) '''
         with open("./data/orders.csv", 'r') as look_up_order_file:
             reader = csv.reader(look_up_order_file)
