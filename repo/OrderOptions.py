@@ -58,12 +58,6 @@ class OrderOptions:
             # extra insurence
             if total_price == 'y':
                 total_price_main = int(multiply*1.25)
-                credit_card_input = input('Enter your credit card number: ')
-                while len(credit_card_input) != 16:
-                    print(
-                        'Error! Please Input A Valid Credit Card Number (only 7 digits)\n')
-                    credit_card_input = input(
-                        'Enter your credit card number: ')
             elif total_price == 'n':
                 total_price_main = int(multiply)
             else:
