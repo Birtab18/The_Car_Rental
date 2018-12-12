@@ -32,11 +32,14 @@ class OrderService:
     def change_Order(self, SSN, choice, changes):
         self.__order_Repo.change_Order(SSN, choice, changes)
 
-    def car_check(self, car_id):
-        return self.__order_Repo.car_check(car_id)
-
     def print_orders(self):
         self.__order_Repo.print_orders()
 
     def return_car(self, plate):
         self.__order_Repo.return_car(plate)
+
+    def check_Car(self, licence_Plate):
+        return self.__order_Repo.check_Car(licence_Plate)
+    
+    def check_Order(self,SSN_input,licence_Plate):
+        return self.__order_Repo.check_Order(SSN_input,licence_Plate)

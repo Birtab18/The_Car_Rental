@@ -11,9 +11,9 @@ class CustomerOptions:
     
 
     #Check if the comstumer exists
-    def costumer_Check(self, SSN_input):
-        with open("./data/customers.csv", 'r') as costumer_Check:
-            reader = csv.reader(costumer_Check)
+    def check_Costumer(self, SSN_input):
+        with open("./data/customers.csv", 'r') as check_Costumer:
+            reader = csv.reader(check_Costumer)
             for row in reader:
                 if row[0] ==  SSN_input:
                     return True

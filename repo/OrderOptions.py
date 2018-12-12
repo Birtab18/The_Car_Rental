@@ -9,14 +9,21 @@ class OrderOptions:
     def __init__(self):
         self.__order = []
 
-    def car_check(self, car_id):
-        with open("./data/cars.csv", 'r') as car_check:
-            reader = csv.reader(car_check)
+    def check_Car(self, licence_Plate):
+        with open("./data/cars.csv", 'r') as check_Car:
+            reader = csv.reader(check_Car)
             for row in reader:
-                if row[6] == 'True' and row[0] == car_id:
+                if row[6] == 'True' and row[0] == licence_Plate:
                     print('Found!')
                     return True
-
+    
+    # Check if the order exists or not 
+    def check_Order(self,SSN_input,licence_Plate):
+        with open("./data/orders.csv", 'r') as check_Order:
+            reader = csv.reader(check_Order)
+            for row in reader:
+                if row[0] == SSN_input and row[2] == licence_Plate:
+                    return True
 
     # Press 1 to Put In Orders
     def put_in_an_order(self, SSN, car_id, car_rent_year, car_rent_month, car_rent_day, car_return_year,
@@ -77,8 +84,8 @@ class OrderOptions:
     def cancel_Order(self, SSN, licence_Plate):
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=[
-                                    'SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
+            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer', 
+                                                    'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != SSN and row['licence_Plate'] != licence_Plate:
@@ -102,11 +109,8 @@ class OrderOptions:
                     print('Licence Plate:{:>10}{}\nCategory:{:>15}{}\nManufacturer:{:>11}{}\nType:{:>19}{}\n'.
                           format(" ", row[2], " ", row[3], " ", row[4], " ", row[5]))
                     print('Order Informations:\n{}'.format("-"*35))
-                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>8}{}'.format(" ", row[6],
-                                                                                                 " ", row[7], " ", row[8]))
-            # if match == []:
-            #     print('Order Not Found')
-            #     print()
+                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>12}{}'.format(" ", row[6], " ", row[7], " ", row[8]))
+         
 
     # Press 4 to Change Order
 

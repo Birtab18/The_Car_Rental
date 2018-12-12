@@ -63,16 +63,14 @@ class Order_Page:
                             print('Invalid input, try again!')
                     print('Available cars: ')
                     self.__CarService.available_cars()
-                    SSN_input = input(
-                        'Enter The SSN Of The Person Who Is Putting In An Order: ')
+                    SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
-                    car_id = input('Enter The Licence Plate Of The Car: ')
-                    isFound = self.__OrderService.car_check(car_id)
+                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                    isFound = self.__OrderService.check_Car(licence_Plate)
                     while not isFound:
                         print("Car not found \nPlease try again!")
-                        car_id = input(
-                            'Enter The Licence Plate Of The Car: ').upper()
-                        isFound = self.__OrderService.car_check(car_id)
+                        licence_Plate = input('Enter The Licence Plate Of The Car: ').upper()
+                        isFound = self.__OrderService.check_Car(licence_Plate)
                     print("-"*60)
                     car_rent_year = int(input('Enter Rent Year: '))
                     car_rent_month = int(input('Enter Rent Month: '))
@@ -81,44 +79,55 @@ class Order_Page:
                     car_return_year = int(input('Enter Return Year: '))
                     car_return_month = int(input('Enter Return Month: '))
                     car_return_day = int(input('Enter Return Day: '))
-                    extra_insurence = input(
-                        'Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
-                    payment = input(
-                        'Are you paying with a Card or Cash: (Press 1 for Card , Press 2 for Cash) ')
+                    extra_insurence = input('Do you want extra insurence: Press(Y) for Yes and Press(N) for No ').lower()
+                    payment = input('Are you paying with a Card or Cash: (Press 1 for Card , Press 2 for Cash) ')
                     if payment == '1':
                         cardholder = input("Enter The Cardholder's Name: ")
                         card = ''
                         card = input('Enter Your Card Number: ')
                         while len(card) != 16:
-                            print(
-                                'Error! Please Input A Valid Card Number (only 16 digits)\n')
+                            print( 'Error! Please Input A Valid Card Number (only 16 digits)\n')
                             card = input('Enter Your Card Number: ')
                         exp_date = input('Enter Cards Expiry Date: ')
                         sec_num = input('Enter The Security Number:')
                         print('Payment Completed!')
                     if payment == '2':
                         print('Payment Completed!')
-                    self.__OrderService.put_in_an_order(SSN, car_id, car_rent_year, car_rent_month, car_rent_day,
+                    self.__OrderService.put_in_an_order(SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day,
                                                         car_return_year, car_return_month, car_return_day, extra_insurence)
                     print('\nOrder Added!\n\n')
 
                 elif action == '2':
                     print("-"*60)
-                    SSN_input = input(
-                        'Enter The SSN Of The Person Who Put In The Order: ')
+                    SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
-                    licence_Plate = input(
-                        'Enter The Licence Plate Of The Car: ')
-                    self.__OrderService.cancel_Order(SSN, licence_Plate)
+                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
                     print()
+                    isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                    while not isFound:
+                        print("\nOrder not found! Please try again!\n")
+                        SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
+                        SSN = self.__CustomerService.check_SSN(SSN_input)
+                        licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                        print()
+                        isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                    self.__OrderService.cancel_Order(SSN, licence_Plate)
+                    print('\nOrder Canceled!\n\n')
 
                 elif action == '3':
                     print("-"*60)
-                    SSN_input = input(
-                        'Enter The SSN Of The Person Who Put In The Order: ')
+                    SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
-                    licence_Plate = input(
-                        'Enter The Licence Plate Of The Car: \n')
+                    licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                    print()
+                    isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
+                    while not isFound:
+                        print("\nOrder not found! Please try again!\n")
+                        SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
+                        SSN = self.__CustomerService.check_SSN(SSN_input)
+                        licence_Plate = input('Enter The Licence Plate Of The Car: ')
+                        print()
+                        isFound = self.__OrderService.check_Order(SSN_input,licence_Plate)
                     self.__OrderService.look_up_order(SSN, licence_Plate)
                     print()
 
@@ -130,8 +139,7 @@ class Order_Page:
                     print('Press 3 to Change Return Date')
                     print('Press 4 to Change Extra Insurance (Y = Yes, N = No')
                     print()
-                    SSN_input = input(
-                        'Enter The SSN Of The Person Who Put In The Order: ')
+                    SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     choice_input = input('Enter Choice: ')
                     choice = self.__CustomerService.check_Choice(choice_input)

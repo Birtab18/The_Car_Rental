@@ -58,5 +58,5 @@ class CustomerService:
             choice_input = input('Enter Choice: ')
         return choice_input
 
-    def costumer_Check(self,SSN_input):
-        return self.__customer_Repo.costumer_Check(SSN_input)
+    def check_Costumer(self,SSN_input):
+        return self.__customer_Repo.check_Costumer(SSN_input)
