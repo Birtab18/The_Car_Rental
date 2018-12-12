@@ -2,7 +2,7 @@ from services.CustomerService import CustomerService
 from models.Customer import Customer
 
 
-class Customer_Page:
+class Customer_UI:
     def __init__(self):
         self.__CustomerService = CustomerService()
 

@@ -8,7 +8,7 @@ from models.Customer import Customer
 from repo.CustomerOptions import CustomerOptions
 
 
-class Order_Page:
+class Order_UI:
     def __init__(self):
         self.__OrderService = OrderService()
         self.__CarService = CarService()

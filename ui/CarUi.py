@@ -2,7 +2,7 @@ from services.CarService import CarService
 from models.Car import Car
 
 
-class Car_Page:
+class Car_UI:
     def __init__(self):
         self.__CarService = CarService()
 
