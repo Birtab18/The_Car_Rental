@@ -12,8 +12,10 @@ AJ567,Station Car,Tesla,Model 3,manual,20000,True
 AL678,Jeep,Nissan,Quashqui,stick shift,12000,True
 AM890,Jeep,Volkswagen,Tiguan,manual,12000,False
 AN123,Jeep,Volvo,xc90,stick shift,12000,False
-AW234,Jeep,Toyota,Land Cruiser,manual,20000,True
+AW234,Jeep,Toyota,Land Cruiser,manual,20000,False
 AO456,Jeep,Mercedes,Benz G-Class,manual,30000,False
+<<<<<<< HEAD
+=======
 SZD31,Station Car,Hyundai,i30,s,15000,False
 AA123,Mini Car,kia,rio,m,3000,False
 AA333,Mini Car,kia,picanto,Stick Shift,6000,True
@@ -23,3 +25,4 @@ MM333,Mini Car,kia,rio,Manual,5000,False
 HSF63,Mini Car,huyndai,i10,Stick Shift,5000,False
 AA196,Station Car,skoda,octavia,Manual,10000,True
 AB122,Jeep,mitsubitsi,pajero,Manual,15000,True
+>>>>>>> e86e3904e8ee28338da468bce97336f695e7c502

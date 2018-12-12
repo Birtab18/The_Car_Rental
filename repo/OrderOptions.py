@@ -8,6 +8,20 @@ class OrderOptions:
     def __init__(self):
         self.__order = []
 
+    def pick_a_category(self, car_choice):
+        ''' Prints out available cars at the moment '''
+        available_Cars = []
+        with open("./data/cars.csv", 'r') as look_up_customer_file:
+            reader = csv.reader(look_up_customer_file)
+            for row in reader:
+                if row[6] == 'True' and row[1] == car_choice:
+                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
+                    available_Cars.append('available')
+            if available_Cars == []:
+                print('There Are No Available Cars At The Moment\n\n')
+            else:
+                pass
+
     def check_Car(self, licence_Plate):
         with open("./data/cars.csv", 'r') as check_Car:
             reader = csv.reader(check_Car)

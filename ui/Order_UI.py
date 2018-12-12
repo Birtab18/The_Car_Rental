@@ -64,11 +64,37 @@ class Order_UI:
                             break
                         else:
                             print('Invalid input, try again!')
-                    print('Available cars: ')
-                    self.__CarService.available_cars()
+                    loop = True
+                    while loop:
+                        car_choice = input('What kind of car do you want?\nPress (M) for Mini car\nPress (S) for Station car\nPress (J) for Jeep\nChoose a category:').lower()
+                        if car_choice == 'm':
+                            print("-"*60)
+                            car_choice = 'Mini Car'
+                            print('These Mini Cars are available:')
+                            self.__OrderService.pick_a_category(car_choice)
+                            loop = False
+                            break
+                        elif car_choice == 's':
+                            print("-"*60)
+                            car_choice = 'Station Car'
+                            print('These Station Cars are available:')
+                            self.__OrderService.pick_a_category(car_choice)
+                            loop = False
+                            break
+                        elif car_choice == 'j':
+                            print("-"*60)
+                            car_choice = 'Jeep'
+                            print('These Jeeps are available:')
+                            self.__OrderService.pick_a_category(car_choice)
+                            loop = False
+                            break
+                        else:
+                            print('Wrong input')
+                    print("-"*60)
                     SSN_input = input(
                         'Enter The SSN Of The Person Who Is Putting In An Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    print("-"*60)
                     licence_Plate = input(
                         'Enter The Licence Plate Of The Car: ').upper()
                     isFound = self.__OrderService.check_Car(licence_Plate)
@@ -204,5 +230,4 @@ class Order_UI:
 
                 else:
                     print("Invalid input, try again!")
-
         main()
