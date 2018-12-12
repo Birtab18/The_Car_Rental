@@ -18,8 +18,7 @@ class Order_UI:
     def Order_Menu(self):
         def print_Choices():
             ''' Prints out everything you can do with orders in the system '''
-            print('{:<30}{:>30}'.format(
-                'The Car Rental', 'F To Go to Frontpage'))
+            print('{:<30}{:>30}'.format('The Car Rental', 'F To Go to Frontpage'))
             print('-'*60)
             print("{:^60}".format('ORDERS'))
             print('-'*60)
@@ -37,8 +36,7 @@ class Order_UI:
                 action = input('Choose command: ').lower()
                 if action == '1':
                     print("-"*60)
-                    new_Or_Old = input(
-                        'Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
+                    new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
                     while new_Or_Old != 'y' or 'n':
                         if new_Or_Old == 'y':
                             print()
@@ -117,7 +115,7 @@ class Order_UI:
                     print()
                     isFound = self.__OrderService.check_Order(SSN)
                     while not isFound:
-                        print("\nOrder not found! Please try again!\n") 
+                        print("\nOrder not found! Please try again!\n")
                         SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                         SSN = self.__CustomerService.check_SSN(SSN_input)
                         print()
@@ -149,8 +147,7 @@ class Order_UI:
                     print("-"*60)
                     print('Return car: \n')
                     self.__OrderService.print_orders()
-                    plate = input(
-                        '\nEnter The Licence Plate Of The Car You Want To Return: ')
+                    plate = input('\nEnter The Licence Plate Of The Car You Want To Return: ')
                     self.__OrderService.return_car(plate)
                     print('\nCar Returned!\n\n')
 
