@@ -6,23 +6,12 @@ class OrderService:
         # __checking_repo er private repository
         self.__order_Repo = OrderOptions()
 
-    def is_valid_order(self, order):
-        # herna rékkum vi hvort þetta video se ekki orugglega hægt af vinna med.
-        # ef valid þa addum vid þvi i gagnageymsluna.
-        return True
-
-    #     if self.is_valid_order(order):  # eru innputin sett in rett
-    #         self.__order_Repo._order(order)  # ATH hvort repo eda main
 
     def look_up_order(self, SSN):
-        # ATH hvort repo eda main
         return self.__order_Repo.look_Up_Order(SSN)
 
     def cancel_Order(self, SSN):
         return self.__order_Repo.cancel_Order(SSN)
-
-    # def print_available_cars(self):
-    #     return self.__order_Repo.print_available_cars()
 
     def put_in_an_order(self, SSN, car_id, car_rent_year, car_rent_month, car_rent_day, car_return_year,
                         car_return_month, car_return_day, total_price):

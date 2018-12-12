@@ -8,11 +8,6 @@ class CustomerService:
     def add_customer(self, customer):
         self.__customer_Repo.add_customer(customer)
 
-    # def is_valid_customer(self, customer):
-    #     # herna rékkum vi hvort þetta video se ekki orugglega hægt af vinna med.
-    #     # ef valid þa addum vid þvi i gagnageymsluna.
-    #     return True
-
     def look_up_customer(self, SSN):
         return self.__customer_Repo.look_up_customer(SSN)  
 

@@ -13,13 +13,7 @@ class CarService:
         self.__car_Repo.show_unavailable_cars()
 
     def add_car(self, car):
-        if self.is_valid_car(car):  # eru innputin sett in rett
-            self.__car_Repo.add_car(car)  # ATH hvort repo eda main
-
-    def is_valid_car(self, car):
-        # herna rékkum vi hvort þetta video se ekki orugglega hægt af vinna med.
-        # ef valid þa addum vid þvi i gagnageymsluna.
-        return True
+        self.__car_Repo.add_car(car)  
         
     def show_Pricelist(self):
         self.__car_Repo.show_Pricelist()
