@@ -14,7 +14,7 @@ class CustomerService:
     #     return True
 
     def look_up_customer(self, SSN):
-        return self.__customer_Repo.look_up_customer(SSN)  # ATH hvort repo eda main
+        return self.__customer_Repo.look_up_customer(SSN)  
 
     def delete_customer(self, SSN):
         return self.__customer_Repo.delete_customer(SSN)

@@ -29,22 +29,19 @@ class Car_UI:
                     print("-"*60)
                     print('Available Cars: \n')
                     self.__CarService.available_cars()
-                    print()
-                    print()
+                    
 
                 elif action == '2':
                     print("-"*60)
                     print('Unavailable Cars: \n')
                     self.__CarService.unavailable_cars()
-                    print()
-                    print()
+                    
 
                 elif action == '3':
                     print("-"*60)
                     print()
                     self.__CarService.show_Pricelist()
-                    print()
-                    print()
+                   
 
                 elif action == '4':
                     print("-"*60)
@@ -65,8 +62,7 @@ class Car_UI:
                     new_Car = Car(licence_Plate, category,
                                   manufacturer, the_Type, transmission, price)
                     self.__CarService.add_car(new_Car)
-                    print()
-                    print('Car Added!\n\n')
+                    print('\nCar Added!')
 
                 elif action == 'f':
                     break

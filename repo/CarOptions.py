@@ -18,7 +18,7 @@ class CarOptions:
                     print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
                     available_Cars.append('available')
             if available_Cars == []:
-                print('There Are No Available Cars At The Moment\n\n')
+                print('There Are No Available Cars At The Moment')
             else:
                 pass
 
@@ -33,7 +33,7 @@ class CarOptions:
                     print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
                     unavailable_Cars.append('unavailable')
             if unavailable_Cars == []:
-                print('There Are No Unavailable Cars At The Moment\n\n')
+                print('There Are No Unavailable Cars At The Moment')
             else:
                 pass
 
@@ -53,7 +53,7 @@ class CarOptions:
 
     # Press 4 to Add A New Car To The Car Rental       
     def add_car(self, car):
-        ''' Adds a new car to The Car Rental (the cars.csv file) '''
+        '''Adds a new car to The Car Rental (the cars.csv file)'''
         # first add to file then to private list
         # try:
         # a+ = creates file if it doesnt exist

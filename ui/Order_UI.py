@@ -113,7 +113,7 @@ class Order_UI:
                         print('Payment Completed!')
                     self.__OrderService.put_in_an_order(SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day,
                                                         car_return_year, car_return_month, car_return_day, extra_insurance)
-                    print('\nOrder Added!\n\n')
+                    print('\nOrder Added!')
 
                 elif action == '2':
                     print("-"*60)
@@ -123,7 +123,7 @@ class Order_UI:
                     isFound = self.__OrderService.check_Order(SSN)
                     if isFound:
                         self.__OrderService.cancel_Order(SSN)
-                        print('\nOrder Canceled!\n\n')
+                        print('Order Canceled!')
                     while not isFound:
                         again = input("Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
                         if again == '1':
@@ -133,9 +133,9 @@ class Order_UI:
                             isFound = self.__CustomerService.check_Costumer(SSN)
                             if isFound:
                                 self.__OrderService.cancel_Order(SSN)
-                                print('\nOrder Canceled!\n\n')
+                                print('Order Canceled!')
                         else:
-                            print('\nQuitting..\n\n')
+                            print('Quitting..')
                             break
 
 
@@ -151,15 +151,14 @@ class Order_UI:
                     while not isFound:
                         again = input("Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
                         if again == '1':
-                            SSN_input = input('\nEnter The SSN Of The Person Who Put In Order: ')
+                            SSN_input = input('Enter The SSN Of The Person Who Put In Order: ')
                             SSN = self.__CustomerService.check_SSN(SSN_input)
                             isFound = self.__CustomerService.check_Costumer(SSN)
                             if isFound:
                                 self.__OrderService.look_up_order(SSN)
                         else:
-                            print('\nQuitting..\n\n')
+                            print('Quitting..')
                             break
-                    print()
 
                 elif action == '4':
                     print("-"*60)
@@ -167,10 +166,11 @@ class Order_UI:
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     while not isFound:
-                        print("\Order Not Found! Please Try Again")
-                        SSN_input = input('\nEnter The SSN Of The Person Who Put In The Order: ')
+                        print("\nOrder Not Found! Please Try Again\n")
+                        SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                         SSN = self.__CustomerService.check_SSN(SSN_input)
                         isFound = self.__CustomerService.check_Costumer(SSN)
+                    print()
                     self.__OrderService.look_up_order(SSN)
                     print('\n\nPress 1 to Change Rent Date')
                     print('Press 2 to Change Return Date')
@@ -179,7 +179,7 @@ class Order_UI:
                     choice = self.__CustomerService.check_Choice(choice_input)
                     changes = input('Enter New Info: ').lower()
                     self.__OrderService.change_Order(SSN, choice, changes)
-                    print('\nOrder Changed!\n\n')
+                    print('\nOrder Changed!')
 
                 elif action == '5':
                     print("-"*60)
@@ -188,7 +188,7 @@ class Order_UI:
                     plate = input(
                         '\nEnter The Licence Plate Of The Car You Want To Return: ')
                     self.__OrderService.return_car(plate)
-                    print('\nCar Returned!\n\n')
+                    print('\nCar Returned!')
 
                 elif action == 'f':
                     break
