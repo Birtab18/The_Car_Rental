@@ -51,13 +51,13 @@ class CustomerOptions:
         ''' Looks Up a customer from The Car Rental (from customers.csv file) '''
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
+            # It iterates through every row in the file, to try to find a match
             for row in reader:
                 if row[0] == SSN:
-                    #match.append('found')
+                    # If the input matches index [0] it will print all the informations about the costumer
                     print('SSN:{:10}{:<40}\nName:{:9}{:<40}\nTelephone:{:4}{:<40}\nEmail:{:8}{:<40}'.format
                             (" ", row[0], " ", row[1], " ", row[2], " ", row[3]))
-            # if match == []:
-            #     print('Customer Not Found')
+
             
     
     # Press 4 to Change Information About A Customer
