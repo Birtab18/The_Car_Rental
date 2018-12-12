@@ -183,7 +183,7 @@ class OrderOptions:
             LicencePlate = licence_Plate
             Rentday = date(car_rent_year, car_rent_month, car_rent_day)
             Returnday = date(car_return_year, car_return_month, car_return_day)
-
+            ExtraInsurance = extra_insurance
             order_file.write('{},{},{},{},{},{}\n'.format(SSN, Name, LicencePlate, Rentday, Returnday, ExtraInsurance))
     def print_out_future_orders(self):
         with open('./data/futureorders.csv', 'r') as order_car:
