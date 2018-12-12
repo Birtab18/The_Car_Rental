@@ -49,6 +49,7 @@ class CustomerOptions:
     # Press 3 to Look Up Customer   
     def look_up_customer(self, SSN):
         ''' Looks Up a customer from The Car Rental (from customers.csv file) '''
+        print()
         with open("./data/customers.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
