@@ -9,6 +9,7 @@ from repo.CustomerOptions import CustomerOptions
 from ui.Put_In_Order_UI import Put_In_Order_UI
 from datetime import datetime
 
+
 class Order_UI:
     def __init__(self):
         self.__OrderService = OrderService()
@@ -19,11 +20,11 @@ class Order_UI:
     def Order_Menu(self):
         def print_Choices():
             ''' Prints out everything you can do with orders in the system '''
-            print('{:<30}{:>30}'.format(
+            print('{:<40}{:>40}'.format(
                 'The Car Rental', 'F To Go to Frontpage'))
-            print('-'*60)
-            print("{:^60}".format('ORDERS'))
-            print('-'*60)
+            print('-'*80)
+            print("{:^80}".format('ORDERS'))
+            print('-'*80)
             print('Press 1 to Put In Order')
             print('Press 2 to Cancel Order')
             print('Press 3 to Look Up Order')
@@ -31,100 +32,118 @@ class Order_UI:
             print('Press 5 to Return Car')
             print('Press F to Go To Frontpage\n')
 
+        def action2():
+            print("-"*80)
+            SSN_input = input(
+                'Enter The SSN Of The Person Who Put In The Order: ')
+            SSN = self.__CustomerService.check_SSN(SSN_input)
+            print()
+            # isFound iterates through the file and if there is not match it will allow the user to try again or quit
+            isFound = self.__OrderService.check_Order(SSN)
+            if isFound:
+                self.__OrderService.cancel_Order(SSN)
+                print('Order Canceled!')
+            while not isFound:
+                again = input(
+                    "Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
+                if again == '1':
+                    SSN_input = input(
+                        '\nEnter The SSN Of The Person Who Put In Order: ')
+                    SSN = self.__CustomerService.check_SSN(SSN_input)
+                    print()
+                    isFound = self.__CustomerService.check_Costumer(SSN)
+                    if isFound:
+                        self.__OrderService.cancel_Order(SSN)
+                        print('Order Canceled!')
+                else:
+                    print('Quitting..')
+                    break
+
+        def action3():
+            print("-"*80)
+            SSN_input = input(
+                'Enter The SSN Of The Person Who Put In The Order: ')
+            SSN = self.__CustomerService.check_SSN(SSN_input)
+            print()
+            # isFound iterates through the file and if there is not match it will allow the user to try again or quit
+            isFound = self.__OrderService.check_Order(SSN)
+            if isFound:
+                self.__OrderService.look_up_order(SSN)
+            while not isFound:
+                again = input(
+                    "Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
+                if again == '1':
+                    SSN_input = input(
+                        'Enter The SSN Of The Person Who Put In Order: ')
+                    SSN = self.__CustomerService.check_SSN(SSN_input)
+                    isFound = self.__CustomerService.check_Costumer(SSN)
+                    if isFound:
+                        self.__OrderService.look_up_order(SSN)
+                else:
+                    print('Quitting..')
+                    break
+
+        def action4():
+            print("-"*80)
+            SSN_input = input(
+                'Enter The SSN Of The Person Who Put In The Order: ')
+            SSN = self.__CustomerService.check_SSN(SSN_input)
+            # isFound iterates through the file and if there is not match it will allow the user to try again
+            isFound = self.__CustomerService.check_Costumer(SSN)
+            while not isFound:
+                print("\nOrder Not Found! Please Try Again\n")
+                SSN_input = input(
+                    'Enter The SSN Of The Person Who Put In The Order: ')
+                SSN = self.__CustomerService.check_SSN(SSN_input)
+                isFound = self.__CustomerService.check_Costumer(SSN)
+            print()
+            self.__OrderService.look_up_order(SSN)
+            print('\n\nPress 1 to Change Rent Date')
+            print('Press 2 to Change Return Date')
+            print('Press 3 to Change Extra Insurance (Y = Yes, N = No)\n')
+            choice = input('Enter Choice: ')
+            while choice not in ['1', '2', '3']:
+                print('Error! Invalid Choice. Please Try Again\n')
+                choice = input('Enter Choice: ')
+            if choice == '1' or choice == '2':
+                print('Put in the date in the format year-month-day (fx: 2018-12-20)\n')
+            changes = input('Enter New Info: ').lower()
+            self.__OrderService.change_Order(SSN, choice, changes)
+            print('\nOrder Changed!')
+
+        def action5():
+            print("-"*80)
+            print('Return car: \n')
+            self.__OrderService.print_orders()
+            plate = input(
+                '\nEnter The Licence Plate Of The Car You Want To Return: ')
+            self.__OrderService.return_car(plate)
+            print('\nCar Returned!')
+
         def main():
             print_Choices()
             action = ""
             while action not in ["1", "2", "3", "4", "5", "F"]:
                 action = input('Choose command: ').lower()
-
                 if action == '1':
                     ui = Put_In_Order_UI()
                     ui.Put_In_Order_Menu()
-
                 # Press 2 to Cancel Order
                 elif action == '2':
-                    print("-"*60)
-                    SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
-                    SSN = self.__CustomerService.check_SSN(SSN_input)
-                    print()
-                    # isFound iterates through the file and if there is not match it will allow the user to try again or quit
-                    isFound = self.__OrderService.check_Order(SSN)
-                    if isFound:
-                        self.__OrderService.cancel_Order(SSN)
-                        print('Order Canceled!')
-                    while not isFound:
-                        again = input("Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
-                        if again == '1':
-                            SSN_input = input('\nEnter The SSN Of The Person Who Put In Order: ')
-                            SSN = self.__CustomerService.check_SSN(SSN_input)
-                            print()
-                            isFound = self.__CustomerService.check_Costumer(SSN)
-                            if isFound:
-                                self.__OrderService.cancel_Order(SSN)
-                                print('Order Canceled!')
-                        else:
-                            print('Quitting..')
-                            break
-
+                    action2()
                 # Press 3 to Look Up Order
                 elif action == '3':
-                    print("-"*60)
-                    SSN_input = input(
-                        'Enter The SSN Of The Person Who Put In The Order: ')
-                    SSN = self.__CustomerService.check_SSN(SSN_input)
-                    print()
-                    # isFound iterates through the file and if there is not match it will allow the user to try again or quit
-                    isFound = self.__OrderService.check_Order(SSN)
-                    if isFound:
-                        self.__OrderService.look_up_order(SSN)
-                    while not isFound:
-                        again = input("Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
-                        if again == '1':
-                            SSN_input = input('Enter The SSN Of The Person Who Put In Order: ')
-                            SSN = self.__CustomerService.check_SSN(SSN_input)
-                            isFound = self.__CustomerService.check_Costumer(SSN)
-                            if isFound:
-                                self.__OrderService.look_up_order(SSN)
-                        else:
-                            print('Quitting..')
-                            break
-
+                    action3()
                 # Press 4 to Change Order
                 elif action == '4':
-                    print("-"*60)
-                    SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
-                    SSN = self.__CustomerService.check_SSN(SSN_input)
-                    # isFound iterates through the file and if there is not match it will allow the user to try again 
-                    isFound = self.__CustomerService.check_Costumer(SSN)
-                    while not isFound:
-                        print("\nOrder Not Found! Please Try Again\n")
-                        SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
-                        SSN = self.__CustomerService.check_SSN(SSN_input)
-                        isFound = self.__CustomerService.check_Costumer(SSN)
-                    print()
-                    self.__OrderService.look_up_order(SSN)
-                    print('\n\nPress 1 to Change Rent Date')
-                    print('Press 2 to Change Return Date')
-                    print('Press 3 to Change Extra Insurance (Y = Yes, N = No)\n')
-                    choice_input = input('Enter Choice: ')
-                    choice = self.__CustomerService.check_Choice(choice_input)
-                    changes = input('Enter New Info: ').lower()
-                    self.__OrderService.change_Order(SSN, choice, changes)
-                    print('\nOrder Changed!')
-
+                    action4()
                 # Press 5 to Return Car'
                 elif action == '5':
-                    print("-"*60)
-                    print('Return car: \n')
-                    self.__OrderService.print_orders()
-                    plate = input('\nEnter The Licence Plate Of The Car You Want To Return: ')
-                    self.__OrderService.return_car(plate)
-                    print('\nCar Returned!')
-                
+                    action5()
                 # Press F to Go To Frontpage
                 elif action == 'f':
                     break
-
                 else:
                     print("Invalid input, try again!")
+
         main()

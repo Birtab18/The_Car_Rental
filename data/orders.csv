@@ -1,10 +1,6 @@
 SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,total_price_main
 0210683869,Haraldur,AF890,Mini Car,Volkswagen,Golf,2018-12-04,2018-12-01,27000kr.-
 1406972739,Baldur,AO456,Jeep,Mercedes,Benz G-Class,2018-12-03,2018-12-01,60000kr.-
-2005984079,Birta Líf,AF890,Mini Car,Volkswagen,Golf,2018-12-28,2018-12-20,90000kr.-
-1610962299,Arnar,AW234,Jeep,Toyota,Land Cruiser,2018-12-20,2018-12-24,80000kr.-
 2323232323,helgi,AC456,Mini Car,Chervolet,Spark,2018-12-20,2018-12-26,48000kr.-
-2323232323,helgi,AC456,Mini Car,Chervolet,Spark,2018-12-20,2018-12-26,48000kr.-
-2323232323,helgi,AB345,Mini Car,Toyota,Aygo,2018-12-20,2018-12-26,48000kr.-
-1406972739,Baldur,AF890,Mini Car,Volkswagen,Golf,2018-12-01,2018-12-04,24000kr.-
-1406972739,Baldur,AL678,Jeep,Nissan,Quashqui,2018-12-01,2018-12-03,48000kr.-
+2005984079,birta,BB555,Mini Car,Kia,Rio,2018-12-22,2018-12-28,60000kr.-
+2005984079,Birta,AW234,Jeep,Toyota,Land Cruiser,2018-12-13,2018-12-15,60000kr.-

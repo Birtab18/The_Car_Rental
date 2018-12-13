@@ -17,41 +17,39 @@ class Front_Page_UI:
 
     def main_Menu(self):
         def print_Frontpage():
-            print('\n\n\n{:<30}{:>30}'.format('The Car Rental', 'Front page'))
-            print('-'*60)
+            print('\n\n\n{:<40}{:>40}'.format('The Car Rental', 'Front page'))
+            print('-'*80)
             today = datetime.today().date()
-            print("{:^60}".format('HELLO'))
-            print('-'*60)
+            print("{:^80}".format('HELLO'))
+            print('-'*80)
             print('Today is {:}'.format(today))
             print('\n\nPress 1 for Customers')
             print('Press 2 for Cars')
             print('Press 3 for Orders')
             print('Press q to Quit\n')
 
-        action = ''
-        while (action != 'q'):
-            print_Frontpage()
-            action = input('Choose command: ').lower()
-            print()
+        def main():
+            action = ''
+            while (action != 'q'):
+                print_Frontpage()
+                action = input('Choose command: ').lower()
+                print()
+                # Press 1 for Customers
+                if action == '1':
+                    ui = Customer_UI()
+                    ui.customer_Menu()
+                # Press 2 for Cars
+                elif action == '2':
+                    ui = Car_UI()
+                    ui.car_Menu()
+                # Press 3 for Orders
+                elif action == '3':
+                    ui = Order_UI()
+                    ui.Order_Menu()
+                # Press q to Quit
+                elif action == 'q':
+                    print("Exiting Program. Goodbye !\n")
+                else:
+                    print('Invalid input, try again!\n')
 
-            # Press 1 for Customers
-            if action == '1':
-                ui = Customer_UI()
-                ui.customer_Menu()
-
-            # Press 2 for Cars
-            elif action == '2':
-                ui = Car_UI()
-                ui.car_Menu()
-
-            # Press 3 for Orders
-            elif action == '3':
-                ui = Order_UI()
-                ui.Order_Menu()
-
-            # Press q to Quit
-            elif action == 'q':
-                print("Exiting Program. Goodbye !\n")
-
-            else:
-                print('Invalid input, try again!\n')
+        main()
