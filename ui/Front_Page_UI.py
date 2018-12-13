@@ -17,11 +17,11 @@ class Front_Page_UI:
 
     def main_Menu(self):
         def print_Frontpage():
-            print('\n\n\n{:<30}{:>30}'.format('The Car Rental', 'Front page'))
-            print('-'*60)
+            print('\n\n\n{:<40}{:>40}'.format('The Car Rental', 'Front page'))
+            print('-'*80)
             today = datetime.today().date()
-            print("{:^60}".format('HELLO'))
-            print('-'*60)
+            print("{:^80}".format('HELLO'))
+            print('-'*80)
             print('Today is {:}'.format(today))
             print('\n\nPress 1 for Customers')
             print('Press 2 for Cars')

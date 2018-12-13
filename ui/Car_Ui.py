@@ -10,11 +10,11 @@ class Car_UI:
     def car_Menu(self):
         def print_Choices():
             ''' Prints out everything you can do with cars in the system '''
-            print('{:<30}{:>30}'.format(
+            print('{:<40}{:>40}'.format(
                 'The Car Rental', 'F To Go to Frontpage'))
-            print('-'*60)
-            print("{:^60}".format('CARS'))
-            print('-'*60)
+            print('-'*80)
+            print("{:^80}".format('CARS'))
+            print('-'*80)
             print('Press 1 to Show Available Cars')
             print('Press 2 to Show Unavailable Cars')
             print('Press 3 to Show Price List')
@@ -29,25 +29,25 @@ class Car_UI:
 
                 # Press 1 to Show Available Cars
                 if action == '1':
-                    print("-"*60)
+                    print("-"*80)
                     print('Available Cars: \n')
                     self.__CarService.available_cars()
 
                 # Press 2 to Show Unavailable Cars
                 elif action == '2':
-                    print("-"*60)
+                    print("-"*80)
                     print('Unavailable Cars: \n')
                     self.__CarService.unavailable_cars()
 
                 # Press 3 to Show Price List
                 elif action == '3':
-                    print("-"*60)
+                    print("-"*80)
                     print()
                     self.__CarService.show_Pricelist()
 
                 # Press 4 to Add A New Car To The Car Rental
                 elif action == '4':
-                    print("-"*60)
+                    print("-"*80)
                     print("New Car:")
                     licence_Plate = input('Enter The Licence Plate: ')
                     licence_Plate = licence_Plate.upper()
