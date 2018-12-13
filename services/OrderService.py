@@ -32,7 +32,7 @@ class OrderService:
 
     def check_Car(self, licence_Plate):
         return self.__order_Repo.check_Car(licence_Plate)
-    
+
     def check_Order(self,SSN):
         return self.__order_Repo.check_Order(SSN)
 
@@ -42,6 +42,6 @@ class OrderService:
 
     def print_out_future_orders(self):
         return self.__order_Repo.print_out_future_orders()
-        
+
     def remove_from_future_orders(self,SSN_input):
         return self.__order_Repo.remove_from_future_orders(SSN_input)

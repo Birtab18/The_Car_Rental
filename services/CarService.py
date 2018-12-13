@@ -8,13 +8,13 @@ class CarService:
 
     def available_cars(self):
         self.__car_Repo.show_available_cars()
-    
+
     def unavailable_cars(self):
         self.__car_Repo.show_unavailable_cars()
 
     def add_car(self, car):
         self.__car_Repo.add_car(car)  
-        
+
     def show_Pricelist(self):
         self.__car_Repo.show_Pricelist()
 
@@ -57,5 +57,3 @@ class CarService:
             except ValueError:
                 print('Error! Please Enter Digits')
         return price
-
-    

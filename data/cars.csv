@@ -3,7 +3,7 @@ AB345,Mini Car,Toyota,Aygo,stick shift,8000,False
 AC456,Mini Car,Chervolet,Spark,stick shift,8000,False
 AD567,Mini Car,Kia,Picanto,stick shift,8000,False
 AE789,Mini Car,Hyundai,i10,stick shift,8000,False
-AF890,Mini Car,Volkswagen,Golf,manual,8000,True
+AF890,Mini Car,Volkswagen,Golf,manual,8000,False
 AG123,Station Car,Mazda,3,stick shift,15000,False
 AH234,Station Car,Ford,Focus,manual,15000,False
 AK345,Station Car,Hyundai,i30,manual,15000,False

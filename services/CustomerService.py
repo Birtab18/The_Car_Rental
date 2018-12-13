@@ -16,7 +16,7 @@ class CustomerService:
 
     def Change_Information(self, SSN, choice, changes):
         self.__customer_Repo.Change_Information(SSN, choice, changes)
-    
+
     def check_SSN(self, SSN_input):
         while len(SSN_input) != 10:
             print('Error! Please Input A Valid SSN (only 10 digits)\n')
@@ -46,7 +46,7 @@ class CustomerService:
                 print('Error! Please Enter A Valid Phone Number (only 7 digits)\n')
                 phonenumber_input = input('Enter A Phone Number: ')
         return phonenumber_input
-    
+
     def check_Choice(self, choice_input):
         while choice_input not in ['1', '2', '3', '4']:
             print('Error! Invalid Choice. Please Try Again\n')
