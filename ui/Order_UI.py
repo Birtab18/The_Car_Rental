@@ -106,8 +106,12 @@ class Order_UI:
                     print('\n\nPress 1 to Change Rent Date')
                     print('Press 2 to Change Return Date')
                     print('Press 3 to Change Extra Insurance (Y = Yes, N = No)\n')
-                    choice_input = input('Enter Choice: ')
-                    choice = self.__CustomerService.check_Choice(choice_input)
+                    choice = input('Enter Choice: ')
+                    while choice not in ['1', '2', '3']:
+                        print('Error! Invalid Choice. Please Try Again\n')
+                        choice = input('Enter Choice: ')
+                    if choice == '1' or choice == '2':
+                        print('Put in the date in the format year-month-day (fx: 2018-12-20)\n')
                     changes = input('Enter New Info: ').lower()
                     self.__OrderService.change_Order(SSN, choice, changes)
                     print('\nOrder Changed!')
