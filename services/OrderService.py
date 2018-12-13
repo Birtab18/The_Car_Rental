@@ -46,25 +46,22 @@ class OrderService:
         return self.__order_Repo.remove_from_future_orders(SSN_input)
 
     def check_year(self, rent_year):
-        while False:
-            if rent_year == "2018" or rent_year == "2019":
-                return rent_year
-            else:
-                print('Invalid year')
-                rent_year = input("Enter Rent Year: ")
+        while 1:
+            if str(rent_year) == "2018" or str(rent_year) == "2019":
+                return int(rent_year)
+            print('Invalid year')
+            rent_year = int(input("Enter a valid year: "))
 
     def check_month(self, rent_month):
-        while False:
-            if rent_month in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]:
-                return rent_month
-            else:
-                print('Invalid month')
-                rent_month = input("Enter Rent Month: ")
+        while 1:
+            if str(rent_month) in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]:
+                return int(rent_month)
+            print('Invalid month')
+            rent_month = int(input("Enter a valid month: "))
 
-    def check_days(self, return_day):
-        while False:
-            if return_day in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]:
-                return return_day
-            else:
-                print('Invalid month')
-                return_day = input("Enter Rent Month: ")
+    def check_days(self, rent_day):
+        while 1:
+            if str(rent_day) in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]:
+                return int(rent_day)
+            print('Invalid month')
+            rent_day = int(input("Enter a valid day: "))
