@@ -40,6 +40,10 @@ class Car_UI:
             print("New Car:")
             licence_Plate = input('Enter The Licence Plate: ')
             licence_Plate = licence_Plate.upper()
+            while len(licence_Plate) != 5:
+                print('Invalid Input, Try Again!')
+                licence_Plate = input('Enter The Licence Plate: ')
+                licence_Plate = licence_Plate.upper()
             category_inp = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
             category = self.__CarService.check_Category(category_inp)
             manufacturer = input('Enter The Manufacturer: ')

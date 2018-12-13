@@ -19,18 +19,12 @@ class CustomerOptions:
     # Press 1 to Sign Up New Customer
     def add_customer(self, customer):
         ''' Adds a new customer to The Car Rental (the customers.csv file) '''
-        # first add to file then to private list
-        # try:
-        # a+ = creates file if it doesnt exist
-        with open('./data/customers.csv', 'a+') as customer_file:
+        with open('./data/customers.csv', 'a+') as customer_file:  # a+ = creates file if it doesnt exist
             name = customer.get_name()
             SSN = customer.get_SSN()
             phonenumber = customer.get_phonenumber()
             email = customer.get_email()
             customer_file.write('{},{},{},{}\n'.format(name, SSN, phonenumber, email))
-        # except:
-            # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
-        # pass
 
     # Press 2 to Delete Customer 
     def delete_customer(self, person_SSN):
@@ -78,7 +72,7 @@ class CustomerOptions:
                             the_Choice = 'Email'
                         row[the_Choice] = changes
                 writer.writerow(row)
-        os.remove('./data/customers.csv')
-        os.rename('./data/deletecustomers.csv', './data/customers.csv')
-# Til að eyða gömlu skránni og gera nýju skránna samnefnda gömlu skránni  
+        os.remove('./data/customers.csv') #deletes the file
+        os.rename('./data/deletecustomers.csv', './data/customers.csv') #creates a new file named customers.csv like the old one
+
 

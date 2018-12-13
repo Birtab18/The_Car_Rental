@@ -58,10 +58,7 @@ class CarOptions:
     # Press 4 to Add A New Car To The Car Rental       
     def add_car(self, car):
         '''Adds a new car to The Car Rental (the cars.csv file)'''
-        # first add to file then to private list
-        # try:
-        # a+ = creates file if it doesnt exist
-        with open('./data/cars.csv', 'a+') as car_file:
+        with open('./data/cars.csv', 'a+') as car_file: # a+ = creates file if it doesnt exist
             licence_Plate = car.get_licence_Plate()
             category = car.get_category()
             manufacturer = car.get_manufacturer()
@@ -71,8 +68,5 @@ class CarOptions:
             status = car.get_status()
             car_file.write('{},{},{},{},{},{},{}\n'.format(licence_Plate, category, manufacturer, the_Type, 
                     transmission, price, status))
-        # except:
-            # adda þessu í skránna??? 1:18:20 i fyrirlestri 2
-        # pass
     
 
