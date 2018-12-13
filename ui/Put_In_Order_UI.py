@@ -148,12 +148,17 @@ class Put_In_Order_UI:
                 category_inp = input(
                     'Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
                 Category = self.__CarService.check_Category(category_inp)
-                car_rent_year = int(input('Enter Rent Year: '))
-                car_rent_month = int(input('Enter Rent Month: '))
+                rent_year = int(input('Enter Rent Year: '))
+                car_rent_year = self.__OrderService.check_year(rent_year)
+                rent_month = int(input('Enter Rent Month: '))
+                car_rent_month = self.__OrderService.check_month(rent_month)
                 car_rent_day = int(input('Enter Rent Day: '))
                 print("-"*60)
-                car_return_year = int(input('Enter Return Year: '))
-                car_return_month = int(input('Enter Return Month: '))
+                return_year = int(input('Enter Return Year: '))
+                car_return_year = self.__OrderService.check_year(return_year)
+                return_month = int(input('Enter Return Month: '))
+                car_return_month = self.__OrderService.check_month(
+                    return_month)
                 car_return_day = int(input('Enter Return Day: '))
                 extra_insurance = input(
                     'Do you want extra insurance? (Type Yes or No) ')

@@ -45,20 +45,24 @@ class OrderService:
     def remove_from_future_orders(self, SSN_input):
         return self.__order_Repo.remove_from_future_orders(SSN_input)
 
-    def check_year(self, year):
+    def check_year(self, rent_year):
         loop = True
         while loop:
-            if year != "2018" or "2019":
+            if rent_year in ["2018", "2019"]:
+                loop = False
+            else:
                 print('Invalid year')
-                year = input("Enter year: ")
-            else:
-                loop = False
+                rent_year = input("Enter rent year: ")
 
-    def check_month(self, month):
+        return rent_year
+
+    def check_month(self, rent_month):
         loop = True
         while loop:
-            if month not in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", ]:
-                print('Invalid month')
-                year = input("Enter month: ")
-            else:
+            if rent_month in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]:
                 loop = False
+            else:
+                print('Invalid month')
+                rent_month = input("Enter rent month: ")
+
+        return rent_month
