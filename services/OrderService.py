@@ -6,7 +6,6 @@ class OrderService:
         # __checking_repo er private repository
         self.__order_Repo = OrderOptions()
 
-
     def look_up_order(self, SSN):
         return self.__order_Repo.look_Up_Order(SSN)
 
@@ -21,7 +20,7 @@ class OrderService:
     def change_Order(self, SSN, choice, changes):
         self.__order_Repo.change_Order(SSN, choice, changes)
 
-    def pick_a_category(self,car_choice):
+    def pick_a_category(self, car_choice):
         self.__order_Repo.pick_a_category(car_choice)
 
     def print_orders(self):
@@ -33,15 +32,33 @@ class OrderService:
     def check_Car(self, licence_Plate):
         return self.__order_Repo.check_Car(licence_Plate)
 
-    def check_Order(self,SSN):
+    def check_Order(self, SSN):
         return self.__order_Repo.check_Order(SSN)
 
-    def put_in_future_order(self,SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day,extra_insurance):
-        return self.__order_Repo.put_in_future_order(SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,
-                    car_return_day,extra_insurance)
+    def put_in_future_order(self, SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year, car_return_month, car_return_day, extra_insurance):
+        return self.__order_Repo.put_in_future_order(SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year, car_return_month,
+                                                     car_return_day, extra_insurance)
 
     def print_out_future_orders(self):
         return self.__order_Repo.print_out_future_orders()
 
-    def remove_from_future_orders(self,SSN_input):
+    def remove_from_future_orders(self, SSN_input):
         return self.__order_Repo.remove_from_future_orders(SSN_input)
+
+    def check_year(self, year):
+        loop = True
+        while loop:
+            if year != "2018" or "2019":
+                print('Invalid year')
+                year = input("Enter year: ")
+            else:
+                loop = False
+
+    def check_month(self, month):
+        loop = True
+        while loop:
+            if month not in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", ]:
+                print('Invalid month')
+                year = input("Enter month: ")
+            else:
+                loop = False

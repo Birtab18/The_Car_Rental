@@ -51,15 +51,19 @@ class Car_UI:
                     print("New Car:")
                     licence_Plate = input('Enter The Licence Plate: ')
                     licence_Plate = licence_Plate.upper()
-                    category_inp = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
+                    category_inp = input(
+                        'Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
                     category = self.__CarService.check_Category(category_inp)
                     manufacturer = input('Enter The Manufacturer: ')
                     the_Type = input('Enter The Type: ')
-                    transmission_inp = input('Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
-                    transmission = self.__CarService.check_Transmission(transmission_inp)
+                    transmission_inp = input(
+                        'Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
+                    transmission = self.__CarService.check_Transmission(
+                        transmission_inp)
                     price_inp = input('Enter Price: ')
                     price = self.__CarService.check_Price(price_inp)
-                    new_Car = Car(licence_Plate, category,manufacturer, the_Type, transmission, price)
+                    new_Car = Car(licence_Plate, category,
+                                  manufacturer, the_Type, transmission, price)
                     self.__CarService.add_car(new_Car)
                     print('\nCar Added!')
 

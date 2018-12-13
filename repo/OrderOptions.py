@@ -3,6 +3,7 @@ import csv
 from models.Order import Order
 from datetime import date
 
+
 class OrderOptions:
 
     def __init__(self):
@@ -15,7 +16,8 @@ class OrderOptions:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
                 if row[6] == 'True' and row[1] == car_choice:
-                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
+                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(
+                        row[2], row[3], row[1], row[5], row[0]))
                     available_Cars.append('available')
             if available_Cars == []:
                 print('There Are No Available Cars At The Moment\n\n')
@@ -39,7 +41,7 @@ class OrderOptions:
 
     # Press 1 to Put In Orders
     def put_in_an_order(self, SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day, car_return_year,
-            car_return_month, car_return_day, extra_insurance):
+                        car_return_month, car_return_day, extra_insurance):
         ''' Adds an order to The Car Rental (the orders.csv file) '''
         with open("./data/customers.csv", 'r') as customer_File:
             reader_customer = csv.reader(customer_File)
@@ -76,11 +78,11 @@ class OrderOptions:
             else:
                 print('Invalid input')
             order_file.write('{},{},{},{},{},{},{},{},{}kr.-\n'.format(SSN, Name, licence_Plate, category,
-                    manufacturer, the_Type, rentday, returnday, total_price))
+                                                                       manufacturer, the_Type, rentday, returnday, total_price))
         # changes a car to false
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type', 
-                    'transmission', 'price', 'status'])
+            writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type',
+                                                     'transmission', 'price', 'status'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i, value in row.items():
@@ -91,28 +93,30 @@ class OrderOptions:
         os.remove('./data/cars.csv')
         os.rename('./data/deletecars.csv', './data/cars.csv')
 
-
-    def put_in_future_order(self,SSN,Name,licence_Plate,car_rent_year,car_rent_month,car_rent_day,car_return_year,
-            car_return_month,car_return_day,extra_insurance):
+    def put_in_future_order(self, SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year,
+                            car_return_month, car_return_day, extra_insurance):
         ''' Keeps information about future orders.'''
         with open('./data/futureorders.csv', 'a+') as order_file:
             SSN = SSN
             Name = Name
-            LicencePlate = licence_Plate
+            Category = Category
             Rentday = date(car_rent_year, car_rent_month, car_rent_day)
             Returnday = date(car_return_year, car_return_month, car_return_day)
             ExtraInsurance = extra_insurance
-            order_file.write('{},{},{},{},{},{}\n'.format(SSN, Name, LicencePlate, Rentday, Returnday, ExtraInsurance))
+            order_file.write('{},{},{},{},{},{}\n'.format(
+                SSN, Name, Category, Rentday, Returnday, ExtraInsurance))
 
     def print_out_future_orders(self):
         with open('./data/futureorders.csv', 'r') as order_car:
             reader_car = csv.reader(order_car)
             for bar in reader_car:
-                print('{:10} {:15} {:15} {:15} {:15} {:15}'.format(bar[0],bar[1],bar[2],bar[3],bar[4],bar[5]))
+                print('{:10} {:15} {:15} {:15} {:15} {:15}'.format(
+                    bar[0], bar[1], bar[2], bar[3], bar[4], bar[5]))
 
     def remove_from_future_orders(self, SSN_input):
         with open('./data/futureorders.csv', 'r') as inp, open('./data/deletefutureorders.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['SSN','Name','LicencePlate','Rentday','Returnday','ExtraInsurance'])
+            writer = csv.DictWriter(out, fieldnames=[
+                                    'SSN', 'Name', 'Category', 'Rentday', 'Returnday', 'ExtraInsurance'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != SSN_input:
@@ -120,8 +124,8 @@ class OrderOptions:
         os.remove('./data/futureorders.csv')
         os.rename('./data/deletefutureorders.csv', './data/futureorders.csv')
 
-
     # Press 2 to Cancel Order
+
     def cancel_Order(self, SSN):
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
@@ -145,13 +149,14 @@ class OrderOptions:
                 if row[0] == SSN:
                     # If the SSN input matches index [0] it will print all the informations about the costumer
                     print('Customer Informations\n{}'.format("-"*35))
-                    print('SSN:{:>20}{}\nName:{:>19}{}\n'.format(" ", row[0], " ", row[1]))
+                    print('SSN:{:>20}{}\nName:{:>19}{}\n'.format(
+                        " ", row[0], " ", row[1]))
                     print('Car Informations:\n{}'.format("-"*35))
                     print('Licence Plate:{:>10}{}\nCategory:{:>15}{}\nManufacturer:{:>11}{}\nType:{:>19}{}\n'.
                           format(" ", row[2], " ", row[3], " ", row[4], " ", row[5]))
                     print('Order Informations:\n{}'.format("-"*35))
-                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>12}{}'.format(" ", row[6], 
-                            " ", row[7], " ", row[8]))
+                    print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>12}{}'.format(" ", row[6],
+                                                                                                  " ", row[7], " ", row[8]))
 
     # Press 4 to Change Order
     def change_Order(self, SSN, choice, changes):
@@ -181,14 +186,14 @@ class OrderOptions:
         with open("./data/orders.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
-                print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0], row[1], row[2], row[4],row[5], 
-                        row[6], row[7]))
+                print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0], row[1], row[2], row[4], row[5],
+                                                                          row[6], row[7]))
 
     def return_car(self, plate):
         ''' When the car is returned the user needs to return it manually '''
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type', 
-                    'transmission', 'price', 'status'])
+            writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type',
+                                                     'transmission', 'price', 'status'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 for i, value in row.items():
@@ -201,7 +206,7 @@ class OrderOptions:
 
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer',
-                    'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
+                                                     'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['licence_Plate'] != plate:
