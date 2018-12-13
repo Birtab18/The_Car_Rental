@@ -21,7 +21,7 @@ class Put_In_Order_UI:
             print('\nPress 1 to Put In Order')
             print('Press 2 to Put in a Future Order\n')
 
-        def main():
+        def new_Or_Old():
             print("-"*80)
             new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower()
             while new_Or_Old != 'y' or 'n':
@@ -47,7 +47,9 @@ class Put_In_Order_UI:
                 else:
                     print('Invalid input, try again!')
                     new_Or_Old = input('Has the customer rented a car from us before? (y = Yes, n = No) ').lower() 
-
+        
+        def main():
+            new_Or_Old()
             print_Choices()
             action = ""
             while action not in ["1", "2"]:
@@ -89,7 +91,6 @@ class Put_In_Order_UI:
                     print("-"*80)
                     SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
-                    
                     self.__OrderService.remove_from_future_orders(SSN)
                     print("-"*80)
                     licence_Plate = input('Enter The Licence Plate Of The Car: ').upper()
