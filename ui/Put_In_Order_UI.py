@@ -62,24 +62,24 @@ class Put_In_Order_UI:
                 if car_choice == 'm':
                     print("-"*80)
                     car_choice = 'Mini Car'
-                    print('\nThese Mini Cars are available:')
+                    print('\nThese Mini Cars are available:\n')
                     self.__OrderService.pick_a_category(car_choice)
                     loop = False
-                    break
+                    #break
                 elif car_choice == 's':
                     print("-"*80)
                     car_choice = 'Station Car'
-                    print('\nThese Station Cars are available:')
+                    print('\nThese Station Cars are available:\n')
                     self.__OrderService.pick_a_category(car_choice)
                     loop = False
-                    break
+                    #break
                 elif car_choice == 'j':
                     print("-"*80)
                     car_choice = 'Jeep'
-                    print('\nThese Jeeps are available:')
+                    print('\nThese Jeeps are available:\n')
                     self.__OrderService.pick_a_category(car_choice)
                     loop = False
-                    break
+                    #break
                 else:
                     print('Error. Invalid Input, Try Again!\n')
             print("-"*80)
@@ -104,6 +104,14 @@ class Put_In_Order_UI:
             car_return_year = int(input('Enter Return Year: '))
             car_return_month = int(input('Enter Return Month: '))
             car_return_day = int(input('Enter Return Day: '))
+            loop = True
+            while loop:
+                if car_return_day == car_rent_day and car_return_month == car_rent_month:
+                    print("\nSorry you can't rent for only one day! Please try again\n")
+                    car_return_month = int(input('Enter Return Month: '))
+                    car_return_day = int(input('Enter Return Day: '))
+                else:
+                    loop = False
             print("-"*80)
             extra_insurance = input(
                 'Do you want extra insurance: Press(Y) for Yes and Press(N) for No: ').lower()
