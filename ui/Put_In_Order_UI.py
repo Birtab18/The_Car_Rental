@@ -114,11 +114,9 @@ class Put_In_Order_UI:
                     while len(credit_card) != 16:
                         print(
                             'Error! Please Input A Valid Credit Card Number (only 16 digits)\n')
-                        credit_card = input(
-                            'Enter your Credit Card Number:')
+                        credit_card = input('Enter your Credit Card Number:')
                 print("-"*60)
-                payment = input(
-                    'Are you paying with a Card or Cash: (Press 1 for Card , Press 2 for Cash): ')
+                payment = input('Are you paying with a Card or Cash: (Press 1 for Card , Press 2 for Cash): ')
                 print("-"*60)
                 if payment == '1':
                     cardholder = input("Enter The Cardholder's Name: ")

@@ -32,6 +32,7 @@ class CarService:
                 loop = False
             else:
                 print("Invalid input, try again!")
+                category = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
         return category
 
     def check_Transmission(self, transmission):
@@ -45,6 +46,7 @@ class CarService:
                 loop = False
             else:
                 print('Invalid input, try again!')
+                transmission = input('Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
         return transmission
 
     def check_Price(self, price):
@@ -52,8 +54,9 @@ class CarService:
         while loop:
             try:
                 price = int(price)
-                print = str(price)
+                price = str(price)
                 loop = False
             except ValueError:
                 print('Error! Please Enter Digits')
+                price = input('Enter Price: ')
         return price
