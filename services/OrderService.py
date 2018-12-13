@@ -48,11 +48,11 @@ class OrderService:
     def check_year(self, rent_year):
         loop = True
         while loop:
-            if rent_year in ["2018", "2019"]:
+            if rent_year == "2018" or rent_year == "2019":
                 loop = False
             else:
                 print('Invalid year')
-                rent_year = input("Enter rent year: ")
+                rent_year = input("Enter Rent Year: ")
 
         return rent_year
 
@@ -63,6 +63,6 @@ class OrderService:
                 loop = False
             else:
                 print('Invalid month')
-                rent_month = input("Enter rent month: ")
+                rent_month = input("Enter Rent Month: ")
 
         return rent_month
