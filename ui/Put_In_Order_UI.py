@@ -50,7 +50,9 @@ class Put_In_Order_UI:
                     new_Or_Old = input('Has The Customer Rented A Car From Us Before? (Y = Yes, N = No) ').lower()
 
         def action1():
-            print('\nAre There Any Orders You Have To Activate Today?\n')
+            today = datetime.today().date()
+            print('Today: {:}'.format(today))
+            print('\nAre there any Orders You have to activate today?\n')
             self.__OrderService.print_out_future_orders()  # Print Out All The Future Orders
             print("-"*80)
             loop = True
