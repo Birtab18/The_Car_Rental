@@ -19,7 +19,7 @@ class CustomerService:
 
     def check_SSN(self, SSN_input):
         while len(SSN_input) != 10:
-            print('Error! Please Input A Valid SSN (only 10 digits)\n')
+            print('Invalid Input, Try Again! (only 10 digits)\n')
             SSN_input = input('Enter The SSN: ')
         loop = True
         while loop:
@@ -28,13 +28,13 @@ class CustomerService:
                 SSN_input = str(SSN_input)
                 loop = False
             except ValueError:
-                print('Error! Please Enter A Valid SSN (only 10 digits)\n')
+                print('Invalid Input, Try Again! (only 10 digits)\n')
                 SSN_input = input('Enter The SSN: ')
         return SSN_input
 
     def check_Phonenumber(self, phonenumber_input):
         while len(phonenumber_input) != 7:
-            print('Error! Please Input A Valid Phone Number (only 7 digits)\n')
+            print('Invalid Input, Try Again! (only 7 digits)\n')
             phonenumber_input = input('Enter A Phone Number: ')
         loop = True
         while loop:
@@ -43,13 +43,13 @@ class CustomerService:
                 phonenumber_input = str(phonenumber_input)
                 loop = False
             except ValueError:
-                print('Error! Please Enter A Valid Phone Number (only 7 digits)\n')
+                print('Invalid Input, Try Again! (only 7 digits)\n')
                 phonenumber_input = input('Enter A Phone Number: ')
         return phonenumber_input
 
     def check_Choice(self, choice_input):
         while choice_input not in ['1', '2', '3', '4']:
-            print('Error! Invalid Choice. Please Try Again\n')
+            print('Invalid Input, Try Again!\n')
             choice_input = input('Enter Choice: ')
         return choice_input
 

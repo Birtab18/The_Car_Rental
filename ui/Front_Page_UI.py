@@ -23,16 +23,16 @@ class Front_Page_UI:
             print("{:^80}".format('HELLO'))
             print('-'*80)
             print('Today is {:}'.format(today))
-            print('\n\nPress 1 for Customers')
-            print('Press 2 for Cars')
-            print('Press 3 for Orders')
-            print('Press q to Quit\n')
+            print('\n\nPress 1 For Customers')
+            print('Press 2 For Cars')
+            print('Press 3 For Orders')
+            print('Press Q To Quit\n')
 
         def main():
             action = ''
             while (action != 'q'):
                 print_Frontpage()
-                action = input('Choose command: ').lower()
+                action = input('Choose Command: ').lower()
                 print()
                 # Press 1 for Customers
                 if action == '1':
@@ -50,6 +50,6 @@ class Front_Page_UI:
                 elif action == 'q':
                     print("Exiting Program. Goodbye !\n")
                 else:
-                    print('Invalid input, try again!\n')
+                    print('Invalid Input, Try Again!\n')
 
         main()

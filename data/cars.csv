@@ -1,17 +1,31 @@
 licence_Plate,category,manufacturer,the_Type,transmission,price,status
-AB345,Mini Car,Toyota,Aygo,stick shift,8000,False
-AC456,Mini Car,Chervolet,Spark,stick shift,8000,False
-AD567,Mini Car,Kia,Picanto,stick shift,8000,False
-AE789,Mini Car,Hyundai,i10,stick shift,8000,False
-AF890,Mini Car,Volkswagen,Golf,manual,8000,False
+AB345,Mini Car,Toyota,Aygo,stick shift,8000,True
+AC456,Mini Car,Chervolet,Spark,stick shift,8000,True
+AD567,Mini Car,Kia,Picanto,stick shift,8000,True
+AE789,Mini Car,Hyundai,i10,stick shift,8000,True
+AF890,Mini Car,Volkswagen,Golf,manual,8000,True
+HSF63,Mini Car,Toyota,Aygo,stick shift,8000,True
+AA123,Mini Car,Chervolet,Spark,stick shift,8000,True
+PE733,Mini Car,Kia,Picanto,stick shift,8000,True
+KFF10,Mini Car,Hyundai,i10,manual,8000,True
+JPG14,Mini Car,Volkswagen,Golf,manual,8000,False
 AG123,Station Car,Mazda,3,stick shift,15000,False
-AH234,Station Car,Ford,Focus,manual,15000,False
+AH234,Station Car,Ford,Focus,manual,15000,True
 AK345,Station Car,Hyundai,i30,manual,15000,False
-AI456,Station Car,Audi,A3,manual,15000,False
+AI456,Station Car,Audi,A3,manual,15000,True
 AJ567,Station Car,Tesla,Model 3,manual,15000,True
-AL678,Jeep,Nissan,Quashqui,stick shift,20000,False
-AM890,Jeep,Volkswagen,Tiguan,manual,20000,False
-AN123,Jeep,Volvo,xc90,stick shift,20000,False
-AW234,Jeep,Toyota,Land Cruiser,manual,20000,False
-AO456,Jeep,Mercedes,Benz G-Class,manual,20000,False
-JJ999,Mini Car,kia,rio,Manual,8000,False
+KK110,Station Car,Mazda,3,manual,15000,True
+FH123,Station Car,Ford,Focus,stick shift,15000,True
+BPM96,Station Car,Hyundai,i30,stick shift,15000,True
+BLB98,Station Car,Audi,A3,manual,15000,True
+SKB14,Station Car,Tesla,Model 3,manual,15000,True
+AL678,Jeep,Nissan,Quashqui,stick shift,20000,True
+AM890,Jeep,Volkswagen,Tiguan,manual,20000,True
+AN123,Jeep,Volvo,xc90,stick shift,20000,True
+AW234,Jeep,Toyota,Land Cruiser,manual,20000,True
+AO456,Jeep,Mercedes Benz,G-Class,manual,20000,True
+HOP21,Jeep,Nissan,Quashqui,stick shift,20000,True
+PO777,Jeep,Volkswagen,Tiguan,manual,20000,False
+RU018,Jeep,Volvo,xc90,stick shift,20000,True
+NAT12,Jeep,Toyota,Land Cruiser,manual,20000,True
+BH197,Jeep,Mercedes Benz,G-Class,manual,20000,True

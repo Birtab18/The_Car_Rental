@@ -35,9 +35,10 @@ class OrderService:
     def check_Order(self, SSN):
         return self.__order_Repo.check_Order(SSN)
 
-    def put_in_future_order(self, SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year, car_return_month, car_return_day, extra_insurance):
-        return self.__order_Repo.put_in_future_order(SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year, car_return_month,
-                                                     car_return_day, extra_insurance)
+    def put_in_future_order(self, SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year, car_return_month, 
+                            car_return_day, extra_insurance):
+        return self.__order_Repo.put_in_future_order(SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year, 
+                                                     car_return_month, car_return_day, extra_insurance)
 
     def print_out_future_orders(self):
         return self.__order_Repo.print_out_future_orders()
@@ -61,7 +62,11 @@ class OrderService:
 
     def check_days(self, rent_day):
         while 1:
-            if str(rent_day) in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]:
+            if str(rent_day) in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", 
+                                "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]:
                 return int(rent_day)
             print('Invalid month')
             rent_day = int(input("Enter a valid day: "))
+        
+    
+        

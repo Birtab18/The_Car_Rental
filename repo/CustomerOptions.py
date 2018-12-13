@@ -54,7 +54,7 @@ class CustomerOptions:
                 if row[0] == SSN:
                     # If the input matches index [0] it will print all the informations about the costumer
                     print('SSN:{:10}{:<40}\nName:{:9}{:<40}\nTelephone:{:4}{:<40}\nEmail:{:8}{:<40}'.format
-                            (" ", row[0], " ", row[1], " ", row[2], " ", row[3]))
+                         (" ", row[0], " ", row[1], " ", row[2], " ", row[3]))
 
             
     

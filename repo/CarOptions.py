@@ -13,10 +13,10 @@ class CarOptions:
         available_Cars = []
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
-            print('{:20}{:20}{:20}{:>10}{:>26}'.format("Manufacturer:","Type:","Category:","Price:","Licence Plate:"))
+            print('{:18}{:<20}{:15}{:>8}{:>22}'.format("Manufacturer:","Type:","Category:","Price:","Licence Plate:"))
             for row in reader:
                 if row[6] == 'True':
-                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
+                    print('{:18}{:<20}{:15}{:>7} kr.{:>10}'.format(row[2],row[3],row[1],row[5],row[0]))
                     available_Cars.append('available')
             if available_Cars == []:
                 print('There Are No Available Cars At The Moment')
@@ -29,10 +29,10 @@ class CarOptions:
         unavailable_Cars = [] 
         with open("./data/cars.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
-            print('{:20}{:20}{:20}{:>10}{:>26}'.format("Manufacturer:","Type:","Category:","Price:","Licence Plate:"))
+            print('{:18}{:<20}{:15}{:>8}{:>22}'.format("Manufacturer:","Type:","Category:","Price:","Licence Plate:"))
             for row in reader:
                 if row[6] == 'False':
-                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(row[2],row[3],row[1],row[5],row[0]))
+                    print('{:18}{:<20}{:15}{:>7} kr.{:>10}'.format(row[2],row[3],row[1],row[5],row[0]))
                     unavailable_Cars.append('unavailable')
             if unavailable_Cars == []:
                 print('There Are No Unavailable Cars At The Moment')

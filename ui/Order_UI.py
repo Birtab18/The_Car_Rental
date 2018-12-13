@@ -44,11 +44,9 @@ class Order_UI:
                 self.__OrderService.cancel_Order(SSN)
                 print('Order Canceled!')
             while not isFound:
-                again = input(
-                    "Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
+                again = input("Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
                 if again == '1':
-                    SSN_input = input(
-                        '\nEnter The SSN Of The Person Who Put In Order: ')
+                    SSN_input = input('\nEnter The SSN Of The Person Who Put In Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
                     isFound = self.__CustomerService.check_Costumer(SSN)
@@ -61,8 +59,7 @@ class Order_UI:
 
         def action3():
             print("-"*80)
-            SSN_input = input(
-                'Enter The SSN Of The Person Who Put In The Order: ')
+            SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
             SSN = self.__CustomerService.check_SSN(SSN_input)
             print()
             # isFound iterates through the file and if there is not match it will allow the user to try again or quit
@@ -70,11 +67,9 @@ class Order_UI:
             if isFound:
                 self.__OrderService.look_up_order(SSN)
             while not isFound:
-                again = input(
-                    "Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
+                again = input("Order Not Found! Press 1 to Try Again, Press 2 to Quit: ")
                 if again == '1':
-                    SSN_input = input(
-                        'Enter The SSN Of The Person Who Put In Order: ')
+                    SSN_input = input('Enter The SSN Of The Person Who Put In Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     if isFound:
@@ -85,28 +80,26 @@ class Order_UI:
 
         def action4():
             print("-"*80)
-            SSN_input = input(
-                'Enter The SSN Of The Person Who Put In The Order: ')
+            SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
             SSN = self.__CustomerService.check_SSN(SSN_input)
             # isFound iterates through the file and if there is not match it will allow the user to try again
             isFound = self.__CustomerService.check_Costumer(SSN)
             while not isFound:
                 print("\nOrder Not Found! Please Try Again\n")
-                SSN_input = input(
-                    'Enter The SSN Of The Person Who Put In The Order: ')
+                SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                 SSN = self.__CustomerService.check_SSN(SSN_input)
                 isFound = self.__CustomerService.check_Costumer(SSN)
             print()
             self.__OrderService.look_up_order(SSN)
-            print('\n\nPress 1 to Change Rent Date')
-            print('Press 2 to Change Return Date')
-            print('Press 3 to Change Extra Insurance (Y = Yes, N = No)\n')
+            print('\n\nPress 1 To Change Rent Date')
+            print('Press 2 To Change Return Date')
+            print('Press 3 To Change Extra Insurance (Y = Yes, N = No)\n')
             choice = input('Enter Choice: ')
             while choice not in ['1', '2', '3']:
-                print('Error! Invalid Choice. Please Try Again\n')
+                print('Invalid Input, Try Again!\n')
                 choice = input('Enter Choice: ')
             if choice == '1' or choice == '2':
-                print('Put in the date in the format year-month-day (fx: 2018-12-20)\n')
+                print('Put In The Date In The Format Year-Month-Day (fx: 2018-12-20)\n')
             changes = input('Enter New Info: ').lower()
             self.__OrderService.change_Order(SSN, choice, changes)
             print('\nOrder Changed!')
@@ -115,8 +108,7 @@ class Order_UI:
             print("-"*80)
             print('Return car: \n')
             self.__OrderService.print_orders()
-            plate = input(
-                '\nEnter The Licence Plate Of The Car You Want To Return: ')
+            plate = input('\nEnter The Licence Plate Of The Car You Want To Return: ')
             self.__OrderService.return_car(plate)
             print('\nCar Returned!')
 
@@ -124,7 +116,7 @@ class Order_UI:
             print_Choices()
             action = ""
             while action not in ["1", "2", "3", "4", "5", "F"]:
-                action = input('Choose command: ').lower()
+                action = input('Choose Command: ').lower()
                 if action == '1':
                     ui = Put_In_Order_UI()
                     ui.Put_In_Order_Menu()
@@ -144,6 +136,6 @@ class Order_UI:
                 elif action == 'f':
                     break
                 else:
-                    print("Invalid input, try again!")
+                    print("Invalid Input, Try Again!")
 
         main()

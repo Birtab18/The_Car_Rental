@@ -10,16 +10,15 @@ class Car_UI:
     def car_Menu(self):
         def print_Choices():
             ''' Prints out everything you can do with cars in the system '''
-            print('{:<40}{:>40}'.format(
-                'The Car Rental', 'F To Go to Frontpage'))
+            print('{:<40}{:>40}'.format('The Car Rental', 'F To Go To Frontpage'))
             print('-'*80)
             print("{:^80}".format('CARS'))
             print('-'*80)
-            print('Press 1 to Show Available Cars')
-            print('Press 2 to Show Unavailable Cars')
-            print('Press 3 to Show Price List')
-            print('Press 4 to Add A New Car To The Car Rental')
-            print('Press F to Go To Frontpage\n')
+            print('Press 1 To Show Available Cars')
+            print('Press 2 To Show Unavailable Cars')
+            print('Press 3 To Show Price List')
+            print('Press 4 To Add A New Car To The Car Rental')
+            print('Press F To Go To Frontpage\n')
 
         def action1():
             print("-"*80)
@@ -41,19 +40,15 @@ class Car_UI:
             print("New Car:")
             licence_Plate = input('Enter The Licence Plate: ')
             licence_Plate = licence_Plate.upper()
-            category_inp = input(
-                'Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
+            category_inp = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
             category = self.__CarService.check_Category(category_inp)
             manufacturer = input('Enter The Manufacturer: ')
             the_Type = input('Enter The Type: ')
-            transmission_inp = input(
-                'Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
-            transmission = self.__CarService.check_Transmission(
-                transmission_inp)
+            transmission_inp = input('Enter The Transmission (S = Stick Shift, M = Manual): ').lower()
+            transmission = self.__CarService.check_Transmission(transmission_inp)
             price_inp = input('Enter Price: ')
             price = self.__CarService.check_Price(price_inp)
-            new_Car = Car(licence_Plate, category,
-                          manufacturer, the_Type, transmission, price)
+            new_Car = Car(licence_Plate, category,manufacturer, the_Type, transmission, price)
             self.__CarService.add_car(new_Car)
             print('\nCar Added!')
 
@@ -61,7 +56,7 @@ class Car_UI:
             print_Choices()
             action = ""  # so the while loop will start running
             while action not in ["1", "2", "3", "4", "F"]:
-                action = input('Choose command: ').lower()
+                action = input('Choose Command: ').lower()
                 # Press 1 to Show Available Cars
                 if action == '1':
                     action1()
@@ -78,6 +73,6 @@ class Car_UI:
                 elif action == 'f':
                     break
                 else:
-                    print("Invalid input, try again!")
+                    print("Invalid Input, Try Again!\n")
 
         main()
