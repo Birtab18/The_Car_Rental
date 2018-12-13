@@ -62,24 +62,24 @@ class Put_In_Order_UI:
                 if car_choice == 'm':
                     print("-"*80)
                     car_choice = 'Mini Car'
-                    print('\nThese Mini Cars are available:')
+                    print('\nThese Mini Cars are available:\n')
                     self.__OrderService.pick_a_category(car_choice)
                     loop = False
-                    break
+                    #break
                 elif car_choice == 's':
                     print("-"*80)
                     car_choice = 'Station Car'
-                    print('\nThese Station Cars are available:')
+                    print('\nThese Station Cars are available:\n')
                     self.__OrderService.pick_a_category(car_choice)
                     loop = False
-                    break
+                    #break
                 elif car_choice == 'j':
                     print("-"*80)
                     car_choice = 'Jeep'
-                    print('\nThese Jeeps are available:')
+                    print('\nThese Jeeps are available:\n')
                     self.__OrderService.pick_a_category(car_choice)
                     loop = False
-                    break
+                    #break
                 else:
                     print('Error. Invalid Input, Try Again!\n')
             print("-"*80)

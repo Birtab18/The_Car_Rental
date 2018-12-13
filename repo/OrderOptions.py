@@ -3,11 +3,11 @@ import csv
 from models.Order import Order
 from datetime import date
 
-
 class OrderOptions:
 
     def __init__(self):
         self.__order = []
+
 
     def pick_a_category(self, car_choice):
         ''' Prints out available cars at the moment '''
@@ -16,7 +16,7 @@ class OrderOptions:
             reader = csv.reader(look_up_customer_file)
             for row in reader:
                 if row[6] == 'True' and row[1] == car_choice:
-                    print('{:20}{:20}{:20}{:>8} kr.{:>15}'.format(
+                    print('{:15}{:15}{:15}{:>8} kr.{:>15}'.format(
                         row[2], row[3], row[1], row[5], row[0]))
                     available_Cars.append('available')
             if available_Cars == []:
