@@ -4,7 +4,6 @@ import csv
 import os
 
 class CustomerOptions:
-    
     def __init__(self):
         self.__customer = []
 
