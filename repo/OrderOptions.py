@@ -65,11 +65,14 @@ class OrderOptions:
             returnday = date(car_return_year, car_return_month, car_return_day)
             days = returnday.day - rentday.day
             rent_Price = days * int(bar[5])
+            VAT = 1.20
             # extra insurence
             if extra_insurance == 'y':
-                total_price = int(rent_Price * 1.25)
+                total_price = int((rent_Price * 1.25) * VAT)
+                print("Total Price:  {}kr.".format(total_price))
             elif extra_insurance == 'n':
-                total_price = int(rent_Price)
+                total_price = int(rent_Price * VAT)
+                print("Total Price:  {}kr.".format(total_price))
             else:
                 print('Invalid input')
             order_file.write('{},{},{},{},{},{},{},{},{}kr.-\n'.format(SSN, Name, licence_Plate, category,
