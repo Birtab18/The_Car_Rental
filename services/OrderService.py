@@ -13,10 +13,10 @@ class OrderService:
     def cancel_Order(self, SSN):
         return self.__order_Repo.cancel_Order(SSN)
 
-    def put_in_an_order(self, SSN, car_id, car_rent_year, car_rent_month, car_rent_day, car_return_year,
-                        car_return_month, car_return_day, total_price):
-        self.__order_Repo.put_in_an_order(SSN, car_id, car_rent_year, car_rent_month, car_rent_day, car_return_year,
-                                          car_return_month, car_return_day, total_price)
+    def put_in_an_order(self, SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day, car_return_year,
+                        car_return_month, car_return_day, extra_insurance):
+        self.__order_Repo.put_in_an_order(SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day, car_return_year,
+                                          car_return_month, car_return_day, extra_insurance)
 
     def change_Order(self, SSN, choice, changes):
         self.__order_Repo.change_Order(SSN, choice, changes)

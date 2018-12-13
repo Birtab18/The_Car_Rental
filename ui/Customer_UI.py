@@ -47,14 +47,15 @@ class Customer_UI:
                         new_Costumer = Customer(SSN, name, phonenumber, email)
                         self.__CustomerService.add_customer(new_Costumer)
                         print('\nCustomer Signed!')
-                
+
                 # Press 2 to Delete Customer
                 elif action == '2':
                     print("-"*60)
                     SSN_input = input(
                         'Enter The SSN Of The Person You Want To Delete: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
-                    # isFound iterates through the file and if there is not match it will allow the user to try again or quit
+                    # isFound iterates through the file and if there is not match it will allow the user to try again
+                    # or quit
                     isFound = self.__CustomerService.check_Costumer(SSN)
                     if isFound:
                         self.__CustomerService.delete_customer(SSN)
@@ -96,7 +97,7 @@ class Customer_UI:
                         else:
                             print('\nQuitting..')
                             break
-                
+
                 # Press 4 to Change Information About A Customer
                 elif action == '4':
                     print("-"*60)
@@ -128,7 +129,7 @@ class Customer_UI:
                         changes = self.__CustomerService.check_Phonenumber(changes)
                     self.__CustomerService.Change_Information(SSN, choice, changes)
                     print('\nCustomer Info Changed!')
-                
+
                 # Press F to Go To Frontpage
                 elif action == 'f':
                     break
