@@ -19,11 +19,11 @@ class Order_UI:
     def Order_Menu(self):
         def print_Choices():
             ''' Prints out everything you can do with orders in the system '''
-            print('{:<30}{:>30}'.format(
+            print('{:<40}{:>40}'.format(
                 'The Car Rental', 'F To Go to Frontpage'))
-            print('-'*60)
-            print("{:^60}".format('ORDERS'))
-            print('-'*60)
+            print('-'*80)
+            print("{:^80}".format('ORDERS'))
+            print('-'*80)
             print('Press 1 to Put In Order')
             print('Press 2 to Cancel Order')
             print('Press 3 to Look Up Order')
@@ -43,7 +43,7 @@ class Order_UI:
 
                 # Press 2 to Cancel Order
                 elif action == '2':
-                    print("-"*60)
+                    print("-"*80)
                     SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     print()
@@ -68,7 +68,7 @@ class Order_UI:
 
                 # Press 3 to Look Up Order
                 elif action == '3':
-                    print("-"*60)
+                    print("-"*80)
                     SSN_input = input(
                         'Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
@@ -91,7 +91,7 @@ class Order_UI:
 
                 # Press 4 to Change Order
                 elif action == '4':
-                    print("-"*60)
+                    print("-"*80)
                     SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     # isFound iterates through the file and if there is not match it will allow the user to try again 
@@ -118,7 +118,7 @@ class Order_UI:
 
                 # Press 5 to Return Car'
                 elif action == '5':
-                    print("-"*60)
+                    print("-"*80)
                     print('Return car: \n')
                     self.__OrderService.print_orders()
                     plate = input('\nEnter The Licence Plate Of The Car You Want To Return: ')

@@ -10,11 +10,11 @@ class Customer_UI:
     def customer_Menu(self):
         def print_Choices():
             ''' Prints out everything you can do with customers in the system '''
-            print('{:<30}{:>30}'.format(
+            print('{:<40}{:>40}'.format(
                 'The Car Rental', 'F To Go to Frontpage'))
-            print('-'*60)
-            print("{:^60}".format('CUSTOMERS'))
-            print('-'*60)
+            print('-'*80)
+            print("{:^80}".format('CUSTOMERS'))
+            print('-'*80)
             print('Press 1 to Sign Up New Customer ')
             print('Press 2 to Delete Customer')
             print('Press 3 to Look Up Customer')
@@ -29,7 +29,7 @@ class Customer_UI:
 
                 # Press 1 to Sign Up New Customer
                 if action == '1':
-                    print("-"*60)
+                    print("-"*80)
                     print("New customer:")
                     SSN_input = input(
                         'Enter The SSN Of The Person You Want To Sign Up: ')
@@ -50,7 +50,7 @@ class Customer_UI:
 
                 # Press 2 to Delete Customer
                 elif action == '2':
-                    print("-"*60)
+                    print("-"*80)
                     SSN_input = input(
                         'Enter The SSN Of The Person You Want To Delete: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
@@ -77,7 +77,7 @@ class Customer_UI:
 
                 # Press 3 to Look Up Customer
                 elif action == '3':
-                    print("-"*60)
+                    print("-"*80)
                     SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
                     # isFound iterates through the file and if there is not match it will allow the user to try again or quit
@@ -100,7 +100,7 @@ class Customer_UI:
 
                 # Press 4 to Change Information About A Customer
                 elif action == '4':
-                    print("-"*60)
+                    print("-"*80)
                     SSN_input = input(
                         'Enter The SSN Of The Person You Want To Change: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
