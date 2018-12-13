@@ -61,7 +61,7 @@ class Put_In_Order_UI:
                 loop = True
                 while loop:
                     car_choice = input(
-                        'What kind of car do you want?\nPress (M) for Mini car\nPress (S) for Station car\nPress (J) for Jeep\nChoose a category:').lower()
+                        'What kind of car do you want?\nPress (M) for Mini car\nPress (S) for Station car\nPress (J) for Jeep\nChoose a category: ').lower()
                     if car_choice == 'm':
                         print("-"*60)
                         car_choice = 'Mini Car'
@@ -152,16 +152,18 @@ class Put_In_Order_UI:
                 car_rent_year = self.__OrderService.check_year(rent_year)
                 rent_month = int(input('Enter Rent Month: '))
                 car_rent_month = self.__OrderService.check_month(rent_month)
-                car_rent_day = int(input('Enter Rent Day: '))
+                rent_day = int(input('Enter Rent Day: '))
+                car_rent_day = self.__OrderService.check_days(rent_day)
                 print("-"*60)
                 return_year = int(input('Enter Return Year: '))
                 car_return_year = self.__OrderService.check_year(return_year)
                 return_month = int(input('Enter Return Month: '))
                 car_return_month = self.__OrderService.check_month(
                     return_month)
-                car_return_day = int(input('Enter Return Day: '))
+                return_day = int(input('Enter Return Day: '))
+                car_return_day = self.__OrderService.check_days(return_day)
                 extra_insurance = input(
-                    'Do you want extra insurance? (Type Yes or No) ')
+                    'Do you want extra insurance? (Type Yes or No): ')
                 self.__OrderService.put_in_future_order(SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year, car_return_month,
                                                         car_return_day, extra_insurance)
 
