@@ -106,8 +106,7 @@ class Put_In_Order_UI:
                 car_return_month = int(input('Enter Return Month: '))
                 car_return_day = int(input('Enter Return Day: '))
                 print("-"*60)
-                extra_insurance = input(
-                    'Do you want extra insurance: Press(Y) for Yes and Press(N) for No: ').lower()
+                extra_insurance = input('Do you want extra insurance: Press(Y) for Yes and Press(N) for No: ').lower()
                 print("-"*60)
                 if extra_insurance == 'y':
                     print('We need your Credit Card Number please\n')
