@@ -71,10 +71,10 @@ class OrderOptions:
             # extra insurence
             if extra_insurance == 'y':
                 total_price = int((rent_Price * 1.25) * VAT)
-                print("Total Price:  {}kr.".format(total_price))
+                print("Total Price:  {}kr.".format(total_price)) #ætti að vera a UI
             elif extra_insurance == 'n':
                 total_price = int(rent_Price * VAT)
-                print("Total Price:  {}kr.".format(total_price))
+                print("Total Price:  {}kr.".format(total_price)) #ætti að vera a UI
             else:
                 print('Invalid input')
             order_file.write('{},{},{},{},{},{},{},{},{}kr.-\n'.format(SSN, Name, licence_Plate, category,
