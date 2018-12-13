@@ -182,6 +182,9 @@ class OrderOptions:
         ''' Prints out all of the orders that are active '''
         with open("./data/orders.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
+            next(look_up_customer_file)
+            print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format("SSN:","Name:","Licence Plate:","Manufacturer:","The Type:",
+                            "Rent Day:","Return Day:"))
             for row in reader:
                 print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0], row[1], row[2], row[4], row[5],row[6], row[7]))
 
