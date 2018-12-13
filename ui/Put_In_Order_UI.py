@@ -121,6 +121,9 @@ class Put_In_Order_UI:
                 while len(credit_card) != 16:
                     print('Invalid Input, Try Again! (only 16 digits)\n')
                     credit_card = input('Enter Your Credit Card Number:')
+            while extra_insurance not in ['y', 'n']:
+                print('Invalid Input, Try Again!')
+                extra_insurance = input('\nDo You Want Extra Insurance: (Y = Yes, N = No) ').lower()
             payment = input('\nAre You Paying With A Card Or Cash: (1 = Card, 2 = Cash): ')
             if payment == '1':
                 cardholder = input("\nEnter The Cardholder's Name: ")
@@ -166,6 +169,9 @@ class Put_In_Order_UI:
                 else:
                     loop = False
             extra_insurance = input('Do You Want Extra Insurance: (Y = Yes, N = No) ').lower()
+            while extra_insurance not in ['y', 'n']:
+                print('Invalid Input, Try Again!')
+                extra_insurance = input('\nDo You Want Extra Insurance: (Y = Yes, N = No) ').lower()
             self.__OrderService.put_in_future_order(SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year, 
                                                     car_return_month,car_return_day, extra_insurance)
             print("\nOrder Added!")

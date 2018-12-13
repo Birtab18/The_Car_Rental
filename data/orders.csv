@@ -1,4 +1,4 @@
-SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,total_price_main
+SSN,Name,licence_Plate,category,manufacturer,the_Type,rent_Date,return_Date,total_price
 1206962709,Bergrós,AG123,Station Car,Mazda,3,2018-12-13,2018-12-16,67500kr.-
 3006722349,Gunnar,JPG14,Mini Car,Volkswagen,Golf,2018-12-13,2018-12-17,38400kr.-
 1407992349,Ólöf,PO777,Jeep,Volkswagen,Tiguan,2018-12-13,2018-12-14,24000kr.-
