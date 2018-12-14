@@ -51,8 +51,8 @@ class Put_In_Order_UI:
 
         def action1():
             today = datetime.today().date()
-            print('Today: {:}'.format(today))
-            print('\nAre there any Orders You have to activate today?\n')
+            print('\nToday: {:}'.format(today))
+            print('Are there any Orders You have to activate today?\n')
             self.__OrderService.print_out_future_orders()  # Print Out All The Future Orders
             print("-"*80)
             loop = True
@@ -132,8 +132,8 @@ class Put_In_Order_UI:
                     print('Invalid Input, Try Again! (only 16 digits)\n')
                     card = input('Enter Your Card Number: ')
                 exp_date = input('Enter The Expiration Date: (mm-yy) ')
-                sec_num = input('Enter The Security Number:')
-                print('Payment Completed!')
+                sec_num = input('Enter The Security Number: ')
+                print('\nPayment Completed!')
             if payment == '2':
                 print('Payment Completed!')
             self.__OrderService.put_in_an_order(SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day,

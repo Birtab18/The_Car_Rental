@@ -19,7 +19,7 @@ FH123,Station Car,Ford,Focus,stick shift,15000,True
 BPM96,Station Car,Hyundai,i30,stick shift,15000,True
 BLB98,Station Car,Audi,A3,manual,15000,True
 SKB14,Station Car,Tesla,Model 3,manual,15000,True
-AL678,Jeep,Nissan,Quashqui,stick shift,20000,True
+AL678,Jeep,Nissan,Quashqui,stick shift,20000,False
 AM890,Jeep,Volkswagen,Tiguan,manual,20000,True
 AN123,Jeep,Volvo,xc90,stick shift,20000,True
 AW234,Jeep,Toyota,Land Cruiser,manual,20000,True
