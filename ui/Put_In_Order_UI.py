@@ -52,7 +52,7 @@ class Put_In_Order_UI:
         def action1():
             today = datetime.today().date()
             print('\nToday: {:}'.format(today))
-            print('Are there any Orders You have to activate today?\n')
+            print('Are There Any Orders You have To Activate Today?\n')
             self.__OrderService.print_out_future_orders()  # Print Out All The Future Orders
             print("-"*80)
             loop = True
