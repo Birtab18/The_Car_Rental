@@ -49,14 +49,12 @@ class OrderOptions:
             for row in reader_customer:
                 if row[0] == SSN:
                     break # If there is a match it will go out of the loop
-
         # Get informations about the car the costumer is renting
         with open('./data/cars.csv', 'r') as order_car:
             reader_car = csv.reader(order_car)
             for bar in reader_car:
                 if bar[0] == licence_Plate:
                     break 
-
         # Collect all of the informations from customers and cars that we need
         with open('./data/orders.csv', 'a+') as order_file:
             SSN = row[0]
@@ -79,11 +77,9 @@ class OrderOptions:
                 print("\nTotal Price:  {}kr.".format(total_price)) 
             else:
                 print('Invalid input')
-
             # Put in the order into "orders.csv"  
             order_file.write('{},{},{},{},{},{},{},{},{}kr.-\n'.format(SSN, Name, licence_Plate, category,
                     manufacturer, the_Type, rentday, returnday, total_price))
-
         # Make car unavailable (True to False)
         with open('./data/cars.csv', 'r') as inp, open('./data/deletecars.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['licence_Plate', 'category', 'manufacturer', 'the_Type',

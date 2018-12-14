@@ -28,7 +28,6 @@ class Put_In_Order_UI:
                     print()
                     break
                 elif new_Or_Old == 'n':
-                    # Go into the "Signing a New Custome", sign him up an the return to put in order 
                     print("\nSigning A New Customer:")
                     print("-"*80)
                     SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
@@ -36,7 +35,7 @@ class Put_In_Order_UI:
                     # isFound iterates through the file and if there is not match it will allow the user to try again
                     isfound = self.__CustomerService.check_Costumer(SSN)
                     if isfound:
-                        print('\nCustomer Already Exists!')
+                        print('\nCustomer Already Exists!') #we dont need to sign him up
                     else:
                         name = input('Enter A Name: ')
                         phonenumber_input = input('Enter A Phone Number: ')
@@ -62,21 +61,18 @@ class Put_In_Order_UI:
                     print('\nThese Mini Cars Are Available:\n')
                     self.__OrderService.pick_a_category(car_choice)
                     loop = False
-                    #break
                 elif car_choice == 's':
                     print("-"*80)
                     car_choice = 'Station Car'
                     print('\nThese Station Cars Are Available:\n')
                     self.__OrderService.pick_a_category(car_choice)
                     loop = False
-                    #break
                 elif car_choice == 'j':
                     print("-"*80)
                     car_choice = 'Jeep'
                     print('\nThese Jeeps Are Available:\n')
                     self.__OrderService.pick_a_category(car_choice)
                     loop = False
-                    #break
                 else:
                     print('Invalid Input, Try Again!\n')
             print("-"*80)
@@ -149,7 +145,7 @@ class Put_In_Order_UI:
             if payment == '2':
                 print('Payment Completed!')
             self.__OrderService.put_in_an_order(SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day,
-                                                car_return_year, car_return_month, car_return_day, extra_insurance)
+                    car_return_year, car_return_month, car_return_day, extra_insurance)
             print('\nOrder Added!')
         
         # Press 2 To Put In A Future Order
