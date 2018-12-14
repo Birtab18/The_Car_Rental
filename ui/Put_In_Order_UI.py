@@ -94,16 +94,6 @@ class Put_In_Order_UI:
             car_return_month = self.__OrderService.check_month(return_month)
             return_day = int(input('Enter Return Day: '))
             car_return_day = self.__OrderService.check_days(return_day)
-            loop = True
-            while loop:
-                if car_return_day == car_rent_day and car_return_month == car_rent_month:
-                    print("\nSorry You Can't Rent For Only One Day! Please Try Again\n")
-                    car_return_month = int(input('Enter Return Month: '))
-                    car_return_month = self.__OrderService.check_month(return_month)
-                    car_return_day = int(input('Enter Return Day: '))
-                    car_return_day = self.__OrderService.check_days(return_day)
-                else:
-                    loop = False
             return car_rent_year, car_rent_month, car_rent_day, car_return_year, car_return_month, car_return_day
         
         def credit_Card():
@@ -133,13 +123,23 @@ class Put_In_Order_UI:
                 licence_Plate = input('Enter The Licence Plate Of The Car: ').upper()
                 isFound = self.__OrderService.check_Car(licence_Plate)
             car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day = rent_Dates()
+            loop = True
+            while loop:
+                if car_return_day == car_rent_day and car_return_month == car_rent_month:
+                    print("\nSorry You Can't Rent For Only One Day! Please Try Again\n")
+                    car_return_month = int(input('Enter Return Month: '))
+                    car_return_month = self.__OrderService.check_month(car_return_month)
+                    car_return_day = int(input('Enter Return Day: '))
+                    car_return_day = self.__OrderService.check_days(car_return_day)
+                else:
+                    loop = False 
             extra_insurance = input('\nDo You Want Extra Insurance: (Y = Yes, N = No) ').lower()
             if extra_insurance == 'y':
                 print('\nWe Need Your Credit Card Number Please\n')
                 credit_card = input('Enter Your Credit Card Number: ')
                 while len(credit_card) != 16:
                     print('Invalid Input, Try Again! (only 16 digits)\n')
-                    credit_card = input('Enter Your Credit Card Number:')
+                    credit_card = input('Enter Your Credit Card Number: ')
             while extra_insurance not in ['y', 'n']:
                 print('Invalid Input, Try Again!')
                 extra_insurance = input('\nDo You Want Extra Insurance: (Y = Yes, N = No) ').lower()
@@ -161,12 +161,22 @@ class Put_In_Order_UI:
             category_inp = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
             Category = self.__CarService.check_Category(category_inp) #Check if the category is valid
             car_rent_year,car_rent_month,car_rent_day,car_return_year,car_return_month,car_return_day = rent_Dates()
+            loop = True
+            while loop:
+                if car_return_day == car_rent_day and car_return_month == car_rent_month:
+                    print("\nSorry You Can't Rent For Only One Day! Please Try Again\n")
+                    car_return_month = int(input('Enter Return Month: '))
+                    car_return_month = self.__OrderService.check_month(car_return_month)
+                    car_return_day = int(input('Enter Return Day: '))
+                    car_return_day = self.__OrderService.check_days(car_return_day)
+                else:
+                    loop = False 
             extra_insurance = input('Do You Want Extra Insurance: (Y = Yes, N = No) ').lower()
             while extra_insurance not in ['y', 'n']:
                 print('Invalid Input, Try Again!')
                 extra_insurance = input('\nDo You Want Extra Insurance: (Y = Yes, N = No) ').lower()
-            self.__OrderService.put_in_future_order(SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year, 
-                                                    car_return_month,car_return_day, extra_insurance)
+            self.__OrderService.put_in_future_order(SSN, Name, Category, car_rent_year, car_rent_month, 
+                    car_rent_day, car_return_year,car_return_month,car_return_day, extra_insurance)
             print("\nOrder Added!")
 
         def main():

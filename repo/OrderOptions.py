@@ -47,17 +47,15 @@ class OrderOptions:
         with open("./data/customers.csv", 'r') as customer_File:
             reader_customer = csv.reader(customer_File)
             for row in reader_customer:
-                # If there is a match it will go out of the loop
                 if row[0] == SSN:
-                    break
+                    break # If there is a match it will go out of the loop
 
         # Get informations about the car the costumer is renting
         with open('./data/cars.csv', 'r') as order_car:
             reader_car = csv.reader(order_car)
             for bar in reader_car:
-                # If there is a match it will go out of the loop
                 if bar[0] == licence_Plate:
-                    break
+                    break 
 
         # Collect all of the informations from customers and cars that we need
         with open('./data/orders.csv', 'a+') as order_file:
@@ -72,8 +70,7 @@ class OrderOptions:
             returnday = date(car_return_year, car_return_month, car_return_day)
             days = returnday.day - rentday.day #How many days is the renting
             rent_Price = days * int(bar[5]) #days * price per. day
-            VAT = 1.20
-            # extra insurence
+            VAT = 1.20 
             if extra_insurance == 'y':
                 total_price = int((rent_Price * 1.25) * VAT)
                 print("\nTotal Price:  {}kr.".format(total_price)) 
@@ -100,9 +97,8 @@ class OrderOptions:
                 writer.writerow(row)
         #This deletes the old file, with the old informations
         os.remove('./data/cars.csv')
-        # This renames "deletecars" to "cars", like the old one with all of the old
-        # information exept for the one that was changed
-        os.rename('./data/deletecars.csv', './data/cars.csv')
+        os.rename('./data/deletecars.csv', './data/cars.csv') # This renames "deletecars" to "cars", 
+        # like the old one with all of the old information exept for the one that was changed
 
     def put_in_future_order(self, SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year,
             car_return_month, car_return_day, extra_insurance):
@@ -140,9 +136,8 @@ class OrderOptions:
                     writer.writerow(row)
         #This deletes the old file, with the old informations
         os.remove('./data/futureorders.csv')
-        # This renames "deletefutureorders" to "future orders", 
-        # like the old one with all of the orders except the ones that were transfered over
-        os.rename('./data/deletefutureorders.csv', './data/futureorders.csv')
+        os.rename('./data/deletefutureorders.csv', './data/futureorders.csv') # This renames "deletefutureorders" 
+        # to "future orders", like the old one with all of the orders except the ones that were transfered over
 
     # Press 2 to Cancel Order
     def cancel_Order(self, SSN):

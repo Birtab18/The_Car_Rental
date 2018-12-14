@@ -67,7 +67,7 @@ class Order_UI:
                 print()
                 self.__OrderService.look_up_order(SSN)
             while not isFound:
-                again = input("Order Not Found! (1 = Try Again, 2 = to Quit)")
+                again = input("Order Not Found! (1 = Try Again, 2 = to Quit) ")
                 if again == '1':
                     SSN_input = input('Enter The SSN Of The Person Who Put In Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)

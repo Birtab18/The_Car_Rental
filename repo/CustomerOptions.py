@@ -58,8 +58,6 @@ class CustomerOptions:
                     print('SSN:{:10}{:<40}\nName:{:9}{:<40}\nTelephone:{:4}{:<40}\nEmail:{:8}{:<40}'.format
                          (" ", row[0], " ", row[1], " ", row[2], " ", row[3]))
 
-            
-    
     # Press 4 to Change Information About A Customer
     def Change_Information(self, SSN, choice, changes):
         ''' Changes information about a customer from The Car Rental (from customers.csv file) '''
