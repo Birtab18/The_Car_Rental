@@ -127,7 +127,7 @@ class OrderOptions:
         ''' Cancels an order from The Car Rental (from the orders.csv file) '''
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer',
-                    'the_Type', 'rent_Date', 'return_Date', 'total_price_main'])
+                    'the_Type', 'rent_Date', 'return_Date', 'total_price'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != SSN:
