@@ -1,3 +1,4 @@
+'''This class is to get all of the informations we need about car'''
 class Car:
 
     def __init__(self, licence_Plate, category, manufacturer, the_Type, transmission, price, status=True):
@@ -7,7 +8,7 @@ class Car:
         self.__the_Type = the_Type
         self.__transmission = transmission
         self.__price = price
-        self.__status = status #True = available for rent
+        self.__status = status #True = available for rent, False = unavailable
 
     def __str__(self):
         return '{},{},{},{},{},{},{}'.format(self.__licence_Plate, self.__category, self.__manufacturer, 

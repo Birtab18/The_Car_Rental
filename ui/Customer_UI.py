@@ -19,6 +19,7 @@ class Customer_UI:
             print('Press 4 To Change Information About A Customer')
             print('Press F To Go To Frontpage\n')
 
+        # Press 1 To Sign Up New Customer
         def action1():
             print("-"*80)
             print("New customer:")
@@ -38,6 +39,7 @@ class Customer_UI:
                 self.__CustomerService.add_customer(new_Costumer)
                 print('\nCustomer Signed!')
 
+        # Press 2 To Delete Customer
         def action2():
             print("-"*80)
             SSN_input = input(
@@ -62,6 +64,7 @@ class Customer_UI:
                     print('\nQuitting..')
                     break
 
+        #Press 3 To Look Up Customer
         def action3():
             print("-"*80)
             SSN_input = input(
@@ -87,6 +90,7 @@ class Customer_UI:
                     print('\nQuitting..')
                     break
 
+        # Press 4 To Change Information About A Customer
         def action4():
             print("-"*80)
             SSN_input = input('Enter The SSN Of The Person You Want To Change: ')

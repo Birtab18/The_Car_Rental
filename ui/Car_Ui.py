@@ -20,27 +20,31 @@ class Car_UI:
             print('Press 4 To Add A New Car To The Car Rental')
             print('Press F To Go To Frontpage\n')
 
+        # Press 1 To Show Available Cars
         def action1():
             print("-"*80)
             print('Available Cars: \n')
             self.__CarService.available_cars()
 
+        # Press 2 To Show Unavailable Cars
         def action2():
             print("-"*80)
             print('Unavailable Cars: \n')
             self.__CarService.unavailable_cars()
 
+        # Press 3 To Show Price List
         def action3():
             print("-"*80)
             print()
             self.__CarService.show_Pricelist()
 
+        # Press 4 To Add A New Car To The Car Rental
         def action4():
             print("-"*80)
             print("New Car:")
             licence_Plate = input('Enter The Licence Plate: ')
             licence_Plate = licence_Plate.upper()
-            while len(licence_Plate) != 5:
+            while len(licence_Plate) != 5: # if the licence plate is invalid, the user is asked to try again 
                 print('Invalid Input, Try Again!')
                 licence_Plate = input('Enter The Licence Plate: ')
                 licence_Plate = licence_Plate.upper()

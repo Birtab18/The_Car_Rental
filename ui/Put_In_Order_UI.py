@@ -22,6 +22,7 @@ class Put_In_Order_UI:
             print('Press 2 To Put In A Future Order\n')
 
         def new_Or_Old():
+            '''Is the Customer new or has he rented from us before'''
             print("-"*80)
             new_Or_Old = input('Has The Customer Rented From Us Before? (Y = Yes, N = No) ').lower()
             while new_Or_Old != 'y' or 'n':
@@ -29,10 +30,12 @@ class Put_In_Order_UI:
                     print()
                     break
                 elif new_Or_Old == 'n':
+                    # Go into the "Signing a New Custome", sign him up an the return to put in order 
                     print("\nSigning A New Customer:")
                     print("-"*80)
                     SSN_input = input('Enter The SSN Of The Person Who Is Putting In An Order: ')
                     SSN = self.__CustomerService.check_SSN(SSN_input)
+                    # isFound iterates through the file and if there is not match it will allow the user to try again
                     isfound = self.__CustomerService.check_Costumer(SSN)
                     if isfound:
                         print('\nCustomer Already Exists!')
@@ -49,6 +52,7 @@ class Put_In_Order_UI:
                     print('Invalid Input, Try Again!')
                     new_Or_Old = input('Has The Customer Rented A Car From Us Before? (Y = Yes, N = No) ').lower()
 
+        # Press 1 To Put In Order
         def action1():
             today = datetime.today().date()
             print('\nToday: {:}'.format(today))
@@ -139,7 +143,8 @@ class Put_In_Order_UI:
             self.__OrderService.put_in_an_order(SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day,
                                                 car_return_year, car_return_month, car_return_day, extra_insurance)
             print('\nOrder Added!')
-
+        
+        # Press 2 To Put In A Future Order
         def action2():
             print("-"*80)
             SSN_input = input('Enter The SSN: ')

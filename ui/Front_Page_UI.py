@@ -30,7 +30,7 @@ class Front_Page_UI:
 
         def main():
             action = ''
-            while (action != 'q'):
+            while (action != 'q'): # The system will run until q is pressed
                 print_Frontpage()
                 action = input('Choose Command: ').lower()
                 print()

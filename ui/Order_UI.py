@@ -31,6 +31,7 @@ class Order_UI:
             print('Press 5 to Return Car')
             print('Press F to Go To Frontpage\n')
 
+        # Press 2 to Cancel Order
         def action2():
             print("-"*80)
             SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
@@ -55,6 +56,7 @@ class Order_UI:
                     print('Quitting..')
                     break
 
+        # Press 3 to Look Up Order
         def action3():
             print("-"*80)
             SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
@@ -78,6 +80,7 @@ class Order_UI:
                     print('Quitting..')
                     break
 
+        # Press 4 to Change Order
         def action4():
             print("-"*80)
             SSN_input = input('Enter The SSN Of The Person Who Put In The Order: ')
@@ -104,6 +107,7 @@ class Order_UI:
             self.__OrderService.change_Order(SSN, choice, changes)
             print('\nOrder Changed!')
 
+        # Press 5 to Return Car
         def action5():
             print("-"*80)
             print('Return Car: \n')
@@ -119,6 +123,7 @@ class Order_UI:
             while action not in ["1", "2", "3", "4", "5", "F"]:
                 action = input('Choose Command: ').lower()
                 if action == '1':
+                    # Press 1 to Put in order
                     ui = Put_In_Order_UI()
                     ui.Put_In_Order_Menu()
                 # Press 2 to Cancel Order

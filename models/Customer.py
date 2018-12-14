@@ -1,3 +1,4 @@
+'''This class is to get all of the informations we need about the customer'''
 class Customer:
 
     def __init__(self, name, SSN, phonenumber, email):
