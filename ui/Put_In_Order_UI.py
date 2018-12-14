@@ -151,20 +151,20 @@ class Put_In_Order_UI:
             SSN = self.__CustomerService.check_SSN(SSN_input)
             Name = input('Enter Name: ')
             category_inp = input('Enter The Category (M = Mini Car, S = Station Car, J = Jeep): ').lower()
-            Category = self.__CarService.check_Category(category_inp)
+            Category = self.__CarService.check_Category(category_inp) #Check if the category is valis
             rent_year = int(input('Enter Rent Year: '))
-            car_rent_year = self.__OrderService.check_year(rent_year)
+            car_rent_year = self.__OrderService.check_year(rent_year) #Check if the year is valid
             rent_month = int(input('Enter Rent Month: '))
-            car_rent_month = self.__OrderService.check_month(rent_month)
+            car_rent_month = self.__OrderService.check_month(rent_month) #Check if the month is valid
             rent_day = int(input('Enter Rent Day: '))
-            car_rent_day = self.__OrderService.check_days(rent_day)
+            car_rent_day = self.__OrderService.check_days(rent_day) #Check if the day is valid
             print("-"*80)
             return_year = int(input('Enter Return Year: '))
-            car_return_year = self.__OrderService.check_year(return_year)
+            car_return_year = self.__OrderService.check_year(return_year) #Check if the year is valid
             return_month = int(input('Enter Return Month: '))
-            car_return_month = self.__OrderService.check_month(return_month)
+            car_return_month = self.__OrderService.check_month(return_month) #Check if the month is valid
             return_day = int(input('Enter Return Day: '))
-            car_return_day = self.__OrderService.check_days(return_day)
+            car_return_day = self.__OrderService.check_days(return_day) #Check if the day is valid
             loop = True
             while loop:
                 if car_return_day == car_rent_day and car_return_month == car_rent_month:
