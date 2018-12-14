@@ -3,6 +3,7 @@ from models.Customer import Customer
 
 
 class Customer_UI:
+
     def __init__(self):
         self.__CustomerService = CustomerService()
 
@@ -67,8 +68,7 @@ class Customer_UI:
         #Press 3 To Look Up Customer
         def action3():
             print("-"*80)
-            SSN_input = input(
-                'Enter The SSN Of The Person You Want To Look Up: ')
+            SSN_input = input('Enter The SSN Of The Person You Want To Look Up: ')
             SSN = self.__CustomerService.check_SSN(SSN_input)
             # isFound iterates through the file and if there is not match it will allow the user to try again or quit
             isFound = self.__CustomerService.check_Costumer(SSN)
@@ -88,7 +88,6 @@ class Customer_UI:
                         self.__CustomerService.look_up_customer(SSN)
                 else:
                     print('\nQuitting..')
-                    break
 
         # Press 4 To Change Information About A Customer
         def action4():

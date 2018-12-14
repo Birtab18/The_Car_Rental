@@ -18,10 +18,9 @@ class CarOptions:
                 if row[6] == 'True':
                     # If the "status" is true then it will print out the information about the car 
                     print('{:18}{:<20}{:15}{:>7} kr.{:>10}'.format(row[2],row[3],row[1],row[5],row[0]))
-                    # if it is True, it appends to the list available_cars, so if there are no cars available, it will be handled and 
-                    # the user will be noticed about that 
+                    # if it is True, it appends to the list available_cars, so if there are no cars available, 
+                    # it will be handled and the user will be noticed about that 
                     available_Cars.append('available')
-
             if available_Cars == []:
                 print('There Are No Available Cars At The Moment')
             else:
@@ -38,8 +37,8 @@ class CarOptions:
                 if row[6] == 'False':
                     # If the "status" is false then it will print out the information about the car 
                     print('{:18}{:<20}{:15}{:>7} kr.{:>10}'.format(row[2],row[3],row[1],row[5],row[0]))
-                    # if it is True, it appends to the list unavailable_cars, so if there are no cars unavailable, it will be handled and 
-                    # the user will be noticed about that 
+                    # if it is True, it appends to the list unavailable_cars, so if there are no cars unavailable, 
+                    # it will be handled and the user will be noticed about that 
                     unavailable_Cars.append('unavailable')
             if unavailable_Cars == []:
                 print('There Are No Unavailable Cars At The Moment')
@@ -68,7 +67,8 @@ class CarOptions:
     def add_car(self, car):
         '''Adds a new car to The Car Rental (the cars.csv file)'''
         with open('./data/cars.csv', 'a+') as car_file: # a+ = creates file if it doesnt exist
-            # this is  collecting all of the informations about the car: licence plate, category, manudacturer,type, transmission and price
+            # this is collecting all of the informations about the car: licence plate, category, manudacturer,
+            # type, transmission and price
             # the car status is automatically set to True, because when the car is added it's of course available 
             licence_Plate = car.get_licence_Plate()
             category = car.get_category()

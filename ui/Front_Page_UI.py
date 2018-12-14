@@ -5,11 +5,11 @@ from ui.Customer_UI import Customer_UI
 from ui.Car_UI import Car_UI
 from ui.Order_UI import Order_UI
 from ui.Put_In_Order_UI import Put_In_Order_UI
-
 from datetime import datetime
 
 
 class Front_Page_UI:
+
     def __init__(self):
         self.__CustomerService = CustomerService()
         self.__CarService = CarService()

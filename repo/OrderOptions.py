@@ -1,5 +1,5 @@
-import os
 import csv
+import os
 from models.Order import Order
 from datetime import date
 
@@ -7,7 +7,6 @@ class OrderOptions:
 
     def __init__(self):
         self.__order = []
-
 
     def pick_a_category(self, car_choice):
         ''' Prints out available cars at the moment, and allows the user to choose category '''
@@ -24,7 +23,7 @@ class OrderOptions:
                 pass
 
     def check_Car(self, licence_Plate):
-        # To check if the car exists and is available, if so it returns True
+        ''' To check if the car exists and is available, if so it returns True'''
         with open("./data/cars.csv", 'r') as check_Car:
             reader = csv.reader(check_Car)
             for row in reader:
@@ -33,7 +32,7 @@ class OrderOptions:
 
     
     def check_Order(self, SSN):
-        # Check if the order exists or not, if so it returns True 
+        ''' Check if the order exists or not, if so it returns True '''
         with open("./data/orders.csv", 'r') as check_Order:
             reader = csv.reader(check_Order)
             for row in reader:
@@ -44,8 +43,7 @@ class OrderOptions:
     def put_in_an_order(self, SSN, licence_Plate, car_rent_year, car_rent_month, car_rent_day, car_return_year,
             car_return_month, car_return_day, extra_insurance):
         ''' Adds an order for today to The Car Rental (the orders.csv file) '''
-
-        # Get informations about the Customer that is putting in the order
+        # Get informations about the Customer that is putting in the order 
         with open("./data/customers.csv", 'r') as customer_File:
             reader_customer = csv.reader(customer_File)
             for row in reader_customer:
@@ -102,13 +100,14 @@ class OrderOptions:
                 writer.writerow(row)
         #This deletes the old file, with the old informations
         os.remove('./data/cars.csv')
-        # This renames "deletecars" to "cars", like the old one with all of the old information exept for the one that was changed
+        # This renames "deletecars" to "cars", like the old one with all of the old
+        # information exept for the one that was changed
         os.rename('./data/deletecars.csv', './data/cars.csv')
 
     def put_in_future_order(self, SSN, Name, Category, car_rent_year, car_rent_month, car_rent_day, car_return_year,
             car_return_month, car_return_day, extra_insurance):
         ''' Keeps information about future orders, fx. orders for tomorrow or anywhere in the future.'''
-        with open('./data/futureorders.csv', 'a+') as order_file:
+        with open('./data/futureorders.csv', 'a+') as order_file: # a+ creates the file if it doesn't exist
             # This dosen't do anything in the system except keeping track of the orders
             # Then the user needs to automaticly transfer the orders in to "put in order" 
             SSN = SSN
@@ -117,11 +116,13 @@ class OrderOptions:
             Rentday = date(car_rent_year, car_rent_month, car_rent_day)
             Returnday = date(car_return_year, car_return_month, car_return_day)
             ExtraInsurance = extra_insurance
-            # Put the informations about the customer, the category that he prefers, rent date and return day into "futureorders.csv"
+            # Put the informations about the customer, the category that he prefers, rent date and return day 
+            # into "futureorders.csv"
             order_file.write('{},{},{},{},{},{}\n'.format(SSN, Name, Category, Rentday, Returnday, ExtraInsurance))
 
     def print_out_future_orders(self):
-        '''This prints out everything that is in future orders, a reminder for the user so he can put in orders if there are any for today'''
+        '''This prints out everything that is in future orders, a reminder for the user so he can put in orders 
+        if there are any for today'''
         # Prints out whenever the user is going to put in the order
         with open('./data/futureorders.csv', 'r') as order_car:
             reader_car = csv.reader(order_car)
@@ -131,12 +132,12 @@ class OrderOptions:
     def remove_from_future_orders(self, SSN_input):
         '''Removes orders from future orders when the order has been done'''
         with open('./data/futureorders.csv', 'r') as inp, open('./data/deletefutureorders.csv', 'w') as out:
-            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'Category', 'Rentday', 'Returnday', 'ExtraInsurance'])
+            writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'Category', 'Rentday', 'Returnday', 
+                    'ExtraInsurance'])
             writer.writeheader()
             for row in csv.DictReader(inp):
                 if row['SSN'] != SSN_input:
                     writer.writerow(row)
-
         #This deletes the old file, with the old informations
         os.remove('./data/futureorders.csv')
         # This renames "deletefutureorders" to "future orders", 
@@ -175,7 +176,6 @@ class OrderOptions:
                     print('Rent Date:{:>14}{}\nReturn Date:{:>12}{}\nTotal price:{:>12}{}'.format(" ", row[6],
                           " ", row[7], " ", row[8]))
 
-
     # Press 4 to Change Order
     def change_Order(self, SSN, choice, changes):
         ''' Changes an order in The Car Rental (in the orders.csv file). Changes category, the date of the rent,
@@ -205,10 +205,11 @@ class OrderOptions:
         with open("./data/orders.csv", 'r') as look_up_customer_file:
             reader = csv.reader(look_up_customer_file)
             next(look_up_customer_file)
-            print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format("SSN:","Name:","Licence Plate:","Manufacturer:","The Type:",
-                    "Rent Day:","Return Day:"))
+            print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format("SSN:","Name:","Licence Plate:",
+                    "Manufacturer:","The Type:","Rent Day:","Return Day:"))
             for row in reader:
-                print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0], row[1], row[2], row[4], row[5],row[6], row[7]))
+                print('{:<15}{:<25}{:<20}{:<20}{:<20}{:<20}{:<20}'.format(row[0], row[1], row[2], row[4], row[5],
+                        row[6], row[7]))
 
     def return_car(self, plate):
         ''' When the car is returned the user needs to return it manually '''
@@ -225,6 +226,8 @@ class OrderOptions:
                 writer.writerow(row)
         os.remove('./data/cars.csv')
         os.rename('./data/deletecars.csv', './data/cars.csv')
+        # creates a new file called cars, like the old one, with all it's content but the car we just returned
+        # is now marked true (available)
 
         with open('./data/orders.csv', 'r') as inp, open('./data/cancel_Order.csv', 'w') as out:
             writer = csv.DictWriter(out, fieldnames=['SSN', 'Name', 'licence_Plate', 'category', 'manufacturer',
@@ -233,5 +236,7 @@ class OrderOptions:
             for row in csv.DictReader(inp):
                 if row['licence_Plate'] != plate:
                     writer.writerow(row)
-        os.remove('./data/orders.csv')
+        os.remove('./data/orders.csv') 
         os.rename('./data/cancel_Order.csv', './data/orders.csv')
+        # creates a new file called orders, like the old one, with all it's content but the car we just returned
+        # is not there

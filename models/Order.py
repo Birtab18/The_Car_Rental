@@ -1,5 +1,5 @@
-'''This class is to get all of the informations we need about orders'''
 class Order:
+    '''This class is to get all of the informations we need about orders'''
 
     def __init__(self, SSN, Name, licence_plate, category, manufacturer, the_Type, rent_Date, return_Date, 
             extra_Insurance):

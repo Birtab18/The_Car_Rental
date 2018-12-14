@@ -1,5 +1,3 @@
-import csv
-import os
 from services.OrderService import OrderService
 from services.CustomerService import CustomerService
 from services.CarService import CarService
@@ -11,6 +9,7 @@ from datetime import datetime
 
 
 class Order_UI:
+
     def __init__(self):
         self.__OrderService = OrderService()
         self.__CarService = CarService()

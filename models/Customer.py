@@ -1,5 +1,5 @@
-'''This class is to get all of the informations we need about the customer'''
 class Customer:
+    '''This class is to get all of the informations we need about the customer'''
 
     def __init__(self, name, SSN, phonenumber, email):
         self.__name = name

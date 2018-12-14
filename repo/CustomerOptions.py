@@ -1,7 +1,7 @@
-from models.Customer import Customer
-import os
 import csv
 import os
+from models.Customer import Customer
+
 
 class CustomerOptions:
     def __init__(self):
@@ -41,7 +41,8 @@ class CustomerOptions:
                     writer.writerow(row)
         #This deletes the old file, with the old informations
         os.remove('./data/customers.csv') 
-        # This renames "deletecustomers" to "customers", like the old one with all of the old information exept for the one that was deleted
+        # This renames "deletecustomers" to "customers", like the old one with all of the old information 
+        # exept for the one that was deleted
         os.rename('./data/deletecustomers.csv', './data/customers.csv') 
 
 
@@ -82,7 +83,8 @@ class CustomerOptions:
                 writer.writerow(row)
         #This deletes the old file, with the old informations
         os.remove('./data/customers.csv') 
-        # This renames "deletecustomers" to "customers", like the old one with all of the old information but with the changes. 
+        # This renames "deletecustomers" to "customers", like the old one with all of the old information but 
+        # with the changes. 
         os.rename('./data/deletecustomers.csv', './data/customers.csv')
 
 

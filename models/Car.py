@@ -1,5 +1,5 @@
-'''This class is to get all of the informations we need about car'''
 class Car:
+    '''This class is to get all of the informations we need about car'''
 
     def __init__(self, licence_Plate, category, manufacturer, the_Type, transmission, price, status=True):
         self.__licence_Plate = licence_Plate
